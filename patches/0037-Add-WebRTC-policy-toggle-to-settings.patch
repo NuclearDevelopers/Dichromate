@@ -1,0 +1,252 @@
+From 8849c6c08238d524ed5b29ec178e5adb4c4b916a Mon Sep 17 00:00:00 2001
+From: qua3k <cliffmaceyak@gmail.com>
+Date: Fri, 22 Oct 2021 00:00:00 +0000
+Subject: [PATCH] Add WebRTC policy toggle to settings
+
+This adds a user facing toggle for changing WebRTC IP handling policy.
+---
+ chrome/app/settings_strings.grdp              | 18 +++++
+ .../api/settings_private/prefs_util.cc        |  2 +
+ .../settings/privacy_page/security_page.html  |  8 +++
+ .../settings/privacy_page/security_page.ts    |  1 +
+ .../privacy_page/webrtc_policy_dropdown.html  | 66 +++++++++++++++++++
+ .../privacy_page/webrtc_policy_dropdown.ts    | 46 +++++++++++++
+ .../browser/resources/settings/settings.gni   |  1 +
+ .../settings_localized_strings_provider.cc    |  6 ++
+ 8 files changed, 148 insertions(+)
+ create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html
+ create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
+
+diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
+index aaef2cea2fe3d..f16b2f5f6d134 100644
+--- a/chrome/app/settings_strings.grdp
++++ b/chrome/app/settings_strings.grdp
+@@ -1944,6 +1944,24 @@
+   <message name="IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION" desc="Secondary, continued explanation of HTTPS-Only Mode in Security settings">
+     Upgrade navigations to HTTPS and warn you before loading sites that don't support it
+   </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_LABEL" desc="Label for the WebRTC policy dropdown menu in Privacy options.">
++    WebRTC IP Handling Policy
++  </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_DESCRIPTION" desc="Secondary, continued explanation of the WebRTC policy dropdown menu in Privacy options.">
++    Determines which IP addresses and interfaces WebRTC uses when attempting to find the best available connection
++  </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_DEFAULT" desc="The default choice in the WebRTC dropdown menu in Privacy options.">
++    Default
++  </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_DEFAULT_PUBLIC_AND_PRIVATE_INTERFACES" desc="The default public and private interfaces choice in the WebRTC dropdown menu in Privacy options.">
++    Default public and private interfaces
++  </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_DEFAULT_PUBLIC_INTERFACE_ONLY" desc="The default public interface only choice in the WebRTC dropdown menu in Privacy options.">
++    Default public interface only
++  </message>
++  <message name="IDS_SETTINGS_WEBRTC_POLICY_DISABLE_NON_PROXIED_UDP" desc="The disable non-proxied UDP choice in the WebRTC dropdown menu in Privacy options.">
++    Disable non-proxied UDP
++  </message>
+   <message name="IDS_SETTINGS_MANAGE_CERTIFICATES" desc="Text for manage certificates button in Privacy options">
+     Manage certificates
+   </message>
+diff --git a/chrome/browser/extensions/api/settings_private/prefs_util.cc b/chrome/browser/extensions/api/settings_private/prefs_util.cc
+index 6a2ed1c69f0ec..7658e1fc4dcd7 100644
+--- a/chrome/browser/extensions/api/settings_private/prefs_util.cc
++++ b/chrome/browser/extensions/api/settings_private/prefs_util.cc
+@@ -313,6 +313,8 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
+       settings_api::PrefType::PREF_TYPE_NUMBER;
+   (*s_allowlist)[::prefs::kHttpsOnlyModeEnabled] =
+       settings_api::PrefType::PREF_TYPE_BOOLEAN;
++  (*s_allowlist)[prefs::kWebRTCIPHandlingPolicy] =
++      settings_api::PrefType::PREF_TYPE_STRING;
+ 
+   // Sync and personalization page.
+   (*s_allowlist)[::prefs::kSearchSuggestEnabled] =
+diff --git a/chrome/browser/resources/settings/privacy_page/security_page.html b/chrome/browser/resources/settings/privacy_page/security_page.html
+index 00fc437759a71..fb4632ecc60da 100644
+--- a/chrome/browser/resources/settings/privacy_page/security_page.html
++++ b/chrome/browser/resources/settings/privacy_page/security_page.html
+@@ -8,6 +8,11 @@
+       }
+ 
+       #httpsOnlyModeToggle {
++        border-top: var(--cr-separator-line);
++        padding: 0 var(--cr-section-padding);
++      }
++
++      #webRTCPolicyMenu {
+         padding: 0 var(--cr-section-padding);
+       }
+ 
+@@ -155,6 +160,9 @@
+     <div class="cr-row first">
+       <h2>$i18n{advancedPageTitle}</h2>
+     </div>
++    <settings-webrtc-policy-menu id="webRtcPolicyMenu"
++      prefs="{{prefs}}">
++    </settings-webrtc-policy-menu>
+     <template is="dom-if" if="[[showHttpsOnlyModeSetting_]]">
+       <settings-toggle-button
+         id="httpsOnlyModeToggle"
+diff --git a/chrome/browser/resources/settings/privacy_page/security_page.ts b/chrome/browser/resources/settings/privacy_page/security_page.ts
+index 39f61dadca3ff..c73a4355d5fe8 100644
+--- a/chrome/browser/resources/settings/privacy_page/security_page.ts
++++ b/chrome/browser/resources/settings/privacy_page/security_page.ts
+@@ -13,6 +13,7 @@ import '../icons.js';
+ import '../prefs/prefs.js';
+ import '../settings_shared_css.js';
+ import './disable_safebrowsing_dialog.js';
++import './webrtc_policy_dropdown.js';
+ 
+ import {assert} from 'chrome://resources/js/assert_ts.js';
+ import {focusWithoutInk} from 'chrome://resources/js/cr/ui/focus_without_ink.m.js';
+diff --git a/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html
+new file mode 100644
+index 0000000000000..bf0e16ae44fed
+--- /dev/null
++++ b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html
+@@ -0,0 +1,66 @@
++<style include="cr-actionable-row-style settings-shared iron-flex">
++  :host {
++    padding: 0 var(--cr-section-padding);
++  }
++
++  :host([elide-label]),
++  :host([elide-label]) #outerRow,
++  :host([elide-label]) #outerRow > div.flex {
++    min-width: 0;
++  }
++
++  :host([elide-label]) .label {
++    overflow: hidden;
++    text-overflow: ellipsis;
++    white-space: nowrap;
++  }
++
++  #outerRow {
++    align-items: center;
++    display: flex;
++    min-height: var(--settings-row-two-line-min-height);
++    width: 100%;
++  }
++
++  #outerRow[noSubLabel] {
++    min-height: var(--settings-row-min-height);
++  }
++
++  #labelWrapper {
++    padding: var(--cr-section-vertical-padding) 0;
++  }
++
++  #labelWrapper,
++  ::slotted([slot='more-actions']) {
++    margin-inline-end: var(--settings-control-label-spacing) !important;
++  }
++</style>
++<div id="outerRow">
++  <div class="flex" id="labelWrapper">
++    <div class="label" aria-hidden="true">$i18n{webRtcPolicyTitle}</div>
++    <div class="secondary label" id="sub-label">
++      <span id="sub-label-text" aria-hidden="true">
++        $i18n{webRtcPolicyDescription}
++      </span>
++        <a id="learn-more"
++            href="https://tools.ietf.org/html/rfc8828.html#section-5.2"
++            target="_blank"
++            aria-labelledby="sub-label-text learn-more"
++            on-click="onLearnMoreClick_">
++          $i18n{learnMore}
++        </a>
++    </div>
++  </div>
++  <slot name="more-actions"></slot>
++  <template is="dom-if" if="[[hasPrefPolicyIndicator(pref.*)]]">
++    <cr-policy-pref-indicator pref="{{prefs.webrtc.ip_handling_policy}}"
++    icon-aria-label="$i18n{webRtcPolicyTitle}">
++    </cr-policy-pref-indicator>
++  </template>
++  <settings-dropdown-menu
++    id="dropdown"
++    pref="{{prefs.webrtc.ip_handling_policy}}"
++    label="$i18n{webRtcPolicyTitle}"
++    menu-options="[[webRtcPolicyOptions_]]">
++  </settings-dropdown-menu>
++</div>
+diff --git a/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
+new file mode 100644
+index 0000000000000..b36d4fe614779
+--- /dev/null
++++ b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
+@@ -0,0 +1,46 @@
++// Copyright 2021 The Hexavalent Authors. All rights reserved.
++// Use of this source code is governed by a BSD-style license that can be
++// found in the LICENSE file.
++
++import '../settings_shared_css.js';
++import '../controls/settings_dropdown_menu.js';
++
++import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';
++
++import {DropdownMenuOptionList} from '../controls/settings_dropdown_menu.js';
++import {loadTimeData} from '../i18n_setup.js';
++import {getTemplate} from './webrtc_policy_dropdown.html.js';
++
++export class SettingsWebRtcPolicyMenuElement extends PolymerElement {
++  static get is() {
++    return 'settings-webrtc-policy-menu';
++  }
++
++  static get template() {
++    return getTemplate();
++  }
++
++  static get properties() {
++    return {
++      /**
++      * List of options for the WebRTC policy drop-down menu.
++      */
++      webRtcPolicyOptions_: {
++        readOnly: true,
++        type: Array,
++        value() {
++          return [
++            {value: 'default', name: loadTimeData.getString('webRtcPolicyDefault')},
++            {value: 'default_public_and_private_interfaces', name: loadTimeData.getString('webRtcPolicyDefaultPublicAndPrivateInterfaces')},
++            {value: 'default_public_interface_only', name: loadTimeData.getString('webRtcPolicyDefaultPublicInterfaceOnly')},
++            {value: 'disable_non_proxied_udp', name: loadTimeData.getString('webRtcPolicyDisableNonProxiedUDP')},
++          ];
++        },
++      },
++    };
++  }
++  webRtcPolicyOptions_: DropdownMenuOptionList;
++}
++
++customElements.define(
++    SettingsWebRtcPolicyMenuElement.is, SettingsWebRtcPolicyMenuElement);
+diff --git a/chrome/browser/resources/settings/settings.gni b/chrome/browser/resources/settings/settings.gni
+index e7c8552d48f0c..23ad67f6aa059 100644
+--- a/chrome/browser/resources/settings/settings.gni
++++ b/chrome/browser/resources/settings/settings.gni
+@@ -106,6 +106,7 @@ web_component_files = [
+   "privacy_page/security_keys_phones_list.ts",
+   "privacy_page/security_keys_phones_dialog.ts",
+   "privacy_page/security_page.ts",
++  "privacy_page/webrtc_policy_dropdown.ts",
+   "privacy_sandbox/app.ts",
+   "privacy_sandbox/interest_item.ts",
+   "reset_page/reset_page.ts",
+diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+index 9b395a777e1f4..bda6ed6b492dc 100644
+--- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
++++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
+@@ -1463,6 +1463,12 @@ void AddPrivacyStrings(content::WebUIDataSource* html_source,
+      IDS_SETTINGS_ADVANCED_PROTECTION_PROGRAM_DESC},
+     {"httpsOnlyModeTitle", IDS_SETTINGS_HTTPS_ONLY_MODE},
+     {"httpsOnlyModeDescription", IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION},
++    {"webRtcPolicyTitle", IDS_SETTINGS_WEBRTC_POLICY_LABEL},
++    {"webRtcPolicyDescription", IDS_SETTINGS_WEBRTC_POLICY_DESCRIPTION},
++    {"webRtcPolicyDefault", IDS_SETTINGS_WEBRTC_POLICY_DEFAULT},
++    {"webRtcPolicyDefaultPublicAndPrivateInterfaces", IDS_SETTINGS_WEBRTC_POLICY_DEFAULT_PUBLIC_AND_PRIVATE_INTERFACES},
++    {"webRtcPolicyDefaultPublicInterfaceOnly", IDS_SETTINGS_WEBRTC_POLICY_DEFAULT_PUBLIC_INTERFACE_ONLY},
++    {"webRtcPolicyDisableNonProxiedUDP", IDS_SETTINGS_WEBRTC_POLICY_DISABLE_NON_PROXIED_UDP},
+     {"manageCertificates", IDS_SETTINGS_MANAGE_CERTIFICATES},
+     {"manageCertificatesDescription",
+      IDS_SETTINGS_MANAGE_CERTIFICATES_DESCRIPTION},

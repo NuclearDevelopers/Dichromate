@@ -1,0 +1,22 @@
+From e5fc66c98c50d39b4e12ec215b350c648115c34f Mon Sep 17 00:00:00 2001
+From: Daniel Micay <danielmicay@gmail.com>
+Date: Wed, 23 Nov 2016 08:29:58 -0500
+Subject: [PATCH] disable navigation error correction by default
+
+---
+ chrome/browser/net/profile_network_context_service.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chrome/browser/net/profile_network_context_service.cc b/chrome/browser/net/profile_network_context_service.cc
+index 7ac922c8fd84d..1aa89e9f1e5f6 100644
+--- a/chrome/browser/net/profile_network_context_service.cc
++++ b/chrome/browser/net/profile_network_context_service.cc
+@@ -340,7 +340,7 @@ void ProfileNetworkContextService::UpdateAdditionalCertificates() {
+ void ProfileNetworkContextService::RegisterProfilePrefs(
+     user_prefs::PrefRegistrySyncable* registry) {
+   registry->RegisterBooleanPref(
+-      embedder_support::kAlternateErrorPagesEnabled, true,
++      embedder_support::kAlternateErrorPagesEnabled, false,
+       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+   registry->RegisterBooleanPref(prefs::kQuicAllowed, true);
+   registry->RegisterBooleanPref(prefs::kGloballyScopeHTTPAuthCacheEnabled,

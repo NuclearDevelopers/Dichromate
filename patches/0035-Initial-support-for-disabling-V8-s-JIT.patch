@@ -1,0 +1,142 @@
+From de82fd0058ffa3207f363833e6e8843a5944c051 Mon Sep 17 00:00:00 2001
+From: qua3k <cliffmaceyak@gmail.com>
+Date: Tue, 19 Oct 2021 07:36:10 -0400
+Subject: [PATCH] Initial support for disabling V8's JIT
+
+This adds a flag in `chrome://flags` for toggling the V8 JIT
+compiler; it is default disabled.
+---
+ chrome/browser/about_flags.cc              | 5 +++++
+ chrome/browser/flag-metadata.json          | 7 +++++++
+ chrome/browser/flag-never-expire-list.json | 1 +
+ chrome/browser/flag_descriptions.cc        | 5 +++++
+ chrome/browser/flag_descriptions.h         | 3 +++
+ gin/gin_features.cc                        | 3 +++
+ gin/gin_features.h                         | 1 +
+ gin/v8_initializer.cc                      | 4 ++++
+ 8 files changed, 29 insertions(+)
+
+diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
+index bee1d114bf9a0..60311eb28237e 100644
+--- a/chrome/browser/about_flags.cc
++++ b/chrome/browser/about_flags.cc
+@@ -158,6 +158,7 @@
+ #include "device/gamepad/public/cpp/gamepad_features.h"
+ #include "device/vr/buildflags/buildflags.h"
+ #include "extensions/buildflags/buildflags.h"
++#include "gin/gin_features.h"
+ #include "gpu/config/gpu_finch_features.h"
+ #include "gpu/config/gpu_switches.h"
+ #include "media/audio/audio_features.h"
+@@ -5780,6 +5781,10 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
+ 
++    {"disable-v8-jit", flag_descriptions::kV8NoJITName,
++     flag_descriptions::kV8NoJITDescription, kOsAll,
++     FEATURE_VALUE_TYPE(features::kV8NoJIT)},
++
+ #if !BUILDFLAG(IS_ANDROID)
+     {"enable-accessibility-live-caption",
+      flag_descriptions::kEnableAccessibilityLiveCaptionName,
+diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
+index 4071e2bd62019..70dce93bb08b1 100644
+--- a/chrome/browser/flag-metadata.json
++++ b/chrome/browser/flag-metadata.json
+@@ -1306,6 +1306,13 @@
+     // issues.
+     "expiry_milestone": -1
+   },
++  {
++    "name": "disable-v8-jit",
++    "owners": [ "cliffmaceyak@gmail.com" ],
++    // This flag does not expire because it allows users to disable the
++    // V8 Just-In-Time compiler.
++    "expiry_milestone": -1
++  },
+   {
+     "name": "disable-virtual-keyboard",
+     "owners": [ "myy", "essential-inputs-team@google.com" ],
+diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
+index d7a4d86c40a8f..793a246fffab4 100644
+--- a/chrome/browser/flag-never-expire-list.json
++++ b/chrome/browser/flag-never-expire-list.json
+@@ -30,6 +30,7 @@
+   "disable-explicit-dma-fences",
+   "disable-javascript-harmony-shipping",
+   "disable-threaded-scrolling",
++  "disable-v8-jit",
+   "disable-webrtc-hw-decoding",
+   "disable-webrtc-hw-encoding",
+   "disallow-doc-written-script-loads",
+diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
+index e0c2c965173a4..29ec4d6a6a405 100644
+--- a/chrome/browser/flag_descriptions.cc
++++ b/chrome/browser/flag_descriptions.cc
+@@ -2708,6 +2708,11 @@ const char kUseSearchClickForRightClickDescription[] =
+     "webpages and apps to consume alt+click. When disabled the legacy "
+     "behavior of remapping alt+click to right click will remain unchanged.";
+ 
++const char kV8NoJITName[] = "Disable V8 JIT (JITless)";
++const char kV8NoJITDescription[] =
++    "Experimental security mode that disables all runtime allocation of "
++    "executable memory";
++
+ const char kV8VmFutureName[] = "Future V8 VM features";
+ const char kV8VmFutureDescription[] =
+     "This enables upcoming and experimental V8 VM features. "
+diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
+index dd878ed3aede7..cfb8d553f562a 100644
+--- a/chrome/browser/flag_descriptions.h
++++ b/chrome/browser/flag_descriptions.h
+@@ -1514,6 +1514,9 @@ extern const char kUseFirstPartySetDescription[];
+ extern const char kUseSearchClickForRightClickName[];
+ extern const char kUseSearchClickForRightClickDescription[];
+ 
++extern const char kV8NoJITName[];
++extern const char kV8NoJITDescription[];
++
+ extern const char kV8VmFutureName[];
+ extern const char kV8VmFutureDescription[];
+ 
+diff --git a/gin/gin_features.cc b/gin/gin_features.cc
+index aa83978161348..4fa511825c64f 100644
+--- a/gin/gin_features.cc
++++ b/gin/gin_features.cc
+@@ -63,6 +63,9 @@ const base::Feature kV8ReduceConcurrentMarkingTasks{
+ const base::Feature kV8NoReclaimUnmodifiedWrappers{
+     "V8NoReclaimUnmodifiedWrappers", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
++// Disables the V8 Just-in-Time compiler
++const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_DISABLED_BY_DEFAULT};
++
+ // Enables W^X code memory protection in V8.
+ // This is enabled in V8 by default. To test the performance impact, we are
+ // going to disable this feature in a finch experiment.
+diff --git a/gin/gin_features.h b/gin/gin_features.h
+index 4191c7fed9fb1..a6f9b7cfd5f26 100644
+--- a/gin/gin_features.h
++++ b/gin/gin_features.h
+@@ -24,6 +24,7 @@ GIN_EXPORT extern const base::Feature kV8FlushBaselineCode;
+ GIN_EXPORT extern const base::Feature kV8FlushEmbeddedBlobICache;
+ GIN_EXPORT extern const base::Feature kV8LazyFeedbackAllocation;
+ GIN_EXPORT extern const base::Feature kV8NoReclaimUnmodifiedWrappers;
++GIN_EXPORT extern const base::Feature kV8NoJIT;
+ GIN_EXPORT extern const base::Feature kV8CodeMemoryWriteProtection;
+ GIN_EXPORT extern const base::Feature kV8OffThreadFinalization;
+ GIN_EXPORT extern const base::Feature kV8OptimizeJavascript;
+diff --git a/gin/v8_initializer.cc b/gin/v8_initializer.cc
+index cebcf5ac6f587..7a6bb6802f247 100644
+--- a/gin/v8_initializer.cc
++++ b/gin/v8_initializer.cc
+@@ -298,6 +298,10 @@ void SetFlags(IsolateHolder::ScriptMode mode,
+   SetV8FlagsIfOverridden(features::kV8SlowHistograms, "--slow-histograms",
+                          "--no-slow-histograms");
+ 
++  if (base::FeatureList::IsEnabled(features::kV8NoJIT)) {
++    SetV8Flags("--jitless");
++  }
++
+   if (base::FeatureList::IsEnabled(features::kV8ConcurrentSparkplug)) {
+     if (int max_threads = features::kV8ConcurrentSparkplugMaxThreads.Get()) {
+       SetV8FlagsFormatted("--concurrent-sparkplug-max-threads=%i", max_threads);

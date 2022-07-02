@@ -79,7 +79,7 @@ index e0c2c965173a4..29ec4d6a6a405 100644
  
 +const char kV8NoJITName[] = "Disable V8 JIT (JITless)";
 +const char kV8NoJITDescription[] =
-+    "Experimental security mode that disables all runtime allocation of "
++    "Security mode that disables all runtime allocation of "
 +    "executable memory";
 +
  const char kV8VmFutureName[] = "Future V8 VM features";
@@ -108,7 +108,7 @@ index aa83978161348..4fa511825c64f 100644
      "V8NoReclaimUnmodifiedWrappers", base::FEATURE_DISABLED_BY_DEFAULT};
  
 +// Disables the V8 Just-in-Time compiler
-+const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_DISABLED_BY_DEFAULT};
++const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_ENABLED_BY_DEFAULT};
 +
  // Enables W^X code memory protection in V8.
  // This is enabled in V8 by default. To test the performance impact, we are

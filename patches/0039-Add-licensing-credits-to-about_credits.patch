@@ -1,24 +1,25 @@
-From 388d2eec66cbd24aa55f4c38241c8ee4d99a19ec Mon Sep 17 00:00:00 2001
-From: loryeam <loryeam@gmail.com>
-Date: Wed, 1 Dec 2021 00:00:00 +0000
-Subject: [PATCH] Add licencing credits to about_credits
+From b1d34759b7f59aaf862f078f3cb341a4af17a3cc Mon Sep 17 00:00:00 2001
+From: Douloureux <douloureux@gmail.com>
+Date: Mon, 4 Jul 2022 12:44:02 +0530
+Subject: [PATCH] Add licensing credits to about_credits
 
-Issue: #68
 ---
- LICENCE.debian     | 29 +++++++++++++++++++++++++++++
- LICENCE.hexavalent | 32 ++++++++++++++++++++++++++++++++
- LICENCE.vanadium   | 19 +++++++++++++++++++
- tools/licenses.py  | 22 ++++++++++++++++++++++
- 4 files changed, 102 insertions(+)
- create mode 100644 LICENCE.debian
- create mode 100644 LICENCE.hexavalent
- create mode 100644 LICENCE.vanadium
+ LICENSE.debian     | 29 +++++++++++++++++++++++++++++
+ LICENSE.dichromate | 19 +++++++++++++++++++
+ LICENSE.hexavalent | 32 ++++++++++++++++++++++++++++++++
+ LICENSE.vanadium   | 19 +++++++++++++++++++
+ tools/licenses.py  | 29 +++++++++++++++++++++++++++++
+ 5 files changed, 128 insertions(+)
+ create mode 100644 LICENSE.debian
+ create mode 100644 LICENSE.dichromate
+ create mode 100644 LICENSE.hexavalent
+ create mode 100644 LICENSE.vanadium
 
-diff --git a/LICENCE.debian b/LICENCE.debian
+diff --git a/LICENSE.debian b/LICENSE.debian
 new file mode 100644
 index 0000000000000..01a4f8b447eb5
 --- /dev/null
-+++ b/LICENCE.debian
++++ b/LICENSE.debian
 @@ -0,0 +1,29 @@
 +Copyright: 2009-2010 Fabien Tassin <fta@ubuntu.com>
 +Copyright: 2010-2014 Giuseppe Iuculano <iuculano@debian.org>
@@ -49,11 +50,36 @@ index 0000000000000..01a4f8b447eb5
 +CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY,
 +OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE
 +OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENCE.hexavalent b/LICENCE.hexavalent
+diff --git a/LICENSE.dichromate b/LICENSE.dichromate
+new file mode 100644
+index 0000000000000..854b7fa8b7393
+--- /dev/null
++++ b/LICENSE.dichromate
+@@ -0,0 +1,19 @@
++Copyright © 2022 Douloureux
++
++Permission is hereby granted, free of charge, to any person obtaining a copy
++of this software and associated documentation files (the "Software"), to deal
++in the Software without restriction, including without limitation the rights
++to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
++copies of the Software, and to permit persons to whom the Software is
++furnished to do so, subject to the following conditions:
++
++The above copyright notice and this permission notice shall be included in
++all copies or substantial portions of the Software.
++
++THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
++IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
++FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
++AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
++LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
++OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
++THE SOFTWARE.
+diff --git a/LICENSE.hexavalent b/LICENSE.hexavalent
 new file mode 100644
 index 0000000000000..aeb40ccc1762d
 --- /dev/null
-+++ b/LICENCE.hexavalent
++++ b/LICENSE.hexavalent
 @@ -0,0 +1,32 @@
 +The Clear BSD License
 +
@@ -87,11 +113,11 @@ index 0000000000000..aeb40ccc1762d
 +IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
 +ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
 +POSSIBILITY OF SUCH DAMAGE.
-diff --git a/LICENCE.vanadium b/LICENCE.vanadium
+diff --git a/LICENSE.vanadium b/LICENSE.vanadium
 new file mode 100644
 index 0000000000000..43d63fe135ffc
 --- /dev/null
-+++ b/LICENCE.vanadium
++++ b/LICENSE.vanadium
 @@ -0,0 +1,19 @@
 +Copyright © 2016-2022 GrapheneOS
 +
@@ -113,21 +139,22 @@ index 0000000000000..43d63fe135ffc
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
 diff --git a/tools/licenses.py b/tools/licenses.py
-index a58dbf44370ba..62ca5bb7b631e 100755
+index a58dbf44370ba..778b1d145587d 100755
 --- a/tools/licenses.py
 +++ b/tools/licenses.py
-@@ -140,6 +140,10 @@ ADDITIONAL_PATHS = (
+@@ -140,6 +140,11 @@ ADDITIONAL_PATHS = (
      # Fake directories to include the strongtalk and fdlibm licenses.
      os.path.join('v8', 'strongtalk'),
      os.path.join('v8', 'fdlibm'),
-+    # More fake directories to include the Debian, Hexavalent, and Vanadium licences.
++    # More fake directories to include the Debian, Hexavalent, Dichromate, and Vanadium licenses.
 +    os.path.join('debian'),
 +    os.path.join('hexavalent'),
 +    os.path.join('vanadium'),
++    os.path.join('dichromate'),
  )
  
  
-@@ -347,6 +351,24 @@ SPECIAL_CASES = {
+@@ -347,6 +352,30 @@ SPECIAL_CASES = {
          "License File":
          "/third_party/swiftshader/third_party/SPIRV-Headers/LICENSE",
      },
@@ -149,6 +176,15 @@ index a58dbf44370ba..62ca5bb7b631e 100755
 +      "License": "MIT",
 +      "License File": "/LICENCE.vanadium",
 +    },
++    os.path.join('dichromate'): {
++      "Name": "Dichromate",
++      "URL": "https://github.com/Dichromate-Browser/Dichromate",
++      "License": "MIT",
++      "License File": "/LICENCE.dichromate",
++    },
  }
  
  # Special value for 'License File' field used to indicate that the license file
+-- 
+2.35.1.windows.2
+

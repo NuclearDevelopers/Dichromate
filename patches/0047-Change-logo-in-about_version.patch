@@ -1,0 +1,35 @@
+From 3f417bbc3ccce30ce9c62b0fddaf8fd70a6a1474 Mon Sep 17 00:00:00 2001
+From: Douloureux <douloureux@gmail.com>
+Date: Mon, 4 Jul 2022 00:00:00 +0000
+Subject: [PATCH] Change logo in about_version
+
+---
+ components/version_ui/resources/about_version.html | 10 +++++-----
+ 1 file changed, 5 insertions(+), 5 deletions(-)
+
+diff --git a/components/version_ui/resources/about_version.html b/components/version_ui/resources/about_version.html
+index a813b6761dd1e..6a1cd3910020a 100644
+--- a/components/version_ui/resources/about_version.html
++++ b/components/version_ui/resources/about_version.html
+@@ -47,13 +47,13 @@ about:version template page
+ <if expr="not is_android and not is_ios">
+         <!-- Version for themes. -->
+         <picture>
+-          <source srcset="chrome://theme/IDR_PRODUCT_LOGO_WHITE,
+-                          chrome://theme/IDR_PRODUCT_LOGO_WHITE@2x 2x"
++          <source srcset="chrome://theme/current-channel-logo,
++                          chrome://theme/current-channel-logo@2x 2x"
+                   media="(prefers-color-scheme: dark)">
+-          <source srcset="chrome://theme/IDR_PRODUCT_LOGO,
+-                          chrome://theme/IDR_PRODUCT_LOGO@2x 2x"
++          <source srcset="chrome://theme/current-channel-logo,
++                          chrome://theme/current-channel-logo@2x 2x"
+                   media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+-          <img alt="$i18n{logo_alt_text}" src="chrome://theme/IDR_PRODUCT_LOGO">
++          <img alt="$i18n{logo_alt_text}" src="chrome://theme/current-channel-logo">
+         </picture>
+ </if>
+ <if expr="is_ios or is_android">
+-- 
+2.35.1.windows.2
+

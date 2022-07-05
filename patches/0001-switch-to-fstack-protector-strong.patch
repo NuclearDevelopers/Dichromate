@@ -1,7 +1,7 @@
-From 4d77fccf169393794d15e50ee79760360d3ce013 Mon Sep 17 00:00:00 2001
+From ddaed7bc5a8d30af7a1b36d3219422f46c7daa96 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 26 Dec 2018 10:20:24 -0500
-Subject: [PATCH] switch to -fstack-protector-strong
+Subject: [PATCH 01/47] switch to -fstack-protector-strong
 
 ---
  build/config/compiler/BUILD.gn | 8 +-------
@@ -31,3 +31,6 @@ index f378b9560d153..0ff6a0d660502 100644
        }
      }
  
+-- 
+2.35.1.windows.2
+

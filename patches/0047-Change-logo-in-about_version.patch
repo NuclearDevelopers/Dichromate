@@ -1,7 +1,7 @@
-From 3f417bbc3ccce30ce9c62b0fddaf8fd70a6a1474 Mon Sep 17 00:00:00 2001
+From 2bcfb7818bec2d32a52144841d71ddcb3a41d4ac Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
-Subject: [PATCH] Change logo in about_version
+Subject: [PATCH 47/47] Change logo in about_version
 
 ---
  components/version_ui/resources/about_version.html | 10 +++++-----

@@ -1,14 +1,14 @@
-From a9ec815c7ae0be34f426043b33a5070183b21b5a Mon Sep 17 00:00:00 2001
+From f0de948b7bc367bcce4f483d417f3f54adef0c5d Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
-Subject: [PATCH] Disable crash reporting
+Subject: [PATCH 46/47] Disable crash reporting
 
 ---
  content/public/common/content_features.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index d6c9f152f17b0..f5b641a102287 100644
+index fc3759786a377..0b1ab68e0996a 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
 @@ -224,7 +224,7 @@ const base::Feature kCooperativeScheduling{"CooperativeScheduling",

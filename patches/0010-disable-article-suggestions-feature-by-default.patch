@@ -1,7 +1,7 @@
-From 2c8edf5f6b2c7d699b3d261a4b4a270dbb0dc29f Mon Sep 17 00:00:00 2001
+From 1926744c70dd02d37131456a763efb841e90ec32 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
-Subject: [PATCH] disable article suggestions feature by default
+Subject: [PATCH 10/47] disable article suggestions feature by default
 
 ---
  components/feed/core/shared_prefs/pref_names.cc | 4 ++--
@@ -36,3 +36,6 @@ index 5bb7995bc5bdf..243afdbd79bae 100644
  
  const base::Feature kRemoteSuggestionsEmulateM58FetchingSchedule{
      "RemoteSuggestionsEmulateM58FetchingSchedule",
+-- 
+2.35.1.windows.2
+

@@ -1,7 +1,7 @@
-From 544788b7528e7105637dddac6df21a2384a62371 Mon Sep 17 00:00:00 2001
+From f7fa319266702323f7fc904f74a826782bce3269 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 23 Oct 2020 23:59:13 -0400
-Subject: [PATCH] enable prefetch privacy changes by default
+Subject: [PATCH 22/47] enable prefetch privacy changes by default
 
 ---
  third_party/blink/common/features.cc | 2 +-
@@ -20,3 +20,6 @@ index f0431e8d7138a..a2af67d31c135 100644
  
  // Decodes jpeg 4:2:0 formatted images to YUV instead of RGBX and stores in this
  // format in the image decode cache. See crbug.com/919627 for details on the
+-- 
+2.35.1.windows.2
+

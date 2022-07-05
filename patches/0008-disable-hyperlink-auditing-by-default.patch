@@ -1,7 +1,7 @@
-From 75491ced7fd547727d8e5290b11eb065cfd0b4ff Mon Sep 17 00:00:00 2001
+From 088a3e57fb1c19b916c9742d49cf5bad986267f3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
-Subject: [PATCH] disable hyperlink auditing by default
+Subject: [PATCH 08/47] disable hyperlink auditing by default
 
 ---
  chrome/browser/chrome_content_browser_client.cc | 2 +-
@@ -20,3 +20,6 @@ index 20f93edf5e294..75aec9898fe3b 100644
    // Register user prefs for mapping SitePerProcess and IsolateOrigins in
    // user policy in addition to the same named ones in Local State (which are
    // used for mapping the command-line flags).
+-- 
+2.35.1.windows.2
+

@@ -1,7 +1,7 @@
-From c8ce846a32f3a86088be19e915ef59897470cb8c Mon Sep 17 00:00:00 2001
+From 61c92e43b2bf111ea9a653df6592b5f05d038ade Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 21:57:26 -0400
-Subject: [PATCH] disable background sync by default
+Subject: [PATCH 13/47] disable background sync by default
 
 ---
  .../content_settings/core/browser/content_settings_registry.cc  | 2 +-
@@ -20,3 +20,6 @@ index c3f4686834f5b..17316ad1169d5 100644
             AllowlistedSchemes(),
             ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
             WebsiteSettingsInfo::SINGLE_ORIGIN_ONLY_SCOPE,
+-- 
+2.35.1.windows.2
+

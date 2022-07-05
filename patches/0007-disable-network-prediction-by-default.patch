@@ -1,7 +1,7 @@
-From 325e3b61ea449b0854142b5b358a1dcf2144a818 Mon Sep 17 00:00:00 2001
+From eb0484dd0bbc24cc6c2a04f80d219044e2f6c3d7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
-Subject: [PATCH] disable network prediction by default
+Subject: [PATCH 07/47] disable network prediction by default
 
 ---
  chrome/browser/prefetch/prefetch_prefs.h                       | 2 +-
@@ -34,3 +34,6 @@ index f04aad11d55fa..7c1e9e714e5bb 100644
  }
  
  type FocusConfig = Map<string, (string|(() => void))>;
+-- 
+2.35.1.windows.2
+

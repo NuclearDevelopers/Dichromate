@@ -1,7 +1,7 @@
-From 60de651d7015bb59a07d31ad6ec2713a5e99a717 Mon Sep 17 00:00:00 2001
+From b8a10db583cae830438e214dd19ff2d2479bd972 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Thu, 21 Oct 2021 00:00:00 +0000
-Subject: [PATCH] Enable strict origin isolation by default
+Subject: [PATCH 36/47] Enable strict origin isolation by default
 
 Upstream is in the process of enabling origin isolation by default
 in the process of deprecating `document.domain`. An insignificant
@@ -27,3 +27,6 @@ index d6c9f152f17b0..152e87ad99717 100644
  
  // Enables subresource loading with Web Bundles.
  const base::Feature kSubresourceWebBundles{"SubresourceWebBundles",
+-- 
+2.35.1.windows.2
+

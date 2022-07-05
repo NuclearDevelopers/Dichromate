@@ -1,7 +1,7 @@
-From 35ef60b31cc9b4a5daa4935733c2308d9112539b Mon Sep 17 00:00:00 2001
+From 838d35590bef2df0ef14866b35f96a85b36cee5c Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Mon, 18 Oct 2021 17:18:52 -0400
-Subject: [PATCH] Hexavalent: Make HTTPS-only mode the default
+Subject: [PATCH 34/47] Hexavalent: Make HTTPS-only mode the default
 
 ---
  chrome/browser/ui/browser_ui_prefs.cc | 2 +-
@@ -19,3 +19,6 @@ index d38ababd1186a..ec62e790f755b 100644
 +      prefs::kHttpsOnlyModeEnabled, true,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
  }
+-- 
+2.35.1.windows.2
+

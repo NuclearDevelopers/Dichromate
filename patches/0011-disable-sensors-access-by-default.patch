@@ -1,7 +1,7 @@
-From 0c053904e51c97666828a70cd6a30d9555581679 Mon Sep 17 00:00:00 2001
+From 7cee5f5e9b1a5e53459aef5d7242e677414043dc Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
-Subject: [PATCH] disable sensors access by default
+Subject: [PATCH 11/47] disable sensors access by default
 
 ---
  .../content_settings/core/browser/content_settings_registry.cc  | 2 +-
@@ -20,3 +20,6 @@ index 272fef3f74acc..c3f4686834f5b 100644
             WebsiteSettingsInfo::UNSYNCABLE, AllowlistedSchemes(),
             ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
             WebsiteSettingsInfo::SINGLE_ORIGIN_ONLY_SCOPE,
+-- 
+2.35.1.windows.2
+

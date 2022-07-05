@@ -1,7 +1,7 @@
-From 1d616e8604b5259897d3b2203e4e84add3659714 Mon Sep 17 00:00:00 2001
+From 04b0602dc84b933e2e13bfa234b08b5a14ca00f5 Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <zkang@wpi.edu>
 Date: Sat, 17 Aug 2019 15:53:50 -0400
-Subject: [PATCH] set default search engine to DuckDuckGo
+Subject: [PATCH 42/47] set default search engine to DuckDuckGo
 
 ---
  components/search_engines/template_url_prepopulate_data.cc | 2 +-
@@ -20,3 +20,6 @@ index e38343c2217b8..ec8ec209537cc 100644
      *default_search_provider_index =
          itr == t_urls.end() ? 0 : std::distance(t_urls.begin(), itr);
    }
+-- 
+2.35.1.windows.2
+

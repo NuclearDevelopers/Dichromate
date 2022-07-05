@@ -1,7 +1,7 @@
-From a50df5b8180b54d6b79203118ea5ad504c27e84e Mon Sep 17 00:00:00 2001
+From 5da05992164c1fac4390f44a7df12c6f2398046c Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sun, 10 Oct 2021 21:59:16 -0400
-Subject: [PATCH] use Google Chrome branding for client hints
+Subject: [PATCH 38/47] use Google Chrome branding for client hints
 
 ---
  components/embedder_support/user_agent_utils.cc | 1 +
@@ -19,3 +19,6 @@ index acd60381a6294..d02463c48b3df 100644
  #if !BUILDFLAG(CHROMIUM_BRANDING)
    brand = version_info::GetProductName();
  #endif
+-- 
+2.35.1.windows.2
+

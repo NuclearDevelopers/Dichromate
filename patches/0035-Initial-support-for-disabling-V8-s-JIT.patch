@@ -1,7 +1,7 @@
-From de82fd0058ffa3207f363833e6e8843a5944c051 Mon Sep 17 00:00:00 2001
+From 697cc859e288f3708b1c162484f4527ea547d6ae Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
-Subject: [PATCH] Initial support for disabling V8's JIT
+Subject: [PATCH 35/47] Initial support for disabling V8's JIT
 
 This adds a flag in `chrome://flags` for toggling the V8 JIT
 compiler; it is default disabled.
@@ -70,7 +70,7 @@ index d7a4d86c40a8f..793a246fffab4 100644
    "disable-webrtc-hw-encoding",
    "disallow-doc-written-script-loads",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index e0c2c965173a4..29ec4d6a6a405 100644
+index e0c2c965173a4..a81536f190034 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
 @@ -2708,6 +2708,11 @@ const char kUseSearchClickForRightClickDescription[] =
@@ -100,7 +100,7 @@ index dd878ed3aede7..cfb8d553f562a 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/gin/gin_features.cc b/gin/gin_features.cc
-index aa83978161348..4fa511825c64f 100644
+index aa83978161348..f78fb5a406741 100644
 --- a/gin/gin_features.cc
 +++ b/gin/gin_features.cc
 @@ -63,6 +63,9 @@ const base::Feature kV8ReduceConcurrentMarkingTasks{
@@ -140,3 +140,6 @@ index cebcf5ac6f587..7a6bb6802f247 100644
    if (base::FeatureList::IsEnabled(features::kV8ConcurrentSparkplug)) {
      if (int max_threads = features::kV8ConcurrentSparkplugMaxThreads.Get()) {
        SetV8FlagsFormatted("--concurrent-sparkplug-max-threads=%i", max_threads);
+-- 
+2.35.1.windows.2
+

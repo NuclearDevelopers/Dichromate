@@ -1,7 +1,7 @@
-From 2e0746fbfec6ef5c0b89d82018c8c73b40a90bcd Mon Sep 17 00:00:00 2001
+From 3be8b4c34c7f9e04d90a0dfa8304652ffff63ac0 Mon Sep 17 00:00:00 2001
 From: flawedworld <flawedworld@flawed.world>
 Date: Sat, 14 Aug 2021 19:47:24 +0100
-Subject: [PATCH] Hexavalent: set webrtc to private but usable default
+Subject: [PATCH 32/47] Hexavalent: set webrtc to private but usable default
 
 ---
  chrome/browser/ui/browser_ui_prefs.cc | 2 +-
@@ -20,3 +20,6 @@ index 97ac9e42caeab..d38ababd1186a 100644
    registry->RegisterStringPref(prefs::kWebRTCUDPPortRange, std::string());
    registry->RegisterBooleanPref(prefs::kWebRtcEventLogCollectionAllowed, false);
    registry->RegisterListPref(prefs::kWebRtcLocalIpsAllowedUrls);
+-- 
+2.35.1.windows.2
+

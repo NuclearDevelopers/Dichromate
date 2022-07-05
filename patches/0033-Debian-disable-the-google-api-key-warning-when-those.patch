@@ -1,8 +1,8 @@
-From 7fa17a11635214f55fd9ea2ff9bbff55748c11fd Mon Sep 17 00:00:00 2001
+From 2ccf0c13b63b55b888c6ed8be335e7b85bdbc897 Mon Sep 17 00:00:00 2001
 From: Michael Gilbert <mgilbert@debian.org>
 Date: Sun, 15 Aug 2021 05:08:49 +0100
-Subject: [PATCH] Debian: disable the google api key warning when those aren't
- found
+Subject: [PATCH 33/47] Debian: disable the google api key warning when those
+ aren't found
 
 ---
  chrome/browser/ui/startup/infobar_utils.cc | 3 ---
@@ -22,3 +22,6 @@ index aeb1f881016b1..e2aa69af5976c 100644
      if (ObsoleteSystem::IsObsoleteNowOrSoon()) {
        PrefService* local_state = g_browser_process->local_state();
        if (!local_state ||
+-- 
+2.35.1.windows.2
+

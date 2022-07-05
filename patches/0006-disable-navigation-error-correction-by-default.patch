@@ -1,7 +1,7 @@
-From e5fc66c98c50d39b4e12ec215b350c648115c34f Mon Sep 17 00:00:00 2001
+From 3a221a1be7c0f718a57e39c0036b5197af2a776e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:29:58 -0500
-Subject: [PATCH] disable navigation error correction by default
+Subject: [PATCH 06/47] disable navigation error correction by default
 
 ---
  chrome/browser/net/profile_network_context_service.cc | 2 +-
@@ -20,3 +20,6 @@ index 7ac922c8fd84d..1aa89e9f1e5f6 100644
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(prefs::kQuicAllowed, true);
    registry->RegisterBooleanPref(prefs::kGloballyScopeHTTPAuthCacheEnabled,
+-- 
+2.35.1.windows.2
+

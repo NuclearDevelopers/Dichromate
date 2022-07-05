@@ -1,7 +1,7 @@
-From c82b18df546911aeed47d32cbfd8dc1e3ba33842 Mon Sep 17 00:00:00 2001
+From 9a26609705006c2f45b9b78e8a374a119903a0cd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 05:22:11 -0400
-Subject: [PATCH] disable safe browsing reporting opt-in by default
+Subject: [PATCH 20/47] disable safe browsing reporting opt-in by default
 
 ---
  components/safe_browsing/core/common/safe_browsing_prefs.cc | 2 +-
@@ -20,3 +20,6 @@ index f63da778f9203..6717d32b96ca3 100644
    registry->RegisterBooleanPref(
        prefs::kSafeBrowsingEnabled, true,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
+-- 
+2.35.1.windows.2
+

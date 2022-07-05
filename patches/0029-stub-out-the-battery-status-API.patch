@@ -1,7 +1,7 @@
-From b21d76c6b5c8fe5db08d942e4f39c83d94a0bf76 Mon Sep 17 00:00:00 2001
+From 3286659d417b920e864715fee156d38023a6a58a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 17 Jun 2019 11:29:21 -0400
-Subject: [PATCH] stub out the battery status API
+Subject: [PATCH 29/47] stub out the battery status API
 
 Pretend that the device is always plugged in and fully charged.
 ---
@@ -63,3 +63,6 @@ index c7c74428510ef..f145fac9fb775 100644
  }
  
  void BatteryManager::RegisterWithDispatcher() {
+-- 
+2.35.1.windows.2
+

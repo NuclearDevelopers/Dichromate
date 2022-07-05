@@ -1,7 +1,7 @@
-From 8e29e9f54bdc96b94ea4d9708bde9b7c7aec8133 Mon Sep 17 00:00:00 2001
+From d5d542219e36a0e4d531b83eaa1ce60b23c6eb00 Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sat, 15 Jan 2022 13:34:33 -0500
-Subject: [PATCH] disable appending variations header
+Subject: [PATCH 40/47] disable appending variations header
 
 ---
  components/variations/net/variations_http_headers.cc | 5 +----
@@ -23,3 +23,6 @@ index 5da390a2abc0f..9c3fb5c3b902c 100644
  }
  
  // Returns true if the request is sent from a Google web property, i.e. from a
+-- 
+2.35.1.windows.2
+

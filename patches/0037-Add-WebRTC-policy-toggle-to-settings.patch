@@ -1,7 +1,7 @@
-From 8849c6c08238d524ed5b29ec178e5adb4c4b916a Mon Sep 17 00:00:00 2001
+From c61f817ad4d7439906217588a4238010b82e3a28 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
-Subject: [PATCH] Add WebRTC policy toggle to settings
+Subject: [PATCH 37/47] Add WebRTC policy toggle to settings
 
 This adds a user facing toggle for changing WebRTC IP handling policy.
 ---
@@ -250,3 +250,6 @@ index 9b395a777e1f4..bda6ed6b492dc 100644
      {"manageCertificates", IDS_SETTINGS_MANAGE_CERTIFICATES},
      {"manageCertificatesDescription",
       IDS_SETTINGS_MANAGE_CERTIFICATES_DESCRIPTION},
+-- 
+2.35.1.windows.2
+

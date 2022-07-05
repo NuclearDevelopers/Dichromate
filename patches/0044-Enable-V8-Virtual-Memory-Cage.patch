@@ -1,17 +1,17 @@
-From 942f4cd1da6308ecb4dc6f50c39019412236794e Mon Sep 17 00:00:00 2001
+From c34178629a7a73e4a719b35e020410f2a0d77f57 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Sun, 3 Jul 2022 00:00:00 +0000
-Subject: [PATCH] Enable V8 Virtual Memory Cage
+Subject: [PATCH 44/47] Enable V8 Virtual Memory Cage
 
 ---
  gin/gin_features.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/gin/gin_features.cc b/gin/gin_features.cc
-index aa83978161348..e5725a0a3bb53 100644
+index f78fb5a406741..da921f7d4b7eb 100644
 --- a/gin/gin_features.cc
 +++ b/gin/gin_features.cc
-@@ -131,6 +131,6 @@ const base::Feature kV8SlowHistogramsScriptAblation{
+@@ -134,6 +134,6 @@ const base::Feature kV8SlowHistogramsScriptAblation{
  // instead of V8Sandbox for historical reasons.
  // TODO(1218005) remove this once the finch trial has ended.
  const base::Feature kV8VirtualMemoryCage{"V8VirtualMemoryCage",

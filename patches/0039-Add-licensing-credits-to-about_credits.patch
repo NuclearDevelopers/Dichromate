@@ -1,7 +1,7 @@
-From b1d34759b7f59aaf862f078f3cb341a4af17a3cc Mon Sep 17 00:00:00 2001
+From 8cba804efc70f2afef6ce5c4b9dbc6b490a40a65 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 12:44:02 +0530
-Subject: [PATCH] Add licensing credits to about_credits
+Subject: [PATCH 39/47] Add licensing credits to about_credits
 
 ---
  LICENSE.debian     | 29 +++++++++++++++++++++++++++++
@@ -52,7 +52,7 @@ index 0000000000000..01a4f8b447eb5
 +OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 diff --git a/LICENSE.dichromate b/LICENSE.dichromate
 new file mode 100644
-index 0000000000000..854b7fa8b7393
+index 0000000000000..54a7bada1bc90
 --- /dev/null
 +++ b/LICENSE.dichromate
 @@ -0,0 +1,19 @@

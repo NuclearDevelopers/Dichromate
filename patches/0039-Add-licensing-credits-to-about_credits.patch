@@ -162,25 +162,25 @@ index a58dbf44370ba..778b1d145587d 100755
 +      "Name": "Debian",
 +      "URL": "https://www.debian.org/",
 +      "License": "BSD-3-clause",
-+      "License File": "/LICENCE.debian",
++      "License File": "/LICENSE.debian",
 +    },
 +    os.path.join('hexavalent'): {
 +      "Name": "Hexavalent",
 +      "URL": "https://hexavalent.org/",
 +      "License": "BSD",
-+      "License File": "/LICENCE.hexavalent",
++      "License File": "/LICENSE.hexavalent",
 +    },
 +    os.path.join('vanadium'): {
 +      "Name": "Vanadium",
 +      "URL": "https://github.com/GrapheneOS/Vanadium",
 +      "License": "MIT",
-+      "License File": "/LICENCE.vanadium",
++      "License File": "/LICENSE.vanadium",
 +    },
 +    os.path.join('dichromate'): {
 +      "Name": "Dichromate",
 +      "URL": "https://github.com/Dichromate-Browser/Dichromate",
 +      "License": "MIT",
-+      "License File": "/LICENCE.dichromate",
++      "License File": "/LICENSE.dichromate",
 +    },
  }
  

@@ -108,7 +108,7 @@ index aa83978161348..f78fb5a406741 100644
      "V8NoReclaimUnmodifiedWrappers", base::FEATURE_DISABLED_BY_DEFAULT};
  
 +// Disables the V8 Just-in-Time compiler
-+const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_ENABLED_BY_DEFAULT};
++const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_DISABLED_BY_DEFAULT};
 +
  // Enables W^X code memory protection in V8.
  // This is enabled in V8 by default. To test the performance impact, we are

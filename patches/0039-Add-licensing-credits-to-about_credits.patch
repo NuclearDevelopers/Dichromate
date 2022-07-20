@@ -1,4 +1,4 @@
-From 8cba804efc70f2afef6ce5c4b9dbc6b490a40a65 Mon Sep 17 00:00:00 2001
+From f2362d4cf1e34a4ed9cb8cfe1f43c3c8bc19ae5c Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 12:44:02 +0530
 Subject: [PATCH 39/47] Add licensing credits to about_credits
@@ -139,7 +139,7 @@ index 0000000000000..43d63fe135ffc
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
 diff --git a/tools/licenses.py b/tools/licenses.py
-index a58dbf44370ba..778b1d145587d 100755
+index a58dbf44370ba..86e1d62136973 100755
 --- a/tools/licenses.py
 +++ b/tools/licenses.py
 @@ -140,6 +140,11 @@ ADDITIONAL_PATHS = (

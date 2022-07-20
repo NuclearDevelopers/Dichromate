@@ -1,4 +1,4 @@
-From 752c02e3e2f66d48633687efa5b61b6da0e1282c Mon Sep 17 00:00:00 2001
+From a2e1ba7f2d82d402f897e0afeca2297178bb4013 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 12 Mar 2020 13:01:02 -0400
 Subject: [PATCH 21/47] disable unused safe browsing option by default

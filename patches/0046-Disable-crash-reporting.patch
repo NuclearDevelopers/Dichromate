@@ -1,4 +1,4 @@
-From f0de948b7bc367bcce4f483d417f3f54adef0c5d Mon Sep 17 00:00:00 2001
+From e3f52e010e6d73fb4af9093569e602029619eceb Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH 46/47] Disable crash reporting

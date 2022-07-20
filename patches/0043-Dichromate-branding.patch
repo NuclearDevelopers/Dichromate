@@ -1,12 +1,12 @@
-From f130c9d8e3e78372881c914772af82273548dcf6 Mon Sep 17 00:00:00 2001
+From 0aa8392f80c4d63e30ddcd066c8b1e8f7e489c58 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Sun, 10 Jul 2022 21:06:13 +0000
-Subject: [PATCH] Dichromate branding
+Subject: [PATCH 43/47] Dichromate branding
 
 ---
  chrome/app/chromium_strings.grd               | 634 +++++++++---------
  chrome/app/settings_chromium_strings.grdp     | 194 +++---
- chrome/app/theme/chromium/BRANDING            |  20 +-
+ chrome/app/theme/chromium/BRANDING            |  16 +-
  .../app/theme/chromium/product_logo_128.png   | Bin 8366 -> 6443 bytes
  chrome/app/theme/chromium/product_logo_24.png | Bin 1022 -> 1037 bytes
  .../app/theme/chromium/product_logo_256.png   | Bin 19595 -> 14244 bytes
@@ -25,7 +25,7 @@ Subject: [PATCH] Dichromate branding
  .../chromium/product_logo_name_22_white.png   | Bin 4313 -> 3922 bytes
  chrome/common/url_constants.cc                | 244 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
- 21 files changed, 555 insertions(+), 555 deletions(-)
+ 21 files changed, 553 insertions(+), 553 deletions(-)
 
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
 index f6bc98cbf3350..d35e62947c050 100644
@@ -1944,7 +1944,7 @@ index 541432c04d430..1e099c9e965ee 100644
    </message>
  </grit-part>
 diff --git a/chrome/app/theme/chromium/BRANDING b/chrome/app/theme/chromium/BRANDING
-index f8363d5b294fe..1fd6b757718f6 100644
+index f8363d5b294fe..735480d8b42db 100644
 --- a/chrome/app/theme/chromium/BRANDING
 +++ b/chrome/app/theme/chromium/BRANDING
 @@ -1,10 +1,10 @@
@@ -1956,8 +1956,6 @@ index f8363d5b294fe..1fd6b757718f6 100644
 -PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
 -COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Chromium Authors. All rights reserved.
 -MAC_BUNDLE_ID=org.chromium.Chromium
--MAC_CREATOR_CODE=Cr24
--MAC_TEAM_ID=
 +COMPANY_FULLNAME=The Dichromate Authors
 +COMPANY_SHORTNAME=The Dichromate Authors
 +PRODUCT_FULLNAME=Dichromate
@@ -1966,8 +1964,8 @@ index f8363d5b294fe..1fd6b757718f6 100644
 +PRODUCT_INSTALLER_SHORTNAME=Dichromate Installer
 +COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Dichromate Authors. All rights reserved.
 +MAC_BUNDLE_ID=org.chromium.Dichromate
-+MAC_CREATOR_CODE=Cr24
-+MAC_TEAM_ID=
+ MAC_CREATOR_CODE=Cr24
+ MAC_TEAM_ID=
 diff --git a/chrome/app/theme/chromium/product_logo_128.png b/chrome/app/theme/chromium/product_logo_128.png
 index 9f88fb10a2b4ac59e088471670317961b803f8b1..82f8b67cb0b04e48fc7e33767068db69e8da656d 100644
 GIT binary patch

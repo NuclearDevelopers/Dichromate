@@ -5,4 +5,6 @@ New features will be few and far between.
 
 # Things to keep in mind
 
-Dichromate is a hobbyist browser and should not be used in production. Updates may not be timely.
+Dichromate is a hobbyist browser. It is stable enough for production use, but it is not recommended.
+
+All releases are now automatic, but the binaries will not be updated as fast as the patches. 

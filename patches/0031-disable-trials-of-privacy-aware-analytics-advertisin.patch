@@ -1,8 +1,7 @@
-From 221d4ada0c0221b775579a9e5db0fa2430c6ffdb Mon Sep 17 00:00:00 2001
+From acb83b1b2e399f08167601f70f67779100a2cd10 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 4 Aug 2021 03:29:04 -0400
-Subject: [PATCH 31/47] disable trials of privacy-aware analytics/advertising
- APIs
+Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs
 
 ---
  components/privacy_sandbox/privacy_sandbox_prefs.cc | 4 ++--

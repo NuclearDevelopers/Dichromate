@@ -1,8 +1,8 @@
-From 5d3a0291005857b756f01cfb0b24d47746a01754 Mon Sep 17 00:00:00 2001
+From 21eefe84ad393192335fea67ea95efb65f381be0 Mon Sep 17 00:00:00 2001
 From: Michael Gilbert <mgilbert@debian.org>
 Date: Sun, 15 Aug 2021 05:08:49 +0100
-Subject: [PATCH 33/47] Debian: disable the google api key warning when those
- aren't found
+Subject: [PATCH] Debian: disable the google api key warning when those aren't
+ found
 
 ---
  chrome/browser/ui/startup/infobar_utils.cc | 3 ---

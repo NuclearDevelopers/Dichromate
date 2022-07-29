@@ -1,7 +1,7 @@
-From 4f226d177e1e2c6a9e91c65c6efe9966769f932c Mon Sep 17 00:00:00 2001
+From f9dd30254bbdb0304d4ff7065155684e3d5ec2b5 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
-Subject: [PATCH 47/47] disable fetching optimization guides by default
+Subject: [PATCH] disable fetching optimization guides by default
 
 ---
  .../optimization_guide/core/optimization_guide_features.cc      | 2 +-

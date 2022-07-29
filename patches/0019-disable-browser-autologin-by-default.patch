@@ -1,7 +1,7 @@
-From bcc47768592611989a0a57f08695d3903209ccef Mon Sep 17 00:00:00 2001
+From 8ad4f9e2c8906d7ab46049c352700ce520829499 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 22 Mar 2020 03:07:08 -0400
-Subject: [PATCH 19/47] disable browser autologin by default
+Subject: [PATCH] disable browser autologin by default
 
 ---
  .../signin/internal/identity_manager/primary_account_manager.cc | 2 +-

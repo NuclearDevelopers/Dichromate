@@ -1,7 +1,7 @@
-From f2362d4cf1e34a4ed9cb8cfe1f43c3c8bc19ae5c Mon Sep 17 00:00:00 2001
+From 95c170a41a778d4cc19e64f5dc7688877a95215b Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 12:44:02 +0530
-Subject: [PATCH 39/47] Add licensing credits to about_credits
+Subject: [PATCH] Add licensing credits to about_credits
 
 ---
  LICENSE.debian     | 29 +++++++++++++++++++++++++++++

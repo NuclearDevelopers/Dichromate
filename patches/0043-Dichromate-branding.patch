@@ -1,7 +1,7 @@
-From 0aa8392f80c4d63e30ddcd066c8b1e8f7e489c58 Mon Sep 17 00:00:00 2001
+From cbf4368cff484692a0881224fbc6e7e8f0097af6 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Sun, 10 Jul 2022 21:06:13 +0000
-Subject: [PATCH 43/47] Dichromate branding
+Subject: [PATCH] Dichromate branding
 
 ---
  chrome/app/chromium_strings.grd               | 634 +++++++++---------

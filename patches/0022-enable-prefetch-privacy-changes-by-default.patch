@@ -1,7 +1,7 @@
-From e56aeedb5dc72294640c99c9fd189d14de4879df Mon Sep 17 00:00:00 2001
+From d6a2937161887bce9c04da9e434a2531605e5be6 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 23 Oct 2020 23:59:13 -0400
-Subject: [PATCH 22/47] enable prefetch privacy changes by default
+Subject: [PATCH] enable prefetch privacy changes by default
 
 ---
  third_party/blink/common/features.cc | 2 +-

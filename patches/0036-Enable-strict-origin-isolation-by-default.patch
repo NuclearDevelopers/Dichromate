@@ -1,7 +1,7 @@
-From be73e93c7117a3d17c764e7e7a7951c60ed28325 Mon Sep 17 00:00:00 2001
+From 8a1786433e740a563aac52a8d166e5fff4cca4ce Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Thu, 21 Oct 2021 00:00:00 +0000
-Subject: [PATCH 36/47] Enable strict origin isolation by default
+Subject: [PATCH] Enable strict origin isolation by default
 
 Upstream is in the process of enabling origin isolation by default
 in the process of deprecating `document.domain`. An insignificant

@@ -1,7 +1,7 @@
-From f4cf8723058bc4a62e5db41b039d6b79756a4f57 Mon Sep 17 00:00:00 2001
+From ed67e72fb18eab131d378160a92da5597121ac2d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Aug 2017 11:16:11 -0400
-Subject: [PATCH 25/47] enable dubious Do Not Track feature by default
+Subject: [PATCH] enable dubious Do Not Track feature by default
 
 ---
  chrome/browser/ui/browser_ui_prefs.cc | 2 +-

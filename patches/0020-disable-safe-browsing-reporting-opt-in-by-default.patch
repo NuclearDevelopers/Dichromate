@@ -1,7 +1,7 @@
-From e93248bd3ba37c69b674bc38d5aa00f3606830b7 Mon Sep 17 00:00:00 2001
+From 24ebd5e3b3847b1942b60fea68ae6698fcf78ad0 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 05:22:11 -0400
-Subject: [PATCH 20/47] disable safe browsing reporting opt-in by default
+Subject: [PATCH] disable safe browsing reporting opt-in by default
 
 ---
  components/safe_browsing/core/common/safe_browsing_prefs.cc | 2 +-

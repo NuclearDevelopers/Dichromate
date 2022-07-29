@@ -1,7 +1,7 @@
-From e42afd407fcd1ac7d6cd68c00f870212f5c84195 Mon Sep 17 00:00:00 2001
+From bf004552b0a21902e746e2a444e5412c4f6e4947 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
-Subject: [PATCH 07/47] disable network prediction by default
+Subject: [PATCH] disable network prediction by default
 
 ---
  chrome/browser/prefetch/prefetch_prefs.h                       | 2 +-

@@ -1,4 +1,4 @@
-From 8887f301b2061da3bf7219dc658e6111a8300065 Mon Sep 17 00:00:00 2001
+From 8d2e318ebb67f66b309736a35f455769d2e66e81 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 4 Jul 2019 19:08:52 -0400
 Subject: [PATCH] disable media router by default
@@ -22,7 +22,7 @@ index 2029e21ad71cf..a15cf4899c875 100644
  
  #if !BUILDFLAG(IS_ANDROID)
 diff --git a/chrome/browser/profiles/profile_impl.cc b/chrome/browser/profiles/profile_impl.cc
-index 2e1d353a1e34b..f8fb7647b4f59 100644
+index 8b4be2abc03ec..c68501084edfe 100644
 --- a/chrome/browser/profiles/profile_impl.cc
 +++ b/chrome/browser/profiles/profile_impl.cc
 @@ -412,7 +412,7 @@ void ProfileImpl::RegisterProfilePrefs(

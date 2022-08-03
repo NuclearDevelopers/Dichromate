@@ -1,12 +1,12 @@
-From cbf4368cff484692a0881224fbc6e7e8f0097af6 Mon Sep 17 00:00:00 2001
+From f187fa9376036789ae5cccdab42a0c0239e623b6 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
-Date: Sun, 10 Jul 2022 21:06:13 +0000
+Date: Tue, 2 Aug 2022 16:50:42 +0530
 Subject: [PATCH] Dichromate branding
 
 ---
- chrome/app/chromium_strings.grd               | 634 +++++++++---------
- chrome/app/settings_chromium_strings.grdp     | 194 +++---
- chrome/app/theme/chromium/BRANDING            |  16 +-
+ chrome/app/chromium_strings.grd               | 652 +++++++++---------
+ chrome/app/settings_chromium_strings.grdp     | 198 +++---
+ chrome/app/theme/chromium/BRANDING            |  20 +-
  .../app/theme/chromium/product_logo_128.png   | Bin 8366 -> 6443 bytes
  chrome/app/theme/chromium/product_logo_24.png | Bin 1022 -> 1037 bytes
  .../app/theme/chromium/product_logo_256.png   | Bin 19595 -> 14244 bytes
@@ -25,10 +25,10 @@ Subject: [PATCH] Dichromate branding
  .../chromium/product_logo_name_22_white.png   | Bin 4313 -> 3922 bytes
  chrome/common/url_constants.cc                | 244 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
- 21 files changed, 553 insertions(+), 553 deletions(-)
+ 21 files changed, 566 insertions(+), 566 deletions(-)
 
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
-index f6bc98cbf3350..d35e62947c050 100644
+index 03d9cbf08b24d..751f5b0915247 100644
 --- a/chrome/app/chromium_strings.grd
 +++ b/chrome/app/chromium_strings.grd
 @@ -277,43 +277,43 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
@@ -326,7 +326,7 @@ index f6bc98cbf3350..d35e62947c050 100644
        </message>
        <message name="IDS_PASSWORD_BUBBLES_PASSWORD_MANAGER_LINK_TEXT_SAVING_ON_DEVICE" desc="The text of the Google Password Manager links displayed on Password Manager bubbles footer when the credentials are stored only locally.">
          Password Manager
-@@ -528,321 +528,321 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -528,314 +528,314 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
        <if expr="is_macosx">
          <message name="IDS_PASSWORDS_PAGE_AUTHENTICATION_PROMPT" desc="Text for the dialog box that prompts the user for their OS account password before revealing plaintext passwords on the password page.">
@@ -690,14 +690,6 @@ index f6bc98cbf3350..d35e62947c050 100644
  
        <!-- One click sign-in infobar -->
        <if expr="not chromeos_ash">
-         <!-- New one-click sign-in dialog contents for SAML support -->
-         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_TITLE_NEW" desc="The title of the modal dialog window that opens when the user chooses to use one click sign-in.">
--          You're signed in to Chromium!
-+          You're signed in to Dichromate!
-         </message>
-         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_MESSAGE_NEW" desc="The message of the one click sign-in dialog.">
-           You're signed in as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Now you can access your bookmarks, history, and other settings on all your signed in devices.
-         </message>
          <message name="IDS_SYNC_WRONG_EMAIL" desc="Message shown when sync setup failed due to the user entering the wrong email address for sign-in.">
 -          You were signed in to Chromium as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Please use the same account to sign in again.
 +          You were signed in to Dichromate as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Please use the same account to sign in again.
@@ -724,15 +716,21 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_TITLE" desc="The title of the dialog to confirm adding a new work profile with the signed-in enterprise account">
            Add Work Profile to this browser
-@@ -854,58 +854,58 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -847,11 +847,11 @@ Permissions you've already given to websites and apps may apply to this account.
            This work profile is completely separate from your personal profile.
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_EXPLANATION" desc="The warning message displayed to an enterprise user about to link their profile to their Google account. This message is followed by a 'Learn more' link.">
 -          Any Chromium data that is generated during the use of this profile (such as the creation of bookmarks, history, passwords, and other settings) can be removed by the work profile administrator. <ph name="LEARN_MORE">$1<ex>Learn more</ex></ph>
 +          Any Dichromate data that is generated during the use of this profile (such as the creation of bookmarks, history, passwords, and other settings) can be removed by the work profile administrator. <ph name="LEARN_MORE">$1<ex>Learn more</ex></ph>
          </message>
-       </if>
- 
+         <!-- New one-click sign-in dialog contents for SAML support -->
+         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_TITLE_NEW" desc="The title of the modal dialog window that opens when the user chooses to use one click sign-in.">
+-          You're signed in to Chromium!
++          You're signed in to Dichromate!
+         </message>
+         <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_MESSAGE_NEW" desc="The message of the one click sign-in dialog.">
+           You're signed in as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Now you can access your bookmarks, history, and other settings on all your signed in devices.
+@@ -861,57 +861,57 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- about:browser-switch strings -->
        <if expr="toolkit_views and not chromeos_lacros and not chromeos_ash">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
@@ -786,17 +784,25 @@ index f6bc98cbf3350..d35e62947c050 100644
 -          This will create a new Chromium profile for <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>
 +          This will create a new Dichromate profile for <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>
          </message>
+         <message name="IDS_SIGNIN_DICE_WEB_INTERCEPT_CONSUMER_BUBBLE_DESC_V2" desc="Body of the web signin interception bubble. It is shown when the user signs in on the web while they already have another account present in the current profile.">
+-          Another account is already signed in. To keep your browsing separate, Chromium can create your own profile for you.
++          Another account is already signed in. To keep your browsing separate, Dichromate can create your own profile for you.
+         </message>
        </if>
  
        <if expr="not chromeos_ash and not is_android">
-         <!-- Profile Customization Bubble-->
+         <!-- Profile Customization Web UI -->
          <message name="IDS_PROFILE_CUSTOMIZATION_TEXT" desc="Text of the profile customization bubble">
 -          Customize your new Chromium profile
 +          Customize your new Dichromate profile
          </message>
+         <message name="IDS_PROFILE_CUSTOMIZATION_TITLE_V2" desc="Title of the profile customization dialog">
+-          Customize your Chromium profile
++          Customize your Dichromate profile
+         </message>
        </if>
  
-@@ -913,77 +913,77 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -919,77 +919,77 @@ Permissions you've already given to websites and apps may apply to this account.
             Note: these strings should only be used by Google Chrome, but
                   omitting them brings up a hash collision error. -->
        <if expr="is_win">
@@ -893,7 +899,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
        </if>
  
-@@ -991,104 +991,104 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -997,104 +997,104 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android and not chromeos_ash">
          <!-- User pod remove sync warning text -->
          <message name="IDS_LOGIN_POD_USER_REMOVE_WARNING_SYNC" desc="Main text shown as a warning when attempting to remove an user.">
@@ -1029,7 +1035,7 @@ index f6bc98cbf3350..d35e62947c050 100644
            </message>
          </if>
        </if>
-@@ -1096,13 +1096,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1102,13 +1102,13 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- Update Recommended dialog -->
        <if expr="not chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1047,7 +1053,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and relaunches Chrome.">
            Relaunch
-@@ -1110,10 +1110,10 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1116,10 +1116,10 @@ Permissions you've already given to websites and apps may apply to this account.
        </if>
        <if expr="chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1060,7 +1066,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and restarts ChromeOS.">
            Restart
-@@ -1122,52 +1122,52 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1128,52 +1128,52 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Update bubble -->
        <message name="IDS_REINSTALL_APP" desc="Text for the button the user clicks to reinstall the app.">
@@ -1124,7 +1130,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
        </if>
        <message name="IDS_RECOVERY_BUBBLE_TEXT" desc="Text for the chrome recovery bubble view full description.">
-@@ -1175,91 +1175,91 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1181,91 +1181,91 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1242,7 +1248,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
        </if>
        <!-- Relaunch notification bubble and dialog. -->
-@@ -1267,73 +1267,73 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1273,73 +1273,73 @@ Permissions you've already given to websites and apps may apply to this account.
          <if expr="not chromeos_ash">
            <message name="IDS_RELAUNCH_RECOMMENDED_TITLE" desc="The title of a dialog that tells users that a browser relaunch is recommended for an update available for some number of days.">
              {0, plural,
@@ -1345,7 +1351,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
        </if>
  
-@@ -1341,80 +1341,80 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1347,96 +1347,96 @@ Permissions you've already given to websites and apps may apply to this account.
          <!-- Profile Picker -->
          <if expr="chromeos_lacros">
            <message name="IDS_PROFILE_PICKER_MAIN_VIEW_SUBTITLE_LACROS" desc="Profile picker main view subtitle">
@@ -1357,8 +1363,8 @@ index f6bc98cbf3350..d35e62947c050 100644
 +            To access your Dichromate browser stuff across all your devices, sign in, then turn on sync
            </message>
            <message name="IDS_PROFILE_PICKER_PROFILE_CREATION_FLOW_ACCOUNT_SELECTION_LACROS_SUBTITLE" desc="Profile picker, account selection screen subtitle">
--            The following accounts are available for this Chromium profile
-+            The following accounts are available for this Dichromate profile
+-            Sign in to Chromium
++            Sign in to Dichromate
            </message>
          </if>
          <if expr="not chromeos_lacros">
@@ -1405,6 +1411,29 @@ index f6bc98cbf3350..d35e62947c050 100644
 +          A Dichromate profile with this account already exists on this device
          </message>
  
+         <!-- First Run Experience -->
+         <if expr="chromeos_lacros">
+-          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_TITLE" desc="Title of the landing screen in first run experience for the primary profile. The screen promotes Chromium sync.">
+-            Welcome to Chromium, <ph name="ACCOUNT_FIRST_NAME">$1<ex>Jane</ex></ph>
++          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_TITLE" desc="Title of the landing screen in first run experience for the primary profile. The screen promotes Dichromate sync.">
++            Welcome to Dichromate, <ph name="ACCOUNT_FIRST_NAME">$1<ex>Jane</ex></ph>
+           </message>
+-          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_NO_NAME_TITLE" desc="Title of the screen shown when the user runs Chromium for the first time. A simple, generic welcome message.">
+-            Welcome to Chromium
++          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_NO_NAME_TITLE" desc="Title of the screen shown when the user runs Dichromate for the first time. A simple, generic welcome message.">
++            Welcome to Dichromate
+           </message>
+-          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_SUBTITLE" desc="Subtitle of the landing screen in first run experience for the primary profile. The screen promotes Chromium sync.">
+-            Get your Chromium browser stuff from <ph name="ACCOUNT_EMAIL">$1<ex>Jane.Doe@gmail.com</ex></ph>
++          <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_SUBTITLE" desc="Subtitle of the landing screen in first run experience for the primary profile. The screen promotes Dichromate sync.">
++            Get your Dichromate browser stuff from <ph name="ACCOUNT_EMAIL">$1<ex>Jane.Doe@gmail.com</ex></ph>
+           </message>
+           <message name="IDS_PRIMARY_PROFILE_FIRST_RUN_SESSION_MANAGED_BY_DESCRIPTION" desc="Disclaimer on the landing screen in first run experience for the primary profile, informing that the session is managed by an administrator.">
+-            Your account is managed by <ph name="MANAGER_NAME">$1<ex>example.com</ex></ph>. Your administrator can see and edit this Chromium browser profile and its data like bookmarks, history, and passwords.
++            Your account is managed by <ph name="MANAGER_NAME">$1<ex>example.com</ex></ph>. Your administrator can see and edit this Dichromate browser profile and its data like bookmarks, history, and passwords.
+           </message>
+         </if>
+ 
          <!-- Profile switch IPH -->
          <message name="IDS_PROFILE_SWITCH_PROMO" desc="Text of the In-Product-Help bubble for profile switching.">
 -          You can switch between Chromium profiles here
@@ -1447,7 +1476,7 @@ index f6bc98cbf3350..d35e62947c050 100644
        </message>
        <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_DESCRIPTION" desc="Description shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
          Enhanced protection does more to block phishing and malware
-@@ -1425,49 +1425,49 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1447,49 +1447,49 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Privacy Sandbox Dialog strings -->
        <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_SUBTITLE" desc="A subtitle on the consent page. Consider this a tagline for the Privacy Sandbox project.* “exploring” conveys that this is a work in progress. * “new features” include settings that the user can turn on/off and also backend features that change the way Chrome works for everyone * “allow sites to deliver”: Privacy Sandbox is proposed by Google as a collaborative effort with the browser industry. We’re building and testing functionality that will live in the Chrome browser. In order to land the full promise of Privacy Sandbox, websites and advertisers need to adopt the new APIs / functionality that we’re developing. So “allow sites…” makes it clear to the user that we’re building something for the ecosystem. Typically a Google product builds something for the user, and that’s true in this case, but it’s bigger than that. * “same browsing experience using less of your info”: Another definition of the promise of Privacy Sandbox. Third-party cookies are going away. In this new world, the user will have essentially the same browsing experience but it’s more private because it doesn’t expose so much of the user’s info.">
@@ -1517,7 +1546,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
          <message name="IDS_NO_UPDATE_RESPONSE" desc="Updater response for no updates when handling install result.">
            No update is available.
-@@ -1476,7 +1476,7 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1498,7 +1498,7 @@ Permissions you've already given to websites and apps may apply to this account.
            Installation failed. Please try again.
          </message>
          <message name="IDS_INSTALLER_DISPLAY_NAME" desc="Name for the updater metainstaller.">
@@ -1526,7 +1555,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          </message>
          <message name="IDS_CLOSE_BUTTON" desc="Close button tooltip">
            Close
-@@ -1515,13 +1515,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1537,13 +1537,13 @@ Permissions you've already given to websites and apps may apply to this account.
            Canceling...
          </message>
          <message name="IDS_TEXT_RESTART_BROWSER" desc="For when a browser must be restarted to complete the installation.">
@@ -1544,7 +1573,7 @@ index f6bc98cbf3350..d35e62947c050 100644
          <message name="IDS_UPDATER_CLOSE" desc="For close button on the UI post install completion.">
            Close
 diff --git a/chrome/app/settings_chromium_strings.grdp b/chrome/app/settings_chromium_strings.grdp
-index 541432c04d430..1e099c9e965ee 100644
+index 75f2587b484c8..83c79c5e826d7 100644
 --- a/chrome/app/settings_chromium_strings.grdp
 +++ b/chrome/app/settings_chromium_strings.grdp
 @@ -1,98 +1,98 @@
@@ -1684,7 +1713,7 @@ index 541432c04d430..1e099c9e965ee 100644
      </message>
    </if>
  
-@@ -101,199 +101,199 @@
+@@ -101,209 +101,209 @@
      <!-- No target="_blank" because OS settings opens its own window. -->
      <message name="IDS_SETTINGS_OS_SETTINGS_BANNER" desc="Banner displayed in browser settings page that links to OS settings.">
        If a setting doesn't show on this page, look in your <ph name="LINK_BEGIN">&lt;a href="$1<ex>https://google.com/</ex>"&gt;</ph>
@@ -1719,6 +1748,12 @@ index 541432c04d430..1e099c9e965ee 100644
 -    Open PDFs in Chromium
 +    Open PDFs in Dichromate
    </message>
+   <if expr="not chromeos_ash and not chromeos_lacros">
+     <message name="IDS_SETTINGS_COOKIES_CLEAR_ON_EXIT_DESC" desc="Secondary text for the toggle that allows the user to automatically delete their cookies and site data when they close all browser windows. This sublabel clarifies that when the toggle is enabled the user will be signed out of Chrome each time they close all Chrome windows.">
+-      When on, you'll also be signed out of Chromium
++      When on, you'll also be signed out of Dichromate
+     </message>
+   </if>
  
    <!-- Privacy Guide -->
    <message name="IDS_SETTINGS_PRIVACY_GUIDE_PROMO_BODY" desc="Body text of a card in the settings page that explains what the 'Privacy Guide' feature is.">
@@ -1917,6 +1952,12 @@ index 541432c04d430..1e099c9e965ee 100644
 +    Sign in to sync and personalize Dichromate across your devices
    </message>
  
+     <!-- Autofill Assistant settings -->
+   <message name="IDS_SETTINGS_AUTOFILL_ASSISTANT_PREF" translateable="false" desc="The documentation string of the 'Use Google Assistant' preference to help with automated flows on the web">
+-    Google Assistant in Chromium
++    Google Assistant in Dichromate
+   </message>
+ 
    <!-- Languages Page -->
    <if expr="is_win">
      <message name="IDS_SETTINGS_LANGUAGES_IS_DISPLAYED_IN_THIS_LANGUAGE" desc="The label for a language that is currently used as the UI display language.">
@@ -1944,7 +1985,7 @@ index 541432c04d430..1e099c9e965ee 100644
    </message>
  </grit-part>
 diff --git a/chrome/app/theme/chromium/BRANDING b/chrome/app/theme/chromium/BRANDING
-index f8363d5b294fe..735480d8b42db 100644
+index f8363d5b294fe..1fd6b757718f6 100644
 --- a/chrome/app/theme/chromium/BRANDING
 +++ b/chrome/app/theme/chromium/BRANDING
 @@ -1,10 +1,10 @@
@@ -1956,6 +1997,8 @@ index f8363d5b294fe..735480d8b42db 100644
 -PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
 -COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Chromium Authors. All rights reserved.
 -MAC_BUNDLE_ID=org.chromium.Chromium
+-MAC_CREATOR_CODE=Cr24
+-MAC_TEAM_ID=
 +COMPANY_FULLNAME=The Dichromate Authors
 +COMPANY_SHORTNAME=The Dichromate Authors
 +PRODUCT_FULLNAME=Dichromate
@@ -1964,8 +2007,8 @@ index f8363d5b294fe..735480d8b42db 100644
 +PRODUCT_INSTALLER_SHORTNAME=Dichromate Installer
 +COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Dichromate Authors. All rights reserved.
 +MAC_BUNDLE_ID=org.chromium.Dichromate
- MAC_CREATOR_CODE=Cr24
- MAC_TEAM_ID=
++MAC_CREATOR_CODE=Cr24
++MAC_TEAM_ID=
 diff --git a/chrome/app/theme/chromium/product_logo_128.png b/chrome/app/theme/chromium/product_logo_128.png
 index 9f88fb10a2b4ac59e088471670317961b803f8b1..82f8b67cb0b04e48fc7e33767068db69e8da656d 100644
 GIT binary patch
@@ -6413,7 +6456,7 @@ znQqlCqfV8suZquLCsY~wELsFdMQ^S0Rc)z$&eP7r8*ly(1f?xbRh|*b00000NkvXX
 Hu0mjf2Vv2I
 
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index 02f8d7ae1dd34..b144d86a68378 100644
+index 2c67a1a41ff97..fbacc4aaf6f51 100644
 --- a/chrome/common/url_constants.cc
 +++ b/chrome/common/url_constants.cc
 @@ -12,53 +12,53 @@
@@ -6838,7 +6881,7 @@ index 02f8d7ae1dd34..b144d86a68378 100644
  
  const char kEchoLearnMoreURL[] =
      "chrome://help-app/help/sub/3399709/id/2703646";
-@@ -367,121 +367,121 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
+@@ -367,119 +367,119 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
  
  const char kArcPrivacyPolicyPathFormat[] = "arc_tos/%s/privacy_policy.pdf";
  
@@ -6967,11 +7010,9 @@ index 02f8d7ae1dd34..b144d86a68378 100644
 +    "https://github.com/Dichromate-Browser/Dichromate";
  #endif
  
- #if BUILDFLAG(ENABLE_ONE_CLICK_SIGNIN)
  const char kChromeSyncLearnMoreURL[] =
 -    "https://support.google.com/chrome/answer/165139";
 +    "https://github.com/Dichromate-Browser/Dichromate";
- #endif  // BUILDFLAG(ENABLE_ONE_CLICK_SIGNIN)
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  const char kOutdatedPluginLearnMoreURL[] =
@@ -6993,7 +7034,7 @@ index 02f8d7ae1dd34..b144d86a68378 100644
  
  }  // namespace chrome
 diff --git a/chrome/install_static/chromium_install_modes.cc b/chrome/install_static/chromium_install_modes.cc
-index 80bbb30c7e368..af6e31c75f3ff 100644
+index d0977d7033a2b..9186e5996eb87 100644
 --- a/chrome/install_static/chromium_install_modes.cc
 +++ b/chrome/install_static/chromium_install_modes.cc
 @@ -1,8 +1,8 @@
@@ -7016,31 +7057,35 @@ index 80bbb30c7e368..af6e31c75f3ff 100644
  
  const size_t kProductPathNameLength = _countof(kProductPathName) - 1;
  
-@@ -25,18 +25,18 @@ const char kSafeBrowsingName[] = "chromium";
+@@ -25,10 +25,10 @@ const char kSafeBrowsingName[] = "chromium";
  const char kDeviceManagementServerHostName[] = "";
  
  const InstallConstants kInstallModes[] = {
 -    // The primary (and only) install mode for Chromium.
 +    // The primary (and only) install mode for Dichromate.
      {
-         sizeof(kInstallModes[0]),
--        CHROMIUM_INDEX,  // The one and only mode for Chromium.
-+        CHROMIUM_INDEX,  // The one and only mode for Dichromate.
-         "",              // No install switch for the primary install mode.
-         L"",             // Empty install_suffix for the primary install mode.
-         L"",             // No logo suffix for the primary install mode.
-         L"",          // Empty app_guid since no integraion with Google Update.
--        L"Chromium",  // A distinct base_app_name.
--        L"Chromium",  // A distinct base_app_id.
--        L"ChromiumHTM",                             // ProgID prefix.
--        L"Chromium HTML Document",                  // ProgID description.
-+        L"Dichromate",  // A distinct base_app_name.
-+        L"Dichromate",  // A distinct base_app_id.
-+        L"DichromateHTM",                             // ProgID prefix.
-+        L"Dichromate HTML Document",                  // ProgID description.
-         L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup GUID.
-         L"{A2DF06F9-A21A-44A8-8A99-8B9C84F29160}",  // CommandExecuteImpl CLSID.
-         {0x635EFA6F,
+         .size = sizeof(kInstallModes[0]),
+-        .index = CHROMIUM_INDEX,  // The one and only mode for Chromium.
++        .index = CHROMIUM_INDEX,  // The one and only mode for Dichromate.
+         .install_switch =
+             "",  // No install switch for the primary install mode.
+         .install_suffix =
+@@ -36,11 +36,11 @@ const InstallConstants kInstallModes[] = {
+         .logo_suffix = L"",  // No logo suffix for the primary install mode.
+         .app_guid =
+             L"",  // Empty app_guid since no integraion with Google Update.
+-        .base_app_name = L"Chromium",      // A distinct base_app_name.
+-        .base_app_id = L"Chromium",        // A distinct base_app_id.
+-        .prog_id_prefix = L"ChromiumHTM",  // ProgID prefix.
++        .base_app_name = L"Dichromate",      // A distinct base_app_name.
++        .base_app_id = L"Dichromate",        // A distinct base_app_id.
++        .prog_id_prefix = L"DichromateHTM",  // ProgID prefix.
+         .prog_id_description =
+-            L"Chromium HTML Document",  // ProgID description.
++            L"Dichromate HTML Document",  // ProgID description.
+         .active_setup_guid =
+             L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup GUID.
+         .legacy_command_execute_clsid =
 -- 
 2.35.1.windows.2
 

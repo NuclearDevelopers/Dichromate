@@ -1,6 +1,6 @@
-From febfecb36572d510e3b06d8e1ed42782323683d3 Mon Sep 17 00:00:00 2001
+From b2ea519b185cc93e0becef0cf339c4f850eb3def Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
-Date: Thu, 11 Aug 2022 19:31:53 +0530
+Date: Wed, 17 Aug 2022 19:53:21 +0530
 Subject: [PATCH] Dichromate branding
 
 ---
@@ -21,7 +21,6 @@ Subject: [PATCH] Dichromate branding
  .../chromium/product_logo_name_22_white.png   | Bin 1913 -> 1910 bytes
  .../chromium/product_logo_16.png              | Bin 1524 -> 1418 bytes
  .../chromium/product_logo_32.png              | Bin 1402 -> 2976 bytes
- .../chromium/product_logo_name_22.png         | Bin 5501 -> 3922 bytes
  .../chromium/product_logo_name_22_white.png   | Bin 4313 -> 3922 bytes
  chrome/common/url_constants.cc                | 244 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
@@ -29,7 +28,7 @@ Subject: [PATCH] Dichromate branding
  .../chromium/product_logo_white.png           | Bin 1417 -> 3577 bytes
  .../chromium/product_logo.png                 | Bin 2714 -> 7432 bytes
  .../chromium/product_logo_white.png           | Bin 2512 -> 7432 bytes
- 25 files changed, 566 insertions(+), 566 deletions(-)
+ 24 files changed, 566 insertions(+), 566 deletions(-)
 
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
 index 03d9cbf08b24d..751f5b0915247 100644
@@ -6180,195 +6179,6 @@ zC{?h;n|va~&BFe$YHPA9+_qgwD7QP|6`G6i@%4;o2uD~G&rniftRfn(Vrh9?F1I>c
 zxI!~aH?ZBOW2dpBD%%>p!d(@+zfGQ9gkjJE090=!9+-^6DF6Tf07*qoM6N<$g3|E&
 Ac>n+a
 
-diff --git a/chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png b/chrome/app/theme/default_200_percent/chromium/product_logo_name_22.png
-index a611e83849a50bbf55aff610461dc2e30c5122aa..17325705f9f13c528f605d42c8fbf1432b1d518a 100644
-GIT binary patch
-literal 3922
-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
-
-literal 5501
-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
-
 diff --git a/chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png b/chrome/app/theme/default_200_percent/chromium/product_logo_name_22_white.png
 index 926247cb9f8afe256742fe21dbe75cc173a9e7d8..17325705f9f13c528f605d42c8fbf1432b1d518a 100644
 GIT binary patch
@@ -6537,7 +6347,7 @@ znQqlCqfV8suZquLCsY~wELsFdMQ^S0Rc)z$&eP7r8*ly(1f?xbRh|*b00000NkvXX
 Hu0mjf2Vv2I
 
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index 2c67a1a41ff97..fbacc4aaf6f51 100644
+index 2c67a1a41ff97..c4b79a3838e47 100644
 --- a/chrome/common/url_constants.cc
 +++ b/chrome/common/url_constants.cc
 @@ -12,53 +12,53 @@
@@ -6545,54 +6355,54 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
  
  const char kAccessCodeCastLearnMoreURL[] =
 -    "https://support.google.com/chrome/a/?p=cast_to_class_teacher";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAccessibilityLabelsLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=image_descriptions";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAutomaticSettingsResetLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ui_automatic_settings_reset";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAdvancedProtectionDownloadLearnMoreURL[] =
 -    "https://support.google.com/accounts/accounts?p=safe-browsing";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAppNotificationsBrowserSettingsURL[] =
      "chrome://settings/content/notifications";
  
  const char kBluetoothAdapterOffHelpURL[] =
 -    "https://support.google.com/chrome?p=bluetooth";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCastCloudServicesHelpURL[] =
 -    "https://support.google.com/chromecast/?p=casting_cloud_services";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCastNoDestinationFoundURL[] =
 -    "https://support.google.com/chromecast/?p=no_cast_destination";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChooserHidOverviewUrl[] =
 -    "https://support.google.com/chrome?p=webhid";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChooserSerialOverviewUrl[] =
 -    "https://support.google.com/chrome?p=webserial";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChooserUsbOverviewURL[] =
 -    "https://support.google.com/chrome?p=webusb";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChromeBetaForumURL[] =
 -    "https://support.google.com/chrome/?p=beta_forum";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChromeFixUpdateProblems[] =
 -    "https://support.google.com/chrome?p=fix_chrome_updates";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChromeHelpViaKeyboardURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
@@ -6600,11 +6410,11 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
      "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
  #else
 -    "https://support.google.com/chromebook/?p=help&ctx=keyboard";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #else
 -    "https://support.google.com/chrome/?p=help&ctx=keyboard";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  const char kChromeHelpViaMenuURL[] =
@@ -6613,23 +6423,23 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
      "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
  #else
 -    "https://support.google.com/chromebook/?p=help&ctx=menu";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #else
 -    "https://support.google.com/chrome/?p=help&ctx=menu";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  const char kChromeHelpViaWebUIURL[] =
 -    "https://support.google.com/chrome/?p=help&ctx=settings";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  const char kChromeOsHelpViaWebUIURL[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
  #else
 -    "https://support.google.com/chromebook/?p=help&ctx=settings";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
@@ -6638,293 +6448,293 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
      "chrome-untrusted://new-tab-page/";
  
 -const char kChromiumProjectURL[] = "https://www.chromium.org/";
-+const char kChromiumProjectURL[] = "https://github.com/Dichromate-Browser/Dichromate";
++const char kChromiumProjectURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kContentSettingsExceptionsLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=settings_manage_exceptions";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCookiesSettingsHelpCenterURL[] =
 -    "https://support.google.com/chrome?p=cpn_cookies";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCrashReasonURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=e_awsnap";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=e_awsnap";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kCrashReasonFeedbackDisplayedURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=e_awsnap_rl";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=e_awsnap_rl";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kDoNotTrackLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=settings_do_not_track";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=settings_do_not_track";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kDownloadInterruptedLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ui_download_errors";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kDownloadScanningLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ib_download_blocked";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kExtensionControlledSettingLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ui_settings_api_extension";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kExtensionInvalidRequestURL[] = "chrome-extension://invalid/";
  
  const char kFlashDeprecationLearnMoreURL[] =
 -    "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kGoogleAccountActivityControlsURL[] =
 -    "https://myaccount.google.com/activitycontrols/search";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kGoogleAccountActivityControlsURLInPrivacyGuide[] =
 -    "https://myaccount.google.com/activitycontrols/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "search&utm_source=chrome&utm_medium=privacy-guide";
  
  const char kGoogleAccountLanguagesURL[] =
 -    "https://myaccount.google.com/language";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
 -const char kGoogleAccountURL[] = "https://myaccount.google.com";
-+const char kGoogleAccountURL[] = "https://github.com/Dichromate-Browser/Dichromate";
++const char kGoogleAccountURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kGoogleAccountChooserURL[] =
 -    "https://accounts.google.com/AccountChooser";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kGoogleAccountDeviceActivityURL[] =
 -    "https://myaccount.google.com/device-activity?utm_source=chrome";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
 -const char kGooglePasswordManagerURL[] = "https://passwords.google.com";
-+const char kGooglePasswordManagerURL[] = "https://github.com/Dichromate-Browser/Dichromate";
++const char kGooglePasswordManagerURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
 -const char kGooglePhotosURL[] = "https://photos.google.com";
-+const char kGooglePhotosURL[] = "https://github.com/Dichromate-Browser/Dichromate";
++const char kGooglePhotosURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLearnMoreReportingURL[] =
 -    "https://support.google.com/chrome/?p=ui_usagestat";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kManagedUiLearnMoreUrl[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=is_chrome_managed";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=is_chrome_managed";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kMixedContentDownloadBlockingLearnMoreUrl[] =
 -    "https://support.google.com/chrome/?p=mixed_content_downloads";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kMyActivityUrlInClearBrowsingData[] =
 -    "https://myactivity.google.com/myactivity?utm_source=chrome_cbd";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kOmniboxLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=settings_omnibox";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=settings_omnibox";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kPageInfoHelpCenterURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=ui_security_indicator";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=ui_security_indicator";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kPasswordCheckLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "?p=settings_password#leak_detection_privacy";
  #else
 -    "https://support.google.com/chrome/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "?p=settings_password#leak_detection_privacy";
  #endif
  
  const char kPasswordGenerationLearnMoreURL[] =
 -    "https://support.google.com/chrome/answer/7570435";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kPasswordManagerLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=settings_password";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=settings_password";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kPaymentMethodsURL[] =
 -    "https://pay.google.com/payments/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "home?utm_source=chrome&utm_medium=settings&utm_campaign=chrome-payment#"
      "paymentMethods";
  
  const char kPaymentMethodsLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/answer/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "142893?visit_id=636857416902558798-696405304&p=settings_autofill&rd=1";
  #else
 -    "https://support.google.com/chrome/answer/"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "142893?visit_id=636857416902558798-696405304&p=settings_autofill&rd=1";
  #endif
  
  const char kPrivacyLearnMoreURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=settings_privacy";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=settings_privacy";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kRemoveNonCWSExtensionURL[] =
 -    "https://support.google.com/chrome/?p=ui_remove_non_cws_extensions";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kResetProfileSettingsLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ui_reset_settings";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSafeBrowsingHelpCenterURL[] =
 -    "https://support.google.com/chrome?p=cpn_safe_browsing";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSafetyTipHelpCenterURL[] =
 -    "https://support.google.com/chrome/?p=safety_tip";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSearchHistoryUrlInClearBrowsingData[] =
 -    "https://myactivity.google.com/product/search?utm_source=chrome_cbd";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSeeMoreSecurityTipsURL[] =
 -    "https://support.google.com/accounts/answer/32040";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSettingsSearchHelpURL[] =
 -    "https://support.google.com/chrome/?p=settings_search_help";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSyncAndGoogleServicesLearnMoreURL[] =
 -    "https://support.google.com/chrome?p=syncgoogleservices";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSyncEncryptionHelpURL[] =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=settings_encryption";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #else
 -    "https://support.google.com/chrome/?p=settings_encryption";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kSyncErrorsHelpURL[] =
 -    "https://support.google.com/chrome/?p=settings_sync_error";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSyncGoogleDashboardURL[] =
 -    "https://www.google.com/settings/chrome/sync";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSyncLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=settings_sign_in";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  #if !BUILDFLAG(IS_ANDROID)
  const char kSyncTrustedVaultOptInURL[] =
 -    "https://passwords.google.com/encryption/enroll?"
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "utm_source=chrome&utm_medium=desktop&utm_campaign=encryption_enroll";
  #endif
  
  const char kSyncTrustedVaultLearnMoreURL[] =
 -    "https://support.google.com/accounts?p=settings_password_ode";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kUpgradeHelpCenterBaseURL[] =
 -    "https://support.google.com/installer/?product="
-+    "https://github.com/Dichromate-Browser/Dichromate"
++    "https://github.com/NuclearDevelopers/Dichromate"
      "{8A69D345-D564-463c-AFF1-A69D9E530F96}&error=";
  
  const char kWhoIsMyAdministratorHelpURL[] =
 -    "https://support.google.com/chrome?p=your_administrator";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCwsEnhancedSafeBrowsingLearnMoreURL[] =
 -    "https://support.google.com/chrome?p=cws_enhanced_safe_browsing";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID)
  const char kEnhancedPlaybackNotificationLearnMoreURL[] =
  #endif
  #if BUILDFLAG(IS_CHROMEOS_ASH)
 -    "https://support.google.com/chromebook/?p=enhanced_playback";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #elif BUILDFLAG(IS_ANDROID)
  // Keep in sync with chrome/browser/ui/android/strings/android_chrome_strings.grd
 -    "https://support.google.com/chrome/?p=mobile_protected_content";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  #if BUILDFLAG(IS_CHROMEOS_ASH)
  const char kAccountManagerLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=google_accounts";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAccountRecoveryURL[] =
 -    "https://accounts.google.com/signin/recovery";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAddNewUserURL[] =
 -    "https://www.google.com/chromebook/howto/add-another-account";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAndroidAppsLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=playapps";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kArcAdbSideloadingLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=develop_android_apps";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kArcExternalStorageLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=open_files";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kArcPrivacyPolicyURLPath[] = "arc/privacy_policy";
  
@@ -6933,11 +6743,11 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
  // has shipped.
  const char kBluetoothPairingLearnMoreUrl[] =
 -    "https://support.google.com/chromebook?p=bluetooth_revamp_m100";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChromeAccessibilityHelpURL[] =
 -    "https://support.google.com/chromebook/topic/6323347";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kChromeOSAssetHost[] = "chromeos-asset";
  const char kChromeOSAssetPath[] = "/usr/share/chromeos-assets/";
@@ -6946,19 +6756,19 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
  
  const char kChromePaletteHelpURL[] =
 -    "https://support.google.com/chromebook?p=stylus_help";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCupsPrintLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=chromebook_printing";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCupsPrintPPDLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=printing_advancedconfigurations";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kEasyUnlockLearnMoreUrl[] =
 -    "https://support.google.com/chromebook/?p=smart_lock";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kEchoLearnMoreURL[] =
      "chrome://help-app/help/sub/3399709/id/2703646";
@@ -6967,150 +6777,150 @@ index 2c67a1a41ff97..fbacc4aaf6f51 100644
  const char kArcPrivacyPolicyPathFormat[] = "arc_tos/%s/privacy_policy.pdf";
  
 -const char kEolNotificationURL[] = "https://www.google.com/chromebook/older/";
-+const char kEolNotificationURL[] = "https://github.com/Dichromate-Browser/Dichromate";
++const char kEolNotificationURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAutoUpdatePolicyURL[] =
      "http://support.google.com/chrome/a?p=auto-update-policy";
  
  const char kGoogleNameserversLearnMoreURL[] =
 -    "https://developers.google.com/speed/public-dns";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kInstantTetheringLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=instant_tethering";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kKerberosAccountsLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=kerberos_accounts";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLanguageSettingsLearnMoreUrl[] =
 -    "https://support.google.com/chromebook/answer/1059490";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLanguagePacksLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=language_packs";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLearnMoreEnterpriseURL[] =
 -    "https://support.google.com/chromebook/?p=managed";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLinuxAppsLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=chromebook_linuxapps";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kNaturalScrollHelpURL[] =
 -    "https://support.google.com/chromebook/?p=simple_scrolling";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kHapticFeedbackHelpURL[] =
 -    "https://support.google.com/chromebook?p=haptic_feedback_m100";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kOemEulaURLPath[] = "oem";
  
  const char kGoogleEulaOnlineURLPath[] =
 -    "https://policies.google.com/terms/embedded?hl=%s";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kCrosEulaOnlineURLPath[] =
 -    "https://www.google.com/intl/%s/chrome/terms/";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kOsSettingsSearchHelpURL[] =
 -    "https://support.google.com/chromebook/?p=settings_search_help";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kPeripheralDataAccessHelpURL[] =
 -    "https://support.google.com/chromebook?p=connect_thblt_usb4_accy";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kTPMFirmwareUpdateLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=tpm_update";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kTimeZoneSettingsLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=chromebook_timezone&hl=%s";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSmartPrivacySettingsLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=screen_privacy_m100";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSmbSharesLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=network_file_shares";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kSuggestedContentLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=explorecontent";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kTabletModeGesturesLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=tablet_mode_gestures";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kWifiSyncLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=wifisync";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kWifiHiddenNetworkURL[] =
      "http://support.google.com/chromebook?p=hidden_networks";
  
  const char kNearbyShareLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=nearby_share";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  extern const char kNearbyShareManageContactsURL[] =
 -    "https://contacts.google.com";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  extern const char kFingerprintLearnMoreURL[] =
 -    "https://support.google.com/chromebook?p=chromebook_fingerprint";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  #if BUILDFLAG(IS_MAC)
  const char kChromeEnterpriseSignInLearnMoreURL[] =
 -    "https://support.google.com/chromebook/answer/1331549";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kMacOsObsoleteURL[] =
 -    "https://support.google.com/chrome/?p=unsupported_mac";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  #if BUILDFLAG(IS_WIN)
  const char kChromeCleanerLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=chrome_cleanup_tool";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kWindowsXPVistaDeprecationURL[] =
 -    "https://chrome.blogspot.com/2015/11/updates-to-chrome-platform-support.html";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  const char kChromeSyncLearnMoreURL[] =
 -    "https://support.google.com/chrome/answer/165139";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  #if BUILDFLAG(ENABLE_PLUGINS)
  const char kOutdatedPluginLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=ib_outdated_plugin";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  // TODO (b/184137843): Use real link to phone hub notifications and apps access.
  const char kPhoneHubPermissionLearnMoreURL[] =
 -    "https://support.google.com/chromebook/?p=multidevice";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
      BUILDFLAG(IS_FUCHSIA)
  const char kChromeAppsDeprecationLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=chrome_app_deprecation";
-+    "https://github.com/Dichromate-Browser/Dichromate";
++    "https://github.com/NuclearDevelopers/Dichromate";
  #endif
  
  }  // namespace chrome

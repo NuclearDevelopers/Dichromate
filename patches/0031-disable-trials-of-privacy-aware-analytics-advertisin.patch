@@ -1,4 +1,4 @@
-From e1e3cc4bab700955937f32168d3fd62687805b93 Mon Sep 17 00:00:00 2001
+From 4d8c19c5262c2980446eb63a320c52778252000f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 4 Aug 2021 03:29:04 -0400
 Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs

@@ -1,4 +1,4 @@
-From 1b1468d93ead78760b4340c7b9ed420b85d08002 Mon Sep 17 00:00:00 2001
+From 42827d18b7b5f7f4a291abdccb9f4435c2de2199 Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <zkang@wpi.edu>
 Date: Sat, 17 Aug 2019 15:53:50 -0400
 Subject: [PATCH] set default search engine to DuckDuckGo

@@ -1,4 +1,4 @@
-From 3f617c42b701cebe972c8a211558d9838d6e0684 Mon Sep 17 00:00:00 2001
+From 345f1fe86b9553c96c2ed1b71c27d3a3990554ca Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:23:18 -0400
 Subject: [PATCH] disable browser sign in feature by default

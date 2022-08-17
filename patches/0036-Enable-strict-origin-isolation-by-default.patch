@@ -1,4 +1,4 @@
-From e89d94b4963ea9bcec064eaf88a62206dadf6bc2 Mon Sep 17 00:00:00 2001
+From f82aed8cd44e05f0591894614ec98e07357c3070 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Thu, 21 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Enable strict origin isolation by default

@@ -4,11 +4,11 @@ Date: Wed, 4 Aug 2021 03:29:04 -0400
 Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs
 
 ---
- components/privacy_sandbox/privacy_sandbox_prefs.cc | 4 ++--
- 1 file changed, 2 insertions(+), 2 deletions(-)
+ components/privacy_sandbox/privacy_sandbox_prefs.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/privacy_sandbox/privacy_sandbox_prefs.cc b/components/privacy_sandbox/privacy_sandbox_prefs.cc
-index 393bb02a426f2..cace522fec0a1 100644
+index 393bb02a426f2..bd96c1886a72b 100644
 --- a/components/privacy_sandbox/privacy_sandbox_prefs.cc
 +++ b/components/privacy_sandbox/privacy_sandbox_prefs.cc
 @@ -71,7 +71,7 @@ namespace privacy_sandbox {
@@ -20,15 +20,6 @@ index 393bb02a426f2..cace522fec0a1 100644
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2, false);
    registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2Init, false);
-@@ -88,7 +88,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
-   registry->RegisterTimePref(prefs::kPrivacySandboxTopicsDataAccessibleSince,
-                              base::Time());
-   registry->RegisterBooleanPref(
--      prefs::kPrivacySandboxFlocEnabled, true,
-+      prefs::kPrivacySandboxFlocEnabled, false,
-       user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
-   registry->RegisterListPref(prefs::kPrivacySandboxBlockedTopics);
-   registry->RegisterDictionaryPref(prefs::kPrivacySandboxFledgeJoinBlocked);
 -- 
 2.35.1.windows.2
 

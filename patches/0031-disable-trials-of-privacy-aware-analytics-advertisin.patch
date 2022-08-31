@@ -1,4 +1,4 @@
-From 4d8c19c5262c2980446eb63a320c52778252000f Mon Sep 17 00:00:00 2001
+From 58188f01868c46ba3abcdba6ff17c412efb45e93 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 4 Aug 2021 03:29:04 -0400
 Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs
@@ -8,10 +8,10 @@ Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/privacy_sandbox/privacy_sandbox_prefs.cc b/components/privacy_sandbox/privacy_sandbox_prefs.cc
-index 393bb02a426f2..bd96c1886a72b 100644
+index 1814169d06914..0386a2b9b4d1e 100644
 --- a/components/privacy_sandbox/privacy_sandbox_prefs.cc
 +++ b/components/privacy_sandbox/privacy_sandbox_prefs.cc
-@@ -71,7 +71,7 @@ namespace privacy_sandbox {
+@@ -60,7 +60,7 @@ namespace privacy_sandbox {
  
  void RegisterProfilePrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(
@@ -19,7 +19,7 @@ index 393bb02a426f2..bd96c1886a72b 100644
 +      prefs::kPrivacySandboxApisEnabled, false,
        user_prefs::PrefRegistrySyncable::SYNCABLE_PREF);
    registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2, false);
-   registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2Init, false);
+   registry->RegisterBooleanPref(
 -- 
 2.35.1.windows.2
 

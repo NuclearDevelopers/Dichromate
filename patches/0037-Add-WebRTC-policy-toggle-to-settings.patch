@@ -179,7 +179,7 @@ index 0000000000000..b36d4fe614779
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
 +
-+import '../settings_shared_css.js';
++import '../settings_shared.css.js';
 +import '../controls/settings_dropdown_menu.js';
 +
 +import {html, PolymerElement} from 'chrome://resources/polymer/v3_0/polymer/polymer_bundled.min.js';

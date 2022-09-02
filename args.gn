@@ -55,3 +55,7 @@ enable_iterator_debugging = false
 enable_platform_hevc = true
 
 enable_platform_ac3_eac3_audio = true
+
+enable_vr = false
+
+enable_supervised_users = false

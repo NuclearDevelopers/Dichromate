@@ -1,4 +1,4 @@
-From 0a0c1c1f052a88145021d622f75ebd7b54816eed Mon Sep 17 00:00:00 2001
+From e934ad8d4cd6d0a4874b2b6d69b9399b585d5bc2 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Add WebRTC policy toggle to settings
@@ -171,7 +171,7 @@ index 0000000000000..bf0e16ae44fed
 +</div>
 diff --git a/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
 new file mode 100644
-index 0000000000000..b36d4fe614779
+index 0000000000000..a6a48b613f85f
 --- /dev/null
 +++ b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
 @@ -0,0 +1,46 @@

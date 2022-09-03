@@ -1,4 +1,4 @@
-From 002ab5337e7185f0757eaebadb38e14d158e03a2 Mon Sep 17 00:00:00 2001
+From 808f16d90c0b0b122cdcd2a012d24c3a0f56effc Mon Sep 17 00:00:00 2001
 From: June <june@eridan.me>
 Date: Sun, 8 May 2022 01:34:58 +0000
 Subject: [PATCH] enable process isolated sandboxed iframes by default
@@ -21,7 +21,6 @@ index ddd904eb2038a..4122071c9c9ae 100644
  const base::FeatureParam<IsolateSandboxedIframesGrouping>::Option
      isolated_sandboxed_iframes_grouping_types[] = {
          {IsolateSandboxedIframesGrouping::kPerSite, "per-site"},
-
 -- 
 2.35.1.windows.2
 

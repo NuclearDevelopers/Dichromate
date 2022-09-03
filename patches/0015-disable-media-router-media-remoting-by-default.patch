@@ -1,4 +1,4 @@
-From 57a95ef960ae01f1e09dbb399ac9e0f2a2cb8ded Mon Sep 17 00:00:00 2001
+From 8c7f88668d44244377afac4c66d7958f6176f764 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 4 Jul 2019 18:11:27 -0400
 Subject: [PATCH] disable media router media remoting by default

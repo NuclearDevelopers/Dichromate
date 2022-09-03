@@ -1,4 +1,4 @@
-From 6048f815c37150f898286b6af9d57d9238425ccf Mon Sep 17 00:00:00 2001
+From de269a94192005e2f77a529736284c0b915eaaa7 Mon Sep 17 00:00:00 2001
 From: Douloureux <douloureux@gmail.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG

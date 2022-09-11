@@ -1,0 +1,33 @@
+From 6d1d237fb09825f96146a5ad26cebbc87fa7537e Mon Sep 17 00:00:00 2001
+From: Douloureux <douloureux@gmail.com>
+Date: Sun, 11 Sep 2022 00:00:00 +0000
+Subject: [PATCH] enable AppContainer by default
+
+---
+ sandbox/policy/features.cc | 4 ++--
+ 1 file changed, 2 insertions(+), 2 deletions(-)
+
+diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
+index 323b4e3c063d2..c0ec0fca01f4e 100644
+--- a/sandbox/policy/features.cc
++++ b/sandbox/policy/features.cc
+@@ -30,14 +30,14 @@ const base::Feature kWinSboxDisableExtensionPoints{
+ 
+ // Enables GPU AppContainer sandbox on Windows.
+ const base::Feature kGpuAppContainer{"GpuAppContainer",
+-                                     base::FEATURE_DISABLED_BY_DEFAULT};
++                                     base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+ // Enables GPU Low Privilege AppContainer when combined with kGpuAppContainer.
+ const base::Feature kGpuLPAC{"GpuLPAC", base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+ // Enables Renderer AppContainer
+ const base::Feature kRendererAppContainer{"RendererAppContainer",
+-                                          base::FEATURE_DISABLED_BY_DEFAULT};
++                                          base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+ #endif  // BUILDFLAG(IS_WIN)
+ 
+-- 
+2.35.1.windows.2
+

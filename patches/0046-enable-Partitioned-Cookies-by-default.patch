@@ -1,0 +1,25 @@
+From 34c5106db87fa23ea4d54633c2cf243962f99142 Mon Sep 17 00:00:00 2001
+From: Douloureux <douloureux@gmail.com>
+Date: Sun, 11 Sep 2022 00:00:00 +0000
+Subject: [PATCH] enable Partitioned Cookies by default
+
+---
+ net/base/features.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/net/base/features.cc b/net/base/features.cc
+index 00c0db4a2c325..59a6d9b15c48c 100644
+--- a/net/base/features.cc
++++ b/net/base/features.cc
+@@ -277,7 +277,7 @@ const base::Feature kSamePartyCookiesConsideredFirstParty{
+     "SamePartyCookiesConsideredFirstParty", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ const base::Feature kPartitionedCookies{"PartitionedCookies",
+-                                        base::FEATURE_DISABLED_BY_DEFAULT};
++                                        base::FEATURE_ENABLED_BY_DEFAULT};
+ const base::Feature kPartitionedCookiesBypassOriginTrial{
+     "PartitionedCookiesBypassOriginTrial", base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+-- 
+2.35.1.windows.2
+

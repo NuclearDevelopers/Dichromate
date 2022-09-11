@@ -9,16 +9,17 @@ namespace Updater
     { 
         public static void Main()
         {
+            string FilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Dichromate\Updater");
+            Directory.CreateDirectory(FilePath);
+
             Functions.CopyToUpdatePath();
 
-            string FilePath = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), @"Dichromate\Updater");
-            
             if (Process.GetProcessesByName(Path.GetFileNameWithoutExtension(Assembly.GetEntryAssembly().Location)).Length > 1)
             {
                 Process.GetCurrentProcess().Kill();
             }
 
-            Directory.CreateDirectory(FilePath);
+
 
             if (!Functions.TaskExists(@"DichromateUpdate"))
             {

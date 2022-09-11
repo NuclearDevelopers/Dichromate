@@ -1,10 +1,46 @@
 # Dichromate
-A Chromium based browser that focuses on privacy and security that was made to keep the corpse of [Hexavalent](https://github.com/Hexavalent-Browser/Hexavalent-Archive) alive after its untimely death. It is released under a new name and logo to avoid copyright infringement. 
 
-New features will be few and far between. 
+![Dichromate Logo](https://github.com/NuclearDevelopers/Dichromate/raw/main/Icons/product_logo_256.png)
+
+Dichromate is a privacy and security hardened Chromium fork that focuses on privacy and security. It is based on the now discontinued [Hexavalent](https://github.com/Hexavalent-Browser/Hexavalent).
+
+We follow the Chrome release schedule, and we try to release a newer build within 1-2 days of a stable release of Chrome.
+
+Dichromate targets only Windows when developing patches and creating releases. It can be compiled for other platforms, but will not have all of the security features.
+
+# Download Dichromate
+
+Get it from WinGet: 
+```
+PS> winget install Dichromate.Browser
+```
+Download an installer from the [releases page](https://github.com/NuclearDevelopers/Dichromate/releases/latest).
+
+# Build from source
+
+Click [here](https://github.com/NuclearDevelopers/Dichromate/blob/main/docs/Building.md) for build instructions.
+
+# How is Dichromate different from Chromium?
+
+Dichromate has a number of additional security and privacy features compared to Chromium.
+
+This is a list of some of them: 
+
++ Windows Sandbox integration
++ The GPU and Renderer processes run in the Windows AppContainer
++ Browser dynamic code is disabled, and is enforced by ACG
++ Flag to disable V8's JIT compiler for Javascript
++ Flag to disable reading from the HTML5 canvas
++ HTTPS-only mode is the default
++ WebRTC hardening
++ Compiled with -fstack-protector-strong, -fwrapv, -ftrivial-auto-var-init=zero, and CFI
++ Disabled basic Google services such as Safe Browsing, browser sign in, and crash reporting
++ Partitioned Cookies enabled by default 
+
+# Contributing
+
+Anyone is welcome to contribute to Dichromate, just make sure that the branding patch is always the last one in the list. This makes it easier when porting patches to a newer release.
 
 # Things to keep in mind
 
-Dichromate is a hobbyist browser. It is stable enough for production use, but it is not recommended.
-
-All releases are now automatic, but updated installers will not be released as fast as the patches. 
+Although our releases are usually on time, Dichromate is a hobbyist project, and we cannot guarantee that releases are timely.

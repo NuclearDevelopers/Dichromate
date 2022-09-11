@@ -1,0 +1,160 @@
+From 656a1cee6d9576a409f23732072caeaec58c3b51 Mon Sep 17 00:00:00 2001
+From: Douloureux <douloureux@gmail.com>
+Date: Sun, 11 Sep 2022 00:00:00 +0000
+Subject: [PATCH] convert DisableReadingFromCanvas into a flag
+
+---
+ chrome/browser/about_flags.cc                     | 4 ++++
+ chrome/browser/flag-metadata.json                 | 5 +++++
+ chrome/browser/flag-never-expire-list.json        | 1 +
+ chrome/browser/flag_descriptions.cc               | 5 +++++
+ chrome/browser/flag_descriptions.h                | 3 +++
+ content/browser/web_contents/web_contents_impl.cc | 2 +-
+ content/public/common/content_features.cc         | 4 ++++
+ content/public/common/content_features.h          | 1 +
+ content/public/common/content_switches.cc         | 3 ---
+ content/public/common/content_switches.h          | 1 -
+ 10 files changed, 24 insertions(+), 5 deletions(-)
+
+diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
+index 15490fefcd690..8da575f121a34 100644
+--- a/chrome/browser/about_flags.cc
++++ b/chrome/browser/about_flags.cc
+@@ -6020,6 +6020,10 @@ const FeatureEntry kFeatureEntries[] = {
+      flag_descriptions::kV8NoJITDescription, kOsAll,
+      FEATURE_VALUE_TYPE(features::kV8NoJIT)},
+ 
++    {"disable-reading-from-canvas", flag_descriptions::kDisableReadingFromCanvasName,
++     flag_descriptions::kDisableReadingFromCanvasDescription, kOsAll,
++      FEATURE_VALUE_TYPE(features::kDisableReadingFromCanvas)},
++
+ #if !BUILDFLAG(IS_ANDROID)
+     {"enable-accessibility-live-caption",
+      flag_descriptions::kEnableAccessibilityLiveCaptionName,
+diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
+index b1c713d6e0f8c..2a0a088f58fbe 100644
+--- a/chrome/browser/flag-metadata.json
++++ b/chrome/browser/flag-metadata.json
+@@ -1360,6 +1360,11 @@
+     "owners": [ "croissant-eng" ],
+     "expiry_milestone": 100
+   },
++  {
++    "name": "disable-reading-from-canvas",
++    "owners": [ "douloureux@gmail.com" ],
++    "expiry_milestone": -1
++  },
+   {
+     "name": "disable-threaded-scrolling",
+     "owners": [ "bokan", "input-dev" ],
+diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
+index 98c3f56d831bf..6dfb9fe6351ee 100644
+--- a/chrome/browser/flag-never-expire-list.json
++++ b/chrome/browser/flag-never-expire-list.json
+@@ -29,6 +29,7 @@
+   "disable-buffer-bw-compression",
+   "disable-explicit-dma-fences",
+   "disable-javascript-harmony-shipping",
++  "disable-reading-from-canvas",
+   "disable-threaded-scrolling",
+   "disable-v8-jit",
+   "disable-webrtc-hw-decoding",
+diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
+index b4bbf111b97b1..99a5f6a6c81e3 100644
+--- a/chrome/browser/flag_descriptions.cc
++++ b/chrome/browser/flag_descriptions.cc
+@@ -2890,6 +2890,11 @@ const char kV8NoJITDescription[] =
+     "Security mode that disables all runtime allocation of "
+     "executable memory";
+ 
++const char kDisableReadingFromCanvasName[] = "Disable reading from canvas";
++const char kDisableReadingFromCanvasDescription[] =
++    "Does not allow sites to read the HTML5 Canvas, preventing"
++    "canvas fingerprinting.";
++
+ const char kV8VmFutureName[] = "Future V8 VM features";
+ const char kV8VmFutureDescription[] =
+     "This enables upcoming and experimental V8 VM features. "
+diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
+index 599374bce0b34..59a8f52d7de64 100644
+--- a/chrome/browser/flag_descriptions.h
++++ b/chrome/browser/flag_descriptions.h
+@@ -1616,6 +1616,9 @@ extern const char kUseSearchClickForRightClickDescription[];
+ extern const char kV8NoJITName[];
+ extern const char kV8NoJITDescription[];
+ 
++extern const char kDisableReadingFromCanvasName[];
++extern const char kDisableReadingFromCanvasDescription[];
++
+ extern const char kV8VmFutureName[];
+ extern const char kV8VmFutureDescription[];
+ 
+diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
+index 83710bb7c6123..4906d3f347da0 100644
+--- a/content/browser/web_contents/web_contents_impl.cc
++++ b/content/browser/web_contents/web_contents_impl.cc
+@@ -2820,7 +2820,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
+   prefs.stylus_handwriting_enabled = stylus_handwriting_enabled_;
+ 
+   prefs.disable_reading_from_canvas =
+-      command_line.HasSwitch(switches::kDisableReadingFromCanvas);
++      base::FeatureList::IsEnabled(features::kDisableReadingFromCanvas);
+ 
+   prefs.strict_mixed_content_checking =
+       command_line.HasSwitch(switches::kEnableStrictMixedContentChecking);
+diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
+index bf77771c0904c..45b38bf403f9c 100644
+--- a/content/public/common/content_features.cc
++++ b/content/public/common/content_features.cc
+@@ -267,6 +267,10 @@ const base::Feature kDigitalGoodsApi {
+ #endif
+ };
+ 
++// Taints all <canvas> elements, regardless of origin.
++const base::Feature kDisableReadingFromCanvas {"DisableReadingFromCanvas",
++                                                base::FEATURE_ENABLED_BY_DEFAULT};
++
+ // Enable document policy for configuring and restricting feature behavior.
+ const base::Feature kDocumentPolicy{"DocumentPolicy",
+                                     base::FEATURE_ENABLED_BY_DEFAULT};
+diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
+index ac96ec2810598..9219ab73973ee 100644
+--- a/content/public/common/content_features.h
++++ b/content/public/common/content_features.h
+@@ -69,6 +69,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
+ CONTENT_EXPORT extern const base::Feature kDesktopPWAsTabStrip;
+ CONTENT_EXPORT extern const base::Feature kDevicePosture;
+ CONTENT_EXPORT extern const base::Feature kDigitalGoodsApi;
++CONTENT_EXPORT extern const base::Feature kDisableReadingFromCanvas
+ CONTENT_EXPORT extern const base::Feature kDocumentPolicy;
+ CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
+ CONTENT_EXPORT extern const base::Feature kEarlyEstablishGpuChannel;
+diff --git a/content/public/common/content_switches.cc b/content/public/common/content_switches.cc
+index a60146c49d704..2b186de9091db 100644
+--- a/content/public/common/content_switches.cc
++++ b/content/public/common/content_switches.cc
+@@ -226,9 +226,6 @@ const char kDisablePresentationAPI[]        = "disable-presentation-api";
+ // Disables throttling of history.pushState/replaceState calls.
+ const char kDisablePushStateThrottle[] = "disable-pushstate-throttle";
+ 
+-// Taints all <canvas> elements, regardless of origin.
+-const char kDisableReadingFromCanvas[]      = "disable-reading-from-canvas";
+-
+ // Disables remote web font support. SVG font should always work whether this
+ // option is specified or not.
+ const char kDisableRemoteFonts[]            = "disable-remote-fonts";
+diff --git a/content/public/common/content_switches.h b/content/public/common/content_switches.h
+index ccc81e32a1a6a..ce8b98b627b13 100644
+--- a/content/public/common/content_switches.h
++++ b/content/public/common/content_switches.h
+@@ -80,7 +80,6 @@ CONTENT_EXPORT extern const char kDisablePermissionsAPI[];
+ CONTENT_EXPORT extern const char kDisablePinch[];
+ CONTENT_EXPORT extern const char kDisablePresentationAPI[];
+ CONTENT_EXPORT extern const char kDisablePushStateThrottle[];
+-CONTENT_EXPORT extern const char kDisableReadingFromCanvas[];
+ extern const char kDisableRemoteFonts[];
+ CONTENT_EXPORT extern const char kDisableRemotePlaybackAPI[];
+ extern const char kDisableRendererAccessibility[];
+-- 
+2.35.1.windows.2
+

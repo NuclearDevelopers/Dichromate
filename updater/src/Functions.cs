@@ -87,7 +87,7 @@ namespace Updater
             string text = File.ReadAllText(TaskXML);
             
             string edit1 = text.Replace("DichromateUser", FixedName);
-            string edit2 = edit1.Replace("CommandPath", installPath + "\\" + "DichromateSetup.exe");
+            string edit2 = edit1.Replace("CommandPath", updatePath + "\\" + "DichromateSetup.exe");
 
             File.WriteAllText(TaskXML, edit2);
 

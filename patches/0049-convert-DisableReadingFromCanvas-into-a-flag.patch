@@ -1,5 +1,5 @@
-From 656a1cee6d9576a409f23732072caeaec58c3b51 Mon Sep 17 00:00:00 2001
-From: Douloureux <douloureux@gmail.com>
+From 6a2dc57760b4ac863e83fced96c763cc13239211 Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
 
@@ -32,7 +32,7 @@ index 15490fefcd690..8da575f121a34 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index b1c713d6e0f8c..2a0a088f58fbe 100644
+index b1c713d6e0f8c..34e14bfcca317 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
 @@ -1360,6 +1360,11 @@
@@ -41,7 +41,7 @@ index b1c713d6e0f8c..2a0a088f58fbe 100644
    },
 +  {
 +    "name": "disable-reading-from-canvas",
-+    "owners": [ "douloureux@gmail.com" ],
++    "owners": [ "Douloureux@users.noreply.github.com" ],
 +    "expiry_milestone": -1
 +  },
    {
@@ -90,7 +90,7 @@ index 599374bce0b34..59a8f52d7de64 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
-index 83710bb7c6123..4906d3f347da0 100644
+index 83710bb7c6123..863281c8fca61 100644
 --- a/content/browser/web_contents/web_contents_impl.cc
 +++ b/content/browser/web_contents/web_contents_impl.cc
 @@ -2820,7 +2820,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
@@ -103,7 +103,7 @@ index 83710bb7c6123..4906d3f347da0 100644
    prefs.strict_mixed_content_checking =
        command_line.HasSwitch(switches::kEnableStrictMixedContentChecking);
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index bf77771c0904c..45b38bf403f9c 100644
+index bf2c444bb737f..23eebb6a6aa87 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
 @@ -267,6 +267,10 @@ const base::Feature kDigitalGoodsApi {

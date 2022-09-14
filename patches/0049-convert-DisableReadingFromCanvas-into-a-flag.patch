@@ -69,7 +69,7 @@ index b4bbf111b97b1..99a5f6a6c81e3 100644
  
 +const char kDisableReadingFromCanvasName[] = "Disable reading from canvas";
 +const char kDisableReadingFromCanvasDescription[] =
-+    "Does not allow sites to read the HTML5 Canvas, preventing"
++    "Does not allow sites to read the HTML5 Canvas, preventing "
 +    "canvas fingerprinting.";
 +
  const char kV8VmFutureName[] = "Future V8 VM features";
@@ -112,7 +112,7 @@ index bf2c444bb737f..23eebb6a6aa87 100644
  
 +// Taints all <canvas> elements, regardless of origin.
 +const base::Feature kDisableReadingFromCanvas {"DisableReadingFromCanvas",
-+                                                base::FEATURE_ENABLED_BY_DEFAULT};
++                                                base::FEATURE_DISABLED_BY_DEFAULT};
 +
  // Enable document policy for configuring and restricting feature behavior.
  const base::Feature kDocumentPolicy{"DocumentPolicy",
@@ -125,7 +125,7 @@ index ac96ec2810598..9219ab73973ee 100644
  CONTENT_EXPORT extern const base::Feature kDesktopPWAsTabStrip;
  CONTENT_EXPORT extern const base::Feature kDevicePosture;
  CONTENT_EXPORT extern const base::Feature kDigitalGoodsApi;
-+CONTENT_EXPORT extern const base::Feature kDisableReadingFromCanvas
++CONTENT_EXPORT extern const base::Feature kDisableReadingFromCanvas;
  CONTENT_EXPORT extern const base::Feature kDocumentPolicy;
  CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
  CONTENT_EXPORT extern const base::Feature kEarlyEstablishGpuChannel;

@@ -109,10 +109,22 @@ Clone the Dichromate repository
 $ cd C:\src\
 $ git clone https://github.com/NuclearDevelopers/Dichromate.git
 ```
-Apply the patches
+
+The localization branding patch that Dichromate uses is too large for GitHub, so is compressed using [Zstandard](https://github.com/facebook/zstd).
+
+To be able to apply the patch, install Zstd from the link given above.
+
+From the patches folder in the Dichromate repository, "C:\src\Dichromate\patches" in this case, run:
+```
+zstd -d *-Dichromate-localization-rebranding.patch.zst
+```
+
+Note that this is not required if you do not require branding in extra languages.
+
+Now, apply the patches
 
 ```
-$ cd chromium\src
+$ cd C:\src\chromium\src
 $ git am --whitespace=nowarn (dir D:\src\Dichromate\patches\*.patch)
 ```
 # Starting the build

@@ -110,7 +110,7 @@ $ cd C:\src\
 $ git clone https://github.com/NuclearDevelopers/Dichromate.git
 ```
 
-The localization branding patch that Dichromate uses is too large for GitHub, so is compressed using [Zstandard](https://github.com/facebook/zstd).
+The localization branding patch that Dichromate uses is too large for GitHub, so it is compressed using [Zstandard](https://github.com/facebook/zstd).
 
 To be able to apply the patch, install Zstd from the link given above.
 

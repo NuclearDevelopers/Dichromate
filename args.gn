@@ -57,3 +57,5 @@ enable_platform_hevc = true
 enable_platform_ac3_eac3_audio = true
 
 enable_vr = false
+
+use_cfi_cast = true

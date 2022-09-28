@@ -1,4 +1,4 @@
-From 6a2dc57760b4ac863e83fced96c763cc13239211 Mon Sep 17 00:00:00 2001
+From ab5be22e3b5a3838a55b01744c2181a9b1051a67 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -17,10 +17,10 @@ Subject: [PATCH] convert DisableReadingFromCanvas into a flag
  10 files changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 15490fefcd690..8da575f121a34 100644
+index 7dd9f063438b5..1bb55d350fd7a 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6020,6 +6020,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6150,6 +6150,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kV8NoJITDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kV8NoJIT)},
  
@@ -32,10 +32,10 @@ index 15490fefcd690..8da575f121a34 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index b1c713d6e0f8c..34e14bfcca317 100644
+index 0b8c731a1efc1..cf978f172335a 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1360,6 +1360,11 @@
+@@ -1375,6 +1375,11 @@
      "owners": [ "croissant-eng" ],
      "expiry_milestone": 100
    },
@@ -48,7 +48,7 @@ index b1c713d6e0f8c..34e14bfcca317 100644
      "name": "disable-threaded-scrolling",
      "owners": [ "bokan", "input-dev" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index 98c3f56d831bf..6dfb9fe6351ee 100644
+index 8642ff428394c..734eaf0441cc4 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -29,6 +29,7 @@
@@ -60,10 +60,10 @@ index 98c3f56d831bf..6dfb9fe6351ee 100644
    "disable-v8-jit",
    "disable-webrtc-hw-decoding",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index b4bbf111b97b1..99a5f6a6c81e3 100644
+index 3c0e0f3ee832a..76e5e88c135b1 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -2890,6 +2890,11 @@ const char kV8NoJITDescription[] =
+@@ -2946,6 +2946,11 @@ const char kV8NoJITDescription[] =
      "Security mode that disables all runtime allocation of "
      "executable memory";
  
@@ -76,10 +76,10 @@ index b4bbf111b97b1..99a5f6a6c81e3 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index 599374bce0b34..59a8f52d7de64 100644
+index 48fea392a5cad..0871b1f08da90 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1616,6 +1616,9 @@ extern const char kUseSearchClickForRightClickDescription[];
+@@ -1647,6 +1647,9 @@ extern const char kUseSearchClickForRightClickDescription[];
  extern const char kV8NoJITName[];
  extern const char kV8NoJITDescription[];
  
@@ -90,10 +90,10 @@ index 599374bce0b34..59a8f52d7de64 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
-index 83710bb7c6123..863281c8fca61 100644
+index 8e1c0feede6dc..be7e1c0f9e614 100644
 --- a/content/browser/web_contents/web_contents_impl.cc
 +++ b/content/browser/web_contents/web_contents_impl.cc
-@@ -2820,7 +2820,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
+@@ -2815,7 +2815,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
    prefs.stylus_handwriting_enabled = stylus_handwriting_enabled_;
  
    prefs.disable_reading_from_canvas =
@@ -103,7 +103,7 @@ index 83710bb7c6123..863281c8fca61 100644
    prefs.strict_mixed_content_checking =
        command_line.HasSwitch(switches::kEnableStrictMixedContentChecking);
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index bf2c444bb737f..23eebb6a6aa87 100644
+index 4ecdb5f539283..32c9a488a0c7e 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
 @@ -267,6 +267,10 @@ const base::Feature kDigitalGoodsApi {
@@ -118,7 +118,7 @@ index bf2c444bb737f..23eebb6a6aa87 100644
  const base::Feature kDocumentPolicy{"DocumentPolicy",
                                      base::FEATURE_ENABLED_BY_DEFAULT};
 diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
-index ac96ec2810598..9219ab73973ee 100644
+index 95586c2934bcb..95e6005cc5b40 100644
 --- a/content/public/common/content_features.h
 +++ b/content/public/common/content_features.h
 @@ -69,6 +69,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
@@ -130,10 +130,10 @@ index ac96ec2810598..9219ab73973ee 100644
  CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
  CONTENT_EXPORT extern const base::Feature kEarlyEstablishGpuChannel;
 diff --git a/content/public/common/content_switches.cc b/content/public/common/content_switches.cc
-index a60146c49d704..2b186de9091db 100644
+index a37ce834f6f2f..06a170278088f 100644
 --- a/content/public/common/content_switches.cc
 +++ b/content/public/common/content_switches.cc
-@@ -226,9 +226,6 @@ const char kDisablePresentationAPI[]        = "disable-presentation-api";
+@@ -227,9 +227,6 @@ const char kDisablePresentationAPI[]        = "disable-presentation-api";
  // Disables throttling of history.pushState/replaceState calls.
  const char kDisablePushStateThrottle[] = "disable-pushstate-throttle";
  
@@ -144,7 +144,7 @@ index a60146c49d704..2b186de9091db 100644
  // option is specified or not.
  const char kDisableRemoteFonts[]            = "disable-remote-fonts";
 diff --git a/content/public/common/content_switches.h b/content/public/common/content_switches.h
-index ccc81e32a1a6a..ce8b98b627b13 100644
+index 15488266b74cb..ba7dbd502fcf4 100644
 --- a/content/public/common/content_switches.h
 +++ b/content/public/common/content_switches.h
 @@ -80,7 +80,6 @@ CONTENT_EXPORT extern const char kDisablePermissionsAPI[];

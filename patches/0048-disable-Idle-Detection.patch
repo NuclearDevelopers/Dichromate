@@ -1,4 +1,4 @@
-From edc6366aeceddd89b9652d9494c06be3d2f5e965 Mon Sep 17 00:00:00 2001
+From de1c80cbf6162201d0f3a3c618229917d4e7a341 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Idle Detection
@@ -8,10 +8,10 @@ Subject: [PATCH] disable Idle Detection
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index c765b6061326f..bf2c444bb737f 100644
+index 367dccaa6b400..4ecdb5f539283 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -429,7 +429,7 @@ const base::Feature kIdentityInCanMakePaymentEventFeature{
+@@ -434,7 +434,7 @@ const base::Feature kIdentityInCanMakePaymentEventFeature{
  // this feature, the experimental web platform features flag should be set,
  // or the site should obtain an Origin Trial token.
  const base::Feature kIdleDetection{"IdleDetection",

@@ -1,4 +1,4 @@
-From 94cc8f5fa5ed40d8a38c05477821cb2bcbdc2d00 Mon Sep 17 00:00:00 2001
+From 49e00160834964939a7c32fa69087d554d4a1e54 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default
@@ -8,7 +8,7 @@ Subject: [PATCH] enable AppContainer by default
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 323b4e3c063d2..c0ec0fca01f4e 100644
+index 09dffb5143c78..01fe6fda40f84 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
 @@ -30,14 +30,14 @@ const base::Feature kWinSboxDisableExtensionPoints{
@@ -26,8 +26,8 @@ index 323b4e3c063d2..c0ec0fca01f4e 100644
 -                                          base::FEATURE_DISABLED_BY_DEFAULT};
 +                                          base::FEATURE_ENABLED_BY_DEFAULT};
  
- #endif  // BUILDFLAG(IS_WIN)
- 
+ // Enables shared/fixed policy for Windows sandbox policies.
+ const base::Feature kSharedSandboxPolicies{"SharedSandboxPolicies",
 -- 
 2.35.1.windows.2
 

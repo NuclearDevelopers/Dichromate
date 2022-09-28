@@ -1,4 +1,4 @@
-From c48954b19a6f780a52766dc7246cb2759c5fa226 Mon Sep 17 00:00:00 2001
+From d27541c815bfb381df600005f61b3aea4161fb6b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Dec 2020 06:00:50 -0500
 Subject: [PATCH] enable split cache by default
@@ -8,10 +8,10 @@ Subject: [PATCH] enable split cache by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index 00c0db4a2c325..74c90d3324ddb 100644
+index a43cca47a5715..c15860b5bf432 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
-@@ -121,7 +121,7 @@ const base::Feature kSplitCacheByIncludeCredentials{
+@@ -118,7 +118,7 @@ const base::Feature kSplitCacheByIncludeCredentials{
      "SplitCacheByIncludeCredentials", base::FEATURE_DISABLED_BY_DEFAULT};
  
  const base::Feature kSplitCacheByNetworkIsolationKey{

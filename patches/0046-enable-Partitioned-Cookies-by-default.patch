@@ -1,4 +1,4 @@
-From 0f70c6732c684475a61015e75c5c873bb3ff3007 Mon Sep 17 00:00:00 2001
+From de33c763ab42fe6bfbfb622d60682f7be7b796b1 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Partitioned Cookies by default
@@ -8,10 +8,10 @@ Subject: [PATCH] enable Partitioned Cookies by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index 15c13a3bdd665..f0ad7a2271586 100644
+index 166b073e8e40b..8a4abfa35d2f7 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
-@@ -277,7 +277,7 @@ const base::Feature kSamePartyCookiesConsideredFirstParty{
+@@ -282,7 +282,7 @@ const base::Feature kSamePartyCookiesConsideredFirstParty{
      "SamePartyCookiesConsideredFirstParty", base::FEATURE_DISABLED_BY_DEFAULT};
  
  const base::Feature kPartitionedCookies{"PartitionedCookies",

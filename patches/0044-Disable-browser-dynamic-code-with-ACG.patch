@@ -1,4 +1,4 @@
-From 049a2a497e1cb7eb39709809b1601219282382a4 Mon Sep 17 00:00:00 2001
+From 966c19f6ea5d903bff33a2478e6c132c8bb2a6c6 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG
@@ -8,7 +8,7 @@ Subject: [PATCH] Disable browser dynamic code with ACG
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/browser/browser_main_loop.cc b/content/browser/browser_main_loop.cc
-index 2bca52ee7d938..b8f4568eec2f3 100644
+index 85b116addbe65..9672fbbbc077e 100644
 --- a/content/browser/browser_main_loop.cc
 +++ b/content/browser/browser_main_loop.cc
 @@ -391,7 +391,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {

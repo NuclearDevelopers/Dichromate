@@ -12,7 +12,6 @@ This adds a user facing toggle for changing WebRTC IP handling policy.
  .../settings/privacy_page/security_page.ts    |  1 +
  .../privacy_page/webrtc_policy_dropdown.html  | 66 +++++++++++++++++++
  .../privacy_page/webrtc_policy_dropdown.ts    | 46 +++++++++++++
- .../browser/resources/settings/settings.gni   | 13 ----
  .../settings_localized_strings_provider.cc    |  6 ++
  9 files changed, 148 insertions(+), 13 deletions(-)
  create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html

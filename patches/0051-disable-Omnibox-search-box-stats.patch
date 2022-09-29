@@ -1,0 +1,27 @@
+From 4e6fa60460f9afd7053b94cd531d590653b985a6 Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
+Date: Wed, 28 Sep 2022 00:00:00 +0000
+Subject: [PATCH] disable Omnibox search box stats
+
+Disables sending excess query information in the ?aqs= parameter when performing a search using Google.
+
+---
+ components/omnibox/common/omnibox_features.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/components/omnibox/common/omnibox_features.cc b/components/omnibox/common/omnibox_features.cc
+index 8483d95963d3c..1061724e230e9 100644
+--- a/components/omnibox/common/omnibox_features.cc
++++ b/components/omnibox/common/omnibox_features.cc
+@@ -375,7 +375,7 @@ const char kDefaultTypedNavigationsToHttpsTimeoutParam[] = "timeout";
+ // If enabled, Omnibox reports the Assisted Query Stats in the aqs= param in the
+ // Search Results Page URL.
+ const base::Feature kReportAssistedQueryStats{"OmniboxReportAssistedQueryStats",
+-                                              base::FEATURE_ENABLED_BY_DEFAULT};
++                                              base::FEATURE_DISABLED_BY_DEFAULT};
+ 
+ // If enabled, Omnibox reports the Searchbox Stats in the gs_lcrp= param in the
+ // Search Results Page URL.
+-- 
+2.35.1.windows.2
+

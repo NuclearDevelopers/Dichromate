@@ -1,4 +1,4 @@
-From ab5be22e3b5a3838a55b01744c2181a9b1051a67 Mon Sep 17 00:00:00 2001
+From 6e06d94a70476e10def28407f2fb15a5cc7282ad Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -32,10 +32,10 @@ index 7dd9f063438b5..1bb55d350fd7a 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 0b8c731a1efc1..cf978f172335a 100644
+index 8d6a1af2a2c33..9285cd7dfa155 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1375,6 +1375,11 @@
+@@ -1380,6 +1380,11 @@
      "owners": [ "croissant-eng" ],
      "expiry_milestone": 100
    },

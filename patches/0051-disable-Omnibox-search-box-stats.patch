@@ -1,10 +1,9 @@
-From 4e6fa60460f9afd7053b94cd531d590653b985a6 Mon Sep 17 00:00:00 2001
+From 7346995f89c1eabd0584f882f56f53f8c88728f5 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Omnibox search box stats
 
 Disables sending excess query information in the ?aqs= parameter when performing a search using Google.
-
 ---
  components/omnibox/common/omnibox_features.cc | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)

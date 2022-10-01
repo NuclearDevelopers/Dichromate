@@ -1,4 +1,4 @@
-From ec89e26380b8a0c5c15f06c3edffbff278afe2b4 Mon Sep 17 00:00:00 2001
+From ccf53b825435360d016e6095b74f9cc79f05df2f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 15:57:29 -0400
 Subject: [PATCH] disable sensors access by default

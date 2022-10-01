@@ -1,4 +1,4 @@
-From bbd4547313a0c33fc9267fd7becba1cd9cf3c435 Mon Sep 17 00:00:00 2001
+From 9a93916342eb96a849b4b98b4c4b6594f14184b8 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Add WebRTC policy toggle to settings
@@ -13,7 +13,7 @@ This adds a user facing toggle for changing WebRTC IP handling policy.
  .../privacy_page/webrtc_policy_dropdown.html  | 66 +++++++++++++++++++
  .../privacy_page/webrtc_policy_dropdown.ts    | 46 +++++++++++++
  .../settings_localized_strings_provider.cc    |  6 ++
- 9 files changed, 148 insertions(+), 13 deletions(-)
+ 8 files changed, 148 insertions(+)
  create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html
  create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
 

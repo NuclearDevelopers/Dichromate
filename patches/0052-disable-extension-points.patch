@@ -1,0 +1,25 @@
+From 39703879f325d8b1584b0d9961142fe41950ca87 Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
+Date: Wed, 28 Sep 2022 00:00:00 +0000
+Subject: [PATCH] disable extension points
+
+---
+ sandbox/policy/features.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
+index f41192f8e61ad..05cd60768f33e 100644
+--- a/sandbox/policy/features.cc
++++ b/sandbox/policy/features.cc
+@@ -26,7 +26,7 @@ const base::Feature kWinSboxDisableKtmComponent{
+ // Experiment for Windows sandbox security mitigation,
+ // sandbox::MITIGATION_EXTENSION_POINT_DISABLE.
+ const base::Feature kWinSboxDisableExtensionPoints{
+-    "WinSboxDisableExtensionPoint", base::FEATURE_DISABLED_BY_DEFAULT};
++    "WinSboxDisableExtensionPoint", base::FEATURE_ENABLED_BY_DEFAULT};
+ 
+ // Enables GPU AppContainer sandbox on Windows.
+ const base::Feature kGpuAppContainer{"GpuAppContainer",
+-- 
+2.35.1.windows.2
+

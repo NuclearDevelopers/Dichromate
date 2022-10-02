@@ -2,7 +2,7 @@
 
 ![Dichromate Logo](https://github.com/NuclearDevelopers/Dichromate/raw/main/Icons/product_logo_256.png)
 
-Dichromate is a privacy and security hardened Chromium fork that focuses on privacy and security. It is based on the now discontinued [Hexavalent](https://github.com/Hexavalent-Browser/Hexavalent).
+Dichromate is a privacy and security hardened Chromium fork. It is based on the now discontinued [Hexavalent](https://github.com/Hexavalent-Browser/Hexavalent).
 
 We follow the Chrome release schedule, and we try to release a newer build within 1-2 days of a stable release of Chrome.
 

@@ -1,4 +1,4 @@
-From 27400407cded1d181563b6875ca617ed0f8348e5 Mon Sep 17 00:00:00 2001
+From cebfbd44917b734ce3cb757d11b18503c8f7e0a7 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH] disable showing popular sites by default
@@ -8,7 +8,7 @@ Subject: [PATCH] disable showing popular sites by default
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/components/ntp_tiles/features.cc b/components/ntp_tiles/features.cc
-index 4ce3356827cec..4414615ff6ac6 100644
+index c14ff7a0dd00f..1b10a197539f9 100644
 --- a/components/ntp_tiles/features.cc
 +++ b/components/ntp_tiles/features.cc
 @@ -13,12 +13,12 @@ namespace ntp_tiles {

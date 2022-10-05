@@ -1,4 +1,4 @@
-From 859e8688f0e9ac40823c1f8b6be07e190f170991 Mon Sep 17 00:00:00 2001
+From 94495cd3b9557d9239530f3a8b6ced84261edc90 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG
@@ -8,10 +8,10 @@ Subject: [PATCH] Disable browser dynamic code with ACG
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/browser/browser_main_loop.cc b/content/browser/browser_main_loop.cc
-index 85b116addbe65..9672fbbbc077e 100644
+index c90af891eaf14..d1751b9641045 100644
 --- a/content/browser/browser_main_loop.cc
 +++ b/content/browser/browser_main_loop.cc
-@@ -391,7 +391,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
+@@ -392,7 +392,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
  // sandbox/win/src/security_level.h. Only available on Windows 10 RS1 (1607,
  // Build 14393) onwards.
  const base::Feature kBrowserDynamicCodeDisabled{

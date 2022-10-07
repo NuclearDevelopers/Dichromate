@@ -1,4 +1,4 @@
-From 9a93916342eb96a849b4b98b4c4b6594f14184b8 Mon Sep 17 00:00:00 2001
+From c9140537e77c603dd1dd962e6bcf841a8f01c023 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Add WebRTC policy toggle to settings

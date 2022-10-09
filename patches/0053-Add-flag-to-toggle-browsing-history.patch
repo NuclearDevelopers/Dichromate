@@ -1,0 +1,159 @@
+From 0fce08731e2c1873f50458b5c93fb87a76b69b99 Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
+Date: Sun, 9 Oct 2022 00:00:00 +0000
+Subject: [PATCH] Add flag to toggle browsing history
+
+TODO:
+     A UI toggle will be added in the future, replacing the flag.
+     Option to clear history as soon as this feature is enabled.
+---
+ chrome/browser/about_flags.cc                     |  4 ++++
+ chrome/browser/flag-metadata.json                 |  7 +++++++
+ chrome/browser/flag-never-expire-list.json        |  1 +
+ chrome/browser/flag_descriptions.cc               |  5 +++++
+ chrome/browser/flag_descriptions.h                |  3 +++
+ chrome/browser/history/history_service_factory.cc | 10 ++++++++++
+ content/public/common/content_features.cc         |  4 ++++
+ content/public/common/content_features.h          |  1 +
+ 8 files changed, 35 insertions(+)
+
+diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
+index 5a011d986e33b..df947f6d60b7d 100644
+--- a/chrome/browser/about_flags.cc
++++ b/chrome/browser/about_flags.cc
+@@ -6274,6 +6274,10 @@ const FeatureEntry kFeatureEntries[] = {
+          network::switches::kUnsafelyTreatInsecureOriginAsSecure,
+          "")},
+ 
++    {"disable-browsing-history", flag_descriptions::kDisableBrowsingHistoryName,
++      flag_descriptions::kDisableBrowsingHistoryDescription, kOsAll,
++      FEATURE_VALUE_TYPE(features::kDisableBrowsingHistory)},
++
+     {"disable-process-reuse", flag_descriptions::kDisableProcessReuse,
+      flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
+      FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
+diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
+index de8866a3c6279..972cfdb598634 100644
+--- a/chrome/browser/flag-metadata.json
++++ b/chrome/browser/flag-metadata.json
+@@ -1371,6 +1371,13 @@
+     // customize switches.
+     "expiry_milestone": -1
+   },
++  {
++    "name": "disable-browsing-history",
++    "owners": [ "Douloureux@users.noreply.github.com" ],
++    // This flag does not expire because it allows users to disable saving
++    // their browsing history.
++    "expiry_milestone": -1
++  },
+   {
+     "name": "disable-camera-frame-rotation-at-source",
+     "owners": [ "chromeos-camera-eng@google.com" ],
+diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
+index 097f79c300882..1137015f460a0 100644
+--- a/chrome/browser/flag-never-expire-list.json
++++ b/chrome/browser/flag-never-expire-list.json
+@@ -27,6 +27,7 @@
+   "disable-accelerated-video-decode",
+   "disable-accelerated-video-encode",
+   "disable-buffer-bw-compression",
++  "disable-browsing-history",
+   "disable-explicit-dma-fences",
+   "disable-javascript-harmony-shipping",
+   "disable-reading-from-canvas",
+diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
+index d0a972c5c6397..9ab14316a4cb2 100644
+--- a/chrome/browser/flag_descriptions.cc
++++ b/chrome/browser/flag_descriptions.cc
+@@ -1151,6 +1151,11 @@ const char kDownloadRangeName[] = "Enable download range support";
+ const char kDownloadRangeDescription[] =
+     "Enables arbitrary download range request support.";
+ 
++const char kDisableBrowsingHistoryName[] = "Disable browsing history";
++const char kDisableBrowsingHistoryDescription[] = 
++    "Disables saving browsing history. Browser cache must be cleared "
++    "in order to stop showing suggestions in the search bar.";
++
+ const char kEnableNetworkLoggingToFileName[] = "Enable network logging to file";
+ const char kEnableNetworkLoggingToFileDescription[] =
+     "Enables network logging to a file named netlog.json in the user data "
+diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
+index 29204dde846b4..63ef73ab468e1 100644
+--- a/chrome/browser/flag_descriptions.h
++++ b/chrome/browser/flag_descriptions.h
+@@ -49,6 +49,9 @@ extern const char kAcceleratedVideoDecodeDescription[];
+ extern const char kAcceleratedVideoEncodeName[];
+ extern const char kAcceleratedVideoEncodeDescription[];
+ 
++extern const char kDisableBrowsingHistoryName[];
++extern const char kDisableBrowsingHistoryDescription[];
++
+ extern const char kEnableMediaInternalsName[];
+ extern const char kEnableMediaInternalsDescription[];
+ 
+diff --git a/chrome/browser/history/history_service_factory.cc b/chrome/browser/history/history_service_factory.cc
+index 47805db323012..cb4390cff98aa 100644
+--- a/chrome/browser/history/history_service_factory.cc
++++ b/chrome/browser/history/history_service_factory.cc
+@@ -16,6 +16,9 @@
+ #include "components/keyed_service/core/service_access_type.h"
+ #include "components/prefs/pref_service.h"
+ 
++#include "content/public/common/content_features.h"
++#include "base/feature_list.h"
++
+ namespace {
+ 
+ std::unique_ptr<KeyedService> BuildHistoryService(
+@@ -37,6 +40,12 @@ std::unique_ptr<KeyedService> BuildHistoryService(
+ history::HistoryService* HistoryServiceFactory::GetForProfile(
+     Profile* profile,
+     ServiceAccessType sat) {
++  
++  // Disable saving history if the disable-browsing-history flag is enabled.
++  if (base::FeatureList::IsEnabled(features::kDisableBrowsingHistory)) {
++    profile->GetPrefs()->SetBoolean(prefs::kSavingBrowserHistoryDisabled, true);
++  } 
++
+   // If saving history is disabled, only allow explicit access.
+   if (sat != ServiceAccessType::EXPLICIT_ACCESS &&
+       profile->GetPrefs()->GetBoolean(prefs::kSavingBrowserHistoryDisabled)) {
+@@ -52,6 +61,7 @@ history::HistoryService* HistoryServiceFactory::GetForProfileIfExists(
+     Profile* profile,
+     ServiceAccessType sat) {
+   // If saving history is disabled, only allow explicit access.
++
+   if (sat != ServiceAccessType::EXPLICIT_ACCESS &&
+       profile->GetPrefs()->GetBoolean(prefs::kSavingBrowserHistoryDisabled)) {
+     return nullptr;
+diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
+index c2ccffe463f5d..799493772b48f 100644
+--- a/content/public/common/content_features.cc
++++ b/content/public/common/content_features.cc
+@@ -264,6 +264,10 @@ const base::Feature kDigitalGoodsApi {
+ #endif
+ };
+ 
++// Disables saving browser history.
++const base::Feature kDisableBrowsingHistory {"DisableBrowsingHistory", 
++                                                base::FEATURE_DISABLED_BY_DEFAULT};
++
+ // Taints all <canvas> elements, regardless of origin.
+ const base::Feature kDisableReadingFromCanvas {"DisableReadingFromCanvas",
+                                                 base::FEATURE_DISABLED_BY_DEFAULT};
+diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
+index b95f617727820..85074bdb8e800 100644
+--- a/content/public/common/content_features.h
++++ b/content/public/common/content_features.h
+@@ -68,6 +68,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
+ CONTENT_EXPORT extern const base::Feature kDesktopPWAsTabStrip;
+ CONTENT_EXPORT extern const base::Feature kDevicePosture;
+ CONTENT_EXPORT extern const base::Feature kDigitalGoodsApi;
++CONTENT_EXPORT extern const base::Feature kDisableBrowsingHistory;
+ CONTENT_EXPORT extern const base::Feature kDisableReadingFromCanvas;
+ CONTENT_EXPORT extern const base::Feature kDocumentPolicy;
+ CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
+-- 
+2.35.1.windows.2
+

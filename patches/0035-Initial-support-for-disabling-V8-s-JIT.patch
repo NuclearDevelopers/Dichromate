@@ -1,4 +1,4 @@
-From a1e34d7251e628060b5fc73aa1b1e91868c6feab Mon Sep 17 00:00:00 2001
+From 85cb5e03f10fde7399e6a0ba42434542b15ddc12 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
 Subject: [PATCH] Initial support for disabling V8's JIT
@@ -17,7 +17,7 @@ compiler; it is default disabled.
  8 files changed, 29 insertions(+)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 5ae6476f99438..f6e464fb4ace5 100644
+index aa1103e8335fa..c175bb2003bf2 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
 @@ -169,6 +169,7 @@
@@ -28,7 +28,7 @@ index 5ae6476f99438..f6e464fb4ace5 100644
  #include "gpu/config/gpu_finch_features.h"
  #include "gpu/config/gpu_switches.h"
  #include "media/audio/audio_features.h"
-@@ -6265,6 +6266,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6277,6 +6278,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
  
@@ -40,7 +40,7 @@ index 5ae6476f99438..f6e464fb4ace5 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index ad4e04adb1efa..7d3a214cfad0b 100644
+index 0c1df870837c1..2912202f876e0 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
 @@ -1432,6 +1432,13 @@
@@ -70,10 +70,10 @@ index cc56694088243..a562cdb3e94ac 100644
    "disable-webrtc-hw-encoding",
    "disallow-doc-written-script-loads",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index 5b8e2895421ee..b8b316b3faae5 100644
+index a407d96c07004..1740527c9c87d 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -2980,6 +2980,11 @@ const char kVCBackgroundBlurName[] = "Enable vc background blur";
+@@ -2988,6 +2988,11 @@ const char kVCBackgroundBlurName[] = "Enable vc background blur";
  const char kVCBackgroundBlurDescription[] =
      "Enables background blur feature for video conferencing on chromebooks.";
  
@@ -86,10 +86,10 @@ index 5b8e2895421ee..b8b316b3faae5 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index 5f15db373423c..ee2c9203a1221 100644
+index 5c25029692dcd..8c167969bdf3c 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1670,6 +1670,9 @@ extern const char kUseSearchClickForRightClickDescription[];
+@@ -1673,6 +1673,9 @@ extern const char kUseSearchClickForRightClickDescription[];
  extern const char kVCBackgroundBlurName[];
  extern const char kVCBackgroundBlurDescription[];
  

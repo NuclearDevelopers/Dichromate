@@ -1,4 +1,4 @@
-From 5148810ea46210bd42ffbc7d0784f717c8259f56 Mon Sep 17 00:00:00 2001
+From 6d078d50bcd7597e7dd5a6c635caad9fdb7c90d8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
 Subject: [PATCH] disable fetching optimization guides by default

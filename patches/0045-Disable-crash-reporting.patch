@@ -1,4 +1,4 @@
-From 1b8e1b3e386b6d2439503c5f11bf80db07c05d88 Mon Sep 17 00:00:00 2001
+From db60303f29d445dbb3db7729e9d3b63ec7642670 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable crash reporting

@@ -1,4 +1,4 @@
-From a7599d023c67196ae07ee182d8ea1c95f12c158f Mon Sep 17 00:00:00 2001
+From f44066e0774c8807a27b7f4b52ee731776e19987 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -17,10 +17,10 @@ Subject: [PATCH] convert DisableReadingFromCanvas into a flag
  10 files changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index f6e464fb4ace5..1ab5242a8f65a 100644
+index c175bb2003bf2..5a011d986e33b 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6270,6 +6270,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6282,6 +6282,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kV8NoJITDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kV8NoJIT)},
  
@@ -32,7 +32,7 @@ index f6e464fb4ace5..1ab5242a8f65a 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 7d3a214cfad0b..9bfda6aff7539 100644
+index 2912202f876e0..de8866a3c6279 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
 @@ -1425,6 +1425,11 @@
@@ -60,10 +60,10 @@ index a562cdb3e94ac..097f79c300882 100644
    "disable-v8-jit",
    "disable-webrtc-hw-decoding",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index b8b316b3faae5..48d21ae201b98 100644
+index 1740527c9c87d..d0a972c5c6397 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -2985,6 +2985,11 @@ const char kV8NoJITDescription[] =
+@@ -2993,6 +2993,11 @@ const char kV8NoJITDescription[] =
      "Security mode that disables all runtime allocation of "
      "executable memory";
  
@@ -76,10 +76,10 @@ index b8b316b3faae5..48d21ae201b98 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index ee2c9203a1221..f5cfc4779d74a 100644
+index 8c167969bdf3c..29204dde846b4 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1673,6 +1673,9 @@ extern const char kVCBackgroundBlurDescription[];
+@@ -1676,6 +1676,9 @@ extern const char kVCBackgroundBlurDescription[];
  extern const char kV8NoJITName[];
  extern const char kV8NoJITDescription[];
  

@@ -1,11 +1,11 @@
-From d1b17b09b7e0dcd127ce69fd21e180595b472a8f Mon Sep 17 00:00:00 2001
+From ff66d5f3b0e9035862b0234310b0fdce3e6bd49e Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 9 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Add flag to toggle browsing history
 
-TODO: 
+TODO:
      A UI toggle will be added in the future, replacing the flag.
-     Option to clear history as soon as this feature is enabled. 
+     Option to clear history as soon as this feature is enabled.
 ---
  chrome/browser/about_flags.cc                     |  4 ++++
  chrome/browser/flag-metadata.json                 |  7 +++++++

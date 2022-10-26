@@ -1,4 +1,4 @@
-From 4c5308b22657a373421df041c350e24dcfd19992 Mon Sep 17 00:00:00 2001
+From b0668beb55deb03837e89d46f4e4256c40261608 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
 Subject: [PATCH] disable fetching optimization guides by default
@@ -8,7 +8,7 @@ Subject: [PATCH] disable fetching optimization guides by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/optimization_guide/core/optimization_guide_features.cc b/components/optimization_guide/core/optimization_guide_features.cc
-index ba46261ae098f..f5c973b8fd7d9 100644
+index 4cd5ad7c8a738..69170820bb5d9 100644
 --- a/components/optimization_guide/core/optimization_guide_features.cc
 +++ b/components/optimization_guide/core/optimization_guide_features.cc
 @@ -82,7 +82,7 @@ const base::Feature kOptimizationHints{"OptimizationHints",

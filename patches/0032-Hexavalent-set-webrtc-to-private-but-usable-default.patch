@@ -1,4 +1,4 @@
-From a0a2c6e7aab1d8baa4a6cf21fc7abe76c27456a2 Mon Sep 17 00:00:00 2001
+From 91db3bfe8c744ce9b62b8df43e2c198475da9f3e Mon Sep 17 00:00:00 2001
 From: flawedworld <flawedworld@flawed.world>
 Date: Sat, 14 Aug 2021 19:47:24 +0100
 Subject: [PATCH] Hexavalent: set webrtc to private but usable default
@@ -8,7 +8,7 @@ Subject: [PATCH] Hexavalent: set webrtc to private but usable default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/ui/browser_ui_prefs.cc b/chrome/browser/ui/browser_ui_prefs.cc
-index 97ac9e42caeab..d38ababd1186a 100644
+index 94b164b7fbd5e..1f68abe865a55 100644
 --- a/chrome/browser/ui/browser_ui_prefs.cc
 +++ b/chrome/browser/ui/browser_ui_prefs.cc
 @@ -93,7 +93,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {

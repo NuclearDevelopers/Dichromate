@@ -1,4 +1,4 @@
-From 44a40dfdfee3668eef4f0e0f1368fce2ade2b9c4 Mon Sep 17 00:00:00 2001
+From 24be064146e0ee75e3e7bb49e45eef68c1facc34 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -17,10 +17,10 @@ Subject: [PATCH] convert DisableReadingFromCanvas into a flag
  10 files changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 7dd9f063438b5..1bb55d350fd7a 100644
+index 551171c1ab813..c9dabfc9b5ff3 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6150,6 +6150,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6300,6 +6300,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kV8NoJITDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kV8NoJIT)},
  
@@ -32,10 +32,10 @@ index 7dd9f063438b5..1bb55d350fd7a 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 8d6a1af2a2c33..9285cd7dfa155 100644
+index c5aca080dc21e..9ce00ef7b49dd 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1380,6 +1380,11 @@
+@@ -1420,6 +1420,11 @@
      "owners": [ "croissant-eng" ],
      "expiry_milestone": 100
    },
@@ -48,7 +48,7 @@ index 8d6a1af2a2c33..9285cd7dfa155 100644
      "name": "disable-threaded-scrolling",
      "owners": [ "bokan", "input-dev" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index 8642ff428394c..734eaf0441cc4 100644
+index a562cdb3e94ac..097f79c300882 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -29,6 +29,7 @@
@@ -60,10 +60,10 @@ index 8642ff428394c..734eaf0441cc4 100644
    "disable-v8-jit",
    "disable-webrtc-hw-decoding",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index 3c0e0f3ee832a..76e5e88c135b1 100644
+index d0d7df066e339..82ec14f746e83 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -2946,6 +2946,11 @@ const char kV8NoJITDescription[] =
+@@ -2988,6 +2988,11 @@ const char kV8NoJITDescription[] =
      "Security mode that disables all runtime allocation of "
      "executable memory";
  
@@ -76,10 +76,10 @@ index 3c0e0f3ee832a..76e5e88c135b1 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index 48fea392a5cad..0871b1f08da90 100644
+index 53dcd453e1e27..bce7492b2249c 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1647,6 +1647,9 @@ extern const char kUseSearchClickForRightClickDescription[];
+@@ -1673,6 +1673,9 @@ extern const char kVCBackgroundBlurDescription[];
  extern const char kV8NoJITName[];
  extern const char kV8NoJITDescription[];
  
@@ -90,10 +90,10 @@ index 48fea392a5cad..0871b1f08da90 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
-index 8e1c0feede6dc..be7e1c0f9e614 100644
+index 536bbd4cf825c..46e4f95fa6551 100644
 --- a/content/browser/web_contents/web_contents_impl.cc
 +++ b/content/browser/web_contents/web_contents_impl.cc
-@@ -2815,7 +2815,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
+@@ -2808,7 +2808,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
    prefs.stylus_handwriting_enabled = stylus_handwriting_enabled_;
  
    prefs.disable_reading_from_canvas =
@@ -103,10 +103,10 @@ index 8e1c0feede6dc..be7e1c0f9e614 100644
    prefs.strict_mixed_content_checking =
        command_line.HasSwitch(switches::kEnableStrictMixedContentChecking);
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index 4ecdb5f539283..32c9a488a0c7e 100644
+index 7688dcbe1ed53..c2ccffe463f5d 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -267,6 +267,10 @@ const base::Feature kDigitalGoodsApi {
+@@ -264,6 +264,10 @@ const base::Feature kDigitalGoodsApi {
  #endif
  };
  
@@ -118,10 +118,10 @@ index 4ecdb5f539283..32c9a488a0c7e 100644
  const base::Feature kDocumentPolicy{"DocumentPolicy",
                                      base::FEATURE_ENABLED_BY_DEFAULT};
 diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
-index 95586c2934bcb..95e6005cc5b40 100644
+index 5db8724ee8713..b95f617727820 100644
 --- a/content/public/common/content_features.h
 +++ b/content/public/common/content_features.h
-@@ -69,6 +69,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
+@@ -68,6 +68,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
  CONTENT_EXPORT extern const base::Feature kDesktopPWAsTabStrip;
  CONTENT_EXPORT extern const base::Feature kDevicePosture;
  CONTENT_EXPORT extern const base::Feature kDigitalGoodsApi;
@@ -130,10 +130,10 @@ index 95586c2934bcb..95e6005cc5b40 100644
  CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
  CONTENT_EXPORT extern const base::Feature kEarlyEstablishGpuChannel;
 diff --git a/content/public/common/content_switches.cc b/content/public/common/content_switches.cc
-index a37ce834f6f2f..06a170278088f 100644
+index 12a150e997378..55cb19c04d2c6 100644
 --- a/content/public/common/content_switches.cc
 +++ b/content/public/common/content_switches.cc
-@@ -227,9 +227,6 @@ const char kDisablePresentationAPI[]        = "disable-presentation-api";
+@@ -231,9 +231,6 @@ const char kDisablePresentationAPI[]        = "disable-presentation-api";
  // Disables throttling of history.pushState/replaceState calls.
  const char kDisablePushStateThrottle[] = "disable-pushstate-throttle";
  
@@ -144,10 +144,10 @@ index a37ce834f6f2f..06a170278088f 100644
  // option is specified or not.
  const char kDisableRemoteFonts[]            = "disable-remote-fonts";
 diff --git a/content/public/common/content_switches.h b/content/public/common/content_switches.h
-index 15488266b74cb..ba7dbd502fcf4 100644
+index 8e3fa53cc6c41..49880aea6255e 100644
 --- a/content/public/common/content_switches.h
 +++ b/content/public/common/content_switches.h
-@@ -80,7 +80,6 @@ CONTENT_EXPORT extern const char kDisablePermissionsAPI[];
+@@ -81,7 +81,6 @@ CONTENT_EXPORT extern const char kDisablePermissionsAPI[];
  CONTENT_EXPORT extern const char kDisablePinch[];
  CONTENT_EXPORT extern const char kDisablePresentationAPI[];
  CONTENT_EXPORT extern const char kDisablePushStateThrottle[];

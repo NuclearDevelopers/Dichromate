@@ -1,4 +1,4 @@
-From 24bf94eaf2e8167a55aa7095ca563c706286ee82 Mon Sep 17 00:00:00 2001
+From 7881137fdca4bc3c9131fd2452aaaac0b8183a95 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
 Subject: [PATCH] disable network prediction by default
@@ -9,7 +9,7 @@ Subject: [PATCH] disable network prediction by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/prefetch/prefetch_prefs.h b/chrome/browser/prefetch/prefetch_prefs.h
-index 138289e8c01b4..2fc09182f06fc 100644
+index bf2129a279a37..c7646a10c57fa 100644
 --- a/chrome/browser/prefetch/prefetch_prefs.h
 +++ b/chrome/browser/prefetch/prefetch_prefs.h
 @@ -25,7 +25,7 @@ enum class NetworkPredictionOptions {
@@ -22,7 +22,7 @@ index 138289e8c01b4..2fc09182f06fc 100644
  
  // Enum representing possible values of the Preload Pages opt-in state.  Since
 diff --git a/chrome/browser/resources/settings/privacy_page/cookies_page.ts b/chrome/browser/resources/settings/privacy_page/cookies_page.ts
-index 2376d68cedab6..cbf7b8d7d0e41 100644
+index 357e177421f20..22a8d07474dec 100644
 --- a/chrome/browser/resources/settings/privacy_page/cookies_page.ts
 +++ b/chrome/browser/resources/settings/privacy_page/cookies_page.ts
 @@ -49,7 +49,7 @@ enum NetworkPredictionOptions {

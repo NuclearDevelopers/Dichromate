@@ -1,15 +1,15 @@
-From 51fcbeb3edb8b0fd9a81a28aed7d79ebc82d3861 Mon Sep 17 00:00:00 2001
+From a67dd48276e396e236b3e64c95a7d8f5a6e1c51d Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
 
 ---
  LICENSE.debian     | 29 +++++++++++++++++++++++++++++
- LICENSE.dichromate | 19 +++++++++++++++++++
+ LICENSE.dichromate | 31 +++++++++++++++++++++++++++++++
  LICENSE.hexavalent | 32 ++++++++++++++++++++++++++++++++
  LICENSE.vanadium   | 19 +++++++++++++++++++
  tools/licenses.py  | 29 +++++++++++++++++++++++++++++
- 5 files changed, 128 insertions(+)
+ 5 files changed, 140 insertions(+)
  create mode 100644 LICENSE.debian
  create mode 100644 LICENSE.dichromate
  create mode 100644 LICENSE.hexavalent
@@ -52,10 +52,10 @@ index 0000000000000..01a4f8b447eb5
 +OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 diff --git a/LICENSE.dichromate b/LICENSE.dichromate
 new file mode 100644
-index 0000000000000..9bd3367b2d1f2
+index 0000000000000..b2d68cf073cac
 --- /dev/null
 +++ b/LICENSE.dichromate
-@@ -0,0 +1,19 @@
+@@ -0,0 +1,31 @@
 +The Clear BSD License
 +
 +Copyright (c) 2022 Douloureux
@@ -75,6 +75,18 @@ index 0000000000000..9bd3367b2d1f2
 +     * Neither the name of the copyright holder nor the names of its
 +     contributors may be used to endorse or promote products derived from this
 +     software without specific prior written permission.
++NO EXPRESS OR IMPLIED LICENSES TO ANY PARTY'S PATENT RIGHTS ARE GRANTED BY
++THIS LICENSE. THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND
++CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
++LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
++PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
++CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
++EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
++PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
++BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER
++IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE)
++ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
++POSSIBILITY OF SUCH DAMAGE.
 diff --git a/LICENSE.hexavalent b/LICENSE.hexavalent
 new file mode 100644
 index 0000000000000..aeb40ccc1762d

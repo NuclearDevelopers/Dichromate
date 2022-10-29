@@ -1,4 +1,4 @@
-From 843d4b503bb0819c85621656cadf5696e6a01032 Mon Sep 17 00:00:00 2001
+From b3acc811a101766b9a9a7aa55c01152b11ff9e5f Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Tue, 1 Dec 1970 00:00:00 +0000
 Subject: [PATCH] Dichromate string rebranding
@@ -12,7 +12,7 @@ Subject: [PATCH] Dichromate string rebranding
  chrome/app/settings_chromium_strings.grdp     | 200 +++---
  chrome/app/settings_strings.grdp              |   6 +-
  chrome/app/shared_settings_strings.grdp       |   2 +-
- chrome/app/theme/chromium/BRANDING            |  20 +-
+ chrome/app/theme/chromium/BRANDING            |  16 +-
  chrome/common/url_constants.cc                | 254 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
  components/autofill_payments_strings.grdp     |   2 +-
@@ -29,7 +29,7 @@ Subject: [PATCH] Dichromate string rebranding
  .../security_interstitials_strings.grdp       |   8 +-
  components/ssl_errors_strings.grdp            |   6 +-
  components/version_ui_strings.grdp            |   6 +-
- 25 files changed, 698 insertions(+), 698 deletions(-)
+ 25 files changed, 696 insertions(+), 696 deletions(-)
 
 diff --git a/chrome/app/access_code_cast_strings.grdp b/chrome/app/access_code_cast_strings.grdp
 index 452d22341a87b..704a820813db5 100644
@@ -2155,7 +2155,7 @@ index a74fa295c547a..e3a713e05e69e 100644
    </if>
  </grit-part>
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index ecba4d584f91b..53d7f036f24f3 100644
+index 3a64f9614cbdd..57802c8313b0e 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
 @@ -227,7 +227,7 @@
@@ -2199,7 +2199,7 @@ index b778eaad65d4a..1e06f004034af 100644
    </message>
    <message name="IDS_SETTINGS_ENABLE_LOGGING_PREF_DESC" desc="The description of the checkbox to enable/disable crash and user metrics logging">
 diff --git a/chrome/app/theme/chromium/BRANDING b/chrome/app/theme/chromium/BRANDING
-index f8363d5b294fe..1fd6b757718f6 100644
+index f8363d5b294fe..735480d8b42db 100644
 --- a/chrome/app/theme/chromium/BRANDING
 +++ b/chrome/app/theme/chromium/BRANDING
 @@ -1,10 +1,10 @@
@@ -2211,8 +2211,6 @@ index f8363d5b294fe..1fd6b757718f6 100644
 -PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
 -COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Chromium Authors. All rights reserved.
 -MAC_BUNDLE_ID=org.chromium.Chromium
--MAC_CREATOR_CODE=Cr24
--MAC_TEAM_ID=
 +COMPANY_FULLNAME=The Dichromate Authors
 +COMPANY_SHORTNAME=The Dichromate Authors
 +PRODUCT_FULLNAME=Dichromate
@@ -2221,8 +2219,8 @@ index f8363d5b294fe..1fd6b757718f6 100644
 +PRODUCT_INSTALLER_SHORTNAME=Dichromate Installer
 +COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Dichromate Authors. All rights reserved.
 +MAC_BUNDLE_ID=org.chromium.Dichromate
-+MAC_CREATOR_CODE=Cr24
-+MAC_TEAM_ID=
+ MAC_CREATOR_CODE=Cr24
+ MAC_TEAM_ID=
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
 index 091af74e935f9..d14cc7b1dd1e0 100644
 --- a/chrome/common/url_constants.cc

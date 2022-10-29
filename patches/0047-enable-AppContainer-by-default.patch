@@ -1,4 +1,4 @@
-From 599790e8856e49ef3c6ac95f129ca7e9bcb2a659 Mon Sep 17 00:00:00 2001
+From 4f6d6e64076214b21ea7a06cfa6dbe26c852589d Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default
@@ -8,26 +8,27 @@ Subject: [PATCH] enable AppContainer by default
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 368a01dfcd04d..7c3be4f8eff35 100644
+index 4dfbf9307ced7..9c8b879f9cc85 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
-@@ -30,14 +30,14 @@ const base::Feature kWinSboxDisableExtensionPoints{
- 
+@@ -34,7 +34,7 @@ BASE_FEATURE(kWinSboxDisableExtensionPoints,
  // Enables GPU AppContainer sandbox on Windows.
- const base::Feature kGpuAppContainer{"GpuAppContainer",
--                                     base::FEATURE_DISABLED_BY_DEFAULT};
-+                                     base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kGpuAppContainer,
+              "GpuAppContainer",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables GPU Low Privilege AppContainer when combined with kGpuAppContainer.
- const base::Feature kGpuLPAC{"GpuLPAC", base::FEATURE_ENABLED_BY_DEFAULT};
- 
+ BASE_FEATURE(kGpuLPAC,
+@@ -44,7 +44,7 @@ BASE_FEATURE(kGpuLPAC,
  // Enables Renderer AppContainer
- const base::Feature kRendererAppContainer{"RendererAppContainer",
--                                          base::FEATURE_DISABLED_BY_DEFAULT};
-+                                          base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kRendererAppContainer,
+              "RendererAppContainer",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enables shared/fixed policy for Windows sandbox policies.
- const base::Feature kSharedSandboxPolicies{"SharedSandboxPolicies",
+ BASE_FEATURE(kSharedSandboxPolicies,
 -- 
 2.35.1.windows.2
 

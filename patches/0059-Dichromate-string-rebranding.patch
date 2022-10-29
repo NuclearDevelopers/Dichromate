@@ -1,19 +1,19 @@
-From b3acc811a101766b9a9a7aa55c01152b11ff9e5f Mon Sep 17 00:00:00 2001
+From 323654f479103a6b7af6332e3a6ef507de9c5a20 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Tue, 1 Dec 1970 00:00:00 +0000
 Subject: [PATCH] Dichromate string rebranding
 
 ---
  chrome/app/access_code_cast_strings.grdp      |   2 +-
- chrome/app/chromium_strings.grd               | 654 +++++++++---------
+ chrome/app/chromium_strings.grd               | 666 +++++++++---------
  chrome/app/generated_resources.grd            |   4 +-
  chrome/app/google_chrome_strings.grd          |  14 +-
  chrome/app/os_settings_strings.grdp           |  22 +-
- chrome/app/settings_chromium_strings.grdp     | 200 +++---
+ chrome/app/settings_chromium_strings.grdp     | 202 +++---
  chrome/app/settings_strings.grdp              |   6 +-
  chrome/app/shared_settings_strings.grdp       |   2 +-
- chrome/app/theme/chromium/BRANDING            |  16 +-
- chrome/common/url_constants.cc                | 254 +++----
+ chrome/app/theme/chromium/BRANDING            |  20 +-
+ chrome/common/url_constants.cc                | 256 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
  components/autofill_payments_strings.grdp     |   2 +-
  components/autofill_strings.grdp              |   6 +-
@@ -29,13 +29,13 @@ Subject: [PATCH] Dichromate string rebranding
  .../security_interstitials_strings.grdp       |   8 +-
  components/ssl_errors_strings.grdp            |   6 +-
  components/version_ui_strings.grdp            |   6 +-
- 25 files changed, 696 insertions(+), 696 deletions(-)
+ 25 files changed, 706 insertions(+), 706 deletions(-)
 
 diff --git a/chrome/app/access_code_cast_strings.grdp b/chrome/app/access_code_cast_strings.grdp
-index 452d22341a87b..704a820813db5 100644
+index 456faa34c1062..2fb08e92fbbe1 100644
 --- a/chrome/app/access_code_cast_strings.grdp
 +++ b/chrome/app/access_code_cast_strings.grdp
-@@ -63,4 +63,4 @@
+@@ -66,4 +66,4 @@
    <message name="IDS_ACCESS_CODE_CAST_USE_CAMERA" desc="Label for the button to use the device camera to scan a QR code">
      Use QR code instead
    </message>
@@ -43,7 +43,7 @@ index 452d22341a87b..704a820813db5 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
-index 856d482cffb51..6fa7835efdb6d 100644
+index 59c18c44f121a..61e8a603093f2 100644
 --- a/chrome/app/chromium_strings.grd
 +++ b/chrome/app/chromium_strings.grd
 @@ -277,43 +277,43 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
@@ -606,8 +606,8 @@ index 856d482cffb51..6fa7835efdb6d 100644
 +        Warning: Dichromate cannot prevent extensions from recording your browsing history. To disable this extension in Incognito mode, unselect this option.
        </message>
        <message name="IDS_EXTENSIONS_UNINSTALL" desc="The link for uninstalling extensions.">
--        Remove from Chromium...
-+        Remove from Dichromate...
+-        Remove from Chromium
++        Remove from Dichromate
        </message>
        <message name="IDS_EXTENSIONS_SHORTCUT_SCOPE_IN_CHROME" desc="The label to indicate that a shortcut will be triggerable only from within the Chrome application.">
 -        In Chromium
@@ -1367,7 +1367,7 @@ index 856d482cffb51..6fa7835efdb6d 100644
          </message>
        </if>
  
-@@ -1348,96 +1348,96 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1348,101 +1348,101 @@ Permissions you've already given to websites and apps may apply to this account.
          <!-- Profile Picker -->
          <if expr="chromeos_lacros">
            <message name="IDS_PROFILE_PICKER_MAIN_VIEW_SUBTITLE_LACROS" desc="Profile picker main view subtitle">
@@ -1449,6 +1449,12 @@ index 856d482cffb51..6fa7835efdb6d 100644
 +            Your account is managed by <ph name="MANAGER_NAME">$1<ex>example.com</ex></ph>. Your administrator can see and edit this Dichromate browser profile and its data like bookmarks, history, and passwords.
            </message>
          </if>
+         <if expr="not chromeos_lacros">
+           <message name="IDS_FRE_SIGN_IN_SUBTITLE" desc="The subtitle for the sign in page explaining to the users the benefits of signing in to Chrome">
+-            You can enjoy the most out of Chromium
++            You can enjoy the most out of Dichromate
+           </message>
+         </if>
  
          <!-- Profile switch IPH -->
          <message name="IDS_PROFILE_SWITCH_PROMO" desc="Text of the In-Product-Help bubble for profile switching.">
@@ -1492,7 +1498,7 @@ index 856d482cffb51..6fa7835efdb6d 100644
        </message>
        <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_DESCRIPTION" desc="Description shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
          Enhanced protection does more to block phishing and malware
-@@ -1448,49 +1448,49 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1453,49 +1453,49 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Privacy Sandbox Dialog strings -->
        <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_SUBTITLE" desc="A subtitle on the consent page. Consider this a tagline for the Privacy Sandbox project.* “exploring” conveys that this is a work in progress. * “new features” include settings that the user can turn on/off and also backend features that change the way Chrome works for everyone * “allow sites to deliver”: Privacy Sandbox is proposed by Google as a collaborative effort with the browser industry. We’re building and testing functionality that will live in the Chrome browser. In order to land the full promise of Privacy Sandbox, websites and advertisers need to adopt the new APIs / functionality that we’re developing. So “allow sites…” makes it clear to the user that we’re building something for the ecosystem. Typically a Google product builds something for the user, and that’s true in this case, but it’s bigger than that. * “same browsing experience using less of your info”: Another definition of the promise of Privacy Sandbox. Third-party cookies are going away. In this new world, the user will have essentially the same browsing experience but it’s more private because it doesn’t expose so much of the user’s info.">
@@ -1562,7 +1568,7 @@ index 856d482cffb51..6fa7835efdb6d 100644
          </message>
          <message name="IDS_NO_UPDATE_RESPONSE" desc="Updater response for no updates when handling install result.">
            No update is available.
-@@ -1499,7 +1499,7 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1504,7 +1504,7 @@ Permissions you've already given to websites and apps may apply to this account.
            Installation failed. Please try again.
          </message>
          <message name="IDS_INSTALLER_DISPLAY_NAME" desc="Name for the updater metainstaller.">
@@ -1571,7 +1577,7 @@ index 856d482cffb51..6fa7835efdb6d 100644
          </message>
          <message name="IDS_CLOSE_BUTTON" desc="Close button tooltip">
            Close
-@@ -1538,13 +1538,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1543,13 +1543,13 @@ Permissions you've already given to websites and apps may apply to this account.
            Canceling...
          </message>
          <message name="IDS_TEXT_RESTART_BROWSER" desc="For when a browser must be restarted to complete the installation.">
@@ -1588,20 +1594,53 @@ index 856d482cffb51..6fa7835efdb6d 100644
          </message>
          <message name="IDS_UPDATER_CLOSE" desc="For close button on the UI post install completion.">
            Close
-@@ -1580,7 +1580,7 @@ Permissions you've already given to websites and apps may apply to this account.
-       <!-- High Efficiency Chip strings -->
+@@ -1586,12 +1586,12 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android">
-         <message name="IDS_HIGH_EFFICIENCY_DIALOG_BODY" desc="Body text for a dialog describing that Memory Saver mode will use less memory from inactive tabs and that this is a setting the user can control.">
--          As needed, Chromium reclaims memory from tabs you aren't actively using. You can change this anytime in settings.
-+          As needed, Dichromate reclaims memory from tabs you aren't actively using. You can change this anytime in settings.
-         </message>
+         <if expr="use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_DIALOG_TITLE" desc="In Title Case: Title text for a dialog describing that the Memory Saver setting is enabled">
+-            Memory Saver Made Chromium Faster
++            Memory Saver Made Dichromate Faster
+           </message>
+         </if>
+         <if expr="not use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_DIALOG_TITLE" desc="Title text for a dialog describing that the Memory Saver setting is enabled">
+-            Memory Saver made Chromium faster
++            Memory Saver made Dichromate faster
+           </message>
+         </if>
        </if>
-     </messages>
+@@ -1600,22 +1600,22 @@ Permissions you've already given to websites and apps may apply to this account.
+       <if expr="not is_android">
+         <if expr="use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_INFO_MODE_PROMO_TITLE" desc="In Title Case: The title for the high efficiency info mode in-product promo bubble.">
+-            Memory Saver Made Chromium Faster
++            Memory Saver Made Dichromate Faster
+           </message>
+         </if>
+         <if expr="not use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_INFO_MODE_PROMO_TITLE" desc="The title for the high efficiency info mode in-product promo bubble.">
+-            Memory Saver made Chromium faster
++            Memory Saver made Dichromate faster
+           </message>
+         </if>
+         <if expr="use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_MODE_PROMO_TITLE" desc="In Title Case: The title for the high efficiency mode in-product promo bubble">
+-            Make Chromium Faster
++            Make Dichromate Faster
+           </message>
+         </if>
+         <if expr="not use_titlecase">
+           <message name="IDS_HIGH_EFFICIENCY_MODE_PROMO_TITLE" desc="The title for the high efficiency mode in-product promo bubble">
+-            Make Chromium faster
++            Make Dichromate faster
+           </message>
+         </if>
+       </if>
 diff --git a/chrome/app/generated_resources.grd b/chrome/app/generated_resources.grd
-index 40275ee118b15..b17c79dca59d4 100644
+index ce751e8080d65..8086dd74f0904 100644
 --- a/chrome/app/generated_resources.grd
 +++ b/chrome/app/generated_resources.grd
-@@ -4283,7 +4283,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -4292,7 +4292,7 @@ are declared in tools/grit/grit_rule.gni.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1610,7 +1649,7 @@ index 40275ee118b15..b17c79dca59d4 100644
          Restart now
        </message>
  
-@@ -6245,7 +6245,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
+@@ -6265,7 +6265,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
            Reason: The inverted rule <ph name="REVERT_RULE">$1<ex>!example.com</ex></ph> was found in the "Force open in" list.
          </message>
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_OPEN_BROWSER_DEFAULT_REASON" desc="about:browser-switch/internals, section URL Checker, the explaination reason for check result, displayed when the entered URL did not match any listed rule and default browser will not get switched">
@@ -1620,7 +1659,7 @@ index 40275ee118b15..b17c79dca59d4 100644
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_INVALID_URL" desc="about:browser-switch/internals, section URL Checker, specific error message when the url is invalid">
            Invalid URL. Make sure it is formatted properly.
 diff --git a/chrome/app/google_chrome_strings.grd b/chrome/app/google_chrome_strings.grd
-index 31621b488fd5e..7e5faa1043a00 100644
+index 7856510736c12..5fe5c0c171a7b 100644
 --- a/chrome/app/google_chrome_strings.grd
 +++ b/chrome/app/google_chrome_strings.grd
 @@ -403,18 +403,18 @@ chromium_strings.grd. -->
@@ -1669,7 +1708,7 @@ index 31621b488fd5e..7e5faa1043a00 100644
          </message>
          <message name="IDS_CONTENT_CONTEXT_SPELLING_BUBBLE_TEXT" desc="The text of a bubble that confirms users allows integrating the spelling service of Google to Chrome.">
 diff --git a/chrome/app/os_settings_strings.grdp b/chrome/app/os_settings_strings.grdp
-index e07ba61384077..2521827288050 100644
+index fdfa6c998973c..69e58a8c22e81 100644
 --- a/chrome/app/os_settings_strings.grdp
 +++ b/chrome/app/os_settings_strings.grdp
 @@ -66,16 +66,16 @@
@@ -1735,10 +1774,10 @@ index e07ba61384077..2521827288050 100644
    </message>
    <message name="IDS_SETTINGS_ABOUT_PAGE_DEFERRED_UPDATE_DESCRIPTION" desc="Text of the deferred update description.">
 diff --git a/chrome/app/settings_chromium_strings.grdp b/chrome/app/settings_chromium_strings.grdp
-index a74fa295c547a..e3a713e05e69e 100644
+index bbbf89d7d731a..84aaa7b5a3883 100644
 --- a/chrome/app/settings_chromium_strings.grdp
 +++ b/chrome/app/settings_chromium_strings.grdp
-@@ -1,315 +1,315 @@
+@@ -1,318 +1,318 @@
  <?xml version="1.0" encoding="utf-8"?>
 -<!-- Settings-specific Chromium strings (included from chromium_strings.grd). -->
 +<!-- Settings-specific Dichromate strings (included from chromium_strings.grd). -->
@@ -2111,9 +2150,13 @@ index a74fa295c547a..e3a713e05e69e 100644
    </message>
  
    <!-- Performance Page -->
-   <message name="IDS_SETTINGS_PERFORMANCE_HIGH_EFFICIENCY_MODE_SETTING_DESCRIPTION" desc="Description for the high efficiency mode setting">
--    When on, Chromium reclaims memory from tabs you aren't actively using. This frees up your computer's resources for other tasks and keeps Chromium speedy. Inactive tabs appear empty and automatically reload when you click them. <ph name="BEGIN_LINK">&lt;a id="highEfficiencyLearnMore" target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph> or <ph name="BEGIN_LINK_2">&lt;a id="highEfficiencySendFeedback" href="#"&gt;</ph>send feedback<ph name="END_LINK_2">&lt;/a&gt;</ph>
-+    When on, Dichromate reclaims memory from tabs you aren't actively using. This frees up your computer's resources for other tasks and keeps Dichromate speedy. Inactive tabs appear empty and automatically reload when you click them. <ph name="BEGIN_LINK">&lt;a id="highEfficiencyLearnMore" target="_blank" href="$1"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph> or <ph name="BEGIN_LINK_2">&lt;a id="highEfficiencySendFeedback" href="#"&gt;</ph>send feedback<ph name="END_LINK_2">&lt;/a&gt;</ph>
+   <message name="IDS_SETTINGS_PERFORMANCE_HIGH_EFFICIENCY_MODE_SETTING_DESCRIPTION" desc="Description for the memory saver mode setting">
+-    When on, Chromium frees up memory from inactive tabs. This gives active tabs and other apps more computer resources and keeps Chromium fast. Your inactive tabs automatically become active again when you go back to them. <ph name="BEGIN_LINK">&lt;a id="highEfficiencyLearnMore" target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
++    When on, Dichromate frees up memory from inactive tabs. This gives active tabs and other apps more computer resources and keeps Dichromate fast. Your inactive tabs automatically become active again when you go back to them. <ph name="BEGIN_LINK">&lt;a id="highEfficiencyLearnMore" target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
+   </message>
+   <message name="IDS_SETTINGS_PERFORMANCE_BATTERY_SAVER_MODE_SETTING_DESCRIPTION" desc="Description for the energy saver mode setting">
+-    When on, Chromium conserves battery power by limiting background activity and visual effects, such as smooth scrolling and video frame rates. <ph name="BEGIN_LINK">&lt;a id="batterySaverLearnMore" target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
++    When on, Dichromate conserves battery power by limiting background activity and visual effects, such as smooth scrolling and video frame rates. <ph name="BEGIN_LINK">&lt;a id="batterySaverLearnMore" target="_blank" href="$1" aria-label="$2"&gt;</ph>Learn more<ph name="END_LINK">&lt;/a&gt;</ph>
    </message>
  
    <!-- Languages Page -->
@@ -2155,10 +2198,10 @@ index a74fa295c547a..e3a713e05e69e 100644
    </if>
  </grit-part>
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index 3a64f9614cbdd..57802c8313b0e 100644
+index 0c8261f7a0e32..c9929e343b5e5 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
-@@ -227,7 +227,7 @@
+@@ -232,7 +232,7 @@
      Settings
    </message>
    <message name="IDS_SETTINGS_ALT_PAGE_TITLE" desc="The settings page title for the about page.">
@@ -2167,16 +2210,16 @@ index 3a64f9614cbdd..57802c8313b0e 100644
    </message>
    <message name="IDS_SETTINGS_SUBPAGE_BUTTON" desc="Accessibility description for a button navigating the user from a settings page to one of the settings subpages.">
      Subpage button
-@@ -940,7 +940,7 @@
-     <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_SEARCH" desc="The label on a field that a user can use to search within a list of passkeys. For consistency, the word 'passkey' is in the glossery with translations already suggested.">
-       Search passkeys
+@@ -970,7 +970,7 @@
+     <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_DELETE_CONFIRMATION_DESCRIPTION" desc="The body of a dialog that asks the user to confirm the deletion of a passkey. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
+       Are you sure you want to delete this passkey?
      </message>
--    <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_TITLE" desc="The title of a dialog shown when Chromium fails to delete a passkey. For consistency, the word 'passkey' is in the glossery with translations already suggested.">
-+    <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_TITLE" desc="The title of a dialog shown when Dichromate fails to delete a passkey. For consistency, the word 'passkey' is in the glossery with translations already suggested.">
+-    <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_TITLE" desc="The title of a dialog shown when Chromium fails to delete a passkey. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
++    <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_TITLE" desc="The title of a dialog shown when Dichromate fails to delete a passkey. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
        Can't delete passkey
      </message>
-     <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_BODY" desc="The body of a dialog that explains that we cannot delete certain passkeys on Windows which are involved when the user signs into the Windows computer itself. For consistency, the word 'passkey' is in the glossery with translations already suggested.">
-@@ -1946,7 +1946,7 @@
+     <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_BODY" desc="The body of a dialog that explains that we cannot delete certain passkeys on Windows which are involved when the user signs into the Windows computer itself. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
+@@ -1972,7 +1972,7 @@
      Passwords
    </message>
    <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_FEATURE_UNAVAILABLE" desc="Explains that the password check feature is not available in this version of the browser.">
@@ -2199,7 +2242,7 @@ index b778eaad65d4a..1e06f004034af 100644
    </message>
    <message name="IDS_SETTINGS_ENABLE_LOGGING_PREF_DESC" desc="The description of the checkbox to enable/disable crash and user metrics logging">
 diff --git a/chrome/app/theme/chromium/BRANDING b/chrome/app/theme/chromium/BRANDING
-index f8363d5b294fe..735480d8b42db 100644
+index f8363d5b294fe..1fd6b757718f6 100644
 --- a/chrome/app/theme/chromium/BRANDING
 +++ b/chrome/app/theme/chromium/BRANDING
 @@ -1,10 +1,10 @@
@@ -2211,6 +2254,8 @@ index f8363d5b294fe..735480d8b42db 100644
 -PRODUCT_INSTALLER_SHORTNAME=Chromium Installer
 -COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Chromium Authors. All rights reserved.
 -MAC_BUNDLE_ID=org.chromium.Chromium
+-MAC_CREATOR_CODE=Cr24
+-MAC_TEAM_ID=
 +COMPANY_FULLNAME=The Dichromate Authors
 +COMPANY_SHORTNAME=The Dichromate Authors
 +PRODUCT_FULLNAME=Dichromate
@@ -2219,13 +2264,13 @@ index f8363d5b294fe..735480d8b42db 100644
 +PRODUCT_INSTALLER_SHORTNAME=Dichromate Installer
 +COPYRIGHT=Copyright @LASTCHANGE_YEAR@ The Dichromate Authors. All rights reserved.
 +MAC_BUNDLE_ID=org.chromium.Dichromate
- MAC_CREATOR_CODE=Cr24
- MAC_TEAM_ID=
++MAC_CREATOR_CODE=Cr24
++MAC_TEAM_ID=
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index 091af74e935f9..d14cc7b1dd1e0 100644
+index d1d2c9dca616d..d57f37e996d5e 100644
 --- a/chrome/common/url_constants.cc
 +++ b/chrome/common/url_constants.cc
-@@ -12,53 +12,53 @@
+@@ -12,56 +12,56 @@
  namespace chrome {
  
  const char kAccessCodeCastLearnMoreURL[] =
@@ -2246,6 +2291,10 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  
  const char kAppNotificationsBrowserSettingsURL[] =
      "chrome://settings/content/notifications";
+ 
+ const char kBatterySaverModeLearnMoreUrl[] =
+-    "https://support.google.com/chrome/?p=chrome_battery_saver";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kBluetoothAdapterOffHelpURL[] =
 -    "https://support.google.com/chrome?p=bluetooth";
@@ -2293,7 +2342,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  const char kChromeHelpViaMenuURL[] =
-@@ -66,20 +66,20 @@ const char kChromeHelpViaMenuURL[] =
+@@ -69,20 +69,20 @@ const char kChromeHelpViaMenuURL[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
  #else
@@ -2318,7 +2367,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -103,241 +103,241 @@ const char kChromeSearchScheme[] = "chrome-search";
+@@ -106,241 +106,241 @@ const char kChromeSearchScheme[] = "chrome-search";
  const char kChromeUIUntrustedNewTabPageUrl[] =
      "chrome-untrusted://new-tab-page/";
  
@@ -2409,7 +2458,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
 +const char kGooglePhotosURL[] = "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kHighEfficiencyModeLearnMoreUrl[] =
--    "https://support.google.com/chrome/?p=chrome_performance_snooze";
+-    "https://support.google.com/chrome/?p=chrome_memory_saver";
 +    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kLearnMoreReportingURL[] =
@@ -2630,7 +2679,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  
  const char kArcPrivacyPolicyURLPath[] = "arc/privacy_policy";
  
-@@ -346,10 +346,10 @@ const char kArcTermsURLPath[] = "arc/terms";
+@@ -349,10 +349,10 @@ const char kArcTermsURLPath[] = "arc/terms";
  // TODO(crbug.com/1010321): Remove 'm100' prefix from link once Bluetooth Revamp
  // has shipped.
  const char kBluetoothPairingLearnMoreUrl[] =
@@ -2643,7 +2692,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  
  const char kChromeOSAssetHost[] = "chromeos-asset";
  const char kChromeOSAssetPath[] = "/usr/share/chromeos-assets/";
-@@ -364,16 +364,16 @@ const char kChromeOSGestureEducationHelpURL[] =
+@@ -367,16 +367,16 @@ const char kChromeOSGestureEducationHelpURL[] =
      "chrome://help-app/help/sub/3399710/id/9739838";
  
  const char kChromePaletteHelpURL[] =
@@ -2664,7 +2713,7 @@ index 091af74e935f9..d14cc7b1dd1e0 100644
  
  const char kEchoLearnMoreURL[] =
      "chrome://help-app/help/sub/3399709/id/2703646";
-@@ -382,125 +382,125 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
+@@ -385,125 +385,125 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
  
  const char kArcPrivacyPolicyPathFormat[] = "arc_tos/%s/privacy_policy.pdf";
  
@@ -2876,7 +2925,7 @@ index 38740b5481878..57e84449b1588 100644
              L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup GUID.
          .legacy_command_execute_clsid =
 diff --git a/components/autofill_payments_strings.grdp b/components/autofill_payments_strings.grdp
-index b8b6b5cb34382..86f8c76a21566 100644
+index 5a66d2a68bdc1..840c80eb8bf5c 100644
 --- a/components/autofill_payments_strings.grdp
 +++ b/components/autofill_payments_strings.grdp
 @@ -378,7 +378,7 @@
@@ -3047,7 +3096,7 @@ index 299c9f9e1bb7c..0c291dc61df6b 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/components/management_strings.grdp b/components/management_strings.grdp
-index 0cc6afd1fefb5..45029285a1aa8 100644
+index 7ede6785360a7..78ae385cc11e8 100644
 --- a/components/management_strings.grdp
 +++ b/components/management_strings.grdp
 @@ -68,11 +68,11 @@
@@ -3118,10 +3167,10 @@ index 6c8a867f85409..d004c6d1acc71 100644
        </if>
        <message name="IDS_REVAMPED_INCOGNITO_NTP_OTR_THIRD_PARTY_COOKIE" desc="Label for the Block 3rd-party cookie checkbox on the Cookies category." formatter_data="android_java">
 diff --git a/components/omnibox_pedal_ui_strings.grdp b/components/omnibox_pedal_ui_strings.grdp
-index def7632eccfa9..acf93cda67f83 100644
+index f1280f4f9c00c..f4a5113d09b29 100644
 --- a/components/omnibox_pedal_ui_strings.grdp
 +++ b/components/omnibox_pedal_ui_strings.grdp
-@@ -10,7 +10,7 @@
+@@ -11,7 +11,7 @@
      Clear your browsing history, cookies, cache, and more in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CLEAR_BROWSING_DATA_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CLEAR_BROWSING_DATA.">
@@ -3130,7 +3179,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CLEAR_BROWSING_DATA" desc="Announcement when pedal action button is focused, CLEAR_BROWSING_DATA">
      Clear browsing data button, press Enter to clear your browsing history, cookies, cache, and more in Chrome settings
-@@ -23,7 +23,7 @@
+@@ -24,7 +24,7 @@
      View and manage your passwords in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_PASSWORDS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_PASSWORDS.">
@@ -3139,7 +3188,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_PASSWORDS" desc="Announcement when pedal action button is focused, MANAGE_PASSWORDS">
      Manage passwords button, press Enter to view and manage your passwords in Chrome settings
-@@ -36,7 +36,7 @@
+@@ -37,7 +37,7 @@
      Manage your payments and credit card info in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_UPDATE_CREDIT_CARD_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to UPDATE_CREDIT_CARD.">
@@ -3148,7 +3197,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_UPDATE_CREDIT_CARD" desc="Announcement when pedal action button is focused, UPDATE_CREDIT_CARD">
      Manage payment methods button, press Enter to manage your payments and credit card info in Chrome settings
-@@ -49,7 +49,7 @@
+@@ -50,7 +50,7 @@
      Open a new Incognito window to browse privately
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_LAUNCH_INCOGNITO_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to LAUNCH_INCOGNITO.">
@@ -3157,7 +3206,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_LAUNCH_INCOGNITO" desc="Announcement when pedal action button is focused, LAUNCH_INCOGNITO">
      Open Incognito Window button, press Enter to open a new Incognito window to browse privately
-@@ -62,7 +62,7 @@
+@@ -63,7 +63,7 @@
      Translate this page with Google Translate
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_TRANSLATE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to TRANSLATE.">
@@ -3166,7 +3215,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_TRANSLATE" desc="Announcement when pedal action button is focused, TRANSLATE">
      Translate page button, press Enter to translate this page with Google Translate
-@@ -75,7 +75,7 @@
+@@ -76,7 +76,7 @@
      Update Chrome from your Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_UPDATE_CHROME_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to UPDATE_CHROME.">
@@ -3175,7 +3224,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_UPDATE_CHROME" desc="Announcement when pedal action button is focused, UPDATE_CHROME">
      Update Chrome button, press Enter to update Chrome from your Chrome settings
-@@ -88,7 +88,7 @@
+@@ -89,7 +89,7 @@
      Run a safety check in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_RUN_CHROME_SAFETY_CHECK_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to RUN_CHROME_SAFETY_CHECK.">
@@ -3184,7 +3233,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_RUN_CHROME_SAFETY_CHECK" desc="Announcement when pedal action button is focused, RUN_CHROME_SAFETY_CHECK">
      Run Chrome safety check button, press Enter to run a safety check in Chrome settings
-@@ -101,7 +101,7 @@
+@@ -102,7 +102,7 @@
      Manage your Safe Browsing and more in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SECURITY_SETTINGS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_SECURITY_SETTINGS.">
@@ -3193,7 +3242,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SECURITY_SETTINGS" desc="Announcement when pedal action button is focused, MANAGE_SECURITY_SETTINGS">
      Manage security settings button, press Enter to manage your Safe Browsing and more in Chrome settings
-@@ -114,7 +114,7 @@
+@@ -115,7 +115,7 @@
      Manage your cookie preferences in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_COOKIES_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_COOKIES.">
@@ -3202,7 +3251,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_COOKIES" desc="Announcement when pedal action button is focused, MANAGE_COOKIES">
      Manage cookies button, press Enter to manage your cookie preferences in Chrome settings
-@@ -127,7 +127,7 @@
+@@ -128,7 +128,7 @@
      Add and manage addresses in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_ADDRESSES_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_ADDRESSES.">
@@ -3211,7 +3260,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_ADDRESSES" desc="Announcement when pedal action button is focused, MANAGE_ADDRESSES">
      Manage addresses button, press Enter to add and manage addresses in Chrome settings
-@@ -140,7 +140,7 @@
+@@ -141,7 +141,7 @@
      Manage what info you sync in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SYNC_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_SYNC.">
@@ -3220,7 +3269,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SYNC" desc="Announcement when pedal action button is focused, MANAGE_SYNC">
      Manage sync button, press Enter to manage what info you sync in Chrome settings
-@@ -153,7 +153,7 @@
+@@ -154,7 +154,7 @@
      Manage permissions and data stored across sites in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SITE_SETTINGS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_SITE_SETTINGS.">
@@ -3229,7 +3278,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_SITE_SETTINGS" desc="Announcement when pedal action button is focused, MANAGE_SITE_SETTINGS">
      Manage site settings button, press Enter to manage permissions and data stored across sites in Chrome settings
-@@ -166,7 +166,7 @@
+@@ -167,7 +167,7 @@
      Create a new Google Doc quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_DOC_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_DOC.">
@@ -3238,7 +3287,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_DOC" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_DOC">
      Create doc button, press Enter to create a new Google Doc quickly
-@@ -179,7 +179,7 @@
+@@ -180,7 +180,7 @@
      Create a new Google Sheet quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SHEET_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_SHEET.">
@@ -3247,7 +3296,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SHEET" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_SHEET">
      Create sheet button, press Enter to create a new Google Sheet quickly
-@@ -192,7 +192,7 @@
+@@ -193,7 +193,7 @@
      Create a new Google presentation in Slides quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SLIDE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_SLIDE.">
@@ -3256,7 +3305,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SLIDE" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_SLIDE">
      Create presentation button, press Enter to create a new Google presentation in Slides quickly
-@@ -205,7 +205,7 @@
+@@ -206,7 +206,7 @@
      Create a new event in Google Calendar quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_CALENDAR_EVENT_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_CALENDAR_EVENT.">
@@ -3265,7 +3314,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_CALENDAR_EVENT" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_CALENDAR_EVENT">
      Create event button, press Enter to create a new event in Google Calendar quickly
-@@ -218,7 +218,7 @@
+@@ -219,7 +219,7 @@
      Create a new site in Google Sites quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SITE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_SITE.">
@@ -3274,7 +3323,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_SITE" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_SITE">
      Create site button, press Enter to create a new site in Google Sites quickly
-@@ -231,7 +231,7 @@
+@@ -232,7 +232,7 @@
      Create a new note in Google Keep quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_KEEP_NOTE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_KEEP_NOTE.">
@@ -3283,7 +3332,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_KEEP_NOTE" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_KEEP_NOTE">
      Create note button, press Enter to create a new note in Google Keep quickly
-@@ -244,7 +244,7 @@
+@@ -245,7 +245,7 @@
      Create a new form in Google Forms quickly
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_FORM_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CREATE_GOOGLE_FORM.">
@@ -3292,7 +3341,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CREATE_GOOGLE_FORM" desc="Announcement when pedal action button is focused, CREATE_GOOGLE_FORM">
      Create form button, press Enter to create a new form in Google Forms quickly
-@@ -257,7 +257,7 @@
+@@ -258,7 +258,7 @@
      Learn about Chrome features
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_SEE_CHROME_TIPS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to SEE_CHROME_TIPS.">
@@ -3301,7 +3350,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_SEE_CHROME_TIPS" desc="Announcement when pedal action button is focused, SEE_CHROME_TIPS">
      See Chrome tips button, press Enter to learn about Chrome features
-@@ -270,7 +270,7 @@
+@@ -271,7 +271,7 @@
      Manage your info, privacy, and security in your Google Account
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_GOOGLE_ACCOUNT_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_GOOGLE_ACCOUNT.">
@@ -3310,7 +3359,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_GOOGLE_ACCOUNT" desc="Announcement when pedal action button is focused, MANAGE_GOOGLE_ACCOUNT">
      Manage Google Account, press Enter to manage your info, privacy, and security in your Google Account
-@@ -283,7 +283,7 @@
+@@ -284,7 +284,7 @@
      Change your Google Account password
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CHANGE_GOOGLE_PASSWORD_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CHANGE_GOOGLE_PASSWORD.">
@@ -3319,7 +3368,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CHANGE_GOOGLE_PASSWORD" desc="Announcement when pedal action button is focused, CHANGE_GOOGLE_PASSWORD">
      Change Google password button, press Enter to change your Google Account password
-@@ -296,7 +296,7 @@
+@@ -297,7 +297,7 @@
      Close all Incognito windows that are currently open
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CLOSE_INCOGNITO_WINDOWS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CLOSE_INCOGNITO_WINDOWS.">
@@ -3328,7 +3377,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CLOSE_INCOGNITO_WINDOWS" desc="Announcement when pedal action button is focused, CLOSE_INCOGNITO_WINDOWS">
      Close Incognito windows button, press Enter to close all Incognito windows that are currently open
-@@ -309,7 +309,7 @@
+@@ -310,7 +310,7 @@
      Play the Dino Run game in Chrome
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_PLAY_CHROME_DINO_GAME_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to PLAY_CHROME_DINO_GAME.">
@@ -3337,7 +3386,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_PLAY_CHROME_DINO_GAME" desc="Announcement when pedal action button is focused, PLAY_CHROME_DINO_GAME">
      Play Chrome Dino game button, press Enter to play the Dino Run game in Chrome
-@@ -322,7 +322,7 @@
+@@ -323,7 +323,7 @@
      Find, secure, or erase your device
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_FIND_MY_PHONE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to FIND_MY_PHONE.">
@@ -3346,7 +3395,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_FIND_MY_PHONE" desc="Announcement when pedal action button is focused, FIND_MY_PHONE">
      Find my device button, press Enter to visit find your device in the Google Account
-@@ -335,7 +335,7 @@
+@@ -336,7 +336,7 @@
      Manage Google privacy settings in your Google Account
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_GOOGLE_PRIVACY_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_GOOGLE_PRIVACY.">
@@ -3355,7 +3404,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_GOOGLE_PRIVACY" desc="Announcement when pedal action button is focused, MANAGE_GOOGLE_PRIVACY">
      Manage Google Privacy settings button, press Enter to visit your Google Account privacy settings
-@@ -348,7 +348,7 @@
+@@ -349,7 +349,7 @@
      Manage your Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_SETTINGS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_CHROME_SETTINGS.">
@@ -3364,7 +3413,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_SETTINGS" desc="Announcement when pedal action button is focused, MANAGE_CHROME_SETTINGS">
      Manage Chrome settings button, press Enter to visit your Chrome settings
-@@ -361,7 +361,7 @@
+@@ -362,7 +362,7 @@
      Manage files you have downloaded in Chrome
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_DOWNLOADS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_CHROME_DOWNLOADS.">
@@ -3373,7 +3422,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_DOWNLOADS" desc="Announcement when pedal action button is focused, MANAGE_CHROME_DOWNLOADS">
      Manage downloads in Chrome button, press Enter to manage files you have downloaded in Chrome
-@@ -374,7 +374,7 @@
+@@ -375,7 +375,7 @@
      View and manage your browsing history in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_VIEW_CHROME_HISTORY_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to VIEW_CHROME_HISTORY.">
@@ -3382,7 +3431,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_VIEW_CHROME_HISTORY" desc="Announcement when pedal action button is focused, VIEW_CHROME_HISTORY">
      View your Chrome history button, press Enter to view and manage your browsing history in Chrome settings
-@@ -387,7 +387,7 @@
+@@ -388,7 +388,7 @@
      Share this tab by sharing the link, creating a QR code, casting, and more
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_SHARE_THIS_PAGE_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to SHARE_THIS_PAGE.">
@@ -3391,7 +3440,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_SHARE_THIS_PAGE" desc="Announcement when pedal action button is focused, SHARE_THIS_PAGE">
      Share this tab button, press Enter to share this tab by sharing the link, creating a QR code, casting, and more
-@@ -400,7 +400,7 @@
+@@ -401,7 +401,7 @@
      Personalize your accessibility tools in Chrome settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_ACCESSIBILITY_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_CHROME_ACCESSIBILITY.">
@@ -3400,7 +3449,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_ACCESSIBILITY" desc="Announcement when pedal action button is focused, MANAGE_CHROME_ACCESSIBILITY">
      Manage accessibility settings button, press Enter to personalize your accessibility tools in Chrome settings
-@@ -413,7 +413,7 @@
+@@ -414,7 +414,7 @@
      Customize font sizes and typefaces in Chrome
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CUSTOMIZE_CHROME_FONTS_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CUSTOMIZE_CHROME_FONTS.">
@@ -3409,7 +3458,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CUSTOMIZE_CHROME_FONTS" desc="Announcement when pedal action button is focused, CUSTOMIZE_CHROME_FONTS">
      Customize fonts in Chrome button, press Enter to customize font sizes and typefaces in Chrome
-@@ -426,7 +426,7 @@
+@@ -427,7 +427,7 @@
      Customize the look of your browser
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_THEMES_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_CHROME_THEMES.">
@@ -3418,7 +3467,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROME_THEMES" desc="Announcement when pedal action button is focused, MANAGE_CHROME_THEMES">
      Customize Chrome button, press Enter to customize the look of your browser
-@@ -439,7 +439,7 @@
+@@ -440,7 +440,7 @@
      Manage your default search engine and site search
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CUSTOMIZE_SEARCH_ENGINES_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to CUSTOMIZE_SEARCH_ENGINES.">
@@ -3427,7 +3476,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_CUSTOMIZE_SEARCH_ENGINES" desc="Announcement when pedal action button is focused, CUSTOMIZE_SEARCH_ENGINES">
      Manage search engines button, press Enter to manage your default search engine and site search
-@@ -452,7 +452,7 @@
+@@ -453,7 +453,7 @@
      Personalize your accessibility tools in ChromeOS settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROMEOS_ACCESSIBILITY_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to MANAGE_CHROMEOS_ACCESSIBILITY.">
@@ -3436,7 +3485,7 @@ index def7632eccfa9..acf93cda67f83 100644
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_MANAGE_CHROMEOS_ACCESSIBILITY" desc="Announcement when pedal action button is focused, MANAGE_CHROMEOS_ACCESSIBILITY">
      Manage accessibility settings button, Enter to personalize your accessibility tools in ChromeOS settings
-@@ -465,7 +465,7 @@
+@@ -466,7 +466,7 @@
      Set Chrome as the system's default browser in iOS settings
    </message>
    <message name="IDS_ACC_OMNIBOX_PEDAL_SET_CHROME_AS_DEFAULT_BROWSER_SUFFIX" desc="Suffix for spoken suggestion description with pedal action button, to explain keystroke used to SET_CHROME_AS_DEFAULT_BROWSER.">
@@ -3521,7 +3570,7 @@ index 42c9eba5ece23..99d76c4314f75 100644
    <message name="IDS_ACC_REMOVE_SUGGESTION_BUTTON" desc="Announcement when remove suggestion button is focused.">
      Remove Suggestion button, press Enter to remove this suggestion
 diff --git a/components/page_info_strings.grdp b/components/page_info_strings.grdp
-index 71da16add8989..f9dec5d9fa0f6 100644
+index b25ec98a141ba..9e8852509957a 100644
 --- a/components/page_info_strings.grdp
 +++ b/components/page_info_strings.grdp
 @@ -139,8 +139,8 @@

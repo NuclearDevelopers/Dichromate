@@ -1,4 +1,4 @@
-From c74f3161941dc00e01b7d0d70ef48daa6e575803 Mon Sep 17 00:00:00 2001
+From b4c5d48fe83d190ebc4c3e1f80a646344845afe4 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Network sandbox by default
@@ -8,15 +8,15 @@ Subject: [PATCH] enable Network sandbox by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 7c3be4f8eff35..14be66e3af164 100644
+index 9c8b879f9cc85..3328221ee748f 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
-@@ -14,7 +14,7 @@ namespace sandbox::policy::features {
- // Enables network service sandbox.
+@@ -15,7 +15,7 @@ namespace sandbox::policy::features {
  // (Only causes an effect when feature kNetworkService is enabled.)
- const base::Feature kNetworkServiceSandbox{"NetworkServiceSandbox",
--                                           base::FEATURE_DISABLED_BY_DEFAULT};
-+                                           base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kNetworkServiceSandbox,
+              "NetworkServiceSandbox",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // !BUILDFLAG(IS_MAC) && !BUILDFLAG(IS_FUCHSIA)
  
  #if BUILDFLAG(IS_WIN)

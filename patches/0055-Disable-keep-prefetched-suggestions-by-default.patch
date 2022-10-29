@@ -1,4 +1,4 @@
-From 5ca7a24a4961a8c2400b1529d7b3b67c48152343 Mon Sep 17 00:00:00 2001
+From 22092b454d6e494cd67849cdb1a5e971deff14f9 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Disable keep prefetched suggestions by default
@@ -8,18 +8,18 @@ Subject: [PATCH] Disable keep prefetched suggestions by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index 0bb6ad032b17d..5770dfe254b32 100644
+index 7bc431d6bcacb..98dedfff29bfa 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
-@@ -68,7 +68,7 @@ const char kNotificationsDailyLimit[] = "daily_limit";
- const char kNotificationsIgnoredLimitParam[] = "ignored_limit";
+@@ -72,7 +72,7 @@ const char kNotificationsIgnoredLimitParam[] = "ignored_limit";
  
- const base::Feature kKeepPrefetchedContentSuggestions{
--    "KeepPrefetchedContentSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
-+    "KeepPrefetchedContentSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kKeepPrefetchedContentSuggestions,
+              "KeepPrefetchedContentSuggestions",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
- const base::Feature kOptionalImagesEnabledFeature{
-     "NTPRemoteSuggestionsOptionalImages", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kOptionalImagesEnabledFeature,
+              "NTPRemoteSuggestionsOptionalImages",
 -- 
 2.35.1.windows.2
 

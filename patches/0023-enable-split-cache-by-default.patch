@@ -1,4 +1,4 @@
-From eb66c4bfcf21ab6ec6afe91cdaa7cb10ded76585 Mon Sep 17 00:00:00 2001
+From db8d83f9f3c57052fea29374aa3f1509512e67d8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Dec 2020 06:00:50 -0500
 Subject: [PATCH] enable split cache by default
@@ -8,18 +8,18 @@ Subject: [PATCH] enable split cache by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index 7dd3495397c81..3e110ab4da5a2 100644
+index aa4214e871ba1..d3c60c6b7f85b 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
-@@ -120,7 +120,7 @@ const base::Feature kSplitCacheByIncludeCredentials{
-     "SplitCacheByIncludeCredentials", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -87,7 +87,7 @@ BASE_FEATURE(kSplitCacheByNetworkIsolationKey,
  
- const base::Feature kSplitCacheByNetworkIsolationKey{
--    "SplitCacheByNetworkIsolationKey", base::FEATURE_DISABLED_BY_DEFAULT};
-+    "SplitCacheByNetworkIsolationKey", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kSplitHostCacheByNetworkIsolationKey,
+              "SplitHostCacheByNetworkIsolationKey",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  
- const base::Feature kSplitHostCacheByNetworkIsolationKey{
-     "SplitHostCacheByNetworkIsolationKey", base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kPartitionConnectionsByNetworkIsolationKey,
+              "PartitionConnectionsByNetworkIsolationKey",
 -- 
 2.35.1.windows.2
 

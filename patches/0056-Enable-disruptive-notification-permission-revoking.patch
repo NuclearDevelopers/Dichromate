@@ -1,4 +1,4 @@
-From 14a7f7bb4a366cbba1c28e795ed766780b178137 Mon Sep 17 00:00:00 2001
+From 50df0dd9bfd739da94d6cf99f8905dc1e5457a70 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable disruptive notification permission revoking
@@ -8,18 +8,18 @@ Subject: [PATCH] Enable disruptive notification permission revoking
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/common/chrome_features.cc b/chrome/common/chrome_features.cc
-index 68903a6a32359..632e7d6421e11 100644
+index f9352a3b9b94a..f2b0a6e9c3cfc 100644
 --- a/chrome/common/chrome_features.cc
 +++ b/chrome/common/chrome_features.cc
-@@ -305,7 +305,7 @@ const base::Feature kKeepForceInstalledPreinstalledApps{
+@@ -346,7 +346,7 @@ BASE_FEATURE(kKeepForceInstalledPreinstalledApps,
  // disruptive notifications.
- const base::Feature kDisruptiveNotificationPermissionRevocation{
-     "DisruptiveNotificationPermissionRevocation",
--    base::FEATURE_DISABLED_BY_DEFAULT};
-+    base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kDisruptiveNotificationPermissionRevocation,
+              "DisruptiveNotificationPermissionRevocation",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  
  // Enable DNS over HTTPS (DoH).
- const base::Feature kDnsOverHttps {
+ BASE_FEATURE(kDnsOverHttps,
 -- 
 2.35.1.windows.2
 

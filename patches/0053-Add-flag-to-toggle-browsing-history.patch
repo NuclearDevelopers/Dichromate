@@ -1,4 +1,4 @@
-From d61e4773d2050bf0146f6a95793caae4a976a8f9 Mon Sep 17 00:00:00 2001
+From a78cc309694ad789a9174d2445908e4c956d1ff0 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 9 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Add flag to toggle browsing history
@@ -18,10 +18,10 @@ TODO:
  8 files changed, 35 insertions(+)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index c9dabfc9b5ff3..e98d33ca6b638 100644
+index 362ce83f6ff6c..358bff34fb24d 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6292,6 +6292,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6478,6 +6478,10 @@ const FeatureEntry kFeatureEntries[] = {
           network::switches::kUnsafelyTreatInsecureOriginAsSecure,
           "")},
  
@@ -33,10 +33,10 @@ index c9dabfc9b5ff3..e98d33ca6b638 100644
       flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 9ce00ef7b49dd..cfa0b8e6f19c4 100644
+index 25b786897ed42..9c8fe4989d5ff 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1366,6 +1366,13 @@
+@@ -1397,6 +1397,13 @@
      // customize switches.
      "expiry_milestone": -1
    },
@@ -51,7 +51,7 @@ index 9ce00ef7b49dd..cfa0b8e6f19c4 100644
      "name": "disable-camera-frame-rotation-at-source",
      "owners": [ "chromeos-camera-eng@google.com" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index 097f79c300882..1137015f460a0 100644
+index b6caf14c77c64..7f08c43067b77 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -27,6 +27,7 @@
@@ -63,10 +63,10 @@ index 097f79c300882..1137015f460a0 100644
    "disable-javascript-harmony-shipping",
    "disable-reading-from-canvas",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index 82ec14f746e83..7b2ce046dd693 100644
+index ce9363b64830f..a3c6e3c494935 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -1146,6 +1146,11 @@ const char kDownloadRangeName[] = "Enable download range support";
+@@ -1172,6 +1172,11 @@ const char kDownloadRangeName[] = "Enable download range support";
  const char kDownloadRangeDescription[] =
      "Enables arbitrary download range request support.";
  
@@ -79,7 +79,7 @@ index 82ec14f746e83..7b2ce046dd693 100644
  const char kEnableNetworkLoggingToFileDescription[] =
      "Enables network logging to a file named netlog.json in the user data "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index bce7492b2249c..d7d0f1473d8ff 100644
+index 0a1ce45601f29..99a55e2ee6328 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
 @@ -49,6 +49,9 @@ extern const char kAcceleratedVideoDecodeDescription[];
@@ -128,12 +128,12 @@ index 47805db323012..cb4390cff98aa 100644
        profile->GetPrefs()->GetBoolean(prefs::kSavingBrowserHistoryDisabled)) {
      return nullptr;
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index c2ccffe463f5d..799493772b48f 100644
+index 74dab28cdf16f..f91ce8caeda02 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -264,6 +264,10 @@ const base::Feature kDigitalGoodsApi {
+@@ -286,6 +286,10 @@ BASE_FEATURE(kDigitalGoodsApi,
  #endif
- };
+ );
  
 +// Disables saving browser history.
 +const base::Feature kDisableBrowsingHistory {"DisableBrowsingHistory", 
@@ -143,17 +143,17 @@ index c2ccffe463f5d..799493772b48f 100644
  const base::Feature kDisableReadingFromCanvas {"DisableReadingFromCanvas",
                                                  base::FEATURE_DISABLED_BY_DEFAULT};
 diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
-index b95f617727820..85074bdb8e800 100644
+index 70600eeebf3a0..8f2a80b2547d8 100644
 --- a/content/public/common/content_features.h
 +++ b/content/public/common/content_features.h
-@@ -68,6 +68,7 @@ CONTENT_EXPORT extern const base::Feature kDesktopCaptureLacrosV2;
- CONTENT_EXPORT extern const base::Feature kDesktopPWAsTabStrip;
- CONTENT_EXPORT extern const base::Feature kDevicePosture;
- CONTENT_EXPORT extern const base::Feature kDigitalGoodsApi;
-+CONTENT_EXPORT extern const base::Feature kDisableBrowsingHistory;
- CONTENT_EXPORT extern const base::Feature kDisableReadingFromCanvas;
- CONTENT_EXPORT extern const base::Feature kDocumentPolicy;
- CONTENT_EXPORT extern const base::Feature kDocumentPolicyNegotiation;
+@@ -65,6 +65,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDevicePosture);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDigitalGoodsApi);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicy);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);
++CONTENT_EXPORT BASE_DECLARE_FEATURE(KDisableBrowsingHistory);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDisableReadingFromCanvas);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyEstablishGpuChannel);
+ CONTENT_EXPORT BASE_DECLARE_FEATURE(kEarlyHintsPreloadForNavigation);
 -- 
 2.35.1.windows.2
 

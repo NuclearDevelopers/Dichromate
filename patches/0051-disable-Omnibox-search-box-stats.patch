@@ -1,4 +1,4 @@
-From da9c22bcb2f4d70fd157e53f6d41889643c16929 Mon Sep 17 00:00:00 2001
+From 999c99a92fda9a183adafc2bfff1b792c1a2b1fc Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Omnibox search box stats
@@ -9,15 +9,15 @@ Disables sending excess query information in the ?aqs= parameter when performing
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/omnibox/common/omnibox_features.cc b/components/omnibox/common/omnibox_features.cc
-index 2e5954323e2bd..9dc960a04e8b6 100644
+index f27d8ba641271..936c9b172ac9a 100644
 --- a/components/omnibox/common/omnibox_features.cc
 +++ b/components/omnibox/common/omnibox_features.cc
-@@ -389,7 +389,7 @@ const char kDefaultTypedNavigationsToHttpsTimeoutParam[] = "timeout";
- // If enabled, Omnibox reports the Assisted Query Stats in the aqs= param in the
+@@ -457,7 +457,7 @@ const char kDefaultTypedNavigationsToHttpsTimeoutParam[] = "timeout";
  // Search Results Page URL.
- const base::Feature kReportAssistedQueryStats{"OmniboxReportAssistedQueryStats",
--                                              base::FEATURE_ENABLED_BY_DEFAULT};
-+                                              base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kReportAssistedQueryStats,
+              "OmniboxReportAssistedQueryStats",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
  // If enabled, Omnibox reports the Searchbox Stats in the gs_lcrp= param in the
  // Search Results Page URL.

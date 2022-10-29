@@ -1,4 +1,4 @@
-From 6c2d05f46a2d18d91c0e84aae472272b7a3e1925 Mon Sep 17 00:00:00 2001
+From 5ad2845ad04e9cb40a3a65ef739e3bc9ba01dc72 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG
@@ -8,15 +8,15 @@ Subject: [PATCH] Disable browser dynamic code with ACG
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/browser/browser_main_loop.cc b/content/browser/browser_main_loop.cc
-index c90af891eaf14..d1751b9641045 100644
+index 28a7e2b1c3e94..3c97f058fc514 100644
 --- a/content/browser/browser_main_loop.cc
 +++ b/content/browser/browser_main_loop.cc
-@@ -392,7 +392,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
- // sandbox/win/src/security_level.h. Only available on Windows 10 RS1 (1607,
+@@ -394,7 +394,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
  // Build 14393) onwards.
- const base::Feature kBrowserDynamicCodeDisabled{
--    "BrowserDynamicCodeDisabled", base::FEATURE_DISABLED_BY_DEFAULT};
-+    "BrowserDynamicCodeDisabled", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kBrowserDynamicCodeDisabled,
+              "BrowserDynamicCodeDisabled",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  #endif  // BUILDFLAG(IS_WIN)
  
  class OopDataDecoder : public data_decoder::ServiceProvider {

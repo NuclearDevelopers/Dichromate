@@ -1,3 +1,4 @@
 /.gclient*
 /src
 /.cipd
+/manifests

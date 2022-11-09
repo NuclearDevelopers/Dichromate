@@ -1,4 +1,4 @@
-From 599790e8856e49ef3c6ac95f129ca7e9bcb2a659 Mon Sep 17 00:00:00 2001
+From 227162ac64ac736164e82a3a0965391debe8d544 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default

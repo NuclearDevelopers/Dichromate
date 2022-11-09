@@ -1,4 +1,4 @@
-From 6c2d05f46a2d18d91c0e84aae472272b7a3e1925 Mon Sep 17 00:00:00 2001
+From 5293789437af573833494cf501dd32917d41d1d8 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG

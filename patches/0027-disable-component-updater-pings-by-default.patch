@@ -1,4 +1,4 @@
-From 819816f97d3cdb238c3f191ae55c59af9ab27f7e Mon Sep 17 00:00:00 2001
+From ddc8dcc99e574f2e65f00e43237cf4f281208db0 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 27 Nov 2020 03:56:29 -0500
 Subject: [PATCH] disable component updater pings by default

@@ -1,4 +1,4 @@
-From a97460fc52157e1d2b9f1183a1ba107129db1ba1 Mon Sep 17 00:00:00 2001
+From 317a3358e5ff85af190f653e3b96d279867d6a48 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag

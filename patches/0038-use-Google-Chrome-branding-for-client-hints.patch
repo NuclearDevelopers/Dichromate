@@ -1,4 +1,4 @@
-From 82634430ff1f63201c24279ff885e1bcb0b48fb5 Mon Sep 17 00:00:00 2001
+From d79fdcfa72e321adcd813998e93a2079902cd97e Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sun, 10 Oct 2021 21:59:16 -0400
 Subject: [PATCH] use Google Chrome branding for client hints

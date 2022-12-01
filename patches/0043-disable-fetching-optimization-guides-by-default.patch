@@ -1,25 +1,36 @@
-From bd6bb0d90d72f1d60649140aa52b5da0168a6c5c Mon Sep 17 00:00:00 2001
+From c30e8b2b394b4f8bfb5dbad78485b30bda3ad25c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
 Subject: [PATCH] disable fetching optimization guides by default
 
 ---
- .../optimization_guide/core/optimization_guide_features.cc      | 2 +-
- 1 file changed, 1 insertion(+), 1 deletion(-)
+ .../optimization_guide/core/optimization_guide_features.cc  | 6 +++---
+ 1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/components/optimization_guide/core/optimization_guide_features.cc b/components/optimization_guide/core/optimization_guide_features.cc
-index 4cd5ad7c8a738..69170820bb5d9 100644
+index f53f10c674c92..091ce3d42fcb5 100644
 --- a/components/optimization_guide/core/optimization_guide_features.cc
 +++ b/components/optimization_guide/core/optimization_guide_features.cc
-@@ -82,7 +82,7 @@ const base::Feature kOptimizationHints{"OptimizationHints",
+@@ -79,16 +79,16 @@ bool IsSupportedLocaleForFeature(const std::string locale,
+ // hints for what optimizations can be applied on a page load.
+ BASE_FEATURE(kOptimizationHints,
+              "OptimizationHints",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables fetching from a remote Optimization Guide Service.
- const base::Feature kRemoteOptimizationGuideFetching{
--    "OptimizationHintsFetching", base::FEATURE_ENABLED_BY_DEFAULT};
-+    "OptimizationHintsFetching", base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kRemoteOptimizationGuideFetching,
+              "OptimizationHintsFetching",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
- const base::Feature kRemoteOptimizationGuideFetchingAnonymousDataConsent{
-     "OptimizationHintsFetchingAnonymousDataConsent",
+ BASE_FEATURE(kRemoteOptimizationGuideFetchingAnonymousDataConsent,
+              "OptimizationHintsFetchingAnonymousDataConsent",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
+ 
+ // Enables performance info in the context menu and fetching from a remote
+ // Optimization Guide Service.
 -- 
 2.35.1.windows.2
 

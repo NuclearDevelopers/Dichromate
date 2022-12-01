@@ -1,4 +1,4 @@
-From 47121349cdbe09efb968c006263f8e26b97533b6 Mon Sep 17 00:00:00 2001
+From affe3ab46aa5957000bc4222f94ccf05c91c24ea Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 20 Oct 2017 21:20:50 -0400
 Subject: [PATCH] mark non-secure origins as dangerous

@@ -1,4 +1,4 @@
-From 9e9b929d65d07b1727107bd90619cbc7f730a8fe Mon Sep 17 00:00:00 2001
+From 4c2e4ba227f0adcdcd483c3962306c3030c7ebff Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable third party module blocking by default
@@ -8,15 +8,15 @@ Subject: [PATCH] Enable third party module blocking by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/common/chrome_features.cc b/chrome/common/chrome_features.cc
-index 632e7d6421e11..4452ad9578df0 100644
+index f2b0a6e9c3cfc..9586f2b2dfbf2 100644
 --- a/chrome/common/chrome_features.cc
 +++ b/chrome/common/chrome_features.cc
-@@ -934,7 +934,7 @@ const base::Feature kSupportTool{"SupportTool",
- // Note: Due to a limitation in the implementation of this feature, it is
+@@ -1099,7 +1099,7 @@ BASE_FEATURE(kSupportToolScreenshot,
  // required to start the browser two times to fully enable or disable it.
- const base::Feature kThirdPartyModulesBlocking{
--    "ThirdPartyModulesBlocking", base::FEATURE_DISABLED_BY_DEFAULT};
-+    "ThirdPartyModulesBlocking", base::FEATURE_ENABLED_BY_DEFAULT};
+ BASE_FEATURE(kThirdPartyModulesBlocking,
+              "ThirdPartyModulesBlocking",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
  #endif
  
  // Disable downloads of unsafe file types over insecure transports if initiated

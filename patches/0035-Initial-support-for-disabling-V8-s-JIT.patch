@@ -1,4 +1,4 @@
-From c883d04d2bed2555e565ce51ef59b220455833bd Mon Sep 17 00:00:00 2001
+From b7bf3c9f4e43a705c6b9a6bdc7e9dde3d00a37df Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
 Subject: [PATCH] Initial support for disabling V8's JIT
@@ -17,10 +17,10 @@ compiler; it is default disabled.
  8 files changed, 29 insertions(+)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index a076714a6d86a..551171c1ab813 100644
+index eec961dafc738..57dd1532bc10f 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -169,6 +169,7 @@
+@@ -170,6 +170,7 @@
  #include "device/gamepad/public/cpp/gamepad_features.h"
  #include "device/vr/buildflags/buildflags.h"
  #include "extensions/buildflags/buildflags.h"
@@ -28,7 +28,7 @@ index a076714a6d86a..551171c1ab813 100644
  #include "gpu/config/gpu_finch_features.h"
  #include "gpu/config/gpu_switches.h"
  #include "media/audio/audio_features.h"
-@@ -6295,6 +6296,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6507,6 +6508,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
  
@@ -40,10 +40,10 @@ index a076714a6d86a..551171c1ab813 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index c74df3b8e7cab..c5aca080dc21e 100644
+index 2a6cebcb60db7..059b928c2c797 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1427,6 +1427,13 @@
+@@ -1463,6 +1463,13 @@
      // issues.
      "expiry_milestone": -1
    },
@@ -58,7 +58,7 @@ index c74df3b8e7cab..c5aca080dc21e 100644
      "name": "disable-virtual-keyboard",
      "owners": [ "dvallet", "essential-inputs-team@google.com" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index cc56694088243..a562cdb3e94ac 100644
+index 08f4ed45e31e1..508a15cd4976c 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -30,6 +30,7 @@
@@ -70,10 +70,10 @@ index cc56694088243..a562cdb3e94ac 100644
    "disable-webrtc-hw-encoding",
    "disallow-doc-written-script-loads",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index 66d1a897618f4..d0d7df066e339 100644
+index 2904162779c98..fc7e16c962535 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -2983,6 +2983,11 @@ const char kVCBackgroundBlurName[] = "Enable vc background blur";
+@@ -3120,6 +3120,11 @@ const char kVCBackgroundBlurName[] = "Enable vc background blur";
  const char kVCBackgroundBlurDescription[] =
      "Enables background blur feature for video conferencing on chromebooks.";
  
@@ -86,10 +86,10 @@ index 66d1a897618f4..d0d7df066e339 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index 1d94a553737be..53dcd453e1e27 100644
+index 3aad4196b7895..46c05e0a71373 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1670,6 +1670,9 @@ extern const char kUseSearchClickForRightClickDescription[];
+@@ -1751,6 +1751,9 @@ extern const char kUseSearchClickForRightClickDescription[];
  extern const char kVCBackgroundBlurName[];
  extern const char kVCBackgroundBlurDescription[];
  
@@ -100,12 +100,12 @@ index 1d94a553737be..53dcd453e1e27 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/gin/gin_features.cc b/gin/gin_features.cc
-index a69c5c1fac1c8..2e5e1d00d22d3 100644
+index ff75eb5a21491..1781fc5d7e7f1 100644
 --- a/gin/gin_features.cc
 +++ b/gin/gin_features.cc
-@@ -65,6 +65,9 @@ const base::Feature kV8ReduceConcurrentMarkingTasks{
- const base::Feature kV8NoReclaimUnmodifiedWrappers{
-     "V8NoReclaimUnmodifiedWrappers", base::FEATURE_DISABLED_BY_DEFAULT};
+@@ -77,6 +77,9 @@ BASE_FEATURE(kV8NoReclaimUnmodifiedWrappers,
+              "V8NoReclaimUnmodifiedWrappers",
+              base::FEATURE_DISABLED_BY_DEFAULT);
  
 +// Disables the V8 Just-in-Time compiler
 +const base::Feature kV8NoJIT{"V8NoJIT", base::FEATURE_DISABLED_BY_DEFAULT};
@@ -114,22 +114,22 @@ index a69c5c1fac1c8..2e5e1d00d22d3 100644
  // This is enabled in V8 by default. To test the performance impact, we are
  // going to disable this feature in a finch experiment.
 diff --git a/gin/gin_features.h b/gin/gin_features.h
-index 2c27529a8358d..d93cf62bead7d 100644
+index 08dc651df959a..45c6376dafd9d 100644
 --- a/gin/gin_features.h
 +++ b/gin/gin_features.h
-@@ -27,6 +27,7 @@ GIN_EXPORT extern const base::Feature kV8FlushBaselineCode;
- GIN_EXPORT extern const base::Feature kV8FlushEmbeddedBlobICache;
- GIN_EXPORT extern const base::Feature kV8LazyFeedbackAllocation;
- GIN_EXPORT extern const base::Feature kV8NoReclaimUnmodifiedWrappers;
-+GIN_EXPORT extern const base::Feature kV8NoJIT;
- GIN_EXPORT extern const base::Feature kV8CodeMemoryWriteProtection;
- GIN_EXPORT extern const base::Feature kV8OffThreadFinalization;
- GIN_EXPORT extern const base::Feature kV8OptimizeJavascript;
+@@ -28,6 +28,7 @@ GIN_EXPORT BASE_DECLARE_FEATURE(kV8FlushEmbeddedBlobICache);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8LazyFeedbackAllocation);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8Maglev);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8NoReclaimUnmodifiedWrappers);
++GIN_EXPORT BASE_DECLARE_FEATURE(kV8NoJIT);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8CodeMemoryWriteProtection);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8OffThreadFinalization);
+ GIN_EXPORT BASE_DECLARE_FEATURE(kV8OptimizeJavascript);
 diff --git a/gin/v8_initializer.cc b/gin/v8_initializer.cc
-index 7c9a98103a934..cdc7e8851ab30 100644
+index ec89b58257d26..dbbb536647e4d 100644
 --- a/gin/v8_initializer.cc
 +++ b/gin/v8_initializer.cc
-@@ -304,6 +304,10 @@ void SetFlags(IsolateHolder::ScriptMode mode,
+@@ -303,6 +303,10 @@ void SetFlags(IsolateHolder::ScriptMode mode,
    SetV8FlagsIfOverridden(features::kV8SlowHistograms, "--slow-histograms",
                           "--no-slow-histograms");
  

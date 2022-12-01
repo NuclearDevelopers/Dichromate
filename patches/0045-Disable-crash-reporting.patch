@@ -1,4 +1,4 @@
-From 3b3c834f26aefe5249aae5d0e434f6443da42228 Mon Sep 17 00:00:00 2001
+From a2cd1913a7f086dfec93e31f55e6a2ff416520c1 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable crash reporting
@@ -8,15 +8,15 @@ Subject: [PATCH] Disable crash reporting
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index cf8d693c282d8..f09d8a8ba7fc6 100644
+index c93b51a2dbb32..82747439ecb39 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -221,7 +221,7 @@ const base::Feature kCooperativeScheduling{"CooperativeScheduling",
- // Enables crash reporting via Reporting API.
+@@ -238,7 +238,7 @@ BASE_FEATURE(kCooperativeScheduling,
  // https://www.w3.org/TR/reporting/#crash-report
- const base::Feature kCrashReporting{"CrashReporting",
--                                    base::FEATURE_ENABLED_BY_DEFAULT};
-+                                    base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kCrashReporting,
+              "CrashReporting",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
  // Enables support for the `Critical-CH` response header.
  // https://github.com/WICG/client-hints-infrastructure/blob/master/reliability.md#critical-ch

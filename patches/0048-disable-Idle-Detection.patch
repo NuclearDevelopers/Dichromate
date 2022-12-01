@@ -1,4 +1,4 @@
-From fde9ff3713620ae75f9ac758a7029b2ce7756758 Mon Sep 17 00:00:00 2001
+From c88824dd36ba1adacc205c73b851968fe932fc59 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Idle Detection
@@ -8,18 +8,18 @@ Subject: [PATCH] disable Idle Detection
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index f09d8a8ba7fc6..7688dcbe1ed53 100644
+index 82747439ecb39..4e4acfc995c34 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -440,7 +440,7 @@ const base::Feature kIdentityInCanMakePaymentEventFeature{
+@@ -475,7 +475,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
+ // This is intended as a kill switch for the Idle Detection feature. To enable
  // this feature, the experimental web platform features flag should be set,
  // or the site should obtain an Origin Trial token.
- const base::Feature kIdleDetection{"IdleDetection",
--                                   base::FEATURE_ENABLED_BY_DEFAULT};
-+                                   base::FEATURE_DISABLED_BY_DEFAULT};
+-BASE_FEATURE(kIdleDetection, "IdleDetection", base::FEATURE_ENABLED_BY_DEFAULT);
++BASE_FEATURE(kIdleDetection, "IdleDetection", base::FEATURE_DISABLED_BY_DEFAULT);
  
  // A feature flag for the memory-backed code cache.
- const base::Feature kInMemoryCodeCache{"InMemoryCodeCache",
+ BASE_FEATURE(kInMemoryCodeCache,
 -- 
 2.35.1.windows.2
 

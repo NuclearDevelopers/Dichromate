@@ -1,4 +1,4 @@
-From 8c65f4a41c58d52a5b99c239c0fb474faaa565ae Mon Sep 17 00:00:00 2001
+From f0822c4d2cf7c9bfcf9467faf13393c49899266d Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH] disable article suggestions feature by default
@@ -24,18 +24,18 @@ index e239b42b31ef3..5a5e881272c22 100644
  }
  
 diff --git a/components/ntp_snippets/features.cc b/components/ntp_snippets/features.cc
-index 1e6ea4a6198de..0bb6ad032b17d 100644
+index 7d146cd35fd4c..7bc431d6bcacb 100644
 --- a/components/ntp_snippets/features.cc
 +++ b/components/ntp_snippets/features.cc
-@@ -38,7 +38,7 @@ const base::Feature* const kAllFeatures[] = {
-     &kOptionalImagesEnabledFeature};
+@@ -40,7 +40,7 @@ const base::Feature* const kAllFeatures[] = {
  
- const base::Feature kArticleSuggestionsFeature{
--    "NTPArticleSuggestions", base::FEATURE_ENABLED_BY_DEFAULT};
-+    "NTPArticleSuggestions", base::FEATURE_DISABLED_BY_DEFAULT};
+ BASE_FEATURE(kArticleSuggestionsFeature,
+              "NTPArticleSuggestions",
+-             base::FEATURE_ENABLED_BY_DEFAULT);
++             base::FEATURE_DISABLED_BY_DEFAULT);
  
- const base::Feature kRemoteSuggestionsEmulateM58FetchingSchedule{
-     "RemoteSuggestionsEmulateM58FetchingSchedule",
+ BASE_FEATURE(kRemoteSuggestionsEmulateM58FetchingSchedule,
+              "RemoteSuggestionsEmulateM58FetchingSchedule",
 -- 
 2.35.1.windows.2
 

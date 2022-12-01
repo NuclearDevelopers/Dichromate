@@ -1,4 +1,4 @@
-From 8285788ae2a6c109ad59b1adc2259819ba9479ad Mon Sep 17 00:00:00 2001
+From 5d13d4b1867e1a833aed4492617c811f1d30d498 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 25 Dec 2018 16:19:51 -0500
 Subject: [PATCH] disable seed-based field trials
@@ -8,16 +8,16 @@ Subject: [PATCH] disable seed-based field trials
  1 file changed, 2 insertions(+)
 
 diff --git a/components/variations/service/variations_field_trial_creator.cc b/components/variations/service/variations_field_trial_creator.cc
-index 3cf22dcda7953..01837b126c3ff 100644
+index e8216600da48c..a083c3b70abea 100644
 --- a/components/variations/service/variations_field_trial_creator.cc
 +++ b/components/variations/service/variations_field_trial_creator.cc
-@@ -308,8 +308,10 @@ bool VariationsFieldTrialCreator::SetUpFieldTrials(
+@@ -313,8 +313,10 @@ bool VariationsFieldTrialCreator::SetUpFieldTrials(
  
    bool used_seed = false;
    if (!used_testing_config) {
 +#if defined(FIELDTRIAL_SEED_ENABLED)
-     used_seed = CreateTrialsFromSeed(low_entropy_provider.get(),
-                                      feature_list.get(), safe_seed_manager);
+     used_seed = CreateTrialsFromSeed(*entropy_providers, feature_list.get(),
+                                      safe_seed_manager);
 +#endif
    }
  

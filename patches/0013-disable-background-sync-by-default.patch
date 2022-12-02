@@ -1,4 +1,4 @@
-From a1a77e8386f589891eb771468614514a3b543f46 Mon Sep 17 00:00:00 2001
+From 02d330e81049be3aa6fdc38f25e2cc94f90e4eaf Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 21:57:26 -0400
 Subject: [PATCH] disable background sync by default
@@ -8,17 +8,17 @@ Subject: [PATCH] disable background sync by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/content_settings/core/browser/content_settings_registry.cc b/components/content_settings/core/browser/content_settings_registry.cc
-index 4cf7a27962f04..9f0a32b937a7d 100644
+index 4e69a808a42d5..63000a037dd70 100644
 --- a/components/content_settings/core/browser/content_settings_registry.cc
 +++ b/components/content_settings/core/browser/content_settings_registry.cc
-@@ -308,7 +308,7 @@ void ContentSettingsRegistry::Init() {
+@@ -259,7 +259,7 @@ void ContentSettingsRegistry::Init() {
             ContentSettingsInfo::EXCEPTIONS_ON_SECURE_ORIGINS_ONLY);
  
    Register(ContentSettingsType::BACKGROUND_SYNC, "background-sync",
 -           CONTENT_SETTING_ALLOW, WebsiteSettingsInfo::UNSYNCABLE,
 +           CONTENT_SETTING_BLOCK, WebsiteSettingsInfo::UNSYNCABLE,
-            AllowlistedSchemes(),
-            ValidSettings(CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK),
+            /*allowlisted_schemes=*/{},
+            /*valid_settings=*/{CONTENT_SETTING_ALLOW, CONTENT_SETTING_BLOCK},
             WebsiteSettingsInfo::TOP_ORIGIN_ONLY_SCOPE,
 -- 
 2.35.1.windows.2

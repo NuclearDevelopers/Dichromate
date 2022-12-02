@@ -1,4 +1,4 @@
-From 09046ad2852504c3d825db5583d484dd9a8852ce Mon Sep 17 00:00:00 2001
+From 444652f7e276c02f7fa47eab8e4bad86210c6018 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable extension points
@@ -8,10 +8,10 @@ Subject: [PATCH] disable extension points
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 3328221ee748f..9c7b61b6ffe0d 100644
+index fe07b4f68ec1a..acf173dfd1ac0 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
-@@ -29,7 +29,7 @@ BASE_FEATURE(kWinSboxDisableKtmComponent,
+@@ -23,7 +23,7 @@ BASE_FEATURE(kNetworkServiceSandbox,
  // sandbox::MITIGATION_EXTENSION_POINT_DISABLE.
  BASE_FEATURE(kWinSboxDisableExtensionPoints,
               "WinSboxDisableExtensionPoint",

@@ -1,4 +1,4 @@
-From ef6acc098e9b4dd28143c7a113463df741bc5d5f Mon Sep 17 00:00:00 2001
+From 60fd66941f70d31002615ecccff60848951d345a Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Thu, 21 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Enable strict origin isolation by default
@@ -15,10 +15,10 @@ for more detail.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index a99e48ae635e6..99217eaa4077e 100644
+index e628850450eab..5c081a5960183 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -1113,7 +1113,7 @@ BASE_FEATURE(kStopVideoCaptureOnScreenLock,
+@@ -1117,7 +1117,7 @@ BASE_FEATURE(kStopVideoCaptureOnScreenLock,
  // eTLD+1.
  BASE_FEATURE(kStrictOriginIsolation,
               "StrictOriginIsolation",

@@ -1,4 +1,4 @@
-From 7877ff1cdaccd9874f0020f59f8989fc7139a9cc Mon Sep 17 00:00:00 2001
+From f2c3c4ba363c1c9acb46f7ec89245104d7ac0704 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Network sandbox by default
@@ -8,7 +8,7 @@ Subject: [PATCH] enable Network sandbox by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 9c8b879f9cc85..3328221ee748f 100644
+index 5bb61d6714443..fe07b4f68ec1a 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
 @@ -15,7 +15,7 @@ namespace sandbox::policy::features {

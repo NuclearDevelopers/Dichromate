@@ -1,4 +1,4 @@
-From f0822c4d2cf7c9bfcf9467faf13393c49899266d Mon Sep 17 00:00:00 2001
+From a474c3f0d878a6e295403dc30b231d3b5ced7c9b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 8 Mar 2018 22:43:12 -0500
 Subject: [PATCH] disable article suggestions feature by default

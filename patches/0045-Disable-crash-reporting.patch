@@ -1,4 +1,4 @@
-From a2cd1913a7f086dfec93e31f55e6a2ff416520c1 Mon Sep 17 00:00:00 2001
+From d3a2a4f3fa819e862588e338d98cdc89e8af6ce9 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable crash reporting
@@ -8,10 +8,10 @@ Subject: [PATCH] Disable crash reporting
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index c93b51a2dbb32..82747439ecb39 100644
+index 5c081a5960183..3f7f69d125812 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -238,7 +238,7 @@ BASE_FEATURE(kCooperativeScheduling,
+@@ -239,7 +239,7 @@ BASE_FEATURE(kCooperativeScheduling,
  // https://www.w3.org/TR/reporting/#crash-report
  BASE_FEATURE(kCrashReporting,
               "CrashReporting",

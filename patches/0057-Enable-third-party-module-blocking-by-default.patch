@@ -1,4 +1,4 @@
-From 4c2e4ba227f0adcdcd483c3962306c3030c7ebff Mon Sep 17 00:00:00 2001
+From 305611c057865060fba7a9b55cd97414035f68ad Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable third party module blocking by default
@@ -8,10 +8,10 @@ Subject: [PATCH] Enable third party module blocking by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/common/chrome_features.cc b/chrome/common/chrome_features.cc
-index f2b0a6e9c3cfc..9586f2b2dfbf2 100644
+index 966b8e1d99867..f4f436b65e0f4 100644
 --- a/chrome/common/chrome_features.cc
 +++ b/chrome/common/chrome_features.cc
-@@ -1099,7 +1099,7 @@ BASE_FEATURE(kSupportToolScreenshot,
+@@ -1105,7 +1105,7 @@ BASE_FEATURE(kSupportToolScreenshot,
  // required to start the browser two times to fully enable or disable it.
  BASE_FEATURE(kThirdPartyModulesBlocking,
               "ThirdPartyModulesBlocking",

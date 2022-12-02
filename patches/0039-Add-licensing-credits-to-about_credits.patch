@@ -1,4 +1,4 @@
-From 73d2734ca5da017db1f61d9c4acc6a924955c330 Mon Sep 17 00:00:00 2001
+From dae146ccdfd98b75d033a452daca88c48a323ec3 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
@@ -8,8 +8,8 @@ Subject: [PATCH] Add licensing credits to about_credits
  LICENSE.dichromate | 31 +++++++++++++++++++++++++++++++
  LICENSE.hexavalent | 32 ++++++++++++++++++++++++++++++++
  LICENSE.vanadium   | 19 +++++++++++++++++++
- tools/licenses.py  | 29 +++++++++++++++++++++++++++++
- 5 files changed, 140 insertions(+)
+ tools/licenses.py  | 28 ++++++++++++++++++++++++++++
+ 5 files changed, 139 insertions(+)
  create mode 100644 LICENSE.debian
  create mode 100644 LICENSE.dichromate
  create mode 100644 LICENSE.hexavalent
@@ -151,10 +151,10 @@ index 0000000000000..43d63fe135ffc
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
 diff --git a/tools/licenses.py b/tools/licenses.py
-index c4ffc17fb5b37..6e406ff8b6d86 100755
+index de49fae95801e..b691196e2b562 100755
 --- a/tools/licenses.py
 +++ b/tools/licenses.py
-@@ -140,6 +140,11 @@ ADDITIONAL_PATHS = (
+@@ -147,6 +147,11 @@ ADDITIONAL_PATHS = (
      # Fake directories to include the strongtalk and fdlibm licenses.
      os.path.join('v8', 'strongtalk'),
      os.path.join('v8', 'fdlibm'),
@@ -166,9 +166,9 @@ index c4ffc17fb5b37..6e406ff8b6d86 100755
  )
  
  
-@@ -347,6 +352,30 @@ SPECIAL_CASES = {
-         "License File":
-         "/third_party/swiftshader/third_party/SPIRV-Headers/LICENSE",
+@@ -384,6 +389,29 @@ SPECIAL_CASES = {
+         "License": "Apache 2.0",
+         "License File": "/third_party/selenium-atoms/LICENSE.closure",
      },
 +    os.path.join('debian'): {
 +      "Name": "Debian",
@@ -191,9 +191,8 @@ index c4ffc17fb5b37..6e406ff8b6d86 100755
 +    os.path.join('dichromate'): {
 +      "Name": "Dichromate",
 +      "URL": "https://github.com/Dichromate-Browser/Dichromate",
-+      "License": "MIT",
++      "License": "BSD",
 +      "License File": "/LICENSE.dichromate",
-+    },
  }
  
  # Special value for 'License File' field used to indicate that the license file

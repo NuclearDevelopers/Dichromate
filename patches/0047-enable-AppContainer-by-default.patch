@@ -1,4 +1,4 @@
-From 897456d128c1d3d8b7c8831641d9875e3b9228e9 Mon Sep 17 00:00:00 2001
+From 5b051e1e2338501a9512bbcdd9765095c40f3429 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default
@@ -8,10 +8,10 @@ Subject: [PATCH] enable AppContainer by default
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 4dfbf9307ced7..9c8b879f9cc85 100644
+index 23b194d6c090b..5bb61d6714443 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
-@@ -34,7 +34,7 @@ BASE_FEATURE(kWinSboxDisableExtensionPoints,
+@@ -28,7 +28,7 @@ BASE_FEATURE(kWinSboxDisableExtensionPoints,
  // Enables GPU AppContainer sandbox on Windows.
  BASE_FEATURE(kGpuAppContainer,
               "GpuAppContainer",
@@ -20,7 +20,7 @@ index 4dfbf9307ced7..9c8b879f9cc85 100644
  
  // Enables GPU Low Privilege AppContainer when combined with kGpuAppContainer.
  BASE_FEATURE(kGpuLPAC,
-@@ -44,7 +44,7 @@ BASE_FEATURE(kGpuLPAC,
+@@ -38,7 +38,7 @@ BASE_FEATURE(kGpuLPAC,
  // Enables Renderer AppContainer
  BASE_FEATURE(kRendererAppContainer,
               "RendererAppContainer",

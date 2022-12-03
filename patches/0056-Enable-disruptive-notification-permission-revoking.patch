@@ -1,4 +1,4 @@
-From a66334068e76086bc6fbe86819781e10c784547f Mon Sep 17 00:00:00 2001
+From e5ed23e1728b0c1c600b697ff8921bd034364ab1 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable disruptive notification permission revoking

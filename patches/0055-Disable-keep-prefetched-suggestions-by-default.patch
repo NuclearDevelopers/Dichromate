@@ -1,4 +1,4 @@
-From 2584f71d20b52e0911cd3d474a1b8e364d528e4f Mon Sep 17 00:00:00 2001
+From 9dd52c43b81d287f6ee2a6b240a63c26a9267580 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Disable keep prefetched suggestions by default

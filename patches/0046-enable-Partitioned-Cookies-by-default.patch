@@ -1,4 +1,4 @@
-From aca4ef9a81c3d2d2c1dd6f093565f4aacef8e177 Mon Sep 17 00:00:00 2001
+From b44384647edbbf848811f71a88934f34b5d50edf Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Partitioned Cookies by default

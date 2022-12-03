@@ -1,4 +1,4 @@
-From d8a79c6c74e6294ad9350f110fb518f6afabd0f9 Mon Sep 17 00:00:00 2001
+From 0c382c62083deadb60d0ccb1fe098e0849aabc10 Mon Sep 17 00:00:00 2001
 From: JTL <jtl@teamclassified.ca>
 Date: Sat, 21 Dec 2019 04:04:24 +0000
 Subject: [PATCH] disable trivial subdomain hiding

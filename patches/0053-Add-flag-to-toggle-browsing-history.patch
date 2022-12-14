@@ -1,4 +1,4 @@
-From 273755577a403fe73b4c61ce850480dbfc024716 Mon Sep 17 00:00:00 2001
+From 0bcd854abc66819c1f3c2b2ee604745c5430c2f3 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 9 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Add flag to toggle browsing history
@@ -33,7 +33,7 @@ index ffe6316020980..b514c584d3a0e 100644
       flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index f1c44b3fabc65..dc4660002902e 100644
+index 0ab239795d1f3..ffb1ca3ba9359 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
 @@ -1397,6 +1397,13 @@

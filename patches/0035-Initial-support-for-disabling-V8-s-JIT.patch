@@ -1,4 +1,4 @@
-From 6db0a4ec4b6286217d7b255de25dc415658ee3a3 Mon Sep 17 00:00:00 2001
+From 845fe301e226b042bae1a89676705c20e0004b21 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
 Subject: [PATCH] Initial support for disabling V8's JIT
@@ -40,7 +40,7 @@ index eec961dafc738..57dd1532bc10f 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 2a6cebcb60db7..059b928c2c797 100644
+index 1d2cc1f8abe47..214da0d327b81 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
 @@ -1463,6 +1463,13 @@

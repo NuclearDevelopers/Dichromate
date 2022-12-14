@@ -1,4 +1,4 @@
-From 4987aa577051abd4176f66393982a5c04224f9b4 Mon Sep 17 00:00:00 2001
+From ec856133f26c7afb9f83399f4d191a6547a666bd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sun, 16 Jun 2019 16:01:31 -0400
 Subject: [PATCH] disable third party cookies by default

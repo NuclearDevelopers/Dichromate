@@ -1,0 +1,25 @@
+From 7d7d9c58ea8ebf68bcfb40c7c726fb6729b5bbaa Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
+Date: Sun, 8 Jan 2023 00:00:00 +0000
+Subject: [PATCH] Enable ThirdPartyStoragePartitioning by default
+
+---
+ net/base/features.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/net/base/features.cc b/net/base/features.cc
+index 10e0f6848fa11..4ff629cfa6f78 100644
+--- a/net/base/features.cc
++++ b/net/base/features.cc
+@@ -354,7 +354,7 @@ const base::FeatureParam<bool> kStorageAccessAPIAutoDenyOutsideFPS{
+ // by the top level site to reduce fingerprinting.
+ BASE_FEATURE(kThirdPartyStoragePartitioning,
+              "ThirdPartyStoragePartitioning",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+ BASE_FEATURE(kAlpsParsing, "AlpsParsing", base::FEATURE_ENABLED_BY_DEFAULT);
+ 
+-- 
+2.35.1.windows.2
+

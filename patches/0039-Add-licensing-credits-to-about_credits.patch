@@ -1,4 +1,4 @@
-From dae146ccdfd98b75d033a452daca88c48a323ec3 Mon Sep 17 00:00:00 2001
+From 6fc3cdb793bcd0c432b70360905df72744e5e933 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
@@ -8,8 +8,8 @@ Subject: [PATCH] Add licensing credits to about_credits
  LICENSE.dichromate | 31 +++++++++++++++++++++++++++++++
  LICENSE.hexavalent | 32 ++++++++++++++++++++++++++++++++
  LICENSE.vanadium   | 19 +++++++++++++++++++
- tools/licenses.py  | 28 ++++++++++++++++++++++++++++
- 5 files changed, 139 insertions(+)
+ tools/licenses.py  | 29 +++++++++++++++++++++++++++++
+ 5 files changed, 140 insertions(+)
  create mode 100644 LICENSE.debian
  create mode 100644 LICENSE.dichromate
  create mode 100644 LICENSE.hexavalent
@@ -151,7 +151,7 @@ index 0000000000000..43d63fe135ffc
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
 diff --git a/tools/licenses.py b/tools/licenses.py
-index de49fae95801e..b691196e2b562 100755
+index de49fae95801e..b146aa40b5f2b 100755
 --- a/tools/licenses.py
 +++ b/tools/licenses.py
 @@ -147,6 +147,11 @@ ADDITIONAL_PATHS = (
@@ -166,7 +166,7 @@ index de49fae95801e..b691196e2b562 100755
  )
  
  
-@@ -384,6 +389,29 @@ SPECIAL_CASES = {
+@@ -384,6 +389,30 @@ SPECIAL_CASES = {
          "License": "Apache 2.0",
          "License File": "/third_party/selenium-atoms/LICENSE.closure",
      },
@@ -193,6 +193,7 @@ index de49fae95801e..b691196e2b562 100755
 +      "URL": "https://github.com/Dichromate-Browser/Dichromate",
 +      "License": "BSD",
 +      "License File": "/LICENSE.dichromate",
++    },
  }
  
  # Special value for 'License File' field used to indicate that the license file

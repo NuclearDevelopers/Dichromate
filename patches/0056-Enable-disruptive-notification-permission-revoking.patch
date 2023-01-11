@@ -1,4 +1,4 @@
-From 355c569d0d6ec04674c7738a28f4efcfcd2fea47 Mon Sep 17 00:00:00 2001
+From 83155a09ff455ebba73ff5dbd47cb4f2edc116af Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable disruptive notification permission revoking
@@ -8,10 +8,10 @@ Subject: [PATCH] Enable disruptive notification permission revoking
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/common/chrome_features.cc b/chrome/common/chrome_features.cc
-index f9352a3b9b94a..f2b0a6e9c3cfc 100644
+index 000eee24411b9..966b8e1d99867 100644
 --- a/chrome/common/chrome_features.cc
 +++ b/chrome/common/chrome_features.cc
-@@ -346,7 +346,7 @@ BASE_FEATURE(kKeepForceInstalledPreinstalledApps,
+@@ -352,7 +352,7 @@ BASE_FEATURE(kKeepForceInstalledPreinstalledApps,
  // disruptive notifications.
  BASE_FEATURE(kDisruptiveNotificationPermissionRevocation,
               "DisruptiveNotificationPermissionRevocation",

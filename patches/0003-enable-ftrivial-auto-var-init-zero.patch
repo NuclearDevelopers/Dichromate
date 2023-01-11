@@ -1,4 +1,4 @@
-From cf466cf6620ea1b7eade389d0226fd2981df9b36 Mon Sep 17 00:00:00 2001
+From 7dba73745dde95a72eb88aa4369f16d99e6d0290 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 8 Apr 2020 20:48:17 -0400
 Subject: [PATCH] enable -ftrivial-auto-var-init=zero
@@ -8,10 +8,10 @@ Subject: [PATCH] enable -ftrivial-auto-var-init=zero
  1 file changed, 5 insertions(+), 1 deletion(-)
 
 diff --git a/build/config/compiler/BUILD.gn b/build/config/compiler/BUILD.gn
-index 23854e4084c9c..63b73cc3f8f67 100644
+index 52c11a3e45e9a..0ca71f43aab4e 100644
 --- a/build/config/compiler/BUILD.gn
 +++ b/build/config/compiler/BUILD.gn
-@@ -134,7 +134,7 @@ declare_args() {
+@@ -135,7 +135,7 @@ declare_args() {
    #
    # TODO(crbug.com/1131993): Enabling this when 'is_android' is true breaks
    # content_shell_test_apk on both ARM and x86.
@@ -20,7 +20,7 @@ index 23854e4084c9c..63b73cc3f8f67 100644
  
    # This argument is to control whether enabling text section splitting in the
    # final binary. When enabled, the separated text sections with prefix
-@@ -334,6 +334,10 @@ config("compiler") {
+@@ -339,6 +339,10 @@ config("compiler") {
        cflags += [ "-fwrapv" ]
      }
  

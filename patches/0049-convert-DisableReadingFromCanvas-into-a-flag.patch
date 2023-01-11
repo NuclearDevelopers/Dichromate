@@ -1,4 +1,4 @@
-From 544e49669beb97e95efe1d19ab9ed9d39b3b21bc Mon Sep 17 00:00:00 2001
+From f6ff638bbcbab867fe6b5247e5954d6cedd00c0d Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -17,10 +17,10 @@ Subject: [PATCH] convert DisableReadingFromCanvas into a flag
  10 files changed, 24 insertions(+), 5 deletions(-)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index 57dd1532bc10f..ffe6316020980 100644
+index 8d08a7f7f07ec..232f28fa1a9c0 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6512,6 +6512,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6646,6 +6646,10 @@ const FeatureEntry kFeatureEntries[] = {
       flag_descriptions::kV8NoJITDescription, kOsAll,
       FEATURE_VALUE_TYPE(features::kV8NoJIT)},
  
@@ -32,10 +32,10 @@ index 57dd1532bc10f..ffe6316020980 100644
      {"enable-accessibility-live-caption",
       flag_descriptions::kEnableAccessibilityLiveCaptionName,
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 214da0d327b81..0ab239795d1f3 100644
+index d26273c3a9bee..0e7b1c440b08e 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1456,6 +1456,11 @@
+@@ -1460,6 +1460,11 @@
      "owners": [ "croissant-eng" ],
      "expiry_milestone": 100
    },
@@ -48,7 +48,7 @@ index 214da0d327b81..0ab239795d1f3 100644
      "name": "disable-threaded-scrolling",
      "owners": [ "bokan", "input-dev" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index 508a15cd4976c..b6caf14c77c64 100644
+index 01247ce29dbe6..2c5af1ff980c7 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -29,6 +29,7 @@
@@ -60,10 +60,10 @@ index 508a15cd4976c..b6caf14c77c64 100644
    "disable-v8-jit",
    "disable-webrtc-hw-decoding",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index fc7e16c962535..bae9a6b030885 100644
+index 8700a15be2810..0545eb8e6cd1d 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -3125,6 +3125,11 @@ const char kV8NoJITDescription[] =
+@@ -3083,6 +3083,11 @@ const char kV8NoJITDescription[] =
      "Security mode that disables all runtime allocation of "
      "executable memory";
  
@@ -76,10 +76,10 @@ index fc7e16c962535..bae9a6b030885 100644
  const char kV8VmFutureDescription[] =
      "This enables upcoming and experimental V8 VM features. "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index 46c05e0a71373..cc1c4d0cd984d 100644
+index a947935d7c716..69ff019154700 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -1754,6 +1754,9 @@ extern const char kVCBackgroundBlurDescription[];
+@@ -1745,6 +1745,9 @@ extern const char kVCPortraitRelightingDescription[];
  extern const char kV8NoJITName[];
  extern const char kV8NoJITDescription[];
  
@@ -90,10 +90,10 @@ index 46c05e0a71373..cc1c4d0cd984d 100644
  extern const char kV8VmFutureDescription[];
  
 diff --git a/content/browser/web_contents/web_contents_impl.cc b/content/browser/web_contents/web_contents_impl.cc
-index 15b6cdaf470c1..fca44161539b3 100644
+index 7ca95e7ec0f37..fecffb58df9d2 100644
 --- a/content/browser/web_contents/web_contents_impl.cc
 +++ b/content/browser/web_contents/web_contents_impl.cc
-@@ -2810,7 +2810,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
+@@ -2833,7 +2833,7 @@ const blink::web_pref::WebPreferences WebContentsImpl::ComputeWebPreferences() {
    prefs.stylus_handwriting_enabled = stylus_handwriting_enabled_;
  
    prefs.disable_reading_from_canvas =
@@ -103,10 +103,10 @@ index 15b6cdaf470c1..fca44161539b3 100644
    prefs.strict_mixed_content_checking =
        command_line.HasSwitch(switches::kEnableStrictMixedContentChecking);
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index 4e4acfc995c34..19f4c747af47b 100644
+index 5f9c0d19a4f74..112e24c8f2eac 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -286,6 +286,10 @@ BASE_FEATURE(kDigitalGoodsApi,
+@@ -295,6 +295,10 @@ BASE_FEATURE(kDigitalGoodsApi,
  #endif
  );
  
@@ -118,10 +118,10 @@ index 4e4acfc995c34..19f4c747af47b 100644
  BASE_FEATURE(kDocumentPolicy,
               "DocumentPolicy",
 diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
-index 5318ed30b8cf2..70600eeebf3a0 100644
+index 3be44d76d584c..8be7fd05723e4 100644
 --- a/content/public/common/content_features.h
 +++ b/content/public/common/content_features.h
-@@ -65,6 +65,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDevicePosture);
+@@ -64,6 +64,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDevicePosture);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDigitalGoodsApi);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicy);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);

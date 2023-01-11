@@ -1,4 +1,4 @@
-From 0c8e3e57eb272a66e81c771a773ed2f98b97f3a8 Mon Sep 17 00:00:00 2001
+From de03345589681ee60a2b5d3cb6dc0e635d3bb04a Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Idle Detection
@@ -8,10 +8,10 @@ Subject: [PATCH] disable Idle Detection
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index 82747439ecb39..4e4acfc995c34 100644
+index aae9af13a0f69..5f9c0d19a4f74 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -475,7 +475,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
+@@ -496,7 +496,7 @@ BASE_FEATURE(kGreaseUACH, "GreaseUACH", base::FEATURE_ENABLED_BY_DEFAULT);
  // This is intended as a kill switch for the Idle Detection feature. To enable
  // this feature, the experimental web platform features flag should be set,
  // or the site should obtain an Origin Trial token.

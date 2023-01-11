@@ -1,4 +1,4 @@
-From 2703388eb75c3581d4c2d50900355c87ec3a7129 Mon Sep 17 00:00:00 2001
+From 0c3d5e512de375b0f29b8389f04db06225abd40a Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
@@ -151,10 +151,10 @@ index 0000000000000..43d63fe135ffc
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
 diff --git a/tools/licenses.py b/tools/licenses.py
-index c4ffc17fb5b37..6e406ff8b6d86 100755
+index de49fae95801e..b146aa40b5f2b 100755
 --- a/tools/licenses.py
 +++ b/tools/licenses.py
-@@ -140,6 +140,11 @@ ADDITIONAL_PATHS = (
+@@ -147,6 +147,11 @@ ADDITIONAL_PATHS = (
      # Fake directories to include the strongtalk and fdlibm licenses.
      os.path.join('v8', 'strongtalk'),
      os.path.join('v8', 'fdlibm'),
@@ -166,9 +166,9 @@ index c4ffc17fb5b37..6e406ff8b6d86 100755
  )
  
  
-@@ -347,6 +352,30 @@ SPECIAL_CASES = {
-         "License File":
-         "/third_party/swiftshader/third_party/SPIRV-Headers/LICENSE",
+@@ -384,6 +389,30 @@ SPECIAL_CASES = {
+         "License": "Apache 2.0",
+         "License File": "/third_party/selenium-atoms/LICENSE.closure",
      },
 +    os.path.join('debian'): {
 +      "Name": "Debian",
@@ -191,7 +191,7 @@ index c4ffc17fb5b37..6e406ff8b6d86 100755
 +    os.path.join('dichromate'): {
 +      "Name": "Dichromate",
 +      "URL": "https://github.com/Dichromate-Browser/Dichromate",
-+      "License": "MIT",
++      "License": "BSD",
 +      "License File": "/LICENSE.dichromate",
 +    },
  }

@@ -1,4 +1,4 @@
-From 0bcd854abc66819c1f3c2b2ee604745c5430c2f3 Mon Sep 17 00:00:00 2001
+From 45aede094891185da54e1922eb2085e391c4ae3e Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 9 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Add flag to toggle browsing history
@@ -18,10 +18,10 @@ TODO:
  8 files changed, 35 insertions(+)
 
 diff --git a/chrome/browser/about_flags.cc b/chrome/browser/about_flags.cc
-index ffe6316020980..b514c584d3a0e 100644
+index 232f28fa1a9c0..9d13239003437 100644
 --- a/chrome/browser/about_flags.cc
 +++ b/chrome/browser/about_flags.cc
-@@ -6504,6 +6504,10 @@ const FeatureEntry kFeatureEntries[] = {
+@@ -6638,6 +6638,10 @@ const FeatureEntry kFeatureEntries[] = {
           network::switches::kUnsafelyTreatInsecureOriginAsSecure,
           "")},
  
@@ -33,10 +33,10 @@ index ffe6316020980..b514c584d3a0e 100644
       flag_descriptions::kDisableProcessReuseDescription, kOsDesktop,
       FEATURE_VALUE_TYPE(features::kDisableProcessReuse)},
 diff --git a/chrome/browser/flag-metadata.json b/chrome/browser/flag-metadata.json
-index 0ab239795d1f3..ffb1ca3ba9359 100644
+index 0e7b1c440b08e..cc1c23ae69878 100644
 --- a/chrome/browser/flag-metadata.json
 +++ b/chrome/browser/flag-metadata.json
-@@ -1397,6 +1397,13 @@
+@@ -1406,6 +1406,13 @@
      // customize switches.
      "expiry_milestone": -1
    },
@@ -51,7 +51,7 @@ index 0ab239795d1f3..ffb1ca3ba9359 100644
      "name": "disable-camera-frame-rotation-at-source",
      "owners": [ "chromeos-camera-eng@google.com" ],
 diff --git a/chrome/browser/flag-never-expire-list.json b/chrome/browser/flag-never-expire-list.json
-index b6caf14c77c64..7f08c43067b77 100644
+index 2c5af1ff980c7..f1be0b33d85ee 100644
 --- a/chrome/browser/flag-never-expire-list.json
 +++ b/chrome/browser/flag-never-expire-list.json
 @@ -27,6 +27,7 @@
@@ -63,10 +63,10 @@ index b6caf14c77c64..7f08c43067b77 100644
    "disable-javascript-harmony-shipping",
    "disable-reading-from-canvas",
 diff --git a/chrome/browser/flag_descriptions.cc b/chrome/browser/flag_descriptions.cc
-index bae9a6b030885..5d9ed74c9b20a 100644
+index 0545eb8e6cd1d..bae2d1c1f38b2 100644
 --- a/chrome/browser/flag_descriptions.cc
 +++ b/chrome/browser/flag_descriptions.cc
-@@ -1172,6 +1172,11 @@ const char kDownloadRangeName[] = "Enable download range support";
+@@ -1133,6 +1133,11 @@ const char kDownloadRangeName[] = "Enable download range support";
  const char kDownloadRangeDescription[] =
      "Enables arbitrary download range request support.";
  
@@ -79,24 +79,24 @@ index bae9a6b030885..5d9ed74c9b20a 100644
  const char kEnableNetworkLoggingToFileDescription[] =
      "Enables network logging to a file named netlog.json in the user data "
 diff --git a/chrome/browser/flag_descriptions.h b/chrome/browser/flag_descriptions.h
-index cc1c4d0cd984d..38e6a60ffe767 100644
+index 69ff019154700..7c8b755b5fe70 100644
 --- a/chrome/browser/flag_descriptions.h
 +++ b/chrome/browser/flag_descriptions.h
-@@ -49,6 +49,9 @@ extern const char kAcceleratedVideoDecodeDescription[];
- extern const char kAcceleratedVideoEncodeName[];
- extern const char kAcceleratedVideoEncodeDescription[];
+@@ -107,6 +107,9 @@ extern const char kDefaultChromeAppsMigrationDescription[];
+ extern const char kDeferredFontShapingName[];
+ extern const char kDeferredFontShapingDescription[];
  
 +extern const char kDisableBrowsingHistoryName[];
 +extern const char kDisableBrowsingHistoryDescription[];
 +
- extern const char kEnableMediaInternalsName[];
- extern const char kEnableMediaInternalsDescription[];
+ extern const char kDocumentPictureInPictureApiName[];
+ extern const char kDocumentPictureInPictureApiDescription[];
  
 diff --git a/chrome/browser/history/history_service_factory.cc b/chrome/browser/history/history_service_factory.cc
-index 47805db323012..cb4390cff98aa 100644
+index 54e05c57b10bc..e02d7cd0494ad 100644
 --- a/chrome/browser/history/history_service_factory.cc
 +++ b/chrome/browser/history/history_service_factory.cc
-@@ -16,6 +16,9 @@
+@@ -17,6 +17,9 @@
  #include "components/keyed_service/core/service_access_type.h"
  #include "components/prefs/pref_service.h"
  
@@ -106,7 +106,7 @@ index 47805db323012..cb4390cff98aa 100644
  namespace {
  
  std::unique_ptr<KeyedService> BuildHistoryService(
-@@ -37,6 +40,12 @@ std::unique_ptr<KeyedService> BuildHistoryService(
+@@ -38,6 +41,12 @@ std::unique_ptr<KeyedService> BuildHistoryService(
  history::HistoryService* HistoryServiceFactory::GetForProfile(
      Profile* profile,
      ServiceAccessType sat) {
@@ -119,7 +119,7 @@ index 47805db323012..cb4390cff98aa 100644
    // If saving history is disabled, only allow explicit access.
    if (sat != ServiceAccessType::EXPLICIT_ACCESS &&
        profile->GetPrefs()->GetBoolean(prefs::kSavingBrowserHistoryDisabled)) {
-@@ -52,6 +61,7 @@ history::HistoryService* HistoryServiceFactory::GetForProfileIfExists(
+@@ -53,6 +62,7 @@ history::HistoryService* HistoryServiceFactory::GetForProfileIfExists(
      Profile* profile,
      ServiceAccessType sat) {
    // If saving history is disabled, only allow explicit access.
@@ -128,10 +128,10 @@ index 47805db323012..cb4390cff98aa 100644
        profile->GetPrefs()->GetBoolean(prefs::kSavingBrowserHistoryDisabled)) {
      return nullptr;
 diff --git a/content/public/common/content_features.cc b/content/public/common/content_features.cc
-index 19f4c747af47b..148012040fc4f 100644
+index 112e24c8f2eac..45473b2c3f4e9 100644
 --- a/content/public/common/content_features.cc
 +++ b/content/public/common/content_features.cc
-@@ -286,6 +286,10 @@ BASE_FEATURE(kDigitalGoodsApi,
+@@ -295,6 +295,10 @@ BASE_FEATURE(kDigitalGoodsApi,
  #endif
  );
  
@@ -143,10 +143,10 @@ index 19f4c747af47b..148012040fc4f 100644
  const base::Feature kDisableReadingFromCanvas {"DisableReadingFromCanvas",
                                                  base::FEATURE_DISABLED_BY_DEFAULT};
 diff --git a/content/public/common/content_features.h b/content/public/common/content_features.h
-index 70600eeebf3a0..ce4e3655e9dff 100644
+index 8be7fd05723e4..96add8a306696 100644
 --- a/content/public/common/content_features.h
 +++ b/content/public/common/content_features.h
-@@ -65,6 +65,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDevicePosture);
+@@ -64,6 +64,7 @@ CONTENT_EXPORT BASE_DECLARE_FEATURE(kDevicePosture);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDigitalGoodsApi);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicy);
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kDocumentPolicyNegotiation);

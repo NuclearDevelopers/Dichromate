@@ -1,4 +1,4 @@
-From 939a83b24716b1f008d20e199fa02b0d4332fd9e Mon Sep 17 00:00:00 2001
+From 7735b28ce7f309971e9c60cb6a645a70aa180b42 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:29:58 -0500
 Subject: [PATCH] disable navigation error correction by default
@@ -8,7 +8,7 @@ Subject: [PATCH] disable navigation error correction by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/net/profile_network_context_service.cc b/chrome/browser/net/profile_network_context_service.cc
-index efebd1c7cfc1e..73cdcef8303fe 100644
+index eb8daa2c4d5fe..97e0b674da01a 100644
 --- a/chrome/browser/net/profile_network_context_service.cc
 +++ b/chrome/browser/net/profile_network_context_service.cc
 @@ -357,7 +357,7 @@ void ProfileNetworkContextService::UpdateAdditionalCertificates() {

@@ -1,4 +1,4 @@
-From 2a42f78611183edb03a22269f1e9731428463bdf Mon Sep 17 00:00:00 2001
+From 81ae485b9ecb6f66d9db943a4b576b1923ee8914 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Add WebRTC policy toggle to settings
@@ -18,10 +18,10 @@ This adds a user facing toggle for changing WebRTC IP handling policy.
  create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
 
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index 0c8261f7a0e32..0634b7794ad7a 100644
+index c0ecb35ed1bd0..49224a623026f 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
-@@ -2243,6 +2243,24 @@
+@@ -2255,6 +2255,24 @@
    <message name="IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION" desc="Secondary, continued explanation of HTTPS-Only Mode in Security settings">
      Upgrade navigations to HTTPS and warn you before loading sites that don't support it
    </message>
@@ -47,7 +47,7 @@ index 0c8261f7a0e32..0634b7794ad7a 100644
      Manage certificates
    </message>
 diff --git a/chrome/browser/extensions/api/settings_private/prefs_util.cc b/chrome/browser/extensions/api/settings_private/prefs_util.cc
-index b63cf0d1f06c6..c292fd1f58988 100644
+index dcc388dff3da0..0f56e37edc5a3 100644
 --- a/chrome/browser/extensions/api/settings_private/prefs_util.cc
 +++ b/chrome/browser/extensions/api/settings_private/prefs_util.cc
 @@ -315,6 +315,8 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
@@ -60,7 +60,7 @@ index b63cf0d1f06c6..c292fd1f58988 100644
    // Cookies page
    (*s_allowlist)[::content_settings::kCookiePrimarySetting] =
 diff --git a/chrome/browser/resources/settings/BUILD.gn b/chrome/browser/resources/settings/BUILD.gn
-index 8dd737bb49e3c..cedf1cc1ad3f0 100644
+index 3b79a77b102bc..071b96a4cc7f3 100644
 --- a/chrome/browser/resources/settings/BUILD.gn
 +++ b/chrome/browser/resources/settings/BUILD.gn
 @@ -197,6 +197,7 @@ build_webui("build") {
@@ -234,10 +234,10 @@ index 0000000000000..a6a48b613f85f
 +customElements.define(
 +    SettingsWebRtcPolicyMenuElement.is, SettingsWebRtcPolicyMenuElement);
 diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-index dd1e630cd9c13..d78baf8a5478f 100644
+index c7e9d096a2bf8..859b6a76df409 100644
 --- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 +++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -1565,6 +1565,12 @@ void AddPrivacyStrings(content::WebUIDataSource* html_source,
+@@ -1575,6 +1575,12 @@ void AddPrivacyStrings(content::WebUIDataSource* html_source,
       IDS_SETTINGS_ADVANCED_PROTECTION_PROGRAM_DESC},
      {"httpsOnlyModeTitle", IDS_SETTINGS_HTTPS_ONLY_MODE},
      {"httpsOnlyModeDescription", IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION},

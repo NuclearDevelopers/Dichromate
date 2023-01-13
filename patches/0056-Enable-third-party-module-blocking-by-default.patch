@@ -1,0 +1,25 @@
+From e1cf349679963ca3018dc6d349c98d908b828e3a Mon Sep 17 00:00:00 2001
+From: Douloureux <Douloureux@users.noreply.github.com>
+Date: Sat, 29 Oct 2022 00:00:00 +0000
+Subject: [PATCH] Enable third party module blocking by default
+
+---
+ chrome/common/chrome_features.cc | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/chrome/common/chrome_features.cc b/chrome/common/chrome_features.cc
+index cd38cee2baf16..59ceb345f5c7f 100644
+--- a/chrome/common/chrome_features.cc
++++ b/chrome/common/chrome_features.cc
+@@ -1098,7 +1098,7 @@ BASE_FEATURE(kSupportToolScreenshot,
+ // required to start the browser two times to fully enable or disable it.
+ BASE_FEATURE(kThirdPartyModulesBlocking,
+              "ThirdPartyModulesBlocking",
+-             base::FEATURE_DISABLED_BY_DEFAULT);
++             base::FEATURE_ENABLED_BY_DEFAULT);
+ #endif
+ 
+ // Disable downloads of unsafe file types over insecure transports if initiated
+-- 
+2.35.1.windows.2
+

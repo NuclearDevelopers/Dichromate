@@ -1,4 +1,4 @@
-From 0b1093d4add9b0ac0f9004d3c14d7027e67da9a6 Mon Sep 17 00:00:00 2001
+From e799ee6b8252c676897f15c90d63884deb74a94d Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default
@@ -8,7 +8,7 @@ Subject: [PATCH] enable AppContainer by default
  1 file changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 23b194d6c090b..5bb61d6714443 100644
+index c95f614e06d5a..010281086e2ab 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
 @@ -28,7 +28,7 @@ BASE_FEATURE(kWinSboxDisableExtensionPoints,

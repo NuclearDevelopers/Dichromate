@@ -1,4 +1,4 @@
-From 100743cb140d5f1bbc58e0a8787868693690052e Mon Sep 17 00:00:00 2001
+From bd9b172f7c900431e89c764359f1788669b9d03b Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
 Subject: [PATCH] disable fetching optimization guides by default
@@ -8,7 +8,7 @@ Subject: [PATCH] disable fetching optimization guides by default
  1 file changed, 3 insertions(+), 3 deletions(-)
 
 diff --git a/components/optimization_guide/core/optimization_guide_features.cc b/components/optimization_guide/core/optimization_guide_features.cc
-index 4f84c210efc90..d4fa030820c58 100644
+index b1d559921ede7..22f0ebaea81a8 100644
 --- a/components/optimization_guide/core/optimization_guide_features.cc
 +++ b/components/optimization_guide/core/optimization_guide_features.cc
 @@ -79,16 +79,16 @@ bool IsSupportedLocaleForFeature(const std::string locale,

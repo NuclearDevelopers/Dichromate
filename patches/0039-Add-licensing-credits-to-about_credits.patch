@@ -1,14 +1,14 @@
-From 0c3d5e512de375b0f29b8389f04db06225abd40a Mon Sep 17 00:00:00 2001
+From e7d603b8977a00b4f48daee3f1d027b62c620a0e Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
 
 ---
- LICENSE.debian     | 29 +++++++++++++++++++++++++++++
- LICENSE.dichromate | 31 +++++++++++++++++++++++++++++++
- LICENSE.hexavalent | 32 ++++++++++++++++++++++++++++++++
- LICENSE.vanadium   | 19 +++++++++++++++++++
- tools/licenses.py  | 29 +++++++++++++++++++++++++++++
+ LICENSE.debian             | 29 +++++++++++++++++++++++++++++
+ LICENSE.dichromate         | 31 +++++++++++++++++++++++++++++++
+ LICENSE.hexavalent         | 32 ++++++++++++++++++++++++++++++++
+ LICENSE.vanadium           | 19 +++++++++++++++++++
+ tools/licenses/licenses.py | 29 +++++++++++++++++++++++++++++
  5 files changed, 140 insertions(+)
  create mode 100644 LICENSE.debian
  create mode 100644 LICENSE.dichromate
@@ -150,10 +150,10 @@ index 0000000000000..43d63fe135ffc
 +LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 +OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 +THE SOFTWARE.
-diff --git a/tools/licenses.py b/tools/licenses.py
-index de49fae95801e..b146aa40b5f2b 100755
---- a/tools/licenses.py
-+++ b/tools/licenses.py
+diff --git a/tools/licenses/licenses.py b/tools/licenses/licenses.py
+index 6f2e1a7077674..9696ced5ac18c 100755
+--- a/tools/licenses/licenses.py
++++ b/tools/licenses/licenses.py
 @@ -147,6 +147,11 @@ ADDITIONAL_PATHS = (
      # Fake directories to include the strongtalk and fdlibm licenses.
      os.path.join('v8', 'strongtalk'),

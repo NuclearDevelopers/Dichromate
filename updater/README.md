@@ -1,7 +1,8 @@
 # Dichromate Updater
 
-Work in progress automatic updater for Dichromate
+Will be re-written in a different language soon<sup>TM</sup>.
 
-# Other options
-
-+ Google Omaha
+# Target Features
++ Verified downloads
++ Smaller binary size
++ Self-uninstall when no Dichromate installation is detected

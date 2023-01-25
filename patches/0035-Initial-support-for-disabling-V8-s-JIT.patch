@@ -1,4 +1,4 @@
-From ab0067b47d397367be05189a890ebe125a1753c4 Mon Sep 17 00:00:00 2001
+From a560192fb0768eb083e14418ea50493996bc13db Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
 Subject: [PATCH] Initial support for disabling V8's JIT
@@ -141,5 +141,5 @@ index 3c241d0611cfe..1600efbbd0bf1 100644
      if (int max_threads = features::kV8ConcurrentSparkplugMaxThreads.Get()) {
        SetV8FlagsFormatted("--concurrent-sparkplug-max-threads=%i", max_threads);
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

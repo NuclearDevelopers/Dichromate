@@ -1,4 +1,4 @@
-From 0b1093d4add9b0ac0f9004d3c14d7027e67da9a6 Mon Sep 17 00:00:00 2001
+From fd400b7b14e4c487b5869477147e716cd6a994a8 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable AppContainer by default
@@ -30,5 +30,5 @@ index 23b194d6c090b..5bb61d6714443 100644
  // Enables shared/fixed policy for Windows sandbox policies.
  BASE_FEATURE(kSharedSandboxPolicies,
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

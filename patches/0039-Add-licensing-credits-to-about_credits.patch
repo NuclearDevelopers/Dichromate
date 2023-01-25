@@ -1,4 +1,4 @@
-From 0c3d5e512de375b0f29b8389f04db06225abd40a Mon Sep 17 00:00:00 2001
+From c4f37083ddb068679abdce6512b025bc60cd2e81 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Add licensing credits to about_credits
@@ -198,5 +198,5 @@ index de49fae95801e..b146aa40b5f2b 100755
  
  # Special value for 'License File' field used to indicate that the license file
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

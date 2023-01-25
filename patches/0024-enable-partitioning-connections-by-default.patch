@@ -1,4 +1,4 @@
-From 3ccb85c971e3c80fb69abad8da32f135411c9abd Mon Sep 17 00:00:00 2001
+From d3a03078ea0864d904c1447ad8758943d01e64f6 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 8 Mar 2021 16:53:47 -0500
 Subject: [PATCH] enable partitioning connections by default
@@ -8,7 +8,7 @@ Subject: [PATCH] enable partitioning connections by default
  1 file changed, 5 insertions(+), 5 deletions(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index b725434997231..5345ce65f3781 100644
+index 2630c9da96ce8..cbcd682c18943 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
 @@ -91,7 +91,7 @@ BASE_FEATURE(kSplitHostCacheByNetworkIsolationKey,
@@ -45,5 +45,5 @@ index b725434997231..5345ce65f3781 100644
  BASE_FEATURE(kEnableDoubleKeyNetworkAnonymizationKey,
               "EnableDoubleKeyNetworkAnonymizationKey",
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

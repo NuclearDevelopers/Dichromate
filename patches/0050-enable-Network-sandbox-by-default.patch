@@ -1,4 +1,4 @@
-From 4f385f9d3b16946a912cde622dd9ea214d949643 Mon Sep 17 00:00:00 2001
+From 158b321627b8bdf829ae912474c4d484b65f51d4 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Network sandbox by default
@@ -21,5 +21,5 @@ index 5bb61d6714443..fe07b4f68ec1a 100644
  
  #if BUILDFLAG(IS_WIN)
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

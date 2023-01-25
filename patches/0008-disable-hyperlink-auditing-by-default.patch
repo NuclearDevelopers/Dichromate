@@ -1,4 +1,4 @@
-From ddc18da8931d7a14b2079a43400491f7808c28a5 Mon Sep 17 00:00:00 2001
+From 699b1d554caeb06786ae654a9c82bf2c40b2102a Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Sat, 26 Nov 2016 14:57:22 -0500
 Subject: [PATCH] disable hyperlink auditing by default
@@ -21,5 +21,5 @@ index 1c4404185b0b6..84ce7b97655ca 100644
    // user policy in addition to the same named ones in Local State (which are
    // used for mapping the command-line flags).
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

@@ -1,4 +1,4 @@
-From dee691b30104d3c830cc5594e7ca5a4e86bba479 Mon Sep 17 00:00:00 2001
+From 0c5e4c7bd2f8efecc9d82e0da454271b9eaeb2a8 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
 Subject: [PATCH] disable network prediction by default
@@ -35,5 +35,5 @@ index b3b2de78393a3..7aa7b6a30fa9d 100644
  
  export interface SettingsCookiesPageElement {
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

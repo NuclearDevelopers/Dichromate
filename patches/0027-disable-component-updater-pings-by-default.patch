@@ -1,4 +1,4 @@
-From e6547c8097e49ce147cc2f992c17a4618d4c91a6 Mon Sep 17 00:00:00 2001
+From 6a10d08de8d9614834fa5656afe4c828b6d6fe61 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 27 Nov 2020 03:56:29 -0500
 Subject: [PATCH] disable component updater pings by default
@@ -21,5 +21,5 @@ index 5a080ea473c61..e90a252d4f3f7 100644
  
    // If non-zero, time interval in seconds until the first component
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

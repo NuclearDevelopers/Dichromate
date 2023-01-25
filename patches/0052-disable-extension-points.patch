@@ -1,4 +1,4 @@
-From 0ff884fd2f8564fcecd3b301e618b2121e3c0edd Mon Sep 17 00:00:00 2001
+From 3ca129967cd5d73db1ecf84c30b462717f94d58a Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable extension points
@@ -21,5 +21,5 @@ index fe07b4f68ec1a..acf173dfd1ac0 100644
  // Enables GPU AppContainer sandbox on Windows.
  BASE_FEATURE(kGpuAppContainer,
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

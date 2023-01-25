@@ -1,4 +1,4 @@
-From eb540896dcf594038946aa2d9d2d81b43d3ac96b Mon Sep 17 00:00:00 2001
+From 747c894d31de2a994b1820d2a6cb0df44a49781c Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Thu, 21 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Enable strict origin isolation by default
@@ -28,5 +28,5 @@ index 8f8b03dfb8ac9..afb07781199ec 100644
  // Disallows window.{alert, prompt, confirm} if triggered inside a subframe that
  // is not same origin with the main frame.
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

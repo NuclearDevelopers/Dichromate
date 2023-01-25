@@ -1,4 +1,4 @@
-From ae5e8be2b245f4baff2286585fe0e14c8ce12368 Mon Sep 17 00:00:00 2001
+From cdcb3e92f2c280d0867d2971e31674517d52642e Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 4 Aug 2021 03:29:04 -0400
 Subject: [PATCH] disable trials of privacy-aware analytics/advertising APIs
@@ -21,5 +21,5 @@ index 6720c3d7d2da7..ca7c65cba06bd 100644
    registry->RegisterBooleanPref(prefs::kPrivacySandboxApisEnabledV2, false);
    registry->RegisterBooleanPref(
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

@@ -1,4 +1,4 @@
-From bbe71b684879eda8537116a66bed8b006464bc40 Mon Sep 17 00:00:00 2001
+From 1661a4c22b26b98a9cfb1b55d28fff026ae659c3 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 23 Oct 2020 23:59:13 -0400
 Subject: [PATCH] enable prefetch privacy changes by default
@@ -21,5 +21,5 @@ index 4cfb4f8f45dcd..a2f5577ded0a1 100644
  // Decodes jpeg 4:2:0 formatted images to YUV instead of RGBX and stores in this
  // format in the image decode cache. See crbug.com/919627 for details on the
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

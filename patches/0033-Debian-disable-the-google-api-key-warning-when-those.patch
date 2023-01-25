@@ -1,4 +1,4 @@
-From c02c91929cff9ffe5934886793fb917de070f175 Mon Sep 17 00:00:00 2001
+From 3d7541b508d7322476225aa5f8c6cb5bfc1d0973 Mon Sep 17 00:00:00 2001
 From: Michael Gilbert <mgilbert@debian.org>
 Date: Sun, 15 Aug 2021 05:08:49 +0100
 Subject: [PATCH] Debian: disable the google api key warning when those aren't
@@ -23,5 +23,5 @@ index 62f3cda3ec6c2..c02147929cdc9 100644
        PrefService* local_state = g_browser_process->local_state();
        if (!local_state ||
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

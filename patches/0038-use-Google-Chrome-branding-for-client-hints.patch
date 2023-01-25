@@ -1,4 +1,4 @@
-From 237e8f682f906541a72a03de203a96de9280a83a Mon Sep 17 00:00:00 2001
+From 47882364d452974d024e0b28ae54baf04fa10408 Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sun, 10 Oct 2021 21:59:16 -0400
 Subject: [PATCH] use Google Chrome branding for client hints
@@ -20,5 +20,5 @@ index 2c5b4b4a85536..6ca6c5e2d0ed6 100644
    brand = version_info::GetProductName();
  #endif
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

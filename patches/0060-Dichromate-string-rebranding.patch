@@ -1,4 +1,4 @@
-From 0c92a08e191192b8a59b4411e48726b6cb2d4032 Mon Sep 17 00:00:00 2001
+From dc1f079d8ef11bec011d4f62208444e744d547d8 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Tue, 1 Dec 1970 00:00:00 +0000
 Subject: [PATCH] Dichromate string rebranding
@@ -3768,5 +3768,5 @@ index cc5f0825f78b6..19c9a11250a49 100644
      </message>
    </if>
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

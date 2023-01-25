@@ -1,4 +1,4 @@
-From 51e9e373d12e862de3e1e051f95d6dc68696e34e Mon Sep 17 00:00:00 2001
+From 98f67ba5096c68a0a7c12815c7b4bf411209b58f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 12 Mar 2020 13:01:02 -0400
 Subject: [PATCH] disable unused safe browsing option by default
@@ -25,5 +25,5 @@ index 7f8d1d644d19f..ba2b8297b6613 100644
    registry->RegisterBooleanPref(prefs::kSafeBrowsingEnhanced, false);
    registry->RegisterBooleanPref(prefs::kSafeBrowsingProceedAnywayDisabled,
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

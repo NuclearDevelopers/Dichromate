@@ -1,4 +1,4 @@
-From 100743cb140d5f1bbc58e0a8787868693690052e Mon Sep 17 00:00:00 2001
+From 089d7f3356a1c71c62a7309476b992045024d4ca Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Mon, 25 Apr 2022 06:19:32 -0400
 Subject: [PATCH] disable fetching optimization guides by default
@@ -32,5 +32,5 @@ index 4f84c210efc90..d4fa030820c58 100644
  // Enables performance info in the context menu and fetching from a remote
  // Optimization Guide Service.
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

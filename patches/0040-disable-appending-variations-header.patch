@@ -1,4 +1,4 @@
-From 90e2d9a3d2cb9b8ca08dd92d4250fc63cbb7a10b Mon Sep 17 00:00:00 2001
+From 984c1b686b3dfe36cc1fe57c10f21585d19fb13f Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sat, 15 Jan 2022 13:34:33 -0500
 Subject: [PATCH] disable appending variations header
@@ -24,5 +24,5 @@ index 53469e106d264..b0ddea69a68ed 100644
  
  // Returns true if the request is sent from a Google web property, i.e. from a
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

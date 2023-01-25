@@ -1,4 +1,4 @@
-From 114f0f5ffa59e78cbdd9bb01d6c4e453ec9ecdb4 Mon Sep 17 00:00:00 2001
+From d678365e5f8e1766632b8ec3028fe94a03ca5988 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 1 Dec 2020 00:56:57 -0500
 Subject: [PATCH] disable autofill server communication by default
@@ -21,5 +21,5 @@ index 8c011edfd87a8..47e3e2f33555b 100644
  // Controls whether Autofill may fill across origins as part of the
  // AutofillAcrossIframes experiment.
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

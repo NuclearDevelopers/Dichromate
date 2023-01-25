@@ -1,4 +1,4 @@
-From 60a518d671f747ebd0bf66aca19ff9ad814f77d6 Mon Sep 17 00:00:00 2001
+From 88a139bf04641d9c13c67de450a58b4f2e6272b1 Mon Sep 17 00:00:00 2001
 From: JTL <jtl@teamclassified.ca>
 Date: Sat, 21 Dec 2019 04:04:24 +0000
 Subject: [PATCH] disable trivial subdomain hiding
@@ -22,5 +22,5 @@ index 057b0cf40aed0..8fc59b0042cb9 100644
    AppendFormattedComponent(
        spec, parsed.host,
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

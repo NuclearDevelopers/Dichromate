@@ -1,4 +1,4 @@
-From 2c5afacd450196b1b7177b519646c41057774661 Mon Sep 17 00:00:00 2001
+From 1621bfc4b8f215e0de28b1231b0f5c39dde1614d Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Disable keep prefetched suggestions by default
@@ -21,5 +21,5 @@ index 7bc431d6bcacb..98dedfff29bfa 100644
  BASE_FEATURE(kOptionalImagesEnabledFeature,
               "NTPRemoteSuggestionsOptionalImages",
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

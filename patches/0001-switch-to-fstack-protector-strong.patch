@@ -1,4 +1,4 @@
-From a711cd54732a5c62b68f307a09b22cf2fbafe07d Mon Sep 17 00:00:00 2001
+From 85413257c3e6e58fe141ed8438813f7c1031582f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 26 Dec 2018 10:20:24 -0500
 Subject: [PATCH] switch to -fstack-protector-strong
@@ -32,5 +32,5 @@ index d72f810e7eeb1..7d464670ca9f1 100644
      }
  
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

@@ -1,4 +1,4 @@
-From 3e46d1b846ecfbe52768d4302df9f241af3aefa0 Mon Sep 17 00:00:00 2001
+From 02f50705dcaab1093a26363cb62f697cd680297c Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 22 Dec 2016 07:15:34 -0500
 Subject: [PATCH] enable -fwrapv in Clang for non-UBSan builds
@@ -23,5 +23,5 @@ index 7d464670ca9f1..52c11a3e45e9a 100644
      if (fatal_linker_warnings && !is_apple && current_os != "aix" &&
          current_os != "zos") {
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

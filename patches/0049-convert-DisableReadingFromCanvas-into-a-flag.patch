@@ -1,4 +1,4 @@
-From f6ff638bbcbab867fe6b5247e5954d6cedd00c0d Mon Sep 17 00:00:00 2001
+From 08af36e48676bd6b4a64392b70d5e97b5426a6e7 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] convert DisableReadingFromCanvas into a flag
@@ -156,5 +156,5 @@ index 6f44b6aeffcff..baea8f7b2ff98 100644
  CONTENT_EXPORT extern const char kDisableRemotePlaybackAPI[];
  extern const char kDisableRendererAccessibility[];
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

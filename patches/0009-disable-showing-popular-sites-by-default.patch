@@ -1,4 +1,4 @@
-From 936a761e28d3d04c14763ae74711f804e4a71bb1 Mon Sep 17 00:00:00 2001
+From d3bbd0b3dde827a9d3683ead63bc539417b46396 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Tue, 6 Mar 2018 00:27:41 -0500
 Subject: [PATCH] disable showing popular sites by default
@@ -30,5 +30,5 @@ index 8b29a14102ba0..48df4146cd5d0 100644
  BASE_FEATURE(kIOSPopularSitesImprovedSuggestions,
               "IOSPopularSitesImprovedSuggestions",
 -- 
-2.35.1.windows.2
+2.39.1.windows.1
 

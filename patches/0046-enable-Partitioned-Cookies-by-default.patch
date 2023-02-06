@@ -1,4 +1,4 @@
-From 25d6369ca91a1d3a90f542f51d1a04e4af1feafb Mon Sep 17 00:00:00 2001
+From 503226ea76f0a6d5ab184d9dea428f4d96faaf9a Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Partitioned Cookies by default
@@ -8,10 +8,10 @@ Subject: [PATCH] enable Partitioned Cookies by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index cbcd682c18943..d7acafcb26f23 100644
+index bcea21e6a9ac1..d43d14df1b4a8 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
-@@ -275,7 +275,7 @@ BASE_FEATURE(kSamePartyAttributeEnabled,
+@@ -252,7 +252,7 @@ BASE_FEATURE(kSamePartyAttributeEnabled,
  
  BASE_FEATURE(kPartitionedCookies,
               "PartitionedCookies",

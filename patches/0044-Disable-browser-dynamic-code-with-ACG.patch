@@ -1,4 +1,4 @@
-From 4cf073515684259538d652878a6bb4ac3f1e103e Mon Sep 17 00:00:00 2001
+From 452f25373d6f2a6c228f8013387640e34f93b6ab Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Mon, 4 Jul 2022 00:00:00 +0000
 Subject: [PATCH] Disable browser dynamic code with ACG
@@ -8,10 +8,10 @@ Subject: [PATCH] Disable browser dynamic code with ACG
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/content/browser/browser_main_loop.cc b/content/browser/browser_main_loop.cc
-index 6806a8236ee96..bdc14734497e5 100644
+index 54c15cbe6cf45..905e5b9e5d21d 100644
 --- a/content/browser/browser_main_loop.cc
 +++ b/content/browser/browser_main_loop.cc
-@@ -394,7 +394,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
+@@ -396,7 +396,7 @@ mojo::PendingRemote<data_decoder::mojom::BleScanParser> GetBleScanParser() {
  // Build 14393) onwards.
  BASE_FEATURE(kBrowserDynamicCodeDisabled,
               "BrowserDynamicCodeDisabled",

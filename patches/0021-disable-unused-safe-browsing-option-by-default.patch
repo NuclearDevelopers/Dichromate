@@ -1,4 +1,4 @@
-From 98f67ba5096c68a0a7c12815c7b4bf411209b58f Mon Sep 17 00:00:00 2001
+From de3ab14d573a1661372a78fa2423d9f3594ac112 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Thu, 12 Mar 2020 13:01:02 -0400
 Subject: [PATCH] disable unused safe browsing option by default
@@ -12,10 +12,10 @@ that privacy is preserved.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/safe_browsing/core/common/safe_browsing_prefs.cc b/components/safe_browsing/core/common/safe_browsing_prefs.cc
-index 7f8d1d644d19f..ba2b8297b6613 100644
+index e2c6b5f3cb4d9..296e73155b319 100644
 --- a/components/safe_browsing/core/common/safe_browsing_prefs.cc
 +++ b/components/safe_browsing/core/common/safe_browsing_prefs.cc
-@@ -201,7 +201,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
+@@ -200,7 +200,7 @@ void RegisterProfilePrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(
        prefs::kSafeBrowsingExtendedReportingOptInAllowed, false);
    registry->RegisterBooleanPref(

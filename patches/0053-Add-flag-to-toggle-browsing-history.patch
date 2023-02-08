@@ -1,4 +1,4 @@
-From 445b323e165685b113f379c8359a9720b96b70e7 Mon Sep 17 00:00:00 2001
+From 40df30fd09ea2c040f987947f85d973d5dc9e0c1 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 9 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Add flag to toggle browsing history

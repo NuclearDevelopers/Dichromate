@@ -1,4 +1,4 @@
-From abb89f2c43b00c92d839c88429196f0b135d1451 Mon Sep 17 00:00:00 2001
+From d0f8a2d658565a41f925526ef61c36aa2f30f358 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 8 Jan 2023 00:00:00 +0000
 Subject: [PATCH] Enable ThirdPartyStoragePartitioning by default
@@ -8,10 +8,10 @@ Subject: [PATCH] Enable ThirdPartyStoragePartitioning by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/net/base/features.cc b/net/base/features.cc
-index d43d14df1b4a8..59dfc4d93db68 100644
+index e89e7e6a011a8..42506df75df4c 100644
 --- a/net/base/features.cc
 +++ b/net/base/features.cc
-@@ -338,7 +338,7 @@ const base::FeatureParam<bool> kStorageAccessAPIAutoDenyOutsideFPS{
+@@ -334,7 +334,7 @@ const base::FeatureParam<bool> kStorageAccessAPIAutoDenyOutsideFPS{
  // by the top level site to reduce fingerprinting.
  BASE_FEATURE(kThirdPartyStoragePartitioning,
               "ThirdPartyStoragePartitioning",

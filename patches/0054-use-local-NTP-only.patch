@@ -1,4 +1,4 @@
-From eb32a3604616c0ab6b9aec5a6accee917b8ad81d Mon Sep 17 00:00:00 2001
+From 5771a8bdc27290d4510f20eac37448f034513381 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] use local NTP only

@@ -1,4 +1,4 @@
-From ab3a223286a3a528bfb414051c146fc8306ee344 Mon Sep 17 00:00:00 2001
+From bbd91b0f23381bfc01fe66442d672e7e81506759 Mon Sep 17 00:00:00 2001
 From: Zoraver Kang <Zoraver@users.noreply.github.com>
 Date: Sat, 15 Jan 2022 13:34:33 -0500
 Subject: [PATCH] disable appending variations header
@@ -8,7 +8,7 @@ Subject: [PATCH] disable appending variations header
  1 file changed, 1 insertion(+), 4 deletions(-)
 
 diff --git a/components/variations/net/variations_http_headers.cc b/components/variations/net/variations_http_headers.cc
-index 53469e106d264..b0ddea69a68ed 100644
+index 65411d0db71fd..20335a08881b1 100644
 --- a/components/variations/net/variations_http_headers.cc
 +++ b/components/variations/net/variations_http_headers.cc
 @@ -118,10 +118,7 @@ URLValidationResult GetUrlValidationResult(const GURL& url) {

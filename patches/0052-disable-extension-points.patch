@@ -1,4 +1,4 @@
-From 10e27205a77787fcbbb200e8f3a795c2a0786e37 Mon Sep 17 00:00:00 2001
+From 9f25db91fd803c62f365a0cc310e2c7a7063e7aa Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable extension points
@@ -8,7 +8,7 @@ Subject: [PATCH] disable extension points
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/sandbox/policy/features.cc b/sandbox/policy/features.cc
-index 2901c7a1737f7..42cc0518f00a7 100644
+index 4ef18a51c00ed..0f13280816eb2 100644
 --- a/sandbox/policy/features.cc
 +++ b/sandbox/policy/features.cc
 @@ -23,7 +23,7 @@ BASE_FEATURE(kNetworkServiceSandbox,

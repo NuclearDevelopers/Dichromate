@@ -1,4 +1,4 @@
-From 901a9a4c3e8c314dfbd76f53945609ce6c9b7208 Mon Sep 17 00:00:00 2001
+From 3668cf37d5856556d260576f18b3d3f98444c090 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 04:23:18 -0400
 Subject: [PATCH] disable browser sign in feature by default
@@ -22,10 +22,10 @@ index b1c0447353c0d..edd57dcffe4c5 100644
  
  // static
 diff --git a/components/signin/internal/identity_manager/primary_account_manager.cc b/components/signin/internal/identity_manager/primary_account_manager.cc
-index ec3ea7dcd2c5d..f161a885416f4 100644
+index d1cc50d9cf367..cff184852acd5 100644
 --- a/components/signin/internal/identity_manager/primary_account_manager.cc
 +++ b/components/signin/internal/identity_manager/primary_account_manager.cc
-@@ -88,7 +88,7 @@ void PrimaryAccountManager::RegisterProfilePrefs(PrefRegistrySimple* registry) {
+@@ -148,7 +148,7 @@ void PrimaryAccountManager::RegisterProfilePrefs(PrefRegistrySimple* registry) {
    registry->RegisterBooleanPref(prefs::kGoogleServicesConsentedToSync, false);
    registry->RegisterBooleanPref(prefs::kAutologinEnabled, true);
    registry->RegisterListPref(prefs::kReverseAutologinRejectedEmailList);

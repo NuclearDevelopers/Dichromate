@@ -1,4 +1,4 @@
-From d06ed84a4d73c1a941b90a51f46562f7deaef27d Mon Sep 17 00:00:00 2001
+From 9b24296bcbca2787ac8ad37fd45c21f37af68eb2 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 23 Nov 2016 08:31:44 -0500
 Subject: [PATCH] disable network prediction by default
@@ -9,10 +9,10 @@ Subject: [PATCH] disable network prediction by default
  2 files changed, 2 insertions(+), 2 deletions(-)
 
 diff --git a/chrome/browser/prefetch/prefetch_prefs.h b/chrome/browser/prefetch/prefetch_prefs.h
-index fb36b283613ac..8237752975d44 100644
+index 02f682dc1eba1..2f36fa7fd1c08 100644
 --- a/chrome/browser/prefetch/prefetch_prefs.h
 +++ b/chrome/browser/prefetch/prefetch_prefs.h
-@@ -30,7 +30,7 @@ enum class NetworkPredictionOptions {
+@@ -28,7 +28,7 @@ enum class NetworkPredictionOptions {
    kWifiOnlyDeprecated = 1,
    kDisabled = 2,
    kExtended = 3,
@@ -20,12 +20,12 @@ index fb36b283613ac..8237752975d44 100644
 +  kDefault = kDisabled,
  };
  
- // Enum representing possible values of the Preload Pages opt-in state.  Since
+ // Enum representing possible values of the Preload Pages opt-in state. These
 diff --git a/chrome/browser/resources/settings/privacy_page/cookies_page.ts b/chrome/browser/resources/settings/privacy_page/cookies_page.ts
-index 2f3f84f1b31b1..1b42584a183d4 100644
+index 1ebd2ba36b439..2d5f1dac6d92b 100644
 --- a/chrome/browser/resources/settings/privacy_page/cookies_page.ts
 +++ b/chrome/browser/resources/settings/privacy_page/cookies_page.ts
-@@ -48,7 +48,7 @@ enum NetworkPredictionOptions {
+@@ -48,7 +48,7 @@ export enum NetworkPredictionOptions {
    WIFI_ONLY_DEPRECATED = 1,
    DISABLED = 2,
    EXTENDED = 3,

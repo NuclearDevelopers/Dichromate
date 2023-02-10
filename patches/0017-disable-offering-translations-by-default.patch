@@ -1,4 +1,4 @@
-From 60e69e7e189b7504428278829653d7a6417b44aa Mon Sep 17 00:00:00 2001
+From 211b9a0578f72e578d37016bb53b84384802c13f Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 12 Jul 2019 03:58:01 -0400
 Subject: [PATCH] disable offering translations by default
@@ -8,10 +8,10 @@ Subject: [PATCH] disable offering translations by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/chrome/browser/ui/browser_ui_prefs.cc b/chrome/browser/ui/browser_ui_prefs.cc
-index df3225597d7e0..ef3cec3ceab16 100644
+index 21fbb85231e22..0c987ad8c3c3d 100644
 --- a/chrome/browser/ui/browser_ui_prefs.cc
 +++ b/chrome/browser/ui/browser_ui_prefs.cc
-@@ -77,7 +77,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {
+@@ -74,7 +74,7 @@ void RegisterBrowserUserPrefs(user_prefs::PrefRegistrySyncable* registry) {
    registry->RegisterBooleanPref(prefs::kWebAppCreateInAppsMenu, true);
    registry->RegisterBooleanPref(prefs::kWebAppCreateInQuickLaunchBar, true);
    registry->RegisterBooleanPref(

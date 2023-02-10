@@ -1,4 +1,4 @@
-From 74ff913ae178823dd4f2aeb15f505b04bec1285b Mon Sep 17 00:00:00 2001
+From bcc8b610a72a9ab040dc19a679e9dece62672914 Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Fri, 22 Oct 2021 00:00:00 +0000
 Subject: [PATCH] Add WebRTC policy toggle to settings
@@ -18,10 +18,10 @@ This adds a user facing toggle for changing WebRTC IP handling policy.
  create mode 100644 chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.ts
 
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index c7817b3b7e179..3bb85396cd488 100644
+index 67b78acead2f0..f860dfad47987 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
-@@ -2451,6 +2451,24 @@
+@@ -2486,6 +2486,24 @@
    <message name="IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION" desc="Secondary, continued explanation of HTTPS-Only Mode in Security settings">
      Upgrade navigations to HTTPS and warn you before loading sites that don't support it
    </message>
@@ -47,10 +47,10 @@ index c7817b3b7e179..3bb85396cd488 100644
      Manage certificates
    </message>
 diff --git a/chrome/browser/extensions/api/settings_private/prefs_util.cc b/chrome/browser/extensions/api/settings_private/prefs_util.cc
-index 49fa6bc8ff4f0..ec41e61bf2a04 100644
+index b2a826365b1b2..7a977efa7d3a7 100644
 --- a/chrome/browser/extensions/api/settings_private/prefs_util.cc
 +++ b/chrome/browser/extensions/api/settings_private/prefs_util.cc
-@@ -322,6 +322,8 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
+@@ -326,6 +326,8 @@ const PrefsUtil::TypedPrefMap& PrefsUtil::GetAllowlistedKeys() {
        settings_api::PrefType::PREF_TYPE_NUMBER;
    (*s_allowlist)[::prefs::kHttpsOnlyModeEnabled] =
        settings_api::PrefType::PREF_TYPE_BOOLEAN;
@@ -60,10 +60,10 @@ index 49fa6bc8ff4f0..ec41e61bf2a04 100644
    // Cookies page
    (*s_allowlist)[::prefs::kCookieControlsMode] =
 diff --git a/chrome/browser/resources/settings/BUILD.gn b/chrome/browser/resources/settings/BUILD.gn
-index 86689c58f3cb8..9cb0b6445830f 100644
+index 16e6d00fd3b5d..be735f342aa7a 100644
 --- a/chrome/browser/resources/settings/BUILD.gn
 +++ b/chrome/browser/resources/settings/BUILD.gn
-@@ -185,6 +185,7 @@ build_webui("build") {
+@@ -173,6 +173,7 @@ build_webui("build") {
      "privacy_page/security_keys_phones_list.ts",
      "privacy_page/security_keys_phones_dialog.ts",
      "privacy_page/security_page.ts",
@@ -72,7 +72,7 @@ index 86689c58f3cb8..9cb0b6445830f 100644
      "privacy_sandbox/interest_item.ts",
      "reset_page/reset_page.ts",
 diff --git a/chrome/browser/resources/settings/privacy_page/security_page.html b/chrome/browser/resources/settings/privacy_page/security_page.html
-index effb6f7e31744..af10fd52f5882 100644
+index efaed3f5ee6ed..79cdd153f0c42 100644
 --- a/chrome/browser/resources/settings/privacy_page/security_page.html
 +++ b/chrome/browser/resources/settings/privacy_page/security_page.html
 @@ -8,6 +8,11 @@
@@ -87,7 +87,7 @@ index effb6f7e31744..af10fd52f5882 100644
          padding: 0 var(--cr-section-padding);
        }
  
-@@ -155,6 +160,9 @@
+@@ -160,6 +165,9 @@
      <div class="cr-row first">
        <h2>$i18n{advancedPageTitle}</h2>
      </div>
@@ -98,7 +98,7 @@ index effb6f7e31744..af10fd52f5882 100644
        <settings-toggle-button
          id="httpsOnlyModeToggle"
 diff --git a/chrome/browser/resources/settings/privacy_page/security_page.ts b/chrome/browser/resources/settings/privacy_page/security_page.ts
-index e58000196fdd3..b07e7ce16e4e0 100644
+index 487b9daedb927..faef8045bf252 100644
 --- a/chrome/browser/resources/settings/privacy_page/security_page.ts
 +++ b/chrome/browser/resources/settings/privacy_page/security_page.ts
 @@ -13,6 +13,7 @@ import '../icons.html.js';
@@ -107,8 +107,8 @@ index e58000196fdd3..b07e7ce16e4e0 100644
  import './disable_safebrowsing_dialog.js';
 +import './webrtc_policy_dropdown.js';
  
- import {HelpBubbleMixin, HelpBubbleMixinInterface} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
- import {I18nMixin, I18nMixinInterface} from 'chrome://resources/cr_elements/i18n_mixin.js';
+ import {HelpBubbleMixin} from 'chrome://resources/cr_components/help_bubble/help_bubble_mixin.js';
+ import {I18nMixin} from 'chrome://resources/cr_elements/i18n_mixin.js';
 diff --git a/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html b/chrome/browser/resources/settings/privacy_page/webrtc_policy_dropdown.html
 new file mode 100644
 index 0000000000000..bf0e16ae44fed
@@ -234,10 +234,10 @@ index 0000000000000..a6a48b613f85f
 +customElements.define(
 +    SettingsWebRtcPolicyMenuElement.is, SettingsWebRtcPolicyMenuElement);
 diff --git a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-index 62af3a765309d..a0ff1df93b18e 100644
+index 9530d18582823..650c6d6e7d010 100644
 --- a/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
 +++ b/chrome/browser/ui/webui/settings/settings_localized_strings_provider.cc
-@@ -1694,6 +1694,12 @@ void AddPrivacyStrings(content::WebUIDataSource* html_source,
+@@ -1675,6 +1675,12 @@ void AddPrivacyStrings(content::WebUIDataSource* html_source,
       IDS_SETTINGS_ADVANCED_PROTECTION_PROGRAM_DESC},
      {"httpsOnlyModeTitle", IDS_SETTINGS_HTTPS_ONLY_MODE},
      {"httpsOnlyModeDescription", IDS_SETTINGS_HTTPS_ONLY_MODE_DESCRIPTION},

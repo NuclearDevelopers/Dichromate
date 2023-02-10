@@ -1,19 +1,19 @@
-From 653f13b8028290342d4571341d255a25ec847703 Mon Sep 17 00:00:00 2001
+From 1bc2803aaf2ba9473c0b341360d70c365b0b8b76 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Tue, 1 Dec 1970 00:00:00 +0000
 Subject: [PATCH] Dichromate string rebranding
 
 ---
  chrome/app/access_code_cast_strings.grdp      |   2 +-
- chrome/app/chromium_strings.grd               | 690 +++++++++---------
+ chrome/app/chromium_strings.grd               | 692 +++++++++---------
  chrome/app/generated_resources.grd            |   4 +-
  chrome/app/google_chrome_strings.grd          |  14 +-
  chrome/app/os_settings_strings.grdp           |  22 +-
- chrome/app/settings_chromium_strings.grdp     | 198 ++---
+ chrome/app/settings_chromium_strings.grdp     | 196 ++---
  chrome/app/settings_strings.grdp              |   6 +-
  chrome/app/shared_settings_strings.grdp       |   2 +-
  chrome/app/theme/chromium/BRANDING            |  20 +-
- chrome/common/url_constants.cc                | 264 +++----
+ chrome/common/url_constants.cc                | 272 +++----
  .../install_static/chromium_install_modes.cc  |  18 +-
  components/autofill_payments_strings.grdp     |   2 +-
  components/autofill_strings.grdp              |   6 +-
@@ -29,7 +29,7 @@ Subject: [PATCH] Dichromate string rebranding
  .../security_interstitials_strings.grdp       |   8 +-
  components/ssl_errors_strings.grdp            |   6 +-
  components/version_ui_strings.grdp            |   6 +-
- 25 files changed, 720 insertions(+), 720 deletions(-)
+ 25 files changed, 724 insertions(+), 724 deletions(-)
 
 diff --git a/chrome/app/access_code_cast_strings.grdp b/chrome/app/access_code_cast_strings.grdp
 index 456faa34c1062..2fb08e92fbbe1 100644
@@ -43,7 +43,7 @@ index 456faa34c1062..2fb08e92fbbe1 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
-index bdee40dc52d21..5e50646f9593b 100644
+index c0f31231b6d56..edbe0edf5f823 100644
 --- a/chrome/app/chromium_strings.grd
 +++ b/chrome/app/chromium_strings.grd
 @@ -277,43 +277,43 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
@@ -359,7 +359,7 @@ index bdee40dc52d21..5e50646f9593b 100644
        </message>
        <message name="IDS_PASSWORD_BUBBLES_PASSWORD_MANAGER_LINK_TEXT_SAVING_ON_DEVICE" desc="The text of the Google Password Manager links displayed on Password Manager bubbles footer when the credentials are stored only locally.">
          Password Manager
-@@ -543,315 +543,315 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -543,319 +543,319 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
        <if expr="is_macosx">
          <message name="IDS_PASSWORDS_PAGE_AUTHENTICATION_PROMPT" desc="Text for the dialog box that prompts the user for their OS account password before revealing plaintext passwords on the password page.">
@@ -560,6 +560,11 @@ index bdee40dc52d21..5e50646f9593b 100644
 -        This file may be dangerous, so Chromium has blocked it.
 +        This file may be dangerous, so Dichromate has blocked it.
        </message>
+       <message name="IDS_BLOCK_REASON_PROMPT_FOR_SCANNING"
+          desc="Message shown to the user on chrome://downloads page to explain that this download is recommended to be scanned.">
+-        Chromium recommends scanning this file because it may be dangerous.
++        Dichromate recommends scanning this file because it may be dangerous.
+       </message>
  
        <!-- Abandon in-progress downloads confirmation dialog -->
        <if expr="not is_macosx">
@@ -750,7 +755,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_TITLE" desc="The title of the dialog to confirm adding a new work profile with the signed-in enterprise account">
            Add Work Profile to this browser
-@@ -863,11 +863,11 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -867,11 +867,11 @@ Permissions you've already given to websites and apps may apply to this account.
            This work profile is completely separate from your personal profile.
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_EXPLANATION" desc="The warning message displayed to an enterprise user about to link their profile to their Google account. This message is followed by a 'Learn more' link.">
@@ -764,7 +769,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_MESSAGE_NEW" desc="The message of the one click sign-in dialog.">
            You're signed in as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Now you can access your bookmarks, history, and other settings on all your signed in devices.
-@@ -877,57 +877,57 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -881,57 +881,57 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- about:browser-switch strings -->
        <if expr="toolkit_views and not chromeos_lacros and not chromeos_ash">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
@@ -836,7 +841,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -935,86 +935,86 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -939,86 +939,86 @@ Permissions you've already given to websites and apps may apply to this account.
             Note: these strings should only be used by Google Chrome, but
                   omitting them brings up a hash collision error. -->
        <if expr="is_win">
@@ -944,7 +949,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -1022,104 +1022,104 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1026,104 +1026,104 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android and not chromeos_ash">
          <!-- User pod remove sync warning text -->
          <message name="IDS_LOGIN_POD_USER_REMOVE_WARNING_SYNC" desc="Main text shown as a warning when attempting to remove an user.">
@@ -1080,7 +1085,7 @@ index bdee40dc52d21..5e50646f9593b 100644
            </message>
          </if>
        </if>
-@@ -1127,13 +1127,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1131,13 +1131,13 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- Update Recommended dialog -->
        <if expr="not chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1098,7 +1103,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and relaunches Chrome.">
            Relaunch
-@@ -1141,10 +1141,10 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1145,10 +1145,10 @@ Permissions you've already given to websites and apps may apply to this account.
        </if>
        <if expr="chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1111,7 +1116,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and restarts ChromeOS.">
            Restart
-@@ -1153,52 +1153,52 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1157,52 +1157,52 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Update bubble -->
        <message name="IDS_REINSTALL_APP" desc="Text for the button the user clicks to reinstall the app.">
@@ -1175,7 +1180,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
        <message name="IDS_RECOVERY_BUBBLE_TEXT" desc="Text for the chrome recovery bubble view full description.">
-@@ -1206,91 +1206,91 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1210,91 +1210,91 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1293,7 +1298,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
        <!-- Relaunch notification bubble and dialog. -->
-@@ -1298,93 +1298,93 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1302,93 +1302,93 @@ Permissions you've already given to websites and apps may apply to this account.
          <if expr="not chromeos_ash">
            <message name="IDS_RELAUNCH_RECOMMENDED_TITLE" desc="The title of a dialog that tells users that a browser relaunch is recommended for an update available for some number of days.">
              {0, plural,
@@ -1423,7 +1428,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -1392,101 +1392,101 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1396,101 +1396,101 @@ Permissions you've already given to websites and apps may apply to this account.
          <!-- Profile Picker -->
          <if expr="chromeos_lacros">
            <message name="IDS_PROFILE_PICKER_MAIN_VIEW_SUBTITLE_LACROS" desc="Profile picker main view subtitle">
@@ -1554,7 +1559,7 @@ index bdee40dc52d21..5e50646f9593b 100644
        </message>
        <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_DESCRIPTION" desc="Description shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
          Enhanced protection does more to block phishing and malware
-@@ -1497,49 +1497,49 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1501,49 +1501,49 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Privacy Sandbox Dialog strings -->
        <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_SUBTITLE" desc="A subtitle on the consent page. Consider this a tagline for the Privacy Sandbox project.* “exploring” conveys that this is a work in progress. * “new features” include settings that the user can turn on/off and also backend features that change the way Chrome works for everyone * “allow sites to deliver”: Privacy Sandbox is proposed by Google as a collaborative effort with the browser industry. We’re building and testing functionality that will live in the Chrome browser. In order to land the full promise of Privacy Sandbox, websites and advertisers need to adopt the new APIs / functionality that we’re developing. So “allow sites…” makes it clear to the user that we’re building something for the ecosystem. Typically a Google product builds something for the user, and that’s true in this case, but it’s bigger than that. * “same browsing experience using less of your info”: Another definition of the promise of Privacy Sandbox. Third-party cookies are going away. In this new world, the user will have essentially the same browsing experience but it’s more private because it doesn’t expose so much of the user’s info.">
@@ -1624,7 +1629,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_NO_UPDATE_RESPONSE" desc="Updater response for no updates when handling install result.">
            No update is available.
-@@ -1548,7 +1548,7 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1552,7 +1552,7 @@ Permissions you've already given to websites and apps may apply to this account.
            Installation failed. Please try again.
          </message>
          <message name="IDS_INSTALLER_DISPLAY_NAME" desc="Name for the updater metainstaller.">
@@ -1633,7 +1638,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_CLOSE_BUTTON" desc="Close button tooltip">
            Close
-@@ -1587,13 +1587,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1591,13 +1591,13 @@ Permissions you've already given to websites and apps may apply to this account.
            Canceling...
          </message>
          <message name="IDS_TEXT_RESTART_BROWSER" desc="For when a browser must be restarted to complete the installation.">
@@ -1650,7 +1655,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_UPDATER_CLOSE" desc="For close button on the UI post install completion.">
            Close
-@@ -1630,12 +1630,12 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1634,12 +1634,12 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android">
          <if expr="use_titlecase">
            <message name="IDS_HIGH_EFFICIENCY_DIALOG_TITLE" desc="In Title Case: Title text for a dialog describing that the Memory Saver setting is enabled">
@@ -1665,7 +1670,7 @@ index bdee40dc52d21..5e50646f9593b 100644
            </message>
          </if>
        </if>
-@@ -1644,22 +1644,22 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1648,22 +1648,22 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android">
          <if expr="use_titlecase">
            <message name="IDS_HIGH_EFFICIENCY_INFO_MODE_PROMO_TITLE" desc="In Title Case: The title for the high efficiency info mode in-product promo bubble.">
@@ -1693,10 +1698,10 @@ index bdee40dc52d21..5e50646f9593b 100644
          </if>
        </if>
 diff --git a/chrome/app/generated_resources.grd b/chrome/app/generated_resources.grd
-index 20523e47976b2..67e2d165c2bb1 100644
+index 45bc795e9c51d..6c8305e93c3e6 100644
 --- a/chrome/app/generated_resources.grd
 +++ b/chrome/app/generated_resources.grd
-@@ -4340,7 +4340,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -4408,7 +4408,7 @@ are declared in tools/grit/grit_rule.gni.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1705,7 +1710,7 @@ index 20523e47976b2..67e2d165c2bb1 100644
          Restart now
        </message>
  
-@@ -6342,7 +6342,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
+@@ -6449,7 +6449,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
            Reason: The inverted rule <ph name="REVERT_RULE">$1<ex>!example.com</ex></ph> was found in the "Force open in" list.
          </message>
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_OPEN_BROWSER_DEFAULT_REASON" desc="about:browser-switch/internals, section URL Checker, the explaination reason for check result, displayed when the entered URL did not match any listed rule and default browser will not get switched">
@@ -1715,7 +1720,7 @@ index 20523e47976b2..67e2d165c2bb1 100644
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_INVALID_URL" desc="about:browser-switch/internals, section URL Checker, specific error message when the url is invalid">
            Invalid URL. Make sure it is formatted properly.
 diff --git a/chrome/app/google_chrome_strings.grd b/chrome/app/google_chrome_strings.grd
-index 45856199a4a72..0bdcc127cb370 100644
+index 8f52d27b918e0..bc04d9ef80392 100644
 --- a/chrome/app/google_chrome_strings.grd
 +++ b/chrome/app/google_chrome_strings.grd
 @@ -403,18 +403,18 @@ chromium_strings.grd. -->
@@ -1750,7 +1755,7 @@ index 45856199a4a72..0bdcc127cb370 100644
            Change default browser to:
          </message>
          <message name="IDS_UNINSTALL_BUTTON_TEXT" desc="Label for uninstall button on Uninstall confirmation dialog.">
-@@ -1171,10 +1171,10 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1174,10 +1174,10 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- content area context menus. Android does not use it -->
        <if expr="not is_android">
@@ -1764,7 +1769,7 @@ index 45856199a4a72..0bdcc127cb370 100644
          </message>
          <message name="IDS_CONTENT_CONTEXT_SPELLING_BUBBLE_TEXT" desc="The text of a bubble that confirms users allows integrating the spelling service of Google to Chrome.">
 diff --git a/chrome/app/os_settings_strings.grdp b/chrome/app/os_settings_strings.grdp
-index 905ff1c49b3d8..076bae9afdf55 100644
+index ac3b11571423b..4b6e4d36b9a5b 100644
 --- a/chrome/app/os_settings_strings.grdp
 +++ b/chrome/app/os_settings_strings.grdp
 @@ -72,16 +72,16 @@
@@ -1830,10 +1835,10 @@ index 905ff1c49b3d8..076bae9afdf55 100644
    </message>
    <message name="IDS_SETTINGS_ABOUT_PAGE_DEFERRED_UPDATE_DESCRIPTION" desc="Text of the deferred update description.">
 diff --git a/chrome/app/settings_chromium_strings.grdp b/chrome/app/settings_chromium_strings.grdp
-index 63f83dd420372..c266efced893a 100644
+index 9532de95d89d3..9f80b6b832678 100644
 --- a/chrome/app/settings_chromium_strings.grdp
 +++ b/chrome/app/settings_chromium_strings.grdp
-@@ -1,310 +1,310 @@
+@@ -1,309 +1,309 @@
  <?xml version="1.0" encoding="utf-8"?>
 -<!-- Settings-specific Chromium strings (included from chromium_strings.grd). -->
 +<!-- Settings-specific Dichromate strings (included from chromium_strings.grd). -->
@@ -1998,22 +2003,20 @@ index 63f83dd420372..c266efced893a 100644
      </message>
    </if>
  
+     <!-- Site Settings - Site Data Page-->
+   <message name="IDS_SETTINGS_SITE_DATA_PAGE_CLEAR_ON_EXIT_RADIO_SUBLABEL" desc="A description of the benefit/cost of choosing 'Sites can save content on your device. In short, a site will remember your preferences, shopping cart content, etc. during this browser session. But once you close all open windows, and then visit the site again, it's as if you're coming to the site for the first time.">
+-    Sites will probably work as you expect but won't remember you after you close all Chromium windows
++    Sites will probably work as you expect but won't remember you after you close all Dichromate windows
+   </message>
+   <message name="IDS_SETTINGS_SITE_DATA_PAGE_CLEAR_ON_EXIT_EXCEPTIONS_SUB_HEADING" desc="2 of 3. A label within 'Customized behaviors' that allows for exceptions to the 'On-device site data' setting. This label and the list of sites that can appear beneath it is only relevant if the user has chosen to allow 'on-device site data' as the default value above.">
+-    Always clear site data from your device when you close Chromium
++    Always clear site data from your device when you close Dichromate
+   </message>
+ 
    <!-- Privacy Guide -->
    <message name="IDS_SETTINGS_PRIVACY_GUIDE_PROMO_BODY" desc="Body text of a card in the settings page that explains what the 'Privacy Guide' feature is.">
 -    Review key privacy and security controls in Chromium
 +    Review key privacy and security controls in Dichromate
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION1" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    When you close all Chromium windows, cookies and site data are automatically cleared
-+    When you close all Dichromate windows, cookies and site data are automatically cleared
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION2" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    You will be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of most sites<ph name="END_BOLD">&lt;/b&gt;</ph> when you close Chromium. If sync is off, you will also be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of Google services and Chromium<ph name="END_BOLD">&lt;/b&gt;</ph>.
-+    You will be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of most sites<ph name="END_BOLD">&lt;/b&gt;</ph> when you close Dichromate. If sync is off, you will also be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of Google services and Dichromate<ph name="END_BOLD">&lt;/b&gt;</ph>.
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION3" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    Sites you visit remember your information until you close Chromium
-+    Sites you visit remember your information until you close Dichromate
    </message>
    <message name="IDS_SETTINGS_PRIVACY_GUIDE_SAFE_BROWSING_CARD_STANDARD_PROTECTION_FEATURE_DESCRIPTION2" desc="A part of the feature description of the standard protection section of the safe browsing card in the 'Privacy Guide'.">
 -    Checks URLs with a list of unsafe sites stored in Chromium
@@ -2244,10 +2247,10 @@ index 63f83dd420372..c266efced893a 100644
    </if>
  </grit-part>
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index c7817b3b7e179..78465e6b1c1c9 100644
+index 67b78acead2f0..95c67b8da33c9 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
-@@ -244,7 +244,7 @@
+@@ -253,7 +253,7 @@
      Settings
    </message>
    <message name="IDS_SETTINGS_ALT_PAGE_TITLE" desc="The settings page title for the about page.">
@@ -2256,7 +2259,7 @@ index c7817b3b7e179..78465e6b1c1c9 100644
    </message>
    <message name="IDS_SETTINGS_SUBPAGE_BUTTON" desc="Accessibility description for a button navigating the user from a settings page to one of the settings subpages.">
      Subpage button
-@@ -985,7 +985,7 @@
+@@ -1024,7 +1024,7 @@
      <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_DELETE_CONFIRMATION_DESCRIPTION" desc="The body of a dialog that asks the user to confirm the deletion of a passkey. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
        Are you sure you want to delete this passkey?
      </message>
@@ -2265,7 +2268,7 @@ index c7817b3b7e179..78465e6b1c1c9 100644
        Can't delete passkey
      </message>
      <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_BODY" desc="The body of a dialog that explains that we cannot delete certain passkeys on Windows which are involved when the user signs into the Windows computer itself. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
-@@ -2175,7 +2175,7 @@
+@@ -2258,7 +2258,7 @@
      Passwords
    </message>
    <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_FEATURE_UNAVAILABLE" desc="Explains that the password check feature is not available in this version of the browser.">
@@ -2275,10 +2278,10 @@ index c7817b3b7e179..78465e6b1c1c9 100644
    <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_BUTTON_ARIA_LABEL" desc="Accessibility text for the button that allows users to review their passwords.">
      Review passwords
 diff --git a/chrome/app/shared_settings_strings.grdp b/chrome/app/shared_settings_strings.grdp
-index 9acf01d1fd8d2..bcf55d2cc97b7 100644
+index 78e9327693978..e8267c61c47df 100644
 --- a/chrome/app/shared_settings_strings.grdp
 +++ b/chrome/app/shared_settings_strings.grdp
-@@ -212,7 +212,7 @@
+@@ -215,7 +215,7 @@
    <message name="IDS_SETTINGS_SUGGEST_PREF_DESC" desc="The description of the 'Use Suggest' preference">
      Sends some cookies and searches from the address bar and search box to your default search engine
    </message>
@@ -2313,10 +2316,10 @@ index f8363d5b294fe..1fd6b757718f6 100644
 +MAC_CREATOR_CODE=Cr24
 +MAC_TEAM_ID=
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index 6cfe9310621bc..3f7c7da77da1d 100644
+index d8cfc4aaed85c..23eff9db529bb 100644
 --- a/chrome/common/url_constants.cc
 +++ b/chrome/common/url_constants.cc
-@@ -12,56 +12,56 @@
+@@ -12,59 +12,59 @@
  namespace chrome {
  
  const char kAccessCodeCastLearnMoreURL[] =
@@ -2325,6 +2328,10 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  
  const char kAccessibilityLabelsLearnMoreURL[] =
 -    "https://support.google.com/chrome/?p=image_descriptions";
++    "https://github.com/NuclearDevelopers/Dichromate";
+ 
+ const char kAdPrivacyLearnMoreURL[] =
+-    "https://support.google.com/chrome/?p=ad_privacy";
 +    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kAutomaticSettingsResetLearnMoreURL[] =
@@ -2388,7 +2395,7 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  const char kChromeHelpViaMenuURL[] =
-@@ -69,20 +69,20 @@ const char kChromeHelpViaMenuURL[] =
+@@ -72,20 +72,20 @@ const char kChromeHelpViaMenuURL[] =
  #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
      "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
  #else
@@ -2413,7 +2420,7 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
-@@ -106,241 +106,241 @@ const char kChromeSearchScheme[] = "chrome-search";
+@@ -109,244 +109,244 @@ const char kChromeSearchScheme[] = "chrome-search";
  const char kChromeUIUntrustedNewTabPageUrl[] =
      "chrome-untrusted://new-tab-page/";
  
@@ -2468,6 +2475,10 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
 +    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kExtensionInvalidRequestURL[] = "chrome-extension://invalid/";
+ 
+ const char kFirstPartySetsLearnMoreURL[] =
+-    "https://developer.chrome.com/docs/privacy-sandbox/first-party-sets/";
++    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kFlashDeprecationLearnMoreURL[] =
 -    "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html";
@@ -2725,7 +2736,7 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  
  const char kArcPrivacyPolicyURLPath[] = "arc/privacy_policy";
  
-@@ -349,10 +349,10 @@ const char kArcTermsURLPath[] = "arc/terms";
+@@ -355,10 +355,10 @@ const char kArcTermsURLPath[] = "arc/terms";
  // TODO(crbug.com/1010321): Remove 'm100' prefix from link once Bluetooth Revamp
  // has shipped.
  const char kBluetoothPairingLearnMoreUrl[] =
@@ -2738,7 +2749,7 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  
  const char kChromeOSAssetHost[] = "chromeos-asset";
  const char kChromeOSAssetPath[] = "/usr/share/chromeos-assets/";
-@@ -367,16 +367,16 @@ const char kChromeOSGestureEducationHelpURL[] =
+@@ -373,16 +373,16 @@ const char kChromeOSGestureEducationHelpURL[] =
      "chrome://help-app/help/sub/3399710/id/9739838";
  
  const char kChromePaletteHelpURL[] =
@@ -2759,7 +2770,7 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  
  const char kEchoLearnMoreURL[] =
      "chrome://help-app/help/sub/3399709/id/2703646";
-@@ -385,130 +385,130 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
+@@ -391,136 +391,136 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
  
  const char kArcPrivacyPolicyPathFormat[] = "arc_tos/%s/privacy_policy.pdf";
  
@@ -2814,6 +2825,14 @@ index 6cfe9310621bc..3f7c7da77da1d 100644
  
  const char kCrosEulaOnlineURLPath[] =
 -    "https://www.google.com/intl/%s/chrome/terms/";
++    "https://github.com/NuclearDevelopers/Dichromate";
+ 
+ const char kArcTosOnlineURLPath[] =
+-    "https://play.google.com/about/play-terms/embedded/";
++    "https://github.com/NuclearDevelopers/Dichromate";
+ 
+ const char kPrivacyPolicyOnlineURLPath[] =
+-    "https://policies.google.com/privacy/embedded";
 +    "https://github.com/NuclearDevelopers/Dichromate";
  
  const char kOsSettingsSearchHelpURL[] =
@@ -2980,7 +2999,7 @@ index b3d7a13cdd84b..c40d80b3e1564 100644
              L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup GUID.
          .legacy_command_execute_clsid =
 diff --git a/components/autofill_payments_strings.grdp b/components/autofill_payments_strings.grdp
-index 179849533851e..3fca937bf55e5 100644
+index 4dabfb345aa82..a79bfb04bf919 100644
 --- a/components/autofill_payments_strings.grdp
 +++ b/components/autofill_payments_strings.grdp
 @@ -378,7 +378,7 @@
@@ -3147,7 +3166,7 @@ index 299c9f9e1bb7c..0c291dc61df6b 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/components/management_strings.grdp b/components/management_strings.grdp
-index 153625b6dcbdc..65cbf650169f1 100644
+index dc2c81363b0da..cf551a2fbdc12 100644
 --- a/components/management_strings.grdp
 +++ b/components/management_strings.grdp
 @@ -68,11 +68,11 @@
@@ -3564,7 +3583,7 @@ index 0d64acbb08e8e..53fa4143e721b 100644
    <!-- Same as IDS_ACC_OMNIBOX_PEDAL_SET_CHROME_AS_DEFAULT_BROWSER, but with iOS-specific terminology. -->
    <message name="IDS_IOS_ACC_OMNIBOX_PEDAL_SET_CHROME_AS_DEFAULT_BROWSER" desc="Announcement when pedal action button is focused, SET_CHROME_AS_DEFAULT_BROWSER">
 diff --git a/components/omnibox_strings.grdp b/components/omnibox_strings.grdp
-index 2aa2ef29c054f..61f626a692e16 100644
+index 05c94ce9aaae3..86c8616fe9570 100644
 --- a/components/omnibox_strings.grdp
 +++ b/components/omnibox_strings.grdp
 @@ -133,7 +133,7 @@
@@ -3630,10 +3649,10 @@ index 2aa2ef29c054f..61f626a692e16 100644
    <message name="IDS_ACC_REMOVE_SUGGESTION_BUTTON" desc="Announcement when remove suggestion button is focused.">
      Remove Suggestion button, press Enter to remove this suggestion
 diff --git a/components/page_info_strings.grdp b/components/page_info_strings.grdp
-index 29f44578a5896..148782ed89053 100644
+index c68942bf2e067..b1bf1f50288aa 100644
 --- a/components/page_info_strings.grdp
 +++ b/components/page_info_strings.grdp
-@@ -116,8 +116,8 @@
+@@ -110,8 +110,8 @@
      </message>
    </if>
    <if expr="not _google_chrome">
@@ -3644,7 +3663,7 @@ index 29f44578a5896..148782ed89053 100644
      </message>
    </if>
    <if expr="use_titlecase">
-@@ -244,7 +244,7 @@
+@@ -238,7 +238,7 @@
      <if expr="is_android">
      <!-- Only used in the dialog shown after tapping "Details" in page info -->
      <message name="IDS_PAGE_INFO_SECURE_IDENTITY_VERIFIED" desc="The text of the identity section when the page is secure and uses a valid certificate">
@@ -3653,7 +3672,7 @@ index 29f44578a5896..148782ed89053 100644
      </message>
      </if>
  
-@@ -536,19 +536,19 @@
+@@ -530,19 +530,19 @@
      </if>
      <if expr="not _google_chrome">
        <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
@@ -3696,7 +3715,7 @@ index 04ff72a1a562a..ebf9163e178b7 100644
    </if>
  </grit-part>
 diff --git a/components/security_interstitials_strings.grdp b/components/security_interstitials_strings.grdp
-index e9a50e7e29d46..2cb368a574260 100644
+index 51efa0d26b724..883e35c075ded 100644
 --- a/components/security_interstitials_strings.grdp
 +++ b/components/security_interstitials_strings.grdp
 @@ -164,7 +164,7 @@

@@ -1,4 +1,4 @@
-From c0e4f365a4a44d60de6a02c1a1458ba87d4d5a81 Mon Sep 17 00:00:00 2001
+From f456bb9196854f2eea078036ca13559fbcb9f9fd Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Fri, 23 Oct 2020 23:59:13 -0400
 Subject: [PATCH] enable prefetch privacy changes by default
@@ -8,10 +8,10 @@ Subject: [PATCH] enable prefetch privacy changes by default
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/third_party/blink/common/features.cc b/third_party/blink/common/features.cc
-index 254d54b0bbed0..c80deaad49987 100644
+index 1cc64db3b24c6..dd48de82e854f 100644
 --- a/third_party/blink/common/features.cc
 +++ b/third_party/blink/common/features.cc
-@@ -501,7 +501,7 @@ BASE_FEATURE(kAllowSyncXHRInPageDismissal,
+@@ -511,7 +511,7 @@ BASE_FEATURE(kAllowSyncXHRInPageDismissal,
  // crbug.com/988956.
  BASE_FEATURE(kPrefetchPrivacyChanges,
               "PrefetchPrivacyChanges",

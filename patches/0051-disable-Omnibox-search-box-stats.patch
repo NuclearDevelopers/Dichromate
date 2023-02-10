@@ -1,4 +1,4 @@
-From 250d65caabc10ed4c77973b6e390950aa0ccd768 Mon Sep 17 00:00:00 2001
+From df697d2a050614be7ffb9b278cd41f85ea478f0c Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Omnibox search box stats
@@ -9,10 +9,10 @@ Disables sending excess query information in the ?aqs= parameter when performing
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/components/omnibox/common/omnibox_features.cc b/components/omnibox/common/omnibox_features.cc
-index 06d7e9c1218e8..0fa2370c0198f 100644
+index e0466e17ef418..20ca7a5826bd3 100644
 --- a/components/omnibox/common/omnibox_features.cc
 +++ b/components/omnibox/common/omnibox_features.cc
-@@ -472,7 +472,7 @@ const char kDefaultTypedNavigationsToHttpsTimeoutParam[] = "timeout";
+@@ -471,7 +471,7 @@ const char kDefaultTypedNavigationsToHttpsTimeoutParam[] = "timeout";
  // Search Results Page URL.
  BASE_FEATURE(kReportAssistedQueryStats,
               "OmniboxReportAssistedQueryStats",

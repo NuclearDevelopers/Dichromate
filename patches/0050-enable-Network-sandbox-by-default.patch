@@ -1,4 +1,4 @@
-From 6f7cd24c0f66e6a35e1e213d70f4c395c671d37e Mon Sep 17 00:00:00 2001
+From 52a095acfa000272b6ea06193f6f5b150ecfb42c Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] enable Network sandbox by default

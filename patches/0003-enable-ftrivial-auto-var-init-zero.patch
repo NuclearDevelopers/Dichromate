@@ -1,4 +1,4 @@
-From 52e4d8c5e5610a7dd2ce3e7c0f69548d5c36742e Mon Sep 17 00:00:00 2001
+From e990678cc5ef8ab9829684ffd9f123feafac1885 Mon Sep 17 00:00:00 2001
 From: Daniel Micay <danielmicay@gmail.com>
 Date: Wed, 8 Apr 2020 20:48:17 -0400
 Subject: [PATCH] enable -ftrivial-auto-var-init=zero

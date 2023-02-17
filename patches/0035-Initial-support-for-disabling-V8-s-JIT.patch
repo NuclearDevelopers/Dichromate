@@ -1,4 +1,4 @@
-From 6b583e4046a7a32618baa9c8efb74070d956f8e0 Mon Sep 17 00:00:00 2001
+From 38e2e7aab76fb4f418f66bc6e336a30a6c2ed66b Mon Sep 17 00:00:00 2001
 From: qua3k <cliffmaceyak@gmail.com>
 Date: Tue, 19 Oct 2021 07:36:10 -0400
 Subject: [PATCH] Initial support for disabling V8's JIT

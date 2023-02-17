@@ -1,4 +1,4 @@
-From 91cad02f9b9eebf21944bf02c2ed7b61ec20ca8b Mon Sep 17 00:00:00 2001
+From f12ce45e087df0b2d854cdee468c9bbb2e513395 Mon Sep 17 00:00:00 2001
 From: Michael Gilbert <mgilbert@debian.org>
 Date: Sun, 15 Aug 2021 05:08:49 +0100
 Subject: [PATCH] Debian: disable the google api key warning when those aren't

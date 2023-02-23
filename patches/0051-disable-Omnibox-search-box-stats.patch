@@ -1,4 +1,4 @@
-From f986120fe911fd81d2a4594a787b241ef7bdeb59 Mon Sep 17 00:00:00 2001
+From dadde0a1d134ce49fe3fcbfe25ff227fe8f8c5fd Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Wed, 28 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Omnibox search box stats

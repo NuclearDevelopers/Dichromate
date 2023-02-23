@@ -1,4 +1,4 @@
-From d2702b32f1e00682558c4c3f089c60a5cf1dbf02 Mon Sep 17 00:00:00 2001
+From b92c60ccb6b5ea77a0ce7310292d55178f8f6ff6 Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sun, 11 Sep 2022 00:00:00 +0000
 Subject: [PATCH] disable Idle Detection

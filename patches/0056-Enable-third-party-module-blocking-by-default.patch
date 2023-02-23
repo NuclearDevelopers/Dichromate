@@ -1,4 +1,4 @@
-From c12c71a15f6bef0ba5126d172a5c88c5bd69f440 Mon Sep 17 00:00:00 2001
+From f5e32f86a92379840bd4d620e8998ba228a54aec Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Sat, 29 Oct 2022 00:00:00 +0000
 Subject: [PATCH] Enable third party module blocking by default

@@ -61,3 +61,5 @@ enable_vr = false
 use_cfi_cast = true
 
 chrome_pgo_phase = 0
+
+cc_wrapper = "sccache"

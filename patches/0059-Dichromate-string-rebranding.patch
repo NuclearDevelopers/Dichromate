@@ -1,19 +1,19 @@
-From 330d84b762d055f1f28e74fb40342005bb50c780 Mon Sep 17 00:00:00 2001
+From 1c4bf3248a242d74104da30f817c5357c8c77f1f Mon Sep 17 00:00:00 2001
 From: Douloureux <Douloureux@users.noreply.github.com>
 Date: Tue, 1 Dec 1970 00:00:00 +0000
 Subject: [PATCH] Dichromate string rebranding
 
 ---
  chrome/app/access_code_cast_strings.grdp      |   2 +-
- chrome/app/chromium_strings.grd               | 690 +++++++++---------
+ chrome/app/chromium_strings.grd               | 692 +++++++++---------
  chrome/app/generated_resources.grd            |   4 +-
  chrome/app/google_chrome_strings.grd          |  14 +-
  chrome/app/os_settings_strings.grdp           |  22 +-
- chrome/app/settings_chromium_strings.grdp     | 198 ++---
+ chrome/app/settings_chromium_strings.grdp     | 196 ++---
  chrome/app/settings_strings.grdp              |   6 +-
  chrome/app/shared_settings_strings.grdp       |   2 +-
  chrome/app/theme/chromium/BRANDING            |  20 +-
- chrome/common/url_constants.cc                | 264 +++----
+ chrome/common/url_constants.cc                | Bin 18280 -> 36012 bytes
  .../install_static/chromium_install_modes.cc  |  18 +-
  components/autofill_payments_strings.grdp     |   2 +-
  components/autofill_strings.grdp              |   6 +-
@@ -29,7 +29,7 @@ Subject: [PATCH] Dichromate string rebranding
  .../security_interstitials_strings.grdp       |   8 +-
  components/ssl_errors_strings.grdp            |   6 +-
  components/version_ui_strings.grdp            |   6 +-
- 25 files changed, 720 insertions(+), 720 deletions(-)
+ 25 files changed, 588 insertions(+), 588 deletions(-)
 
 diff --git a/chrome/app/access_code_cast_strings.grdp b/chrome/app/access_code_cast_strings.grdp
 index 456faa34c1062..2fb08e92fbbe1 100644
@@ -43,7 +43,7 @@ index 456faa34c1062..2fb08e92fbbe1 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/chrome/app/chromium_strings.grd b/chrome/app/chromium_strings.grd
-index bdee40dc52d21..5e50646f9593b 100644
+index c0f31231b6d56..edbe0edf5f823 100644
 --- a/chrome/app/chromium_strings.grd
 +++ b/chrome/app/chromium_strings.grd
 @@ -277,43 +277,43 @@ If you update this file, be sure also to update google_chrome_strings.grd. -->
@@ -359,7 +359,7 @@ index bdee40dc52d21..5e50646f9593b 100644
        </message>
        <message name="IDS_PASSWORD_BUBBLES_PASSWORD_MANAGER_LINK_TEXT_SAVING_ON_DEVICE" desc="The text of the Google Password Manager links displayed on Password Manager bubbles footer when the credentials are stored only locally.">
          Password Manager
-@@ -543,315 +543,315 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -543,319 +543,319 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
        <if expr="is_macosx">
          <message name="IDS_PASSWORDS_PAGE_AUTHENTICATION_PROMPT" desc="Text for the dialog box that prompts the user for their OS account password before revealing plaintext passwords on the password page.">
@@ -560,6 +560,11 @@ index bdee40dc52d21..5e50646f9593b 100644
 -        This file may be dangerous, so Chromium has blocked it.
 +        This file may be dangerous, so Dichromate has blocked it.
        </message>
+       <message name="IDS_BLOCK_REASON_PROMPT_FOR_SCANNING"
+          desc="Message shown to the user on chrome://downloads page to explain that this download is recommended to be scanned.">
+-        Chromium recommends scanning this file because it may be dangerous.
++        Dichromate recommends scanning this file because it may be dangerous.
+       </message>
  
        <!-- Abandon in-progress downloads confirmation dialog -->
        <if expr="not is_macosx">
@@ -750,7 +755,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_TITLE" desc="The title of the dialog to confirm adding a new work profile with the signed-in enterprise account">
            Add Work Profile to this browser
-@@ -863,11 +863,11 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -867,11 +867,11 @@ Permissions you've already given to websites and apps may apply to this account.
            This work profile is completely separate from your personal profile.
          </message>
          <message name="IDS_ENTERPRISE_SIGNIN_WORK_PROFILE_EXPLANATION" desc="The warning message displayed to an enterprise user about to link their profile to their Google account. This message is followed by a 'Learn more' link.">
@@ -764,7 +769,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_ONE_CLICK_SIGNIN_DIALOG_MESSAGE_NEW" desc="The message of the one click sign-in dialog.">
            You're signed in as <ph name="USER_EMAIL_ADDRESS">$1<ex>foo@gmail.com</ex></ph>. Now you can access your bookmarks, history, and other settings on all your signed in devices.
-@@ -877,57 +877,57 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -881,57 +881,57 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- about:browser-switch strings -->
        <if expr="toolkit_views and not chromeos_lacros and not chromeos_ash">
          <message name="IDS_ABOUT_BROWSER_SWITCH_DESCRIPTION_UNKNOWN_BROWSER" desc="Description shown while waiting for an alternative browser to open, when the browser name is not auto-detected">
@@ -836,7 +841,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -935,86 +935,86 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -939,86 +939,86 @@ Permissions you've already given to websites and apps may apply to this account.
             Note: these strings should only be used by Google Chrome, but
                   omitting them brings up a hash collision error. -->
        <if expr="is_win">
@@ -944,7 +949,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -1022,104 +1022,104 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1026,104 +1026,104 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android and not chromeos_ash">
          <!-- User pod remove sync warning text -->
          <message name="IDS_LOGIN_POD_USER_REMOVE_WARNING_SYNC" desc="Main text shown as a warning when attempting to remove an user.">
@@ -1080,7 +1085,7 @@ index bdee40dc52d21..5e50646f9593b 100644
            </message>
          </if>
        </if>
-@@ -1127,13 +1127,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1131,13 +1131,13 @@ Permissions you've already given to websites and apps may apply to this account.
        <!-- Update Recommended dialog -->
        <if expr="not chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1098,7 +1103,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and relaunches Chrome.">
            Relaunch
-@@ -1141,10 +1141,10 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1145,10 +1145,10 @@ Permissions you've already given to websites and apps may apply to this account.
        </if>
        <if expr="chromeos_ash">
          <message name="IDS_UPDATE_RECOMMENDED_DIALOG_TITLE" desc="The window title for the Update Recommended dialog.">
@@ -1111,7 +1116,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_RELAUNCH_AND_UPDATE" desc="The button in the Update Recommended dialog which updates and restarts ChromeOS.">
            Restart
-@@ -1153,52 +1153,52 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1157,52 +1157,52 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Update bubble -->
        <message name="IDS_REINSTALL_APP" desc="Text for the button the user clicks to reinstall the app.">
@@ -1175,7 +1180,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
        <message name="IDS_RECOVERY_BUBBLE_TEXT" desc="Text for the chrome recovery bubble view full description.">
-@@ -1206,91 +1206,91 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1210,91 +1210,91 @@ Permissions you've already given to websites and apps may apply to this account.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1293,7 +1298,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
        <!-- Relaunch notification bubble and dialog. -->
-@@ -1298,93 +1298,93 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1302,93 +1302,93 @@ Permissions you've already given to websites and apps may apply to this account.
          <if expr="not chromeos_ash">
            <message name="IDS_RELAUNCH_RECOMMENDED_TITLE" desc="The title of a dialog that tells users that a browser relaunch is recommended for an update available for some number of days.">
              {0, plural,
@@ -1423,7 +1428,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
        </if>
  
-@@ -1392,101 +1392,101 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1396,101 +1396,101 @@ Permissions you've already given to websites and apps may apply to this account.
          <!-- Profile Picker -->
          <if expr="chromeos_lacros">
            <message name="IDS_PROFILE_PICKER_MAIN_VIEW_SUBTITLE_LACROS" desc="Profile picker main view subtitle">
@@ -1554,7 +1559,7 @@ index bdee40dc52d21..5e50646f9593b 100644
        </message>
        <message name="IDS_TAILORED_SECURITY_UNCONSENTED_PROMOTION_MESSAGE_DESCRIPTION" desc="Description shown in the message shown when a user changes their account-level tailored security setting encouraging them to enable Enhanced Safe Browsing">
          Enhanced protection does more to block phishing and malware
-@@ -1497,49 +1497,49 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1501,49 +1501,49 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- Privacy Sandbox Dialog strings -->
        <message name="IDS_PRIVACY_SANDBOX_DIALOG_CONSENT_SUBTITLE" desc="A subtitle on the consent page. Consider this a tagline for the Privacy Sandbox project.* “exploring” conveys that this is a work in progress. * “new features” include settings that the user can turn on/off and also backend features that change the way Chrome works for everyone * “allow sites to deliver”: Privacy Sandbox is proposed by Google as a collaborative effort with the browser industry. We’re building and testing functionality that will live in the Chrome browser. In order to land the full promise of Privacy Sandbox, websites and advertisers need to adopt the new APIs / functionality that we’re developing. So “allow sites…” makes it clear to the user that we’re building something for the ecosystem. Typically a Google product builds something for the user, and that’s true in this case, but it’s bigger than that. * “same browsing experience using less of your info”: Another definition of the promise of Privacy Sandbox. Third-party cookies are going away. In this new world, the user will have essentially the same browsing experience but it’s more private because it doesn’t expose so much of the user’s info.">
@@ -1624,7 +1629,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_NO_UPDATE_RESPONSE" desc="Updater response for no updates when handling install result.">
            No update is available.
-@@ -1548,7 +1548,7 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1552,7 +1552,7 @@ Permissions you've already given to websites and apps may apply to this account.
            Installation failed. Please try again.
          </message>
          <message name="IDS_INSTALLER_DISPLAY_NAME" desc="Name for the updater metainstaller.">
@@ -1633,7 +1638,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_CLOSE_BUTTON" desc="Close button tooltip">
            Close
-@@ -1587,13 +1587,13 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1591,13 +1591,13 @@ Permissions you've already given to websites and apps may apply to this account.
            Canceling...
          </message>
          <message name="IDS_TEXT_RESTART_BROWSER" desc="For when a browser must be restarted to complete the installation.">
@@ -1650,7 +1655,7 @@ index bdee40dc52d21..5e50646f9593b 100644
          </message>
          <message name="IDS_UPDATER_CLOSE" desc="For close button on the UI post install completion.">
            Close
-@@ -1630,12 +1630,12 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1634,12 +1634,12 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android">
          <if expr="use_titlecase">
            <message name="IDS_HIGH_EFFICIENCY_DIALOG_TITLE" desc="In Title Case: Title text for a dialog describing that the Memory Saver setting is enabled">
@@ -1665,7 +1670,7 @@ index bdee40dc52d21..5e50646f9593b 100644
            </message>
          </if>
        </if>
-@@ -1644,22 +1644,22 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1648,22 +1648,22 @@ Permissions you've already given to websites and apps may apply to this account.
        <if expr="not is_android">
          <if expr="use_titlecase">
            <message name="IDS_HIGH_EFFICIENCY_INFO_MODE_PROMO_TITLE" desc="In Title Case: The title for the high efficiency info mode in-product promo bubble.">
@@ -1693,10 +1698,10 @@ index bdee40dc52d21..5e50646f9593b 100644
          </if>
        </if>
 diff --git a/chrome/app/generated_resources.grd b/chrome/app/generated_resources.grd
-index 20523e47976b2..67e2d165c2bb1 100644
+index 45bc795e9c51d..6c8305e93c3e6 100644
 --- a/chrome/app/generated_resources.grd
 +++ b/chrome/app/generated_resources.grd
-@@ -4340,7 +4340,7 @@ are declared in tools/grit/grit_rule.gni.
+@@ -4408,7 +4408,7 @@ are declared in tools/grit/grit_rule.gni.
        </message>
  
        <!-- Critical Notification bubble -->
@@ -1705,7 +1710,7 @@ index 20523e47976b2..67e2d165c2bb1 100644
          Restart now
        </message>
  
-@@ -6342,7 +6342,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
+@@ -6449,7 +6449,7 @@ Keep your key file in a safe place. You will need it to create new versions of y
            Reason: The inverted rule <ph name="REVERT_RULE">$1<ex>!example.com</ex></ph> was found in the "Force open in" list.
          </message>
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_OPEN_BROWSER_DEFAULT_REASON" desc="about:browser-switch/internals, section URL Checker, the explaination reason for check result, displayed when the entered URL did not match any listed rule and default browser will not get switched">
@@ -1715,7 +1720,7 @@ index 20523e47976b2..67e2d165c2bb1 100644
          <message name="IDS_ABOUT_BROWSER_SWITCH_INTERNALS_INVALID_URL" desc="about:browser-switch/internals, section URL Checker, specific error message when the url is invalid">
            Invalid URL. Make sure it is formatted properly.
 diff --git a/chrome/app/google_chrome_strings.grd b/chrome/app/google_chrome_strings.grd
-index 45856199a4a72..0bdcc127cb370 100644
+index 8f52d27b918e0..bc04d9ef80392 100644
 --- a/chrome/app/google_chrome_strings.grd
 +++ b/chrome/app/google_chrome_strings.grd
 @@ -403,18 +403,18 @@ chromium_strings.grd. -->
@@ -1750,7 +1755,7 @@ index 45856199a4a72..0bdcc127cb370 100644
            Change default browser to:
          </message>
          <message name="IDS_UNINSTALL_BUTTON_TEXT" desc="Label for uninstall button on Uninstall confirmation dialog.">
-@@ -1171,10 +1171,10 @@ Permissions you've already given to websites and apps may apply to this account.
+@@ -1174,10 +1174,10 @@ Permissions you've already given to websites and apps may apply to this account.
  
        <!-- content area context menus. Android does not use it -->
        <if expr="not is_android">
@@ -1764,7 +1769,7 @@ index 45856199a4a72..0bdcc127cb370 100644
          </message>
          <message name="IDS_CONTENT_CONTEXT_SPELLING_BUBBLE_TEXT" desc="The text of a bubble that confirms users allows integrating the spelling service of Google to Chrome.">
 diff --git a/chrome/app/os_settings_strings.grdp b/chrome/app/os_settings_strings.grdp
-index 905ff1c49b3d8..076bae9afdf55 100644
+index ac3b11571423b..4b6e4d36b9a5b 100644
 --- a/chrome/app/os_settings_strings.grdp
 +++ b/chrome/app/os_settings_strings.grdp
 @@ -72,16 +72,16 @@
@@ -1830,10 +1835,10 @@ index 905ff1c49b3d8..076bae9afdf55 100644
    </message>
    <message name="IDS_SETTINGS_ABOUT_PAGE_DEFERRED_UPDATE_DESCRIPTION" desc="Text of the deferred update description.">
 diff --git a/chrome/app/settings_chromium_strings.grdp b/chrome/app/settings_chromium_strings.grdp
-index 63f83dd420372..c266efced893a 100644
+index 9532de95d89d3..9f80b6b832678 100644
 --- a/chrome/app/settings_chromium_strings.grdp
 +++ b/chrome/app/settings_chromium_strings.grdp
-@@ -1,310 +1,310 @@
+@@ -1,309 +1,309 @@
  <?xml version="1.0" encoding="utf-8"?>
 -<!-- Settings-specific Chromium strings (included from chromium_strings.grd). -->
 +<!-- Settings-specific Dichromate strings (included from chromium_strings.grd). -->
@@ -1998,22 +2003,20 @@ index 63f83dd420372..c266efced893a 100644
      </message>
    </if>
  
+     <!-- Site Settings - Site Data Page-->
+   <message name="IDS_SETTINGS_SITE_DATA_PAGE_CLEAR_ON_EXIT_RADIO_SUBLABEL" desc="A description of the benefit/cost of choosing 'Sites can save content on your device. In short, a site will remember your preferences, shopping cart content, etc. during this browser session. But once you close all open windows, and then visit the site again, it's as if you're coming to the site for the first time.">
+-    Sites will probably work as you expect but won't remember you after you close all Chromium windows
++    Sites will probably work as you expect but won't remember you after you close all Dichromate windows
+   </message>
+   <message name="IDS_SETTINGS_SITE_DATA_PAGE_CLEAR_ON_EXIT_EXCEPTIONS_SUB_HEADING" desc="2 of 3. A label within 'Customized behaviors' that allows for exceptions to the 'On-device site data' setting. This label and the list of sites that can appear beneath it is only relevant if the user has chosen to allow 'on-device site data' as the default value above.">
+-    Always clear site data from your device when you close Chromium
++    Always clear site data from your device when you close Dichromate
+   </message>
+ 
    <!-- Privacy Guide -->
    <message name="IDS_SETTINGS_PRIVACY_GUIDE_PROMO_BODY" desc="Body text of a card in the settings page that explains what the 'Privacy Guide' feature is.">
 -    Review key privacy and security controls in Chromium
 +    Review key privacy and security controls in Dichromate
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION1" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    When you close all Chromium windows, cookies and site data are automatically cleared
-+    When you close all Dichromate windows, cookies and site data are automatically cleared
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION2" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    You will be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of most sites<ph name="END_BOLD">&lt;/b&gt;</ph> when you close Chromium. If sync is off, you will also be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of Google services and Chromium<ph name="END_BOLD">&lt;/b&gt;</ph>.
-+    You will be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of most sites<ph name="END_BOLD">&lt;/b&gt;</ph> when you close Dichromate. If sync is off, you will also be <ph name="BEGIN_BOLD">&lt;b&gt;</ph>signed out of Google services and Dichromate<ph name="END_BOLD">&lt;/b&gt;</ph>.
-   </message>
-   <message name="IDS_SETTINGS_PRIVACY_GUIDE_CLEAR_ON_EXIT_FEATURE_DESCRIPTION3" desc="A part of the feature description of 'clear cookies on exit' card in the 'Privacy Guide'.">
--    Sites you visit remember your information until you close Chromium
-+    Sites you visit remember your information until you close Dichromate
    </message>
    <message name="IDS_SETTINGS_PRIVACY_GUIDE_SAFE_BROWSING_CARD_STANDARD_PROTECTION_FEATURE_DESCRIPTION2" desc="A part of the feature description of the standard protection section of the safe browsing card in the 'Privacy Guide'.">
 -    Checks URLs with a list of unsafe sites stored in Chromium
@@ -2244,10 +2247,10 @@ index 63f83dd420372..c266efced893a 100644
    </if>
  </grit-part>
 diff --git a/chrome/app/settings_strings.grdp b/chrome/app/settings_strings.grdp
-index c7817b3b7e179..78465e6b1c1c9 100644
+index 67b78acead2f0..95c67b8da33c9 100644
 --- a/chrome/app/settings_strings.grdp
 +++ b/chrome/app/settings_strings.grdp
-@@ -244,7 +244,7 @@
+@@ -253,7 +253,7 @@
      Settings
    </message>
    <message name="IDS_SETTINGS_ALT_PAGE_TITLE" desc="The settings page title for the about page.">
@@ -2256,7 +2259,7 @@ index c7817b3b7e179..78465e6b1c1c9 100644
    </message>
    <message name="IDS_SETTINGS_SUBPAGE_BUTTON" desc="Accessibility description for a button navigating the user from a settings page to one of the settings subpages.">
      Subpage button
-@@ -985,7 +985,7 @@
+@@ -1024,7 +1024,7 @@
      <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_DELETE_CONFIRMATION_DESCRIPTION" desc="The body of a dialog that asks the user to confirm the deletion of a passkey. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
        Are you sure you want to delete this passkey?
      </message>
@@ -2265,7 +2268,7 @@ index c7817b3b7e179..78465e6b1c1c9 100644
        Can't delete passkey
      </message>
      <message name="IDS_AUTOFILL_MANAGE_PASSKEYS_CANNOT_DELETE_BODY" desc="The body of a dialog that explains that we cannot delete certain passkeys on Windows which are involved when the user signs into the Windows computer itself. For consistency, the word 'passkey' is in the glossary with translations already suggested.">
-@@ -2175,7 +2175,7 @@
+@@ -2258,7 +2258,7 @@
      Passwords
    </message>
    <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_FEATURE_UNAVAILABLE" desc="Explains that the password check feature is not available in this version of the browser.">
@@ -2275,10 +2278,10 @@ index c7817b3b7e179..78465e6b1c1c9 100644
    <message name="IDS_SETTINGS_SAFETY_CHECK_PASSWORDS_BUTTON_ARIA_LABEL" desc="Accessibility text for the button that allows users to review their passwords.">
      Review passwords
 diff --git a/chrome/app/shared_settings_strings.grdp b/chrome/app/shared_settings_strings.grdp
-index 9acf01d1fd8d2..bcf55d2cc97b7 100644
+index 78e9327693978..e8267c61c47df 100644
 --- a/chrome/app/shared_settings_strings.grdp
 +++ b/chrome/app/shared_settings_strings.grdp
-@@ -212,7 +212,7 @@
+@@ -215,7 +215,7 @@
    <message name="IDS_SETTINGS_SUGGEST_PREF_DESC" desc="The description of the 'Use Suggest' preference">
      Sends some cookies and searches from the address bar and search box to your default search engine
    </message>
@@ -2313,620 +2316,191 @@ index f8363d5b294fe..1fd6b757718f6 100644
 +MAC_CREATOR_CODE=Cr24
 +MAC_TEAM_ID=
 diff --git a/chrome/common/url_constants.cc b/chrome/common/url_constants.cc
-index 6cfe9310621bc..3f7c7da77da1d 100644
---- a/chrome/common/url_constants.cc
-+++ b/chrome/common/url_constants.cc
-@@ -12,56 +12,56 @@
- namespace chrome {
- 
- const char kAccessCodeCastLearnMoreURL[] =
--    "https://support.google.com/chrome/a/?p=cast_to_class_teacher";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAccessibilityLabelsLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=image_descriptions";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAutomaticSettingsResetLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ui_automatic_settings_reset";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAdvancedProtectionDownloadLearnMoreURL[] =
--    "https://support.google.com/accounts/accounts?p=safe-browsing";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAppNotificationsBrowserSettingsURL[] =
-     "chrome://settings/content/notifications";
- 
- const char kBatterySaverModeLearnMoreUrl[] =
--    "https://support.google.com/chrome/?p=chrome_battery_saver";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kBluetoothAdapterOffHelpURL[] =
--    "https://support.google.com/chrome?p=bluetooth";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCastCloudServicesHelpURL[] =
--    "https://support.google.com/chromecast/?p=casting_cloud_services";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCastNoDestinationFoundURL[] =
--    "https://support.google.com/chromecast/?p=no_cast_destination";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChooserHidOverviewUrl[] =
--    "https://support.google.com/chrome?p=webhid";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChooserSerialOverviewUrl[] =
--    "https://support.google.com/chrome?p=webserial";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChooserUsbOverviewURL[] =
--    "https://support.google.com/chrome?p=webusb";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChromeBetaForumURL[] =
--    "https://support.google.com/chrome/?p=beta_forum";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChromeFixUpdateProblems[] =
--    "https://support.google.com/chrome?p=fix_chrome_updates";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChromeHelpViaKeyboardURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
- #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-     "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
- #else
--    "https://support.google.com/chromebook/?p=help&ctx=keyboard";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
- #else
--    "https://support.google.com/chrome/?p=help&ctx=keyboard";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
- const char kChromeHelpViaMenuURL[] =
-@@ -69,20 +69,20 @@ const char kChromeHelpViaMenuURL[] =
- #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-     "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
- #else
--    "https://support.google.com/chromebook/?p=help&ctx=menu";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
- #else
--    "https://support.google.com/chrome/?p=help&ctx=menu";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
- const char kChromeHelpViaWebUIURL[] =
--    "https://support.google.com/chrome/?p=help&ctx=settings";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #if BUILDFLAG(IS_CHROMEOS_ASH)
- const char kChromeOsHelpViaWebUIURL[] =
- #if BUILDFLAG(GOOGLE_CHROME_BRANDING)
-     "chrome-extension://honijodknafkokifofgiaalefdiedpko/main.html";
- #else
--    "https://support.google.com/chromebook/?p=help&ctx=settings";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(GOOGLE_CHROME_BRANDING)
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
-@@ -106,241 +106,241 @@ const char kChromeSearchScheme[] = "chrome-search";
- const char kChromeUIUntrustedNewTabPageUrl[] =
-     "chrome-untrusted://new-tab-page/";
- 
--const char kChromiumProjectURL[] = "https://www.chromium.org/";
-+const char kChromiumProjectURL[] = "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kContentSettingsExceptionsLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=settings_manage_exceptions";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCookiesSettingsHelpCenterURL[] =
--    "https://support.google.com/chrome?p=cpn_cookies";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCrashReasonURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=e_awsnap";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=e_awsnap";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kCrashReasonFeedbackDisplayedURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=e_awsnap_rl";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=e_awsnap_rl";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kDoNotTrackLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=settings_do_not_track";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=settings_do_not_track";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kDownloadInterruptedLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ui_download_errors";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kDownloadScanningLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ib_download_blocked";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kExtensionControlledSettingLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ui_settings_api_extension";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kExtensionInvalidRequestURL[] = "chrome-extension://invalid/";
- 
- const char kFlashDeprecationLearnMoreURL[] =
--    "https://blog.chromium.org/2017/07/so-long-and-thanks-for-all-flash.html";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kGoogleAccountActivityControlsURL[] =
--    "https://myaccount.google.com/activitycontrols/search";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kGoogleAccountActivityControlsURLInPrivacyGuide[] =
--    "https://myaccount.google.com/activitycontrols/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "search&utm_source=chrome&utm_medium=privacy-guide";
- 
- const char kGoogleAccountLanguagesURL[] =
--    "https://myaccount.google.com/language";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
--const char kGoogleAccountURL[] = "https://myaccount.google.com";
-+const char kGoogleAccountURL[] = "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kGoogleAccountChooserURL[] =
--    "https://accounts.google.com/AccountChooser";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kGoogleAccountDeviceActivityURL[] =
--    "https://myaccount.google.com/device-activity?utm_source=chrome";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
--const char kGooglePasswordManagerURL[] = "https://passwords.google.com";
-+const char kGooglePasswordManagerURL[] = "https://github.com/NuclearDevelopers/Dichromate";
- 
--const char kGooglePhotosURL[] = "https://photos.google.com";
-+const char kGooglePhotosURL[] = "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kHighEfficiencyModeLearnMoreUrl[] =
--    "https://support.google.com/chrome/?p=chrome_memory_saver";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kLearnMoreReportingURL[] =
--    "https://support.google.com/chrome/?p=ui_usagestat";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kManagedUiLearnMoreUrl[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=is_chrome_managed";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=is_chrome_managed";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kInsecureDownloadBlockingLearnMoreUrl[] =
--    "https://support.google.com/chrome/?p=mixed_content_downloads";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kMyActivityUrlInClearBrowsingData[] =
--    "https://myactivity.google.com/myactivity?utm_source=chrome_cbd";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kOmniboxLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=settings_omnibox";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=settings_omnibox";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kPageInfoHelpCenterURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=ui_security_indicator";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=ui_security_indicator";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kPasswordCheckLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "?p=settings_password#leak_detection_privacy";
- #else
--    "https://support.google.com/chrome/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "?p=settings_password#leak_detection_privacy";
- #endif
- 
- const char kPasswordGenerationLearnMoreURL[] =
--    "https://support.google.com/chrome/answer/7570435";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kPasswordManagerLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=settings_password";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=settings_password";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kPaymentMethodsURL[] =
--    "https://pay.google.com/payments/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "home?utm_source=chrome&utm_medium=settings&utm_campaign=chrome-payment#"
-     "paymentMethods";
- 
- const char kAddressesAndPaymentMethodsLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/answer/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "142893?visit_id=636857416902558798-696405304&p=settings_autofill&rd=1";
- #else
--    "https://support.google.com/chrome/answer/"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "142893?visit_id=636857416902558798-696405304&p=settings_autofill&rd=1";
- #endif
- 
- const char kPrivacyLearnMoreURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=settings_privacy";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=settings_privacy";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kRemoveNonCWSExtensionURL[] =
--    "https://support.google.com/chrome/?p=ui_remove_non_cws_extensions";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kResetProfileSettingsLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ui_reset_settings";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSafeBrowsingHelpCenterURL[] =
--    "https://support.google.com/chrome?p=cpn_safe_browsing";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSafetyTipHelpCenterURL[] =
--    "https://support.google.com/chrome/?p=safety_tip";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSearchHistoryUrlInClearBrowsingData[] =
--    "https://myactivity.google.com/product/search?utm_source=chrome_cbd";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSeeMoreSecurityTipsURL[] =
--    "https://support.google.com/accounts/answer/32040";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSettingsSearchHelpURL[] =
--    "https://support.google.com/chrome/?p=settings_search_help";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSyncAndGoogleServicesLearnMoreURL[] =
--    "https://support.google.com/chrome?p=syncgoogleservices";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSyncEncryptionHelpURL[] =
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=settings_encryption";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #else
--    "https://support.google.com/chrome/?p=settings_encryption";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- const char kSyncErrorsHelpURL[] =
--    "https://support.google.com/chrome/?p=settings_sync_error";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSyncGoogleDashboardURL[] =
--    "https://www.google.com/settings/chrome/sync";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSyncLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=settings_sign_in";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSigninInterceptManagedDisclaimerLearnMoreURL[] =
--    "https://support.google.com/chrome/a/?p=profile_separation";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- #if !BUILDFLAG(IS_ANDROID)
- const char kSyncTrustedVaultOptInURL[] =
--    "https://passwords.google.com/encryption/enroll?"
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "utm_source=chrome&utm_medium=desktop&utm_campaign=encryption_enroll";
- #endif
- 
- const char kSyncTrustedVaultLearnMoreURL[] =
--    "https://support.google.com/accounts?p=settings_password_ode";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kUpgradeHelpCenterBaseURL[] =
--    "https://support.google.com/installer/?product="
-+    "https://github.com/NuclearDevelopers/Dichromate"
-     "{8A69D345-D564-463c-AFF1-A69D9E530F96}&error=";
- 
- const char kWhoIsMyAdministratorHelpURL[] =
--    "https://support.google.com/chrome?p=your_administrator";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCwsEnhancedSafeBrowsingLearnMoreURL[] =
--    "https://support.google.com/chrome?p=cws_enhanced_safe_browsing";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_ANDROID)
- const char kEnhancedPlaybackNotificationLearnMoreURL[] =
- #endif
- #if BUILDFLAG(IS_CHROMEOS_ASH)
--    "https://support.google.com/chromebook/?p=enhanced_playback";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #elif BUILDFLAG(IS_ANDROID)
- // Keep in sync with chrome/browser/ui/android/strings/android_chrome_strings.grd
--    "https://support.google.com/chrome/?p=mobile_protected_content";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH) || BUILDFLAG(IS_CHROMEOS_LACROS)
- const char kChromeOSDefaultMailtoHandler[] =
--    "https://mail.google.com/mail/?extsrc=mailto&amp;url=%s";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- const char kChromeOSDefaultWebcalHandler[] =
--    "https://www.google.com/calendar/render?cid=%s";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- #if BUILDFLAG(IS_CHROMEOS_ASH)
- const char kAccountManagerLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=google_accounts";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAccountRecoveryURL[] =
--    "https://accounts.google.com/signin/recovery";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAddNewUserURL[] =
--    "https://www.google.com/chromebook/howto/add-another-account";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAndroidAppsLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=playapps";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kArcAdbSideloadingLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=develop_android_apps";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kArcExternalStorageLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=open_files";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kArcPrivacyPolicyURLPath[] = "arc/privacy_policy";
- 
-@@ -349,10 +349,10 @@ const char kArcTermsURLPath[] = "arc/terms";
- // TODO(crbug.com/1010321): Remove 'm100' prefix from link once Bluetooth Revamp
- // has shipped.
- const char kBluetoothPairingLearnMoreUrl[] =
--    "https://support.google.com/chromebook?p=bluetooth_revamp_m100";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChromeAccessibilityHelpURL[] =
--    "https://support.google.com/chromebook/topic/6323347";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kChromeOSAssetHost[] = "chromeos-asset";
- const char kChromeOSAssetPath[] = "/usr/share/chromeos-assets/";
-@@ -367,16 +367,16 @@ const char kChromeOSGestureEducationHelpURL[] =
-     "chrome://help-app/help/sub/3399710/id/9739838";
- 
- const char kChromePaletteHelpURL[] =
--    "https://support.google.com/chromebook?p=stylus_help";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCupsPrintLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=chromebook_printing";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCupsPrintPPDLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=printing_advancedconfigurations";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kEasyUnlockLearnMoreUrl[] =
--    "https://support.google.com/chromebook/?p=smart_lock";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kEchoLearnMoreURL[] =
-     "chrome://help-app/help/sub/3399709/id/2703646";
-@@ -385,130 +385,130 @@ const char kArcTermsPathFormat[] = "arc_tos/%s/terms.html";
- 
- const char kArcPrivacyPolicyPathFormat[] = "arc_tos/%s/privacy_policy.pdf";
- 
--const char kEolNotificationURL[] = "https://www.google.com/chromebook/older/";
-+const char kEolNotificationURL[] = "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kAutoUpdatePolicyURL[] =
--    "https://support.google.com/chrome/a?p=auto-update-policy";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kGoogleNameserversLearnMoreURL[] =
--    "https://developers.google.com/speed/public-dns";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kInstantTetheringLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=instant_tethering";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kKerberosAccountsLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=kerberos_accounts";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kLanguageSettingsLearnMoreUrl[] =
--    "https://support.google.com/chromebook/answer/1059490";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kLanguagePacksLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=language_packs";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kLearnMoreEnterpriseURL[] =
--    "https://support.google.com/chromebook/?p=managed";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kLinuxAppsLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=chromebook_linuxapps";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kNaturalScrollHelpURL[] =
--    "https://support.google.com/chromebook/?p=simple_scrolling";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kHapticFeedbackHelpURL[] =
--    "https://support.google.com/chromebook?p=haptic_feedback_m100";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kOemEulaURLPath[] = "oem";
- 
- const char kGoogleEulaOnlineURLPath[] =
--    "https://policies.google.com/terms/embedded?hl=%s";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kCrosEulaOnlineURLPath[] =
--    "https://www.google.com/intl/%s/chrome/terms/";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kOsSettingsSearchHelpURL[] =
--    "https://support.google.com/chromebook/?p=settings_search_help";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kPeripheralDataAccessHelpURL[] =
--    "https://support.google.com/chromebook?p=connect_thblt_usb4_accy";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSelectToSpeakLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=select_to_speak";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kTPMFirmwareUpdateLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=tpm_update";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kTimeZoneSettingsLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=chromebook_timezone&hl=%s";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSmartPrivacySettingsLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=screen_privacy_m100";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSmbSharesLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=network_file_shares";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kSuggestedContentLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=explorecontent";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kTabletModeGesturesLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=tablet_mode_gestures";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kWifiSyncLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=wifisync";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kWifiHiddenNetworkURL[] =
--    "https://support.google.com/chromebook?p=hidden_networks";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kNearbyShareLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=nearby_share";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- extern const char kNearbyShareManageContactsURL[] =
--    "https://contacts.google.com";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- extern const char kFingerprintLearnMoreURL[] =
--    "https://support.google.com/chromebook?p=chromebook_fingerprint";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
- 
- #if BUILDFLAG(IS_MAC)
- const char kChromeEnterpriseSignInLearnMoreURL[] =
--    "https://support.google.com/chromebook/answer/1331549";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kMacOsObsoleteURL[] =
--    "https://support.google.com/chrome/?p=unsupported_mac";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- #if BUILDFLAG(IS_WIN)
- const char kChromeCleanerLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=chrome_cleanup_tool";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kWindowsXPVistaDeprecationURL[] =
--    "https://chrome.blogspot.com/2015/11/updates-to-chrome-platform-support.html";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- const char kWindows78DeprecationURL[] =
--    "https://support.google.com/chrome/?p=unsupported_windows";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif  // BUILDFLAG(IS_WIN)
- 
- const char kChromeSyncLearnMoreURL[] =
--    "https://support.google.com/chrome/answer/165139";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- #if BUILDFLAG(ENABLE_PLUGINS)
- const char kOutdatedPluginLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=ib_outdated_plugin";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- // TODO (b/184137843): Use real link to phone hub notifications and apps access.
- const char kPhoneHubPermissionLearnMoreURL[] =
--    "https://support.google.com/chromebook/?p=multidevice";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- 
- #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
-     BUILDFLAG(IS_FUCHSIA)
- const char kChromeAppsDeprecationLearnMoreURL[] =
--    "https://support.google.com/chrome/?p=chrome_app_deprecation";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- #if BUILDFLAG(CHROME_ROOT_STORE_SUPPORTED)
- const char kChromeRootStoreSettingsHelpCenterURL[] =
--    "https://support.google.com/chrome?p=root_store";
-+    "https://github.com/NuclearDevelopers/Dichromate";
- #endif
- 
- }  // namespace chrome
+index d8cfc4aaed85c8ad3224b43c4a8d1d03a9f0acc9..eac120ea41913d3ae1764883e4adc569250428fe 100644
+GIT binary patch
+literal 36012
+zcmeI5X>S|H8OQf^fqn-zM$+VkOdpBkv@imhl5C;6U`lb&0|G_riYbyMsoF-Guip0m
+zn@6LaUG6TIQZ4Qpf*_K+oSm6xp8J^LfB(~rno%QaMZ;(meT>G@d2||`MN{2-5<Q9@
+z>$MT>>&~%jb*2`>=t8Y7_1cJ5^*+_NL*1W5zmI;W-stZ@S3EI{PV`EPbKPm^f2b$M
+zQP+Lj)m6`ZvTsjy{V!dQqk&#~YJa3THKLCGUq<a{Em~0zQ{C&kr~2xZo(5N=F;2(L
+zy{q?ud;U0>)rlK@;CeoH-}40X+=@1}2J6v|Mp@VOiF#&?hwf?MdZ0T4jn>!vZO&il
+z%CE<<paz-?{SDQw>7eXKhwd)(o4OfI_35FW`l7JkBR$RdJ@s>>)c}^B8~;>2#^0W(
+zO-J|&`^=hW`~>~^zWv;Q^)#5(ydFZRhZ_4PGYb1iuiSgByUp^j^ePUt4i|cEA}a1^
+z&B19nMkD(5dd0z$VZ_>Ww8D+(ooKo1o}8!`_yH`p)El_l(r4NYqHTRM*407uMtA=f
+z{X@^baD6xQiN7y|->Lpadh$=gU{kAmuIn>FbEI`PI%$g5F7+8IqvtifL;HR8Khit=
+z)YM%l+*28}eXRcfybvts8Wn0{4j(n=j;<MJQbVYE(VkZ3Tq^~Zfu?SFL0%#!z$LhC
+z3j(MG=>jLe(KWKOjx^VEctJ`cy}{H_a2)Fz_~5!Vy}s8wRNhgW`r&UR?%Z*3ojWao
+zrt#2Cq@{rQy~E&m2De2rBj)nsE2&{r5L1T9$$?u@UYlA+);DV&Wn{!lH*@ea7ALiJ
+zWx5v$hwRJ3%~+VLs?2+-xm{}B@E7ZHCW+n?R3m)`#$Dm-BzmpSecda<#q#C1*E=o8
+zDOeoHiLo$b7SE(+aKJHWICLqJF6NmHeRHWhy~<+*D;IkQJiHbZJyDc#3|Ki9*B|Jc
+z>hecR91%lc^mHyv^lJ?Vp2krI1XZ@qz=Zix$I=)`tWE?UjKv8THQ)n3_YKkg2hDfn
+z<SbIwbpDZO>R6CWDyu6(40w(3lc4EDf6>f8ilVSj#+gzH{|K-4r6AvwmRu9=wxnxb
+zMPKW>Eq|yb`S3<Gxh-FE*WFpw>+9$nXSWwU|4Qw5)zg-qO!jlA@!n{Z9gVlC*H>4)
+z#a>5fL97Uh4^Hpl>6q<hz6dg4pgX_ly(g~+S$v}Rq5gpjj~#!dqd%~CqE<+^p0G@-
+zrn6m<;rOvrUG=X$k_T#sUtvCXJhQver;KiXGT3QorbHsLu(bFp*9EdN^hY!!&j-%u
+zi*2{Mml@Kjh@Q*Lr|9{`F%?tYJwM#@LmB$J89%%gKO8v?uzXLVh=a<kKpAPUE4iN3
+zltn90G^2Z-Mz7v1=J%;}Tsi$&hNg<RYE!f{l%-(t%$}?oqAG1^C8F`faea(|XezmZ
+zu=R?bqkWkeN2t$s+<3$ek8{UL>J0Cv^2DN};a`Dcdfd|di4*l@w-Fb9t!q5t5K1Cq
+z)@DUk46SZ6A~76Bz^29i!#3|_j!V9RmMbo{5V!TCmyr!2tl1+cJ!7z%Txo1ZzglLe
+z=FO|Q@Va27AGkHezXDd)Vn?s<mDwU1zNgnyT@w-O%E~=;-kFa|<oonV7-&CrKAa!J
+zAR(9aUh9jOccgbR6pThLW_G-Xvdl;Nev$RR9fWvsNF=B|&3k2LSj6eAz|#$>geW%{
+z1{e7}L7v68`hRdmo`gx_F{DM0g|aY~$3&7N=s(YLU7W5Ko3-U~&2#@nD^9dNY133A
+zr_~a@z+q78R1!RyH(8gz+todyz2@)MFTVwZ=7$q0O+)Cduh!KH5Qj|SDM>|l<8>Ev
+z2D$5rWB~lmConiW=OSydjI9xK&fUOVooE27zc>aqgbj3{m+oYl$(&=6eRSX4<LGv|
+z`Or?Eha+;LmQmanN1H{k<@lwz-r$~V7O9q46eD4ldh<%}jGc97`NaC=uG6`9tRX6k
+zhz3)8P=@C2TGAHDHZ;Cj13tp-Ed=rteP`2J-ZZYSs6UL*BGoU{^Yolv{in-%<8vgX
+z_N<qcmlFX0ai8TpEW8G4l%~#m8ta`J0&KGS*<Bk>^I@luqaFz^tl&6DT{o(ECHfzV
+zqx*tmRgmDrn-{?q_Awc2FqY()Ns5BtzAAD2ZQ+7<@N?q&u~%9b_$ZDz-7U<?(L&Gj
+zE6t4T+M%<Wea-9(;V;e|$8GT2$<vWPe&HxMhH*ud;Grzz8RoAtwS#DiOT81ps4u<D
+zO3J(O9E$W={<;%Ii7Pjfb5BxGm7zekB6qraPs^eDz(lN&3gP#{2=xKmjwg&C(*Afg
+z;wB+o?Kw)KLN3j_)tD=FRqQ`lSKR@1>0SL3@1fS0$TE^TOB?6MXqV3sv-2eyGII1|
+z)o`a3*SjH&Q>S-c3J3T8>8J8fv170my3)khs%g)TN?5W<RP^L|c2(w>ZE^dohG51(
+zPED+3i{ff)gL6%?m@JFWt5r=m?#epD+orngLnaTUs}}Eh=u`2K&-p=7RK1mpuHWP1
+zQ{p4EtFU>IaPK}dK1s@?A7ux;aI!p(QL&?r9C5fB53Xe1JAH=@MBFRhRYUvGtMy*q
+zvhoyn4WqAGVO;)+cVzAGOWW?Rw2EZsiMso&;jFb*ZQmpfQ)sJ=KQrF3eUHnc>Ui`;
+z=<TC)zGbYp_0Fy&yqL82mE@RD?X#puV?W|?^rNiFn?{_lMnee}N2Z9QUO0J%XE%_v
+z3nN%o4HK`?1J%7GXNM$=zfZ2Amvcot&mORzvyzdg#H>~|3w9^w_gh8=)W;G?uIJ<E
+zTkYw89{mtK6~>9jSk2d=KJ|p1XS)AP-+vc<ua=MX`3Ic?@I=?&>F)QsdafEK?mpA^
+zk97B`UcZgL%F$#UM^)@9pvtJPc0^5HsArG8W$|+z)}_3p3HATyMZdA!t;XIG=%z^G
+z5Z$3_jjB=d`gp8wl^dJQS617y01lJuRvTs<Ozmt^)|a8SDrJ$_>3kv>($Rx*9$*zA
+zA(OW+`ATIm{@F+rXEsOmYs8=?U-?V)my9xz^^b}()<5C{bjR0chHzyuJIlTr&X#Kn
+z&Ob{e&F@K!8NF3olC?!m<PgmA3-cks67H(6pDZ)T)*XCsO<e!#Wx*_N>SMdsP4|0B
+zTNhPPg+zr+J|3#2ON^32?jW8{RZP)t=qkccKQ1=km@EeIXrg;|MjG54Ms#}0^`Ij;
+zH>#sg`0eGQJj=k7motCJ+=XqG-L|8h-SV4)&34G=#qT_KQ70Sk<oQV}ajEr~st?wS
+z6`YlMcL#scue^Cog*fj-@o(&*k^E-g(`-ZqTd%7%38nv`o*w9)RYHcoc3Gct-fGv4
+z%Q&Zkon4$eb$l(ALra<cUlV;-9qRd2(Uw&gZCO*C<y%EtR>URWx!B8!u8G!kb#GN?
+zP;4ls!Y5)gYx-Zmip^}eSj}&uAY_GUr5D%Hmm*L0t&3J}YE3L7+mpOOMwyjvQFC-$
+zJv3ZPH9Hfn%0N(2$JW()P#>J_4OW%9y-dwI*J9pYnMU+){biqtvA8r&ujHQ7Nt~V1
+z(b~Sd+S4$5I$4>OB_<fksoOxEl*gYswjNrn^UjIM(tUPn38&CdBh+yG#<{6xoi#+m
+z_>O1#CXA!oIic~%bDTeVt{tY(InnQ-t~gB;@0v)Voi&*Lo)bai>QX9C!`2U-^z5bL
+z^LMwNAw7W8+t9>(PMAHzhckX!?p&Yt96N>FHEWJ_#`!;MdOr~^%u2zYBNmQce|?3a
+zzFLfzTDOvCa}~p4XFy<)^eY5QT6)};T8eZebxN$A)z^o%dUfscJX|MXA^uBCJL8Uc
+zT)H~x?riG$Q7X&x*{*&&eL7u@y9_;0OgW)!wlgs5w|8b$a*N0syGh$l%UFdFR<`Mx
+zGWxz+lmtXRTf-hqq+8p`YiwS2KGYMY<ldJ(@wT0y?s=P>IJSkapQI+-V)ISeB4LJ+
+zilg{x?_CyCJFB|y^c*JxnlvdI(V`%<4f{9yXkU7DP5)o3&#@@)QdoJY&*<Ey{2)%Q
+ze<a`NiQd1_dAbd^Q_g4Q8qpusjuwyfso`KlLvxxTXTO{7Zn)JM$dct8d-E5tozthx
+zTHoxSqt1afusPyo*qQg7e$R<D_#1Yje4YfJ?VS~3r(HfTRk@Nkv>r^m5YwRIAUu=2
+zF8*WEs#|rCkPFQ^&nL8`*=@1nsDbFh^qQXYs32T5?8kVdEPlb(pNK-R?x8s<!Z|BC
+zo^5)3PL>aOs_Z;ku5aWzyFAl#N$S_8c!p>kr{BlB5tH+3y8go7gkWZzl7l@pRjng4
+z$14FQKkn?glQGYQa)FhA=X^YMd?g96xv^>NcO~p>DMqtXL*Rd68b}4Cqw)WRo`Hjn
+z3%yt7>6YKY;9KKuFQLxd7(B^&nqBoc5L6d}4qG3|KyTr%V^GcC*B!&5eZxF00%(1h
+zM`vxAGm&80;NQ`w<ri5m;O@(Bj8})d>=s6zu%6a4^I}DaK_ma^jkTr?HKz38Tk=aB
+zz(tNZYYrYB`p90Lvb08RCjO`Ga9G!jIFTW))AYR;S*0Nl_|s2q?r<X*YhFVG_wf4+
+zO=*p%ikSVNS|>C_)2(dNU334rzJ0zh_rNRQi5j^$_E<FcyYZ``jeLw;YK7o)(?0e4
+zMS_+vnuK6a(5%(YdRrIu5CJ+6r}~{eSr%xOErE5>8MUuj^Un7xZ_B}t#Ic@(pNONe
+z38`CrR*HjHMfsu4>NTF7)s19Np5cew?n+-FuhC>*y4To_&DLCb{AZ)*+w3=+O_3e{
+zP~6g!{wre}tP4iYGtB-4ilk(##@<r<t*W88C_Jw`_F|HAPFgd|m&RdUen*r?Y!Pdc
+z>J_sm7UQhtL$oPrhK9$YnL5u9-xFBO%BmYY#O(1!d4>Oz(X{$ScG9OkP%9PI_-Em#
+z${HvQ5Au^dRUI*7HIwnLk&%ltJ!A5H*;(xQ@!BoN<(G=M)HU*n6gL0F;)8gpXcICa
+zb*PHO54LK-u4)I8Cj!<3f?dt}LXleXYMp|J;?T7#W7ULO*7v*XtZsCYuMF{)myeTH
+z%~l{zg9fTE1m5xniu$d8zRg}gSayYhwC3m9e4VqJ$htkv7`t+GWnm(*{b><lT)G}|
+zkM-~CpXl7aIK3^nz(~2h@>R;U?JFL$E$u_J@j|sNP!&=(_RzAd%=~!4^1T}Nbl{u)
+zRd_*Tq<N=q@U#UDSmB&UIEXwKr!jpFaFMb08I$^X0d3hmr~0!vIr03KqdEKlyn(t=
+zn*A07a*djIJL@Z%1*jj6-il+$EBjjNy5Ypn-+u3sy6J&peqhMXzk7FObyw9AX0Avt
+zen&p$^{QgQpU+Fp37I@J2obX6@04f5v@JNv;~@{c96(Z&sjWt2vmA8T0#v7BuURak
+z%Cao1G{mm5-0w|lv+*JMpI_Cwt%yl$feO^D*btRkoW?;6wyNBaNB>ZIS6(5W;gMd6
+zxge3ecfL$n6w*U^jJ_2fb{4>>KLHQ>vVK*j=oBg+ty=wO*_A)(j%5O<l!oi^ZQ@*i
+zHRM+wJtpD#Uey6rg(9TRGSVufOQ<<-1zNJAt!55?$95`IRjL%p*L88>sw({K*LU~y
+zexTpkg*WF_{O`&ZpNgiTSuAn(!eE_4=~Y~bkP^I{@^wpAS=mr+CDkyGMbDfA^i<h%
+zK0UpvqOuz6hT~PDDPgrF`ETl{$oC_os2QTRhDxLCd@+?vab**gId+HIdi<NooVrOn
+z*O;+hyOAv3!)`UJHe?=E#6vla@A+{4t`%<^%x}5n==vb~S@`s=|DM>}lW)arh%eY5
+z(^em=3+OGM>B*LlRm4vgpA<=uaM#eG+bguI2;HGpips<{ipcZ%K=NVFUGMA8yj{<s
+ybbTZKfrHxmr%G`)zT_jAEq&*6g3H&RS?l<l=+0ZrcrI4aFw!S@KDoaQKKUP-8jbw`
+
+literal 18280
+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
+
 diff --git a/chrome/install_static/chromium_install_modes.cc b/chrome/install_static/chromium_install_modes.cc
 index b3d7a13cdd84b..c40d80b3e1564 100644
 --- a/chrome/install_static/chromium_install_modes.cc
@@ -2980,7 +2554,7 @@ index b3d7a13cdd84b..c40d80b3e1564 100644
              L"{7D2B3E1D-D096-4594-9D8F-A6667F12E0AC}",  // Active Setup GUID.
          .legacy_command_execute_clsid =
 diff --git a/components/autofill_payments_strings.grdp b/components/autofill_payments_strings.grdp
-index 179849533851e..3fca937bf55e5 100644
+index 4dabfb345aa82..a79bfb04bf919 100644
 --- a/components/autofill_payments_strings.grdp
 +++ b/components/autofill_payments_strings.grdp
 @@ -378,7 +378,7 @@
@@ -3147,7 +2721,7 @@ index 299c9f9e1bb7c..0c291dc61df6b 100644
 \ No newline at end of file
 +</grit-part>
 diff --git a/components/management_strings.grdp b/components/management_strings.grdp
-index 153625b6dcbdc..65cbf650169f1 100644
+index dc2c81363b0da..cf551a2fbdc12 100644
 --- a/components/management_strings.grdp
 +++ b/components/management_strings.grdp
 @@ -68,11 +68,11 @@
@@ -3564,7 +3138,7 @@ index 0d64acbb08e8e..53fa4143e721b 100644
    <!-- Same as IDS_ACC_OMNIBOX_PEDAL_SET_CHROME_AS_DEFAULT_BROWSER, but with iOS-specific terminology. -->
    <message name="IDS_IOS_ACC_OMNIBOX_PEDAL_SET_CHROME_AS_DEFAULT_BROWSER" desc="Announcement when pedal action button is focused, SET_CHROME_AS_DEFAULT_BROWSER">
 diff --git a/components/omnibox_strings.grdp b/components/omnibox_strings.grdp
-index 2aa2ef29c054f..61f626a692e16 100644
+index 05c94ce9aaae3..86c8616fe9570 100644
 --- a/components/omnibox_strings.grdp
 +++ b/components/omnibox_strings.grdp
 @@ -133,7 +133,7 @@
@@ -3630,10 +3204,10 @@ index 2aa2ef29c054f..61f626a692e16 100644
    <message name="IDS_ACC_REMOVE_SUGGESTION_BUTTON" desc="Announcement when remove suggestion button is focused.">
      Remove Suggestion button, press Enter to remove this suggestion
 diff --git a/components/page_info_strings.grdp b/components/page_info_strings.grdp
-index 29f44578a5896..148782ed89053 100644
+index c68942bf2e067..b1bf1f50288aa 100644
 --- a/components/page_info_strings.grdp
 +++ b/components/page_info_strings.grdp
-@@ -116,8 +116,8 @@
+@@ -110,8 +110,8 @@
      </message>
    </if>
    <if expr="not _google_chrome">
@@ -3644,7 +3218,7 @@ index 29f44578a5896..148782ed89053 100644
      </message>
    </if>
    <if expr="use_titlecase">
-@@ -244,7 +244,7 @@
+@@ -238,7 +238,7 @@
      <if expr="is_android">
      <!-- Only used in the dialog shown after tapping "Details" in page info -->
      <message name="IDS_PAGE_INFO_SECURE_IDENTITY_VERIFIED" desc="The text of the identity section when the page is secure and uses a valid certificate">
@@ -3653,7 +3227,7 @@ index 29f44578a5896..148782ed89053 100644
      </message>
      </if>
  
-@@ -536,19 +536,19 @@
+@@ -530,19 +530,19 @@
      </if>
      <if expr="not _google_chrome">
        <message name="IDS_PAGE_INFO_CHANGE_PASSWORD_DETAILS" desc="A short paragraph explaining to the user that they has reuse their google password on current website.">
@@ -3696,7 +3270,7 @@ index 04ff72a1a562a..ebf9163e178b7 100644
    </if>
  </grit-part>
 diff --git a/components/security_interstitials_strings.grdp b/components/security_interstitials_strings.grdp
-index e9a50e7e29d46..2cb368a574260 100644
+index 51efa0d26b724..883e35c075ded 100644
 --- a/components/security_interstitials_strings.grdp
 +++ b/components/security_interstitials_strings.grdp
 @@ -164,7 +164,7 @@

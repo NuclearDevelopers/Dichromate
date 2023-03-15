@@ -6,9 +6,9 @@ It can be compiled on other platforms as well, but some of the hardening feature
 
 # Setup
 
-+ Install Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/releases/2019/release-notes">2019</a> or <a href="https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes">2022</a>. Google recommends Visual Studio 2019, but 2022 will also do fine.
++ Install Visual Studio <a href="https://docs.microsoft.com/en-us/visualstudio/releases/2022/release-notes">2022</a>. Other versions are not guaranteed to work.
 
-+ In the Visual Studio Installer, check the box to install `Desktop Development with C++` and in the optional section, install `Windows 10 SDK (10.0.20348.0)`, `C++ ATL`, and `C++ MFC`.
++ In the Visual Studio Installer, check the box to install `Desktop Development with C++` and in the optional section, install `Windows 11 SDK (10.0.22621.0)`, `C++ ATL`, and `C++ MFC`.
 
 + When the installation is complete, go to Control Panel → Programs → Programs and Features → Select the “Windows Software Development Kit” → Change → Change → Check “Debugging Tools For Windows” → Change.
 
@@ -18,9 +18,8 @@ It can be compiled on other platforms as well, but some of the hardening feature
 
 + Extract the zip file to `C:\src` and add `C:\src\depot_tools` to your PATH by going to Control Panel → System and Security → System → Advanced system settings, double clicking the PATH variable, and adding `C:\src\depot_tools` to the list. **Make sure it is ahead of any Python or Git installations.**
 
-+ In the same menu, add an environment variable `vs2022_install` or `vs2019_install` depending your version of VS.
++ In the same menu, add an environment variable depending on your Visual Studio version
     + For VS 2022, set `vs2022_install` to `C:\Program Files\Microsoft Visual Studio\2022\Community`. 
-    + For VS 2019 set `vs2019_install` to ` C:\Program Files (x86)\Microsoft Visual Studio\2019\Community`.
 
 + Additionally, set the environment variable `DEPOT_TOOLS_WIN_TOOLCHAIN` to `0` , to tell GN to use a local installation of Visual Studio instead of Google's internal version.
 
@@ -71,6 +70,7 @@ solutions = [
     "custom_deps": {},
     "custom_vars": {
       "checkout_pgo_profiles": True,
+      "checkout_nacl": False,
     },
   },
 ]

@@ -1,3 +1,9 @@
+# Archival Notice 
+
++ Dichromate is being archived indefinitely. A more professional project may be created sometime in the distant future.
++ Dichromate authored patches are free to use in other projects under the BSD 3-Clause Clear License.
++ The Dichromate branding is not released under an open source license, and therefore cannot be used in other projects. 
+
 # Dichromate
 
 ![Dichromate Logo](https://github.com/NuclearDevelopers/Dichromate/raw/main/Icons/product_logo_256.png)
@@ -7,14 +13,6 @@ Dichromate is a privacy and security hardened Chromium fork. It is based on the 
 We follow the Chrome release schedule, and we try to release a newer build within 1-2 days of a stable release of Chrome.
 
 Dichromate targets only Windows when developing patches and creating releases. It can be compiled for other platforms, but will not have all of the security features.
-
-# Download Dichromate
-
-Get it from WinGet: 
-```
-PS> winget install Dichromate.Browser
-```
-Download an installer from the [releases page](https://github.com/NuclearDevelopers/Dichromate/releases/latest).
 
 # Build from source
 

@@ -1,8 +1,6 @@
 # Archival Notice 
 
-+ Dichromate is being archived indefinitely. A more professional project may be created sometime in the distant future.
-+ Dichromate authored patches are free to use in other projects under the BSD 3-Clause Clear License.
-+ The Dichromate branding is not released under an open source license, and therefore cannot be used in other projects. 
++ This verison of Dichromate was archived in 2023, and the project has been continued [here](https://github.com/Dichromate-Browser/Dichromate) 
 
 # Dichromate
 
